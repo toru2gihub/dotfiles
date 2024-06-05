@@ -1,0 +1,56 @@
+#!/bin/sh
+
+# ▀█▀▄▀▄█▀▄█ █
+#  █ ▀▄▀█▀▄▀▄█
+# simple, clean, elegant
+#
+# Page: https://toru.codeberg.page/
+# Mastodon: @averagetiger89
+# Repository: https://codeberg.org/toru
+# Email: torupublic11@waifu.club
+
+#                 _      
+#  _ _   _____ __(_)__ __
+# | ' \ (_-/\ \ /| |\ V /
+# |_||_|/__//_\_\|_| \_/ 
+
+#  _         _  _        _                    _  _           
+# | |__ ___ | || |      | |_   __ _  _ _   __| || | ___  _ _ 
+# | / // -_) \_. |      |   \ / _` || ' \ / _` || |/ -_)| '_|
+# |_\_\\___| |__/       |_||_|\__/_||_||_|\__/_||_|\___||_|  
+
+while read file
+do
+        case "$1" in
+
+  "w") 
+    swww img -t fade $file && cp $file ~/.config/wall.png ;;
+    #xwallpaper --zoom $file && cp $file ~/.config/wall.png ;;
+    #"w") xwallpaper --zoom $file && wal -ni $file && cp $file ~/.config/wall.png ;;
+
+  "c") 
+    cat $file | wl-copy ;;
+	
+  "d")
+		#rm "$file" && notify-send "$file deleted." ;;
+		rm "$file" ;;
+
+   #[ "$(printf "No\\nYes" | dmenu -i -p "Really delete $file?")" = "Yes" ] && rm "$file" && notify-send "$file deleted." ;;
+
+	"g")
+		gimp "$file" ;;
+
+	"i")
+		inkscape "$file" ;;
+
+	"r")
+		convert -rotate 90 "$file" "$file" ;;
+
+	"R")
+		convert -rotate -90 "$file" "$file" ;;
+
+	"f")
+		convert -flop "$file" "$file" ;;
+
+ esac
+done

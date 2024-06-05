@@ -1,0 +1,11 @@
+#+description: ${description}
+#+author: Tomás González
+#+category: libro
+#+filetags: :Zaralia:
+#+startup: showall
+#+date: %U
+
+* Descripción
+
+
+* Historia

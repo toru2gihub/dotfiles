@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: Minipage
+# key: <m
+# --
+
+  \begin{minipage}{0.49\textwidth}
+  \centering
+  ${1:Texto}
+  \end{minipage}
+  \begin{minipage}{0.49\textwidth}
+  \centering
+  ${2:Texto}
+  \end{minipage}

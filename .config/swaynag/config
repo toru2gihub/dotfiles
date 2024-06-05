@@ -1,0 +1,31 @@
+# ▀█▀▄▀▄█▀▄█ █
+#  █ ▀▄▀█▀▄▀▄█
+#  Simple, Clean, Elegant
+
+# Page: https://toru.codeberg.page/
+# Mastodon: @averagetiger89
+# Repository: https://codeberg.org/toru
+# Email: torupublic11@waifu.club
+
+# ░█▀▀░█░░░█░█▀▀▄░█░░█░█▀▀▄░█▀▀▄░█▀▀▀
+# ░▀▀▄░▀▄█▄▀░█▄▄█░█▄▄█░█░▒█░█▄▄█░█░▀▄
+# ░▀▀▀░░▀░▀░░▀░░▀░▄▄▄▀░▀░░▀░▀░░▀░▀▀▀▀
+
+font=Jetbrains Mono 12
+edge=top
+
+[warning]
+background=#000000
+text=#ffffff
+border=#ff0000
+border-bottom=#ff0000
+button-background=#ff0000
+message-padding=10
+
+[error]
+background=#ff0000
+text=#000000
+border=#000000
+border-bottom=#ff0000
+button-background=#ffffff
+message-padding=10

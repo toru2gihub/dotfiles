@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: toru_notas
+# key: <n
+# --
+
+:PROPERTIES:
+:ID:       `(org-id-uuid)`
+:END:
+#+title: ${1:title}
+#+description: ${2:description}
+#+author: toru
+#+category: nota
+#+startup: showall
+#+date: `(format-time-string "%Y-%m-%d %r")`

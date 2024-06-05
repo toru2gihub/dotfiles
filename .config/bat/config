@@ -1,0 +1,32 @@
+# ▀█▀▄▀▄█▀▄█ █
+#  █ ▀▄▀█▀▄▀▄█
+#  Simple, Clean, Elegant
+
+# Page: https://toru.codeberg.page/
+# Mastodon: @averagetiger89
+# Repository: https://codeberg.org/toru
+# Email: torupublic11@waifu.club
+
+ #  _           _   
+ # | |         | |  
+ # | |__   __ _| |_ 
+ # | '_ \ / _` | __|
+ # | |_) | (_| | |_ 
+ # |_.__/ \__,_|\__|
+
+# No pager
+--paging=never
+
+# warpper
+#--wrap=never
+
+# Set the theme to "TwoDark"
+--theme="gruvbox-dark"
+
+# Show line numbers, Git modifications and file header (but no grid)
+# --style="grid,numbers,changes,header"
+--style="auto"
+--italic-text=always
+
+# Use C++ syntax (instead of C) for .h header files
+# --map-syntax h:cpp

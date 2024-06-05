@@ -1,0 +1,7 @@
+#+TITLE: Torumacs
+#+AUTHOR: toru
+#+DESCRIPTION: Super noob config
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+git clone https://codeberg.org/toru/emacs.d --depth 1 ~/.emacs.d && emacs

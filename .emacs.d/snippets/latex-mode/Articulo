@@ -1,0 +1,47 @@
+# -*- mode: snippet -*-
+# name: Articulo
+# key: <a
+# --
+
+\documentclass{article}
+\usepackage{graphicx}
+<<<<<<< HEAD
+\usepackage{wrapfig}
+\usepackage{titlesec}
+\usepackage{subcaption}
+\usepackage[paperheight=18cm,top=1.5cm,left=1.0cm,right=1.0cm,bottom=1.5cm,paperwidth=14cm,textwidth=12cm]{geometry}
+\pagenumbering{Roman}
+\renewcommand*\contentsname{Índice}
+\usepackage[skip=10pt plus1pt, indent=20pt]{parskip}
+\titleformat{\section}
+{\bfseries}
+{}
+{.25em}
+{}[\titlerule]
+
+\title{${1:titulo}}
+\author{${2:Autor}}
+=======
+\usepackage{titlesec}
+\titleformat{\section}
+{}
+{}
+{0em}
+{}[\titlerule]
+
+\author{Toru}
+\title{${1:titulo}}
+>>>>>>> b67099a (first commit of the repo)
+\date{\today}
+
+\begin{document}
+\maketitle
+
+<<<<<<< HEAD
+\tableofcontents
+\newpage
+
+=======
+>>>>>>> b67099a (first commit of the repo)
+\end{document}
+

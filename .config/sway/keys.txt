@@ -1,0 +1,18 @@
+Super:
+a = scratchpads
+s = volume control
+d = launcher
+f = fullscreen
+r = beats script
+q = quit window
+w = screenshot
+e = editor
+x = tabbed split (swallow)
+c = horizontal split
+v = vertical split
+
+Super + Shift:
+q = quit wm
+r = reload wm
+x = power
+c = lock screen

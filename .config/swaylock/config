@@ -1,0 +1,79 @@
+# ▀█▀▄▀▄█▀▄█ █
+#  █ ▀▄▀█▀▄▀▄█
+#  Simple, Clean, Elegant
+
+# Page: https://toru.codeberg.page/
+# Mastodon: @averagetiger89
+# Repository: https://codeberg.org/toru
+# Email: torupublic11@waifu.club
+
+# ░█▀▀░█░░░█░█▀▀▄░█░░█░█░░▄▀▀▄░█▀▄░█░▄
+# ░▀▀▄░▀▄█▄▀░█▄▄█░█▄▄█░█░░█░░█░█░░░█▀▄
+# ░▀▀▀░░▀░▀░░▀░░▀░▄▄▄▀░▀▀░░▀▀░░▀▀▀░▀░▀
+
+ignore-empty-password
+font="Jetbrains Mono"
+
+clock
+timestr=%R
+datestr=%a, %e of %B
+
+# Add current screenshot as wallpaper
+screenshots
+
+# Add an image as a background 
+# image=~/.config/wall.png
+
+# Fade in time
+fade-in=0.3
+
+# Effect for background
+effect-blur=7x2
+# effect-greyscale
+# effect-pixelate=5
+
+# Show/Hide indicator circle
+indicator
+#no-unlock-indicator
+
+# smaller indicator
+indicator-radius=90
+
+# bigger indicator
+# indicator-radius=150
+
+indicator-thickness=10
+indicator-caps-lock
+
+# Define all colors
+
+key-hl-color=#ffffff
+separator-color=#000000
+
+inside-color=#ffffff
+inside-clear-color=#087800
+inside-caps-lock-color=#000000
+inside-ver-color=#000000
+inside-wrong-color=#ff0000
+
+ring-color=#000000
+ring-clear-color=#000000
+ring-caps-lock-color=#000000
+ring-ver-color=#000000
+ring-wrong-color=#000000
+
+line-color=#000000
+line-clear-color=#000000
+line-caps-lock-color=#000000
+line-ver-color=#000000
+line-wrong-color=#000000
+
+text-color=#000000
+text-clear-color=#ffffff
+text-ver-color=#000000
+text-wrong-color=#ffffff
+
+bs-hl-color=#000000
+caps-lock-key-hl-color=#000000
+caps-lock-bs-hl-color=#000000
+text-caps-lock-color=#000000

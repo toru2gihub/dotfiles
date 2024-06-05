@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: Wrapfigure
+# key: <w
+# --
+
+\begin{wrapfigure}{r}{2in}
+  \centering
+  \includegraphics[width=2in]{${1:img}.jpg}
+\end{wrapfigure}

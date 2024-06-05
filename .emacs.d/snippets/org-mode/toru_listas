@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: toru_listas
+# key: <ch
+# --
+
+- [ ] Tareas `(format-time-string "%Y-%m-%d %r")` [0/2] [0%]
+ - [ ] ${1:task}
+ - [ ] ${2:task}

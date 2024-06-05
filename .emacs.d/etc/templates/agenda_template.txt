@@ -1,0 +1,6 @@
+<<<<<<< HEAD
+** TODO %^{Descripción de TODO} %^g
+=======
+* TODO %^{Descripción de TODO} %^g
+>>>>>>> b67099a (first commit of the repo)
+SCHEDULED: %^t 

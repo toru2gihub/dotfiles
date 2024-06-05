@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: Tarea iwill
+# key: <h
+# --
+
+#+title: Homework
+#+description: Tarea iwill
+#+author: Iwill Tomas
+#+date: `(format-time-string "%Y-%m-%d %r")`

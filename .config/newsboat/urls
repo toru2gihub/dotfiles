@@ -1,0 +1,35 @@
+"query:Unread:unread = \"yes\"" meta
+"query:Articulos:tags # \"articulos\"" meta
+"query:Videos:tags # \"videos\"" meta
+
+https://www.youtube.com/feeds/videos.xml?channel_id=UCiRiQGCHGjDLT9FQXFW0I3A filosofia videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UC-tLyAaPbRZiYrOJxAGB7dQ filosofia videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCybBViio_TH_uiFFDJuz5tg filosofia videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCBLNoRJ6mB26gcAN65ysuaA filosofia videos
+https://sachachua.com/blog/category/emacs-news/feed/ "~Emacs News" articulos tech
+https://notxor.nueva-actitud.org/rss.xml "~Notxor blog" articulos tech
+https://karthinks.com/index.xml "~Karthinks" articulos tech
+https://www.reddit.com/r/commandline/new.rss articulos tech "~r/commandline"
+https://www.reddit.com/r/emacs/new.rss articulos tech "~r/emacs"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg tech videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCylGUf9BvQooEFjgdNudoQg tech videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCngn7SVujlvskHRvRKc1cTw tech videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UC5UAwBUum7CPN5buc-_N1Fw tech videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA tech videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UC0uTPqBCFIpZxlz_Lv1tk_g tech videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCJetJ7nDNLlEzDLXv7KIo0w tech videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UC1s1OsWNYDFgbROPV-q5arg tech videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCa-lsDvCuyK6ZmkRLDlnzsg tech videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA tech videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCs6KfncB4OV6Vug4o_bzijg tech videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCEqYjPJdmEcUVfHmQwJVM9A tech videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UC_zBdZ0_H_jn41FDRG7q4Tw tech videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCo71RUe6DX4w-Vd47rFLXPg tech videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCEEVcDuBRDiwxfXAgQjLGug tech videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCUe2AK0iirPfXcDkYu5dWow entretenimiento videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCffvdhj3nA0s2uN3NoWDQFA entretenimiento videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCKZszfRSW2jI5MD1kAmIuUw entretenimiento videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCIYaraH-I3yed_adLzjEG7A musica videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UC6Z7DfEvG-_c5z8QPHK7Buw musica videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UC-Zrug1Z44kQ9zDlhczVu6w musica videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCOnKllYl7PVV2NlsMPV9_VA musica videos

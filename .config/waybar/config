@@ -1,0 +1,107 @@
+{
+    // "layer": "top", // Waybar at top layer
+
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+
+    "height": 38, // Waybar height (to be removed for auto height)
+
+    "width": 1920, // Waybar width
+
+    "mode": "dock",
+
+  "margin-top": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "margin-bottom": 0,
+
+    "spacing": 1, // Gaps between modules (2px)
+
+    // Choose the order of the modules
+
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
+
+    "modules-center": ["clock"],
+
+    "modules-right": ["pulseaudio", "tray", "custom/recorder"],
+
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "mpd": {
+        "format": "{stateIcon} {title}",
+        "format-disconnected": "Disconnected ",
+        "format-stop": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stop ",
+        "unknown-tag": "?",
+        "interval": 2,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "tray": {
+        // "icon-size": 35,
+        "spacing": 8
+    },
+
+"clock": {
+  "format": " {:%I:%M %p}"
+ },
+
+    "cpu": {
+        "format": "",
+    },
+    "memory": {
+        "format": ""
+    },
+
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "footclient -e pulsemixer"
+    },
+
+"custom/recorder": {
+  "format": "",
+  "return-type": "json",
+  "interval": 1,
+  "exec": "echo '{\"class\": \"recording\"}'",
+  "exec-if": "pgrep recorder.sh"
+ },
+
+}

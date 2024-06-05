@@ -1,0 +1,6 @@
+;;; -*- lisp-data -*-
+(("~/.scripts/")
+ ("~/.emacs.d/")
+ ("/media/tomb/org/notas/")
+ ("~/repos/pages/")
+ ("~/pic/wallpapers/"))

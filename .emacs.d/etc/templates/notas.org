@@ -1,0 +1,14 @@
+#+description: ${description}
+#+author: toru
+#+category: nota
+#+startup: showall
+#+date: %U
+
+* Table :toc:
+- [[#atomic][Atomic]]
+- [[#wiki][Wiki]]
+
+* Atomic
+
+
+* Wiki

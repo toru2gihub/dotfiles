@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: Figure
+# key: <f
+# --
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=1in]{${1:img}.jpg}
+\end{figure}

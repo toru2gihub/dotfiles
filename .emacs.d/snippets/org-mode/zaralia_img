@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: zaralia_img
+# key: <i
+# --
+
+[[./zimg/${1:img}.jpg]]

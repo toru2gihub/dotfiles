@@ -1,0 +1,227 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Jetbrains Mono, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+window#waybar {
+    /* background: rgba(0,0,0,0.8); */
+    background: #000000;
+    /* background: #282c34; */
+    /* background: #1d2021; */
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .8s;
+}
+
+window#waybar.hidden {
+    opacity: 2.0;
+}
+
+/* * { */
+/*     border-radius: 7px; */
+/* } */
+
+
+/* window#waybar.empty { */
+/*     background-color: transparent; */
+/* } */
+
+/* window#waybar.solo { */
+/*     background-color: #FFFFFF; */
+/* } */
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#workspaces button:hover {
+    
+    /* background: rgba(0, 0, 0, 0.2); */
+
+}
+
+#workspaces button.focused {
+
+    /* background-color: rgba(0,0,0,0.5); */
+
+    box-shadow: inset 0 -3px #8b0000;
+}
+
+#workspaces button.urgent {
+
+    background-color: #8b0000;
+    
+/*     background-color: #cc241d; */
+} 
+
+#mode {
+    background-color: #64727D;
+     border-bottom: 3px solid #8b0000; 
+
+     /* border-bottom: 3px solid #d79921; */
+
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#pulseaudio,
+#custom-recorder,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#mpd {
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+/* #clock { */
+/*     background-color: rgba(0,0,0,0.5); */
+/* } */
+
+@keyframes blink {
+    to {
+
+        background-color: #ffffff;
+
+        /* color: rgba(0,0,0,0.5); */
+
+    }
+}
+
+label:focus {
+
+    /* background-color: rgba(0,0,0,0.5); */
+
+}
+
+#cpu {
+    /* background-color: rgba(0,0,0,0.5); */
+
+    /* color: #cc241d; */
+
+   color: #8b0000;
+}
+
+#custom-recorder {
+ font-size: 18px;
+ margin: 2px 7px 0px 7px;
+
+ /* color:#fb4934; */
+
+   color: #8b0000;
+}
+
+#memory {
+
+    /* background-color: rgba(0,0,0,0.5); */
+
+    /* color: #98971a; */
+
+   color: #d79921;
+
+
+}
+
+#pulseaudio {
+
+    /* background-color: rgba(0,0,0,0.5); */
+
+    /* color: #b16286; */
+
+   color: #ffffff;
+}
+
+#pulseaudio.muted {
+
+    /* background-color: rgba(0,0,0,0.5); */
+
+    color: #ffffff;
+}
+
+#wireplumber {
+    background-color: #fff0f5;
+
+    /* color: rgba(0,0,0,0.5); */
+
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #ff0000;
+}
+
+#mpd {
+
+    /* background-color: rgba(0,0,0,0.5); */
+
+    color: #ffffff;
+}
+
+#mpd.disconnected {
+    background-color: #ff0000;
+}
+
+#mpd.stopped {
+
+    /* background-color: rgba(0,0,0,0.5); */
+
+}
+
+#mpd.paused {
+
+    /* background-color: rgba(0,0,0,0.5); */
+
+}
+
+#scratchpad {
+
+    /* background: rgba(0, 0, 0, 0.2); */
+
+   /* color: #d79921; */
+
+   color: #8b0000;
+
+}
+
+#scratchpad.empty {
+	background-color: transparent;
+}
