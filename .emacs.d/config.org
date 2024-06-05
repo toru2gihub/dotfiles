@@ -400,6 +400,13 @@
 )
 
 #+end_src
+** 󰙱 Eglot
+#+begin_src
+
+(add-hook 'LaTeX-mode-hook 'eglot-ensure)
+(add-hook 'html-mode-hook 'eglot-ensure)
+
+#+end_src
 
 ** 󰧺 Bindkey.
 - Using the built-in package "bind-key"
@@ -1077,6 +1084,8 @@
 (setq confirm-kill-processes nil)
 (setq confirm-nonexistent-file-or-buffer nil)
 (set-buffer-modified-p nil)
+;; Auto-refresh dired on file change
+(add-hook 'dired-mode-hook 'auto-revert-mode)
 
 (use-package dired-open
   :ensure t
@@ -1091,8 +1100,8 @@
                                 ("mkv" . "mpv")
                                 ("gif" . "mpv")
                                 ("webm" . "mpv")
-                                ("mp4" . "mpv")
-                                ("pdf" . "zathura"))))
+                                ("mp4" . "mpv"))))
+                                ;("pdf" . "zathura")
 
 (add-hook 'dired-mode-hook
           (lambda ()
