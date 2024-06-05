@@ -42,15 +42,14 @@
  '(org-safe-remote-resources
    '("\\`https://github\\.com/fniessen/org-html-themes/blob/master/org/theme-readtheorg\\.setup\\'"))
  '(package-selected-packages
-   '(magit embark-consult eglot cdlatex auctex telega calfw-org solaire-mode ef-themes simple-modeline vundo evil-goggles org-roam-ui major-mode-hydra consult-org-roam avy consult-yasnippet org-download org-yaap nix-mode all-the-icons-dired org-roam highlight-indent-guides corfu cape modus-themes org-bullets dashboard unicode-fonts page-break-lines auto-complete no-littering olivetti rainbow-mode))
-   '(pdf-tools cdlatex auctex telega calfw-org doom-themes solaire-mode ef-themes simple-modeline vundo evil-goggles org-roam-ui major-mode-hydra consult-org-roam avy consult-yasnippet org-download org-yaap nix-mode all-the-icons-dired org-roam highlight-indent-guides corfu cape modus-themes org-bullets dashboard unicode-fonts page-break-lines auto-complete no-littering olivetti rainbow-mode))
+   '(magit embark-consult eglot cdlatex auctex calfw-org solaire-mode ef-themes simple-modeline vundo evil-goggles org-roam-ui major-mode-hydra consult-org-roam avy consult-yasnippet org-download org-yaap nix-mode all-the-icons-dired org-roam highlight-indent-guides corfu cape modus-themes org-bullets dashboard unicode-fonts page-break-lines auto-complete no-littering olivetti rainbow-mode))
  '(simple-modeline-segments
    '((simple-modeline-segment-modified simple-modeline-segment-buffer-name simple-modeline-segment-position)
      (simple-modeline-segment-vc simple-modeline-segment-misc-info simple-modeline-segment-process simple-modeline-segment-major-mode)))
  '(telega-server-libs-prefix "/nix/store")
  '(toc-org-max-depth 3)
  '(warning-suppress-types '((use-package)))
- '(yas-snippet-dirs '("/home/toru/.emacs.d/snippets/"))
+ '(yas-snippet-dirs '("/home/toru/.emacs.d/snippets/")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

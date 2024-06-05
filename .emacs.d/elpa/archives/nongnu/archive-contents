@@ -19,12 +19,8 @@
 		    (:keywords "themes")
 		    (:maintainer "Ozan Sener" . "ozan@ozansener.com")
 		    (:authors
-<<<<<<< HEAD
 		     ("Ozan Sener" . "ozan@ozansener.com"))
 		    (:commit . "b58731c3b0bbaac9d3ed8d5ae900063df5db090d"))])
-=======
-		     ("Ozan Sener" . "ozan@ozansener.com")))])
->>>>>>> b67099a (first commit of the repo)
  (alect-themes .
 	       [(0 10)
 		((emacs
@@ -34,12 +30,8 @@
 		 (:keywords "color" "theme")
 		 (:maintainer "Alex Kost" . "alezost@gmail.com")
 		 (:authors
-<<<<<<< HEAD
 		  ("Alex Kost" . "alezost@gmail.com"))
 		 (:commit . "89560047934c236d05ea6b911c0c63702a8e06f3"))])
-=======
-		  ("Alex Kost" . "alezost@gmail.com")))])
->>>>>>> b67099a (first commit of the repo)
  (ample-theme .
 	      [(0 3 0)
 	       nil "Calm Dark Theme for Emacs" tar
@@ -47,38 +39,24 @@
 		(:keywords "theme" "dark")
 		(:maintainer "Jordon Biondo" . "jordonbiondo@gmail.com")
 		(:authors
-<<<<<<< HEAD
 		 ("Jordon Biondo" . "jordonbiondo@gmail.com"))
 		(:commit . "33691c93ee302690e41f631f82083bcc15d229e8"))])
  (annotate .
 	   [(2 2 2)
-=======
-		 ("Jordon Biondo" . "jordonbiondo@gmail.com")))])
- (annotate .
-	   [(2 1 0)
->>>>>>> b67099a (first commit of the repo)
 	    nil "annotate files without changing them" tar
 	    ((:url . "https://github.com/bastibe/annotate.el")
 	     (:maintainer
 	      ("Bastian Bechtold" . "bastibe.dev@mailbox.org")
 	      ("cage" . "cage-dev@twistfold.it"))
-<<<<<<< HEAD
 	     (:commit . "deb43c7c429a021d16d6d67b82e7a3053a6eef67"))])
-=======
-	     (:commit . "866fa6d3c05baeace4e8906049a356c9ea913a23"))])
->>>>>>> b67099a (first commit of the repo)
  (anti-zenburn-theme .
 		     [(2 5 1)
 		      nil "Low-contrast Zenburn-inverted theme" tar
 		      ((:url . "https://github.com/m00natic/anti-zenburn-theme")
 		       (:maintainer "Andrey Kotlarski" . "m00naticus@gmail.com")
 		       (:authors
-<<<<<<< HEAD
 			("Andrey Kotlarski" . "m00naticus@gmail.com"))
 		       (:commit . "c80cc51bb1aaf11dd53b9d08e01d61bc9b32622f"))])
-=======
-			("Andrey Kotlarski" . "m00naticus@gmail.com")))])
->>>>>>> b67099a (first commit of the repo)
  (anzu .
        [(0 64)
 	((emacs
@@ -87,28 +65,17 @@
 	((:url . "https://github.com/emacsorphanage/anzu")
 	 (:maintainer "Neil Okamoto" . "neil.okamoto+melpa@gmail.com")
 	 (:authors
-<<<<<<< HEAD
 	  ("Syohei YOSHIDA" . "syohex@gmail.com"))
 	 (:commit . "bdb3da5028935a4aea55c40769bc191a81afb54e"))])
-=======
-	  ("Syohei YOSHIDA" . "syohex@gmail.com")))])
->>>>>>> b67099a (first commit of the repo)
  (apache-mode .
 	      [(2 2 0)
 	       nil "Major mode for editing Apache httpd configuration files" tar
 	       ((:url . "https://github.com/emacs-php/apache-mode")
-<<<<<<< HEAD
 		(:keywords "languages" "faces")
 		(:maintainer "USAMI Kenta" . "tadsan@zonu.me")
 		(:authors
 		 ("Karl Chen" . "quarl@nospam.quarl.org"))
 		(:commit . "354f9302a8d805ac80d846adcd1cef10830b3d51"))])
-=======
-		(:maintainer "USAMI Kenta" . "tadsan@zonu.me")
-		(:authors
-		 ("Karl Chen" . "quarl@nospam.quarl.org"))
-		(:keywords "languages" "faces"))])
->>>>>>> b67099a (first commit of the repo)
  (apropospriate-theme .
 		      [(0 2 0)
 		       nil "A light & dark theme set for Emacs." tar
@@ -116,30 +83,18 @@
 			(:maintainer "Justin Talbott" . "justin@waymondo.com")
 			(:authors
 			 ("Justin Talbott" . "justin@waymondo.com"))
-<<<<<<< HEAD
 			(:commit . "cb56b8c1a4ea42a329b279e57b3db473f0be4adc"))])
  (arduino-mode .
 	       [(1 3 1)
-=======
-			(:commit . "a03fd98f438806bfd74ed3cd0957de859ea7fd2f"))])
- (arduino-mode .
-	       [(1 3 0)
->>>>>>> b67099a (first commit of the repo)
 		((emacs
 		  (25 1))
 		 (spinner
 		  (1 7 3)))
 		"Major mode for editing Arduino code" tar
-<<<<<<< HEAD
 		((:url . "https://repo.or.cz/arduino-mode.git")
 		 (:keywords "languages" "arduino")
 		 (:maintainer "stardiviner" . "numbchild@gmail.com")
 		 (:commit . "b2ffd8441851659cb1cc844156073967729585e5"))])
-=======
-		((:url . "https://github.com/stardiviner/arduino-mode")
-		 (:maintainer "stardiviner" . "numbchild@gmail.com")
-		 (:keywords "languages" "arduino"))])
->>>>>>> b67099a (first commit of the repo)
  (auto-dim-other-buffers .
 			 [(2 1 1)
 			  nil "Makes windows without focus less prominent" tar
@@ -158,7 +113,6 @@
 	      ((:url . "https://github.com/jasonm23/autothemer")
 	       (:maintainer "Jason Milkins" . "jasonm23@gmail.com")
 	       (:commit . "8f72afc6dba5ad7cc3a201a084fd20571f945d2e"))])
-<<<<<<< HEAD
  (base32 .
 	 [(1 0)
 	  ((emacs
@@ -170,8 +124,6 @@
 	   (:authors
 	    ("Vivek Das Mohapatra" . "vivek@etla.org"))
 	   (:commit . "v1.0"))])
-=======
->>>>>>> b67099a (first commit of the repo)
  (bash-completion .
 		  [(3 1 1)
 		   ((emacs
@@ -192,12 +144,8 @@
 		  (:keywords "convenience" "jump" "history" "evil")
 		  (:maintainer "Bryan Gilbert" . "bryan@bryan.sh")
 		  (:authors
-<<<<<<< HEAD
 		   ("Bryan Gilbert" . "http://github/gilbertw1"))
 		  (:commit . "17821e7f55aeaa40c9337b766bfb991625436de4"))])
-=======
-		   ("Bryan Gilbert <http://github/gilbertw1>")))])
->>>>>>> b67099a (first commit of the repo)
  (bind-map .
 	   [(1 1 2)
 	    ((emacs
@@ -211,20 +159,12 @@
  (bison-mode .
 	     [(0 4)
 	      nil "Major mode for editing bison, yacc and lex files." tar
-<<<<<<< HEAD
 	      ((:keywords "bison-mode" "yacc-mode")
 	       (:maintainer "Eric Beuscher" . "beuscher@eecs.tulane.edu")
 	       (:authors
 		("Eric Beuscher" . "beuscher@eecs.tulane.edu"))
 	       (:url . "https://elpa.nongnu.org/nongnu/bison-mode.html")
 	       (:commit . "4f2e20394a475931409618c1635e9c9f1cf07d9c"))])
-=======
-	      ((:maintainer "Eric Beuscher" . "beuscher@eecs.tulane.edu")
-	       (:authors
-		("Eric Beuscher" . "beuscher@eecs.tulane.edu"))
-	       (:keywords "bison-mode" "yacc-mode")
-	       (:url . "https://elpa.nongnu.org/nongnu/bison-mode.html"))])
->>>>>>> b67099a (first commit of the repo)
  (blow .
        [(1 0)
 	((emacs
@@ -259,11 +199,7 @@
 	      ("Dave Pearson" . "davep@davep.org"))
 	     (:commit . "fe676396fa7e4372e01bf2c3d9a62e8d53615d46"))])
  (buttercup .
-<<<<<<< HEAD
 	    [(1 35)
-=======
-	    [(1 33)
->>>>>>> b67099a (first commit of the repo)
 	     ((emacs
 	       (24 4)))
 	     "Behavior-Driven Emacs Lisp Testing" tar
@@ -271,11 +207,7 @@
 	      (:maintainer "Ola Nilsson" . "ola.nilsson@gmail.com")
 	      (:authors
 	       ("Jorgen Schaefer" . "contact@jorgenschaefer.de"))
-<<<<<<< HEAD
 	      (:commit . "a1a86b027ffe030e1c78a9f43c50cd20a6fed19a"))])
-=======
-	      (:commit . "e4fb7cd560d27d8879a2c7739ee96946adec2df8"))])
->>>>>>> b67099a (first commit of the repo)
  (camera .
 	 [(0 3)
 	  ((emacs
@@ -293,20 +225,13 @@
 	  (24 3)))
 	"Caml mode for GNU Emacs" tar
 	((:url . "https://github.com/ocaml/caml-mode")
-<<<<<<< HEAD
 	 (:keywords "ocaml")
-=======
->>>>>>> b67099a (first commit of the repo)
 	 (:maintainer "Christophe Troestler" . "Christophe.Troestler@umons.ac.be")
 	 (:authors
 	  ("Jacques Garrigue" . "garrigue@kurims.kyoto-u.ac.jp")
 	  ("Ian T Zimmerman" . "itz@rahul.net")
 	  ("Damien Doligez" . "damien.doligez@inria.fr"))
-<<<<<<< HEAD
 	 (:commit . "2905a436e956c5bba16c4633a6e4c4fceefa6535"))])
-=======
-	 (:keywords "ocaml"))])
->>>>>>> b67099a (first commit of the repo)
  (cdlatex .
 	  [(4 18 4)
 	   nil "Fast input methods for LaTeX environments and math" tar
@@ -317,7 +242,6 @@
 	    (:url . "https://elpa.nongnu.org/nongnu/cdlatex.html")
 	    (:commit . "33770dec73138909714711b05a63e79da5a19ccd"))])
  (cider .
-<<<<<<< HEAD
 	[(1 14 0)
 	 ((emacs
 	   (26))
@@ -325,15 +249,6 @@
 	   (5 19))
 	  (parseedn
 	   (1 2 1))
-=======
-	[(1 12 0)
-	 ((emacs
-	   (26))
-	  (clojure-mode
-	   (5 18 1))
-	  (parseedn
-	   (1 2 0))
->>>>>>> b67099a (first commit of the repo)
 	  (queue
 	   (0 2))
 	  (spinner
@@ -355,39 +270,24 @@
 	   ("Artur Malabarba" . "bruce.connor.am@gmail.com")
 	   ("Hugo Duncan" . "hugo@hugoduncan.org")
 	   ("Steve Purcell" . "steve@sanityinc.com"))
-<<<<<<< HEAD
 	  (:commit . "c3acf55af0a8c03a2a050f66b328bba8d2402574"))])
  (clojure-mode .
 	       [(5 19 0)
-=======
-	  (:commit . "2bafc1ec67308de500ce7ce8ac8f79eae449dee8"))])
- (clojure-mode .
-	       [(5 18 1)
->>>>>>> b67099a (first commit of the repo)
 		((emacs
 		  (25 1)))
 		"Major mode for Clojure code" tar
 		((:url . "https://github.com/clojure-emacs/clojure-mode")
 		 (:keywords "languages" "clojure" "clojurescript" "lisp")
 		 (:maintainer "Bozhidar Batsov" . "bozhidar@batsov.dev")
-<<<<<<< HEAD
 		 (:commit . "4afdd3539036bbd6b1c01b2e00559676c4d40085"))])
  (clojure-ts-mode .
 		  [(0 2 2)
 		   ((emacs
 		     (29 1)))
-=======
-		 (:commit . "25d713a67d8e0209ee74bfc0153fdf677697b43f"))])
- (clojure-ts-mode .
-		  [(0 2 0)
-		   ((emacs
-		     (29)))
->>>>>>> b67099a (first commit of the repo)
 		   "Major mode for Clojure code" tar
 		   ((:url . "http://github.com/clojure-emacs/clojure-ts-mode")
 		    (:keywords "languages" "clojure" "clojurescript" "lisp")
 		    (:maintainer "Danny Freeman" . "danny@dfreeman.email")
-<<<<<<< HEAD
 		    (:commit . "a923aa83a61751a588ed3afc133d45898995762e"))])
  (coffee-mode .
 	      [(0 6 3)
@@ -395,13 +295,6 @@
 		 (24 1))
 		(cl-lib
 		 (0 5)))
-=======
-		    (:commit . "8e61fe8ff4795975ec9e225af931d3a514c99445"))])
- (coffee-mode .
-	      [(0 6 3)
-	       ((emacs
-		 (24 3)))
->>>>>>> b67099a (first commit of the repo)
 	       "Major mode for CoffeeScript code" tar
 	       ((:url . "http://github.com/defunkt/coffee-mode")
 		(:keywords "coffeescript" "major" "mode")
@@ -409,7 +302,6 @@
 		(:authors
 		 ("Chris Wanstrath" . "chris@ozmm.org"))
 		(:commit . "adfb7ae73d6ee2ef790c780dd3c967e62930e94a"))])
-<<<<<<< HEAD
  (consult-flycheck .
 		   [(1 0)
 		    ((emacs
@@ -423,8 +315,6 @@
 		     (:keywords "languages" "tools" "completion")
 		     (:maintainer "Daniel Mendler" . "mail@daniel-mendler.de")
 		     (:commit . "0662839aa5db429130f5ffd15c14d4a980b2e694"))])
-=======
->>>>>>> b67099a (first commit of the repo)
  (corfu-terminal .
 		 [(0 7)
 		  ((emacs
@@ -441,7 +331,6 @@
 		    ("Akib Azmain Turja" . "akib@disroot.org"))
 		   (:commit . "501548c3d51f926c687e8cd838c5865ec45d03cc"))])
  (crux .
-<<<<<<< HEAD
        [(0 5 0)
 	((emacs
 	  (26 1)))
@@ -453,7 +342,7 @@
 	  ("Bozhidar Batsov" . "bozhidar@batsov.dev"))
 	 (:commit . "7980df10e47eef41d4d1c57cfb690ec406381ed3"))])
  (csv2ledger .
-	     [(1 5 2)
+	     [(1 5 3)
 	      ((emacs
 		(29 1))
 	       (csv-mode
@@ -463,18 +352,7 @@
 	       (:maintainer "Joost Kremers" . "joostkremers@fastmail.fm")
 	       (:authors
 		("Joost Kremers" . "joostkremers@fastmail.fm"))
-	       (:commit . "1d1004507c4973b35f54d3b7207ee0477e067ba3"))])
-=======
-       [(0 4 0)
-	((seq
-	  (1 11)))
-	"A Collection of Ridiculously Useful eXtensions" tar
-	((:url . "https://github.com/bbatsov/crux")
-	 (:maintainer "Bozhidar Batsov" . "bozhidar@batsov.dev")
-	 (:authors
-	  ("Bozhidar Batsov" . "bozhidar@batsov.dev"))
-	 (:keywords "convenience"))])
->>>>>>> b67099a (first commit of the repo)
+	       (:commit . "b5089fdd133405c69b1aa67246991907759f2313"))])
  (cyberpunk-theme .
 		  [(1 22)
 		   nil "Cyberpunk Color Theme" tar
@@ -482,7 +360,6 @@
 		    (:keywords "color" "theme" "cyberpunk")
 		    (:maintainer "Nicholas M. Van Horn" . "nvanhorn@protonmail.com")
 		    (:authors
-<<<<<<< HEAD
 		     ("Nicholas M. Van Horn" . "nvanhorn@protonmail.com"))
 		    (:commit . "81004fc774d373777d426926fc11abcf1e7ab334"))])
  (cycle-at-point .
@@ -498,56 +375,25 @@
 		   (:authors
 		    ("Campbell Barton" . "ideasman42@gmail.com"))
 		   (:commit . "83d94733fd8ed64f2ba40f4e1df7ecbfe8260e51"))])
-=======
-		     ("Nicholas M. Van Horn" . "nvanhorn@protonmail.com")))])
- (cycle-at-point .
-		 [(0 1)
-		  ((emacs
-		    (28 1))
-		   (recomplete
-		    (0 2)))
-		  "Cycle (rotate) the thing under the cursor" tar
-		  ((:url . "https://codeberg.com/ideasman42/emacs-cycle-at-point")
-		   (:keywords "convenience")
-		   (:maintainer "Campbell Barton")
-		   (:authors
-		    ("Campbell Barton"))
-		   (:commit . "ea22b90f35f4cef73387047b3ef3fad83787d4e2"))])
->>>>>>> b67099a (first commit of the repo)
  (d-mode .
 	 [(202003130913)
 	  ((emacs
 	    (25 1)))
 	  "D Programming Language major mode for (X)Emacs" tar
-<<<<<<< HEAD
 	  ((:keywords "d" "programming" "language" "emacs" "cc-mode")
 	   (:maintainer
 	    ("Russel Winder" . "russel@winder.org.uk")
 	    ("Vladimir Panteleev" . "vladimir@thecybershadow.net"))
 	   (:url . "https://elpa.nongnu.org/nongnu/d-mode.html")
 	   (:commit . "6624fcbc1539613753af542923e27b3211690d39"))])
-=======
-	  ((:maintainer "Russel Winder" . "russel@winder.org.uk")
-	   (:authors
-	    ("William Baxter"))
-	   (:keywords "d" "programming" "language" "emacs" "cc-mode")
-	   (:url . "https://elpa.nongnu.org/nongnu/d-mode.html"))])
->>>>>>> b67099a (first commit of the repo)
  (dart-mode .
 	    [(1 0 7)
 	     ((emacs
 	       (24 3)))
 	     "Major mode for editing Dart files" tar
 	     ((:url . "https://github.com/bradyt/dart-mode")
-<<<<<<< HEAD
 	      (:keywords "languages")
 	      (:commit . "3bac14200f9f8f8fcebc383087572da5c3823c34"))])
-=======
-	      (:maintainer "https://github.com/bradyt/dart-mode/issues")
-	      (:authors
-	       ("https://github.com/bradyt/dart-mode/issues"))
-	      (:keywords "languages"))])
->>>>>>> b67099a (first commit of the repo)
  (denote-refs .
 	      [(0 1 2)
 	       ((emacs
@@ -598,11 +444,7 @@
 		   ((emacs
 		     (26 2)))
 		   "Show doc-strings found in external files" tar
-<<<<<<< HEAD
 		   ((:url . "https://gitlab.com/ideasman42/emacs-doc-show-inline")
-=======
-		   ((:url . "https://codeberg.com/ideasman42/emacs-doc-show-inline")
->>>>>>> b67099a (first commit of the repo)
 		    (:keywords "convenience")
 		    (:maintainer "Campbell Barton" . "ideasman42@gmail.com")
 		    (:authors
@@ -649,11 +491,7 @@
 	 ("Akib Azmain Turja" . "akib@disroot.org"))
 	(:commit . "c91451f2d17453c19d3fa76faa4945cbe54e14ce"))])
  (edit-indirect .
-<<<<<<< HEAD
 		[(0 1 13)
-=======
-		[(0 1 10)
->>>>>>> b67099a (first commit of the repo)
 		 ((emacs
 		   (24 3)))
 		 "Edit regions in separate buffers" tar
@@ -661,15 +499,9 @@
 		  (:maintainer "Fanael Linithien" . "fanael4@gmail.com")
 		  (:authors
 		   ("Fanael Linithien" . "fanael4@gmail.com"))
-<<<<<<< HEAD
 		  (:commit . "82a28d8a85277cfe453af464603ea330eae41c05"))])
  (editorconfig .
 	       [(0 11 0)
-=======
-		  (:commit . "f80f63822ffae78de38dbe72cacaeb1aaa96c732"))])
- (editorconfig .
-	       [(0 10 1)
->>>>>>> b67099a (first commit of the repo)
 		((emacs
 		  (26 1))
 		 (nadvice
@@ -680,11 +512,7 @@
 		 (:maintainer "EditorConfig Team" . "editorconfig@googlegroups.com")
 		 (:authors
 		  ("EditorConfig Team" . "editorconfig@googlegroups.com"))
-<<<<<<< HEAD
 		 (:commit . "f1531bab5b57e40759167b7e5db49acbbc09972f"))])
-=======
-		 (:commit . "ed760770ed5397120b3d68b69afc0778c48d3a47"))])
->>>>>>> b67099a (first commit of the repo)
  (elixir-mode .
 	      [(2 5 0)
 	       ((emacs
@@ -694,11 +522,7 @@
 		(:keywords "languages" "elixir")
 		(:commit . "00d6580a040a750e019218f9392cf9a4c2dac23a"))])
  (elpher .
-<<<<<<< HEAD
 	 [(3 6 0)
-=======
-	 [(3 5 0)
->>>>>>> b67099a (first commit of the repo)
 	  ((emacs
 	    (27 1)))
 	  "A friendly gopher and gemini client" tar
@@ -707,11 +531,7 @@
 	   (:maintainer "Tim Vaughan" . "plugd@thelambdalab.xyz")
 	   (:authors
 	    ("Tim Vaughan" . "plugd@thelambdalab.xyz"))
-<<<<<<< HEAD
 	   (:commit . "56bc74e224d9835c41b6e6b68c9705b60e6dbbe2"))])
-=======
-	   (:commit . "81f2883614c303184116449ec3583ef5c136ec2f"))])
->>>>>>> b67099a (first commit of the repo)
  (engine-mode .
 	      [(2 2 4)
 	       ((cl-lib
@@ -737,7 +557,6 @@
 	       (0 46)))
 	     "anzu for evil-mode" tar
 	     ((:url . "https://github.com/syohex/emacs-evil-anzu")
-<<<<<<< HEAD
 	      (:maintainer
 	       ("Syohei YOSHIDA" . "syohex@gmail.com")
 	       ("Fredrik Bergroth" . "fbergroth@gmail.com"))
@@ -745,12 +564,6 @@
 	       ("Syohei YOSHIDA" . "syohex@gmail.com")
 	       ("Fredrik Bergroth" . "fbergroth@gmail.com"))
 	      (:commit . "5aa524dd2dbccdb607fcea0ea708be44a5cfe730"))])
-=======
-	      (:maintainer "Syohei YOSHIDA" . "syohex@gmail.com")
-	      (:authors
-	       ("Syohei YOSHIDA" . "syohex@gmail.com")
-	       ("Fredrik Bergroth" . "fbergroth@gmail.com")))])
->>>>>>> b67099a (first commit of the repo)
  (evil-args .
 	    [(1 1)
 	     ((evil
@@ -762,7 +575,6 @@
 	      (:authors
 	       ("Connor Smith" . "wconnorsmith@gmail.com"))
 	      (:commit . "2671071a4a57eaee7cc8c27b9e4b6fc60fd2ccd3"))])
-<<<<<<< HEAD
  (evil-escape .
 	      [(3 16)
 	       ((emacs
@@ -778,8 +590,6 @@
 		(:authors
 		 ("Sylvain Benner" . "sylvain.benner@gmail.com"))
 		(:commit . "3c335a5709b1abb08687960038746b36add465f9"))])
-=======
->>>>>>> b67099a (first commit of the repo)
  (evil-exchange .
 		[(0 41)
 		 ((evil
@@ -791,12 +601,8 @@
 		  (:keywords "evil" "plugin")
 		  (:maintainer "Dewdrops" . "v_v_4474@126.com")
 		  (:authors
-<<<<<<< HEAD
 		   ("Dewdrops" . "v_v_4474@126.com"))
 		  (:commit . "47691537815150715e64e6f6ec79be7746c96120"))])
-=======
-		   ("Dewdrops" . "v_v_4474@126.com")))])
->>>>>>> b67099a (first commit of the repo)
  (evil-goggles .
 	       [(0 0 2)
 		((emacs
@@ -834,12 +640,8 @@
 		     (:keywords "convenience" "evil")
 		     (:maintainer "Eivind Fonn" . "evfonn@gmail.com")
 		     (:authors
-<<<<<<< HEAD
 		      ("Eivind Fonn" . "evfonn@gmail.com"))
 		     (:commit . "db8cfd6b6fd51a13054922d8f53f93a481b40544"))])
-=======
-		      ("Eivind Fonn" . "evfonn@gmail.com")))])
->>>>>>> b67099a (first commit of the repo)
  (evil-lisp-state .
 		  [(8 2)
 		   ((evil
@@ -853,16 +655,10 @@
 		    (:keywords "convenience" "editing" "evil" "smartparens" "lisp" "mnemonic")
 		    (:maintainer "Sylvain Benner" . "sylvain.benner@gmail.com")
 		    (:authors
-<<<<<<< HEAD
 		     ("Sylvain Benner" . "sylvain.benner@gmail.com"))
 		    (:commit . "3c65fecd9917a41eaf6460f22187e2323821f3ce"))])
  (evil-matchit .
 	       [(3 0 4)
-=======
-		     ("Sylvain Benner" . "sylvain.benner@gmail.com")))])
- (evil-matchit .
-	       [(3 0 2)
->>>>>>> b67099a (first commit of the repo)
 		((emacs
 		  (25 1)))
 		"Vim matchit ported to Evil" tar
@@ -871,11 +667,7 @@
 		 (:maintainer "Chen Bin" . "chenbin.sh@gmail.com")
 		 (:authors
 		  ("Chen Bin" . "chenbin.sh@gmail.com"))
-<<<<<<< HEAD
 		 (:commit . "1c4fefa9bb11cc4b1d7f10614d2021c12ed12e89"))])
-=======
-		 (:commit . "f27b2a87bab75e3b8a87c277049a4363cdfcbf61"))])
->>>>>>> b67099a (first commit of the repo)
  (evil-nerd-commenter .
 		      [(3 6 1)
 		       ((emacs
@@ -934,46 +726,24 @@
 		   "Starts a * or # search from the visual selection" tar
 		   ((:url . "https://github.com/bling/evil-visualstar")
 		    (:keywords "evil" "vim" "visualstar")
-<<<<<<< HEAD
 		    (:commit . "87a5bd845759c5e5508de2e2aed2a99424995d44"))])
  (exec-path-from-shell .
 		       [(2 2)
 			((emacs
 			  (24 4)))
-=======
-		    (:maintainer "Bailey Ling")
-		    (:authors
-		     ("Bailey Ling")))])
- (exec-path-from-shell .
-		       [(2 1)
-			((emacs
-			  (24 1))
-			 (cl-lib
-			  (0 6)))
->>>>>>> b67099a (first commit of the repo)
 			"Get environment variables such as $PATH from the shell" tar
 			((:url . "https://github.com/purcell/exec-path-from-shell")
 			 (:keywords "unix" "environment")
 			 (:maintainer "Steve Purcell" . "steve@sanityinc.com")
 			 (:authors
 			  ("Steve Purcell" . "steve@sanityinc.com"))
-<<<<<<< HEAD
 			 (:commit . "72ede29a0e0467b3b433e8edbee3c79bab005884"))])
-=======
-			 (:commit . "03fc0a38af9e396c98f5a30c392cf757b3a34feb"))])
->>>>>>> b67099a (first commit of the repo)
  (flx .
       [(0 6 2)
        ((cl-lib
 	 (0 3)))
        "fuzzy matching with good sorting" tar
        ((:url . "https://github.com/lewang/flx")
-<<<<<<< HEAD
-=======
-	(:maintainer "Le Wang")
-	(:authors
-	 ("Le Wang"))
->>>>>>> b67099a (first commit of the repo)
 	(:commit . "29e3664b75618847eaaf821713a74eb3c897a124"))])
  (flx-ido .
 	  [(0 6 2)
@@ -983,7 +753,6 @@
 	     (0 3)))
 	   "flx integration for ido" tar
 	   ((:url . "https://github.com/lewang/flx")
-<<<<<<< HEAD
 	    (:commit . "29e3664b75618847eaaf821713a74eb3c897a124"))])
  (flycheck .
 	   [(34 1)
@@ -999,12 +768,6 @@
 	     (:authors
 	      ("Sebastian Wiesner" . "swiesner@lunaryorn.com"))
 	     (:commit . "5a9ff918f91e230ae08a6bdce7ec1f107864a5e2"))])
-=======
-	    (:maintainer "Le Wang")
-	    (:authors
-	     ("Le Wang"))
-	    (:commit . "29e3664b75618847eaaf821713a74eb3c897a124"))])
->>>>>>> b67099a (first commit of the repo)
  (flymake-guile .
 		[(0 5)
 		 ((emacs
@@ -1024,13 +787,7 @@
 		    (26 1)))
 		  "Linter with clj-kondo" tar
 		  ((:url . "https://github.com/turbo-cafe/flymake-kondor")
-<<<<<<< HEAD
 		   (:commit . "784e57f36812a37e323409b90b935ef3c6920a22"))])
-=======
-		   (:maintainer "https://turbocafe.keybase.pub")
-		   (:authors
-		    ("https://turbocafe.keybase.pub")))])
->>>>>>> b67099a (first commit of the repo)
  (flymake-popon .
 		[(0 5 1)
 		 ((emacs
@@ -1092,11 +849,7 @@
 		("Akib Azmain Turja" . "akib@disroot.org"))
 	       (:commit . "ce2ea016a67b200862788e81f0ff1f8f7e4e0454"))])
  (geiser .
-<<<<<<< HEAD
 	 [(0 31)
-=======
-	 [(0 30)
->>>>>>> b67099a (first commit of the repo)
 	  ((emacs
 	    (27 1))
 	   (project
@@ -1107,11 +860,7 @@
 	   (:maintainer "Jose Antonio Ortega Ruiz" . "(jao@gnu.org)")
 	   (:authors
 	    ("Jose Antonio Ortega Ruiz" . "(jao@gnu.org)"))
-<<<<<<< HEAD
 	   (:commit . "b6b4ac070d136345345c80ff649f0084e3c512a5"))])
-=======
-	   (:commit . "f343592a52da0f947989d07c208a51ad6c972a5e"))])
->>>>>>> b67099a (first commit of the repo)
  (geiser-chez .
 	      [(0 18)
 	       ((emacs
@@ -1136,12 +885,8 @@
 		 (:keywords "languages" "chibi" "scheme" "geiser")
 		 (:maintainer "Jose A Ortega Ruiz" . "jao@gnu.org")
 		 (:authors
-<<<<<<< HEAD
 		  ("Peter" . "craven@gmx.net"))
 		 (:commit . "5a6a5a580ea45cd4974df21629a8d50cbe3d6e99"))])
-=======
-		  ("Peter" . "craven@gmx.net")))])
->>>>>>> b67099a (first commit of the repo)
  (geiser-chicken .
 		 [(0 17)
 		  ((emacs
@@ -1151,13 +896,7 @@
 		  "Chicken's implementation of the geiser protocols" tar
 		  ((:url . "https://gitlab.com/emacs-geiser/chicken")
 		   (:keywords "languages" "chicken" "scheme" "geiser")
-<<<<<<< HEAD
 		   (:commit . "79a9ac78f4df7c9ec1f918313c543c116dbb8b70"))])
-=======
-		   (:maintainer "Daniel Leslie")
-		   (:authors
-		    ("Daniel Leslie")))])
->>>>>>> b67099a (first commit of the repo)
  (geiser-gambit .
 		[(0 18 1)
 		 ((emacs
@@ -1168,11 +907,6 @@
 		 ((:url . "https://gitlab.com/emacs-geiser/gambit")
 		  (:keywords "languages" "gambit" "scheme" "geiser")
 		  (:maintainer "Jose A Ortega Ruiz" . "jao@gnu.org")
-<<<<<<< HEAD
-=======
-		  (:authors
-		   ("Daniel Leslie"))
->>>>>>> b67099a (first commit of the repo)
 		  (:commit . "381d74ca5059b44fe3d8b5daf42214019c6d1a88"))])
  (geiser-gauche .
 		[(0 0 2)
@@ -1182,18 +916,11 @@
 		   (0 11 2)))
 		 "Gauche scheme support for Geiser" tar
 		 ((:url . "https://gitlab.com/emacs-geiser/gauche")
-<<<<<<< HEAD
 		  (:keywords "languages" "gauche" "scheme" "geiser")
 		  (:maintainer "András Simonyi" . "andras.simonyi@gmail.com")
 		  (:authors
 		   ("András Simonyi" . "andras.simonyi@gmail.com"))
 		  (:commit . "9e7ed54e5629f759660569bc7efc3d75dbabbc5f"))])
-=======
-		  (:maintainer "András Simonyi" . "andras.simonyi@gmail.com")
-		  (:authors
-		   ("András Simonyi" . "andras.simonyi@gmail.com"))
-		  (:keywords "languages" "gauche" "scheme" "geiser"))])
->>>>>>> b67099a (first commit of the repo)
  (geiser-guile .
 	       [(0 28 1)
 		((emacs
@@ -1205,15 +932,9 @@
 		"Guile and Geiser talk to each other" tar
 		((:url . "https://gitlab.com/emacs-geiser/guile")
 		 (:keywords "languages" "guile" "scheme" "geiser")
-<<<<<<< HEAD
 		 (:maintainer "Jose Antonio Ortega Ruiz" . "(jao@gnu.org)")
 		 (:authors
 		  ("Jose Antonio Ortega Ruiz" . "(jao@gnu.org)"))
-=======
-		 (:maintainer "Jose Antonio Ortega Ruiz" . "jao@gnu.org")
-		 (:authors
-		  ("Jose Antonio Ortega Ruiz" . "jao@gnu.org"))
->>>>>>> b67099a (first commit of the repo)
 		 (:commit . "f57bfd5039ce158de95d2ef2933e64fb16def4f6"))])
  (geiser-kawa .
 	      [(0 0 1)
@@ -1238,12 +959,8 @@
 	       (:keywords "languages" "mit" "scheme" "geiser")
 	       (:maintainer "Jose A Ortega Ruiz" . "jao@gnu.org")
 	       (:authors
-<<<<<<< HEAD
 		("Peter" . "craven@gmx.net"))
 	       (:commit . "4e90e9ae815e89f3540fb9644e6016c663ef5765"))])
-=======
-		("Peter" . "craven@gmx.net")))])
->>>>>>> b67099a (first commit of the repo)
  (geiser-racket .
 		[(0 16)
 		 ((emacs
@@ -1252,18 +969,11 @@
 		   (0 16)))
 		 "Support for Racket in Geiser" tar
 		 ((:url . "https://gitlab.com/emacs-geiser/racket")
-<<<<<<< HEAD
 		  (:keywords "languages" "racket" "scheme" "geiser")
 		  (:maintainer "Jose Antonio Ortega Ruiz" . "(jao@gnu.org)")
 		  (:authors
 		   ("Jose Antonio Ortega Ruiz" . "(jao@gnu.org)"))
 		  (:commit . "22e56ce80389544d3872cf4beb4008fb514b2218"))])
-=======
-		  (:maintainer "Jose Antonio Ortega Ruiz" . "jao@gnu.org")
-		  (:authors
-		   ("Jose Antonio Ortega Ruiz" . "jao@gnu.org"))
-		  (:keywords "languages" "racket" "scheme" "geiser"))])
->>>>>>> b67099a (first commit of the repo)
  (geiser-stklos .
 		[(1 8)
 		 ((emacs
@@ -1273,15 +983,9 @@
 		 "STklos Scheme implementation of the geiser protocols" tar
 		 ((:url . "https://gitlab.com/emacs-geiser/stklos")
 		  (:keywords "languages" "stklos" "scheme" "geiser")
-<<<<<<< HEAD
 		  (:maintainer "Jeronimo Pellegrini" . "(j_p@aleph0.info)")
 		  (:authors
 		   ("Jeronimo Pellegrini" . "(j_p@aleph0.info)"))
-=======
-		  (:maintainer "Jeronimo Pellegrini" . "j_p@aleph0.info")
-		  (:authors
-		   ("Jeronimo Pellegrini" . "j_p@aleph0.info"))
->>>>>>> b67099a (first commit of the repo)
 		  (:commit . "3358d0cc01436bd8f71a500175db2716e75b2eed"))])
  (git-commit .
 	     [(3 3 0)
@@ -1344,15 +1048,9 @@
 	   "Major-mode and interactive frontend for gnuplot" tar
 	   ((:url . "https://github.com/emacs-gnuplot/gnuplot")
 	    (:keywords "data" "gnuplot" "plotting")
-<<<<<<< HEAD
 	    (:maintainer
 	     ("Maxime Tréca" . "maxime@gmail.com")
 	     ("Daniel Mendler" . "mail@daniel-mendler.de"))
-=======
-	    (:maintainer "Maxime Tréca <maxime@gmail.com>, Daniel Mendler" . "mail@daniel-mendler.de")
-	    (:authors
-	     ("Jon Oddie, Bruce Ravel, Phil Type"))
->>>>>>> b67099a (first commit of the repo)
 	    (:commit . "663a89d263d4f26b996796d01b6a3b783449e0f5"))])
  (go-mode .
 	  [(1 6 0)
@@ -1361,12 +1059,6 @@
 	   "Major mode for the Go programming language" tar
 	   ((:url . "https://github.com/dominikh/go-mode.el")
 	    (:keywords "languages" "go")
-<<<<<<< HEAD
-=======
-	    (:maintainer "The go-mode Authors")
-	    (:authors
-	     ("The go-mode Authors"))
->>>>>>> b67099a (first commit of the repo)
 	    (:commit . "3273fcece5d9ab7edd4f15b2d6bce61f4e5a0666"))])
  (golden-ratio .
 	       [(1 0 1)
@@ -1385,12 +1077,8 @@
 		((:url . "https://depp.brause.cc/gotham-theme")
 		 (:maintainer "Vasilij Schneidermann" . "mail@vasilij.de")
 		 (:authors
-<<<<<<< HEAD
 		  ("Vasilij Schneidermann" . "mail@vasilij.de"))
 		 (:commit . "4b8214df0851bb69b44c3e864568b7e0030a95d2"))])
-=======
-		  ("Vasilij Schneidermann" . "mail@vasilij.de")))])
->>>>>>> b67099a (first commit of the repo)
  (goto-chg .
 	   [(1 7 5)
 	    ((emacs
@@ -1400,7 +1088,6 @@
 	     (:keywords "convenience" "matching")
 	     (:maintainer "Vasilij Schneidermann" . "mail@vasilij.de")
 	     (:authors
-<<<<<<< HEAD
 	      ("David Andersson" . "l.david.anderssonsverige.nu"))
 	     (:commit . "278cd3e6d5107693aa2bb33189ca503f22f227d0"))])
  (gptel .
@@ -1415,9 +1102,6 @@
 	 ((:url . "https://github.com/karthink/gptel")
 	  (:keywords "convenience")
 	  (:commit . "cdb07d0d2bb6a4fe6d6a620aa4eec98f70fe6f78"))])
-=======
-	      ("David Andersson <l.david.andersson(at)sverige.nu>")))])
->>>>>>> b67099a (first commit of the repo)
  (graphql-mode .
 	       [(1 0 0)
 		((emacs
@@ -1451,15 +1135,8 @@
 	    [(1 0)
 	     nil "Become an Emacs guru" tar
 	     ((:url . "https://github.com/bbatsov/guru-mode")
-<<<<<<< HEAD
 	      (:keywords "convenience")
 	      (:commit . "3274661e8e4b51455dfc8d8e08c64605463e62f2"))])
-=======
-	      (:maintainer "Bozhidar Batsov")
-	      (:authors
-	       ("Bozhidar Batsov"))
-	      (:keywords "convenience"))])
->>>>>>> b67099a (first commit of the repo)
  (haml-mode .
 	    [(3 2 1)
 	     ((emacs
@@ -1469,12 +1146,6 @@
 	     "Major mode for editing Haml files" tar
 	     ((:url . "https://github.com/nex3/haml-mode")
 	      (:keywords "markup" "languages" "html")
-<<<<<<< HEAD
-=======
-	      (:maintainer "Natalie Weizenbaum")
-	      (:authors
-	       ("Natalie Weizenbaum"))
->>>>>>> b67099a (first commit of the repo)
 	      (:commit . "45a0b23db0b8f827c78f7749457f3427263e6ffd"))])
  (haskell-mode .
 	       [(17 5)
@@ -1487,7 +1158,6 @@
  (haskell-tng-mode .
 		   [(0 0 1)
 		    ((emacs
-<<<<<<< HEAD
 		      (26 1)))
 		    "Major mode for editing Haskell" tar
 		    ((:url . "https://gitlab.com/tseenshe/haskell-tng-mode")
@@ -1499,28 +1169,11 @@
 	  (3 9 9))
 	 (wfnames
 	  (1 2)))
-=======
-		      (27 1))
-		     (popup
-		      (0 5 3)))
-		    "Major mode for editing Haskell" tar
-		    ((:url . "https://gitlab.com/tseenshe/haskell-tng-mode")
-		     (:keywords "languages"))])
- (helm .
-       [(3 9 7)
-	((helm-core
-	  (3 9 7))
-	 (wfnames
-	  (1 1))
-	 (popup
-	  (0 5 3)))
->>>>>>> b67099a (first commit of the repo)
 	"Helm is an Emacs incremental and narrowing framework" tar
 	((:url . "https://emacs-helm.github.io/helm/")
 	 (:maintainer "Thierry Volpiatto" . "thievol@posteo.net")
 	 (:authors
 	  ("Thierry Volpiatto" . "thievol@posteo.net"))
-<<<<<<< HEAD
 	 (:commit . "aa51c1a8d6ff4e1e88e61e989f41ac3aa808a592"))])
  (helm-core .
 	    [(3 9 9)
@@ -1528,29 +1181,14 @@
 	       (25 1))
 	      (async
 	       (1 9 8)))
-=======
-	 (:commit . "b04272a53e5b2db1fc7724d4ba84e51fd20e9c4f"))])
- (helm-core .
-	    [(3 9 7)
-	     ((emacs
-	       (25 1))
-	      (async
-	       (1 9 7)))
->>>>>>> b67099a (first commit of the repo)
 	     "Development files for Helm" tar
 	     ((:url . "https://emacs-helm.github.io/helm/")
 	      (:maintainer "Thierry Volpiatto" . "thievol@posteo.net")
 	      (:authors
 	       ("Thierry Volpiatto" . "thievol@posteo.net"))
-<<<<<<< HEAD
 	      (:commit . "aa51c1a8d6ff4e1e88e61e989f41ac3aa808a592"))])
  (highlight-parentheses .
 			[(2 2 2)
-=======
-	      (:commit . "b04272a53e5b2db1fc7724d4ba84e51fd20e9c4f"))])
- (highlight-parentheses .
-			[(2 1 1)
->>>>>>> b67099a (first commit of the repo)
 			 ((emacs
 			   (24 3)))
 			 "Highlight surrounding parentheses" tar
@@ -1558,13 +1196,8 @@
 			  (:keywords "faces" "matching")
 			  (:maintainer "Tassilo Horn" . "tsdh@gnu.org")
 			  (:authors
-<<<<<<< HEAD
 			   ("Nikolaj Schumacher" . "bugs*nschumde"))
 			  (:commit . "965b18dd69eff4457e17c9e84b3cbfdbfca2ddfb"))])
-=======
-			   ("Nikolaj Schumacher <bugs * nschum de>"))
-			  (:commit . "438a1cb2563e2a2496be4678cc0df8d5b22caf5d"))])
->>>>>>> b67099a (first commit of the repo)
  (hl-block-mode .
 		[(0 2)
 		 ((emacs
@@ -1587,7 +1220,6 @@
 	       ("Akib Azmain Turja" . "akib@disroot.org"))
 	      (:commit . "2d3a3f551b52c07a11b9ea0f842ef39915911c55"))])
  (htmlize .
-<<<<<<< HEAD
 	  [(1 56)
 	   nil "Convert buffer text and decorations to HTML." tar
 	   ((:keywords "hypermedia" "extensions")
@@ -1596,15 +1228,6 @@
 	     ("Hrvoje Niksic" . "hniksic@gmail.com"))
 	    (:url . "https://elpa.nongnu.org/nongnu/htmlize.html")
 	    (:commit . "7b63aa058c3dd0d9f8c07706cd8bb4e56aaa1fb3"))])
-=======
-	  [(1 57)
-	   nil "Convert buffer text and decorations to HTML." tar
-	   ((:url . "https://github.com/hniksic/emacs-htmlize")
-	    (:maintainer "Hrvoje Niksic" . "hniksic@gmail.com")
-	    (:authors
-	     ("Hrvoje Niksic" . "hniksic@gmail.com"))
-	    (:keywords "hypermedia" "extensions"))])
->>>>>>> b67099a (first commit of the repo)
  (hyperdrive .
 	     [(0 3)
 	      ((emacs
@@ -1635,11 +1258,6 @@
 		       ((:url . "https://codeberg.org/ideasman42/emacs-idle-highlight-mode")
 			(:keywords "convenience")
 			(:maintainer "Campbell Barton" . "ideasman42@gmail.com")
-<<<<<<< HEAD
-=======
-			(:authors
-			 ("Phil Hagelberg, Cornelius Mika, Campbell Barton"))
->>>>>>> b67099a (first commit of the repo)
 			(:commit . "8ded8426e9fb6e2637c25d52184f6333dfa157ad"))])
  (idris-mode .
 	     [(1 1 0)
@@ -1651,12 +1269,8 @@
 		(0 5)))
 	      "Major mode for editing Idris code" tar
 	      ((:url . "https://github.com/idris-hackers/idris-mode")
-<<<<<<< HEAD
 	       (:keywords "languages")
 	       (:commit . "f7f12348cedb7eb0e3bdd5f7d7a247f04792f3dc"))])
-=======
-	       (:keywords "languages"))])
->>>>>>> b67099a (first commit of the repo)
  (iedit .
 	[(0 9 9 9 9)
 	 nil "Edit multiple regions in the same way simultaneously." tar
@@ -1720,28 +1334,17 @@
 	 [(1 1 1)
 	  nil "Major mode for editing J programs" tar
 	  ((:url . "http://github.com/zellio/j-mode")
-<<<<<<< HEAD
 	   (:keywords "j" "langauges")
 	   (:commit . "caa55dfaae01d1875380929826952c2b3ef8a653"))])
-=======
-	   (:keywords "j" "languages"))])
->>>>>>> b67099a (first commit of the repo)
  (jade-mode .
 	    [(1 0 1)
 	     nil "Major mode for editing .jade files" tar
 	     ((:url . "https://github.com/brianc/jade-mode")
 	      (:keywords "languages")
-<<<<<<< HEAD
-=======
-	      (:maintainer "Brian M. Carlson and other contributors")
-	      (:authors
-	       ("Brian M. Carlson and other contributors"))
->>>>>>> b67099a (first commit of the repo)
 	      (:commit . "dad17dc86c93401646802a639a98dd2ec875db6f"))])
  (jinja2-mode .
 	      [(0 3)
 	       nil "A major mode for jinja2" tar
-<<<<<<< HEAD
 	       ((:url . "https://elpa.nongnu.org/nongnu/jinja2-mode.html")
 		(:commit . "a598357069a68b0ac2bf128c19edd8e899084cdc"))])
  (julia-mode .
@@ -1750,20 +1353,6 @@
 	      ((:url . "https://github.com/JuliaLang/julia")
 	       (:keywords "languages")
 	       (:commit . "6408b96c1c97e41bc2af060d661afee4f7b22e89"))])
-=======
-	       ((:maintainer "Florian Mounier aka paradoxxxzero")
-		(:authors
-		 ("Florian Mounier aka paradoxxxzero"))
-		(:url . "https://elpa.nongnu.org/nongnu/jinja2-mode.html")
-		(:commit . "a598357069a68b0ac2bf128c19edd8e899084cdc"))])
- (julia-mode .
-	     [(0 4)
-	      ((emacs
-		(24 3)))
-	      "Major mode for editing Julia source code" tar
-	      ((:url . "https://github.com/JuliaEditorSupport/julia-emacs")
-	       (:keywords "languages"))])
->>>>>>> b67099a (first commit of the repo)
  (keycast .
 	  [(1 3 3)
 	   ((emacs
@@ -1783,15 +1372,9 @@
 		 (24 3)))
 	       "Major mode for kotlin" tar
 	       ((:keywords "languages")
-<<<<<<< HEAD
 		(:maintainer "Shodai Yokoyama" . "(quantumcars@gmail.com)")
 		(:authors
 		 ("Shodai Yokoyama" . "(quantumcars@gmail.com)"))
-=======
-		(:maintainer "Shodai Yokoyama" . "quantumcars@gmail.com")
-		(:authors
-		 ("Shodai Yokoyama" . "quantumcars@gmail.com"))
->>>>>>> b67099a (first commit of the repo)
 		(:url . "https://elpa.nongnu.org/nongnu/kotlin-mode.html")
 		(:commit . "d92c3b773473e9fe15f61f6177e4fbf097aadd05"))])
  (lorem-ipsum .
@@ -1799,15 +1382,9 @@
 	       nil "Insert dummy pseudo Latin text" tar
 	       ((:url . "https://github.com/jschaf/emacs-lorem-ipsum")
 		(:keywords "tools" "language" "convenience")
-<<<<<<< HEAD
 		(:maintainer "Joe Schafer" . "(joe@jschaf.com)")
 		(:authors
 		 ("Jean-Philippe Theberge" . "(jphil21@sourceforge.net)"))
-=======
-		(:maintainer "Joe Schafer" . "joe@jschaf.com")
-		(:authors
-		 ("Jean-Philippe Theberge" . "jphil21@sourceforge.net"))
->>>>>>> b67099a (first commit of the repo)
 		(:commit . "4e87a899868e908a7a9e1812831d76c8d072f885"))])
  (lua-mode .
 	   [(20221027)
@@ -1816,7 +1393,6 @@
 	    "a major-mode for editing Lua scripts" tar
 	    ((:url . "https://immerrr.github.io/lua-mode")
 	     (:keywords "languages" "processes" "tools")
-<<<<<<< HEAD
 	     (:maintainer
 	      ("2011-2013 immerrr" . "immerrr+lua@gmail.com")
 	      ("2010-2011 Reuben Thomas" . "rrt@sc3d.org")
@@ -1826,14 +1402,10 @@
 	      ("tcl-mode by Gregor Schmid" . "schmid@fb3-s7.math.tu-berlin.de")
 	      ("Paul Du Bois and" . "pld-lua@gelatinous.com")
 	      ("Aaron Smith" . "aaron-lua@gelatinous.com"))
-=======
-	     (:maintainer "2011-2013 immerrr" . "immerrr+lua@gmail.com")
->>>>>>> b67099a (first commit of the repo)
 	     (:authors
 	      ("2011-2013 immerrr" . "immerrr+lua@gmail.com")
 	      ("2010-2011 Reuben Thomas" . "rrt@sc3d.org")
 	      ("2006 Juergen Hoetzel" . "juergen@hoetzel.info")
-<<<<<<< HEAD
 	      ("2001 Christian Vogler" . "cvogler@gradient.cis.upenn.edu")
 	      ("1997 Bret Mogilefsky starting from" . "mogul-lua@gelatinous.com")
 	      ("tcl-mode by Gregor Schmid" . "schmid@fb3-s7.math.tu-berlin.de")
@@ -1846,31 +1418,13 @@
 	       (0 5))
 	      (compat
 	       (29)))
-=======
-	      ("2004 various (support for Lua 5 and byte compilation)")
-	      ("2001 Christian Vogler" . "cvogler@gradient.cis.upenn.edu")
-	      ("1997 Bret Mogilefsky" . "mogul-lua@gelatinous.com")
-	      ("tcl-mode by Gregor Schmid" . "schmid@fb3-s7.math.tu-berlin.de")
-	      ("with tons of assistance from")
-	      ("Paul Du Bois" . "pld-lua@gelatinous.com")
-	      ("Aaron Smith" . "aaron-lua@gelatinous.com"))
-	     (:commit . "1cb83e691627fb92290d452cb08b6c5f73fe19b6"))])
- (macrostep .
-	    [(0 9 2)
-	     ((cl-lib
-	       (0 5)))
->>>>>>> b67099a (first commit of the repo)
 	     "Interactive macro expander" tar
 	     ((:url . "https://github.com/emacsorphanage/macrostep")
 	      (:keywords "lisp" "languages" "macro" "debugging")
 	      (:maintainer "Jon Oddie" . "j.j.oddie@gmail.com")
 	      (:authors
 	       ("Jon Oddie" . "j.j.oddie@gmail.com"))
-<<<<<<< HEAD
 	      (:commit . "31d4adcca4f08cfd7a45f85e691aaa7a9316b355"))])
-=======
-	      (:commit . "633586421e7fc14072cc1ca1655c1103b81a9093"))])
->>>>>>> b67099a (first commit of the repo)
  (magit .
 	[(3 3 0)
 	 ((emacs
@@ -1916,11 +1470,7 @@
 		   ("Jason R. Blevins" . "jblevins@xbeta.org"))
 		  (:commit . "193b61605f44c85d261b8bd82e0a213fd8f1ff32"))])
  (mastodon .
-<<<<<<< HEAD
 	   [(1 0 23)
-=======
-	   [(1 0 12)
->>>>>>> b67099a (first commit of the repo)
 	    ((emacs
 	      (27 1))
 	     (request
@@ -1933,11 +1483,7 @@
 	     (:authors
 	      ("Johnson Denen" . "johnson.denen@gmail.com")
 	      ("Marty Hiatt" . "martianhiatus@riseup.net"))
-<<<<<<< HEAD
 	     (:commit . "ac5684acaa2c0910350a5a79977b28dea8ddf8d7"))])
-=======
-	     (:commit . "cd2d6f23b4f7af63df3000f2fb68227c22bc8dee"))])
->>>>>>> b67099a (first commit of the repo)
  (material-theme .
 		 [(2015)
 		  ((emacs
@@ -1947,12 +1493,8 @@
 		   (:keywords "themes")
 		   (:maintainer "Christoph Paulik" . "cpaulik@gmail.com")
 		   (:authors
-<<<<<<< HEAD
 		    ("Christoph Paulik" . "cpaulik@gmail.com"))
 		   (:commit . "fad77e3658f54d36a11d59d71f04ae07450a7785"))])
-=======
-		    ("Christoph Paulik" . "cpaulik@gmail.com")))])
->>>>>>> b67099a (first commit of the repo)
  (mentor .
 	 [(0 5)
 	  ((emacs
@@ -1973,21 +1515,13 @@
 	    ("Stefan Kangas" . "stefankangas@gmail.com"))
 	   (:commit . "480602f2ec5467aa2418ee98b328fb85d3b58d0c"))])
  (meow .
-<<<<<<< HEAD
        [(1 4 5)
-=======
-       [(1 4 4)
->>>>>>> b67099a (first commit of the repo)
 	((emacs
 	  (27 1)))
 	"Yet Another modal editing" tar
 	((:url . "https://www.github.com/DogLooksGood/meow")
 	 (:keywords "convenience" "modal-editing")
-<<<<<<< HEAD
 	 (:commit . "54d4e933039827c158a4f593a94681a64e0d8042"))])
-=======
-	 (:commit . "f553db183a47b23d037b1a7f1cab48b0b4798a37"))])
->>>>>>> b67099a (first commit of the repo)
  (minibar .
 	  [(0 3)
 	   ((emacs
@@ -2006,24 +1540,16 @@
 	      (:keywords "themes")
 	      (:maintainer "kuanyui" . "azazabc123@gmail.com")
 	      (:authors
-<<<<<<< HEAD
 	       ("kuanyui" . "azazabc123@gmail.com"))
 	      (:commit . "52102d23f5a20d6349abc645c19bd04370773241"))])
-=======
-	       ("kuanyui" . "azazabc123@gmail.com")))])
->>>>>>> b67099a (first commit of the repo)
  (monokai-theme .
 		[(3 5 3)
 		 nil "A fruity color theme for Emacs." tar
 		 ((:url . "http://github.com/oneKelvinSmith/monokai-emacs")
 		  (:maintainer "Kelvin Smith" . "oneKelvinSmith@gmail.com")
 		  (:authors
-<<<<<<< HEAD
 		   ("Kelvin Smith" . "oneKelvinSmith@gmail.com"))
 		  (:commit . "1143c072f5153ae1a69807e5e8af163069b947d2"))])
-=======
-		   ("Kelvin Smith" . "oneKelvinSmith@gmail.com")))])
->>>>>>> b67099a (first commit of the repo)
  (mpv .
       [(0 2 0)
        ((cl-lib
@@ -2039,7 +1565,6 @@
 	(:keywords "tools" "multimedia")
 	(:maintainer "Johann Klähn" . "johann@jklaehn.de")
 	(:authors
-<<<<<<< HEAD
 	 ("Johann Klähn" . "johann@jklaehn.de"))
 	(:commit . "4fd8baa508dbc1a6b42b4e40292c0dbb0f19c9b9"))])
  (multiple-cursors .
@@ -2051,17 +1576,6 @@
 		      ("Magnar Sveen" . "magnars@gmail.com"))
 		     (:url . "https://elpa.nongnu.org/nongnu/multiple-cursors.html")
 		     (:commit . "b3bd49c756cd959c0fb998d27eaf3d273570b05e"))])
-=======
-	 ("Johann Klähn" . "johann@jklaehn.de")))])
- (multiple-cursors .
-		   [(1 4 0)
-		    nil "Multiple cursors for emacs." tar
-		    ((:url . "https://github.com/magnars/multiple-cursors.el")
-		     (:maintainer "Magnar Sveen" . "magnars@gmail.com")
-		     (:authors
-		      ("Magnar Sveen" . "magnars@gmail.com"))
-		     (:keywords "editing" "cursors"))])
->>>>>>> b67099a (first commit of the repo)
  (nasm-mode .
 	    [(1 1 1)
 	     ((emacs
@@ -2070,7 +1584,6 @@
 	     ((:url . "https://github.com/skeeto/nasm-mode")
 	      (:maintainer "Christopher Wellons" . "wellons@nullprogram.com")
 	      (:authors
-<<<<<<< HEAD
 	       ("Christopher Wellons" . "wellons@nullprogram.com"))
 	      (:commit . "d990ed94d902b74a5c834fb567e03307607cee45"))])
  (nginx-mode .
@@ -2082,17 +1595,6 @@
 		("Andrew J Cosgriff" . "andrew@cosgriff.name"))
 	       (:url . "https://elpa.nongnu.org/nongnu/nginx-mode.html")
 	       (:commit . "c4ac5de975d65c84893a130a470af32a48b0b66c"))])
-=======
-	       ("Christopher Wellons" . "wellons@nullprogram.com")))])
- (nginx-mode .
-	     [(1 1 9)
-	      nil "major mode for editing nginx config files" tar
-	      ((:maintainer "Andrew J Cosgriff" . "andrew@cosgriff.name")
-	       (:authors
-		("Andrew J Cosgriff" . "andrew@cosgriff.name"))
-	       (:keywords "languages" "nginx")
-	       (:url . "https://elpa.nongnu.org/nongnu/nginx-mode.html"))])
->>>>>>> b67099a (first commit of the repo)
  (nix-mode .
 	   [(1 5 0)
 	    ((emacs
@@ -2111,11 +1613,7 @@
 		  ((emacs
 		    (24 1)))
 		  "A port of GEdit oblivion theme" tar
-<<<<<<< HEAD
 		  ((:url . "https://gitlab.com/ideasman42/emacs-oblivion-theme")
-=======
-		  ((:url . "https://codeberg.com/ideasman42/emacs-oblivion-theme")
->>>>>>> b67099a (first commit of the repo)
 		   (:maintainer "Campbell Barton" . "ideasman42@gmail.com")
 		   (:authors
 		    ("Campbell Barton" . "ideasman42@gmail.com"))
@@ -2161,11 +1659,7 @@
 	      (seq
 	       (2 14))
 	      (org
-<<<<<<< HEAD
 	       (9 2 4))
-=======
-	       (9 3))
->>>>>>> b67099a (first commit of the repo)
 	      (persist
 	       (0 3)))
 	     "Self-testing using spaced repetition" tar
@@ -2183,13 +1677,6 @@
 		 (9 1)))
 	       "a simple org-mode based journaling mode" tar
 	       ((:url . "http://github.com/bastibe/org-journal")
-<<<<<<< HEAD
-=======
-		(:maintainer "Bastian Bechtold")
-		(:authors
-		 ("Bastian Bechtold")
-		 ("Christian Schwarzgruber"))
->>>>>>> b67099a (first commit of the repo)
 		(:commit . "18df4d5ae5e15580df42562c143d007c6d28d75f"))])
  (org-mime .
 	   [(0 3 2)
@@ -2199,11 +1686,6 @@
 	    ((:url . "http://github.com/org-mime/org-mime")
 	     (:keywords "mime" "mail" "email" "html")
 	     (:maintainer "Chen Bin" . "chenbin.sh@gmail.com")
-<<<<<<< HEAD
-=======
-	     (:authors
-	      ("Eric Schulte"))
->>>>>>> b67099a (first commit of the repo)
 	     (:commit . "cc00afcf0291633324364c1c83bfe2833cfdc1bf"))])
  (org-present .
 	      [(0 1)
@@ -2211,13 +1693,7 @@
 		 (7)))
 	       "Minimalist presentation minor-mode for Emacs org-mode." tar
 	       ((:url . "https://github.com/rlister/org-present")
-<<<<<<< HEAD
 		(:commit . "75ac0cab2aee6785d184e65bf7abc6d5e55e05d6"))])
-=======
-		(:maintainer "Ric Lister")
-		(:authors
-		 ("Ric Lister")))])
->>>>>>> b67099a (first commit of the repo)
  (org-superstar .
 		[(1 5 1)
 		 ((org
@@ -2229,12 +1705,8 @@
 		  (:keywords "faces" "outlines")
 		  (:maintainer "D. Williams" . "d.williams@posteo.net")
 		  (:authors
-<<<<<<< HEAD
 		   ("D. Williams" . "d.williams@posteo.net"))
 		  (:commit . "03be6c0a3081c46a59b108deb8479ee24a6d86c0"))])
-=======
-		   ("D. Williams" . "d.williams@posteo.net")))])
->>>>>>> b67099a (first commit of the repo)
  (org-tree-slide .
 		 [(2 8 22)
 		  ((emacs
@@ -2273,23 +1745,11 @@
 	       (:url . "https://elpa.nongnu.org/nongnu/p4-16-mode.html")
 	       (:commit . "794dd0056b4ca736ae5ecb39072547f22a006137"))])
  (package-lint .
-<<<<<<< HEAD
 	       [(0 23)
 		((emacs
 		  (24 4))
 		 (let-alist
 		     (1 0 6)))
-=======
-	       [(0 21)
-		((cl-lib
-		  (0 5))
-		 (emacs
-		  (24 4))
-		 (let-alist
-		     (1 0 6))
-		 (compat
-		  (29 1)))
->>>>>>> b67099a (first commit of the repo)
 		"A linting library for elisp package authors" tar
 		((:url . "https://github.com/purcell/package-lint")
 		 (:keywords "lisp")
@@ -2299,11 +1759,7 @@
 		 (:authors
 		  ("Steve Purcell" . "steve@sanityinc.com")
 		  ("Fanael Linithien" . "fanael4@gmail.com"))
-<<<<<<< HEAD
 		 (:commit . "17e4ab20dd3e36fa540007b4f4047170c23bdb10"))])
-=======
-		 (:commit . "dd81a5b9224cc6e6dc4bbb6b4a2928df89c01317"))])
->>>>>>> b67099a (first commit of the repo)
  (pacmacs .
 	  [(0 1 1)
 	   ((emacs
@@ -2425,16 +1881,10 @@
 	 "Visual Popup User Interface" tar
 	 ((:url . "https://github.com/auto-complete/popup-el")
 	  (:keywords "lisp")
-<<<<<<< HEAD
 	  (:maintainer "Jen-Chieh" . "jcs090218@gmail.com")
 	  (:authors
 	   ("Tomohiro Matsuyama" . "m2ym.pub@gmail.com"))
 	  (:commit . "bfa10dc8af3f07632e5167457671ce3738ac0b7e"))])
-=======
-	  (:maintainer "Shen, Jen-Chieh" . "jcs090218@gmail.com")
-	  (:authors
-	   ("Tomohiro Matsuyama" . "m2ym.pub@gmail.com")))])
->>>>>>> b67099a (first commit of the repo)
  (projectile .
 	     [(2 8 0)
 	      ((emacs
@@ -2461,7 +1911,6 @@
 	       (0 5)))
 	     "Create and display a context menu based on text and overlay properties" tar
 	     ((:url . "https://github.com/david-christiansen/prop-menu-el")
-<<<<<<< HEAD
 	      (:keywords "convenience")
 	      (:maintainer "David Christiansen" . "david@davidchristiansen.dk")
 	      (:authors
@@ -2469,14 +1918,6 @@
 	      (:commit . "1edda80e2e32b72e77f4f16ae5b83c312c68ee95"))])
  (racket-mode .
 	      [(1 0 20240514 112412)
-=======
-	      (:maintainer "David Christiansen" . "david@davidchristiansen.dk")
-	      (:authors
-	       ("David Christiansen" . "david@davidchristiansen.dk"))
-	      (:keywords "convenience"))])
- (racket-mode .
-	      [(1 0 20231224 162603)
->>>>>>> b67099a (first commit of the repo)
 	       ((emacs
 		 (25 1)))
 	       "Racket editing, REPL, and more" tar
@@ -2492,12 +1933,8 @@
 		       (:maintainer "Fanael Linithien" . "fanael4@gmail.com")
 		       (:authors
 			("Jeremy Rayman" . "opensource@jeremyrayman.com")
-<<<<<<< HEAD
 			("Fanael Linithien" . "fanael4@gmail.com"))
 		       (:commit . "7919681b0d883502155d5b26e791fec15da6aeca"))])
-=======
-			("Fanael Linithien" . "fanael4@gmail.com")))])
->>>>>>> b67099a (first commit of the repo)
  (raku-mode .
 	    [(0 2 1)
 	     ((emacs
@@ -2505,26 +1942,16 @@
 	     "Major mode for editing Raku code" tar
 	     ((:url . "https://github.com/hinrik/perl6-mode")
 	      (:keywords "languages")
-<<<<<<< HEAD
 	      (:maintainer "Hinrik rn Sigurðsson" . "hinrik.sig@gmail.com")
 	      (:authors
 	       ("Hinrik rn Sigurðsson" . "hinrik.sig@gmail.com"))
-=======
-	      (:maintainer "Hinrik Örn Sigurðsson" . "hinrik.sig@gmail.com")
-	      (:authors
-	       ("Hinrik Örn Sigurðsson" . "hinrik.sig@gmail.com"))
->>>>>>> b67099a (first commit of the repo)
 	      (:commit . "4ee9045eeb90f7831d7c0ee2e4adfcd957f712be"))])
  (recomplete .
 	     [(0 2)
 	      ((emacs
 		(26 1)))
 	      "Immediately (re)complete actions" tar
-<<<<<<< HEAD
 	      ((:url . "https://gitlab.com/ideasman42/emacs-recomplete")
-=======
-	      ((:url . "https://codeberg.com/ideasman42/emacs-recomplete")
->>>>>>> b67099a (first commit of the repo)
 	       (:maintainer "Campbell Barton" . "ideasman42@gmail.com")
 	       (:authors
 		("Campbell Barton" . "ideasman42@gmail.com"))
@@ -2546,16 +1973,10 @@
 	     (24 4)))
 	   "Compatible layer for URL request in Emacs" tar
 	   ((:url . "https://github.com/tkf/emacs-request")
-<<<<<<< HEAD
 	    (:maintainer "Takafumi Arakaki" . "aka.tkfatgmail.com")
 	    (:authors
 	     ("Takafumi Arakaki" . "aka.tkfatgmail.com"))
 	    (:commit . "d00e522252f0f8405308844c30b4c8d708e22d8d"))])
-=======
-	    (:maintainer "Takafumi Arakaki <aka.tkf at gmail.com>")
-	    (:authors
-	     ("Takafumi Arakaki <aka.tkf at gmail.com>")))])
->>>>>>> b67099a (first commit of the repo)
  (rfc-mode .
 	   [(1 4 2)
 	    ((emacs
@@ -2571,17 +1992,9 @@
 	   ((emacs
 	     (24)))
 	   "An Emacs interface for RuboCop" tar
-<<<<<<< HEAD
 	   ((:url . "https://github.com/bbatsov/rubocop-emacs")
 	    (:keywords "project" "convenience")
 	    (:commit . "608a3c1dccab9a3af467ce75d94dedfbfd37b21d"))])
-=======
-	   ((:url . "https://github.com/rubocop/rubocop-emacs")
-	    (:maintainer "Bozhidar Batsov")
-	    (:authors
-	     ("Bozhidar Batsov"))
-	    (:keywords "project" "convenience"))])
->>>>>>> b67099a (first commit of the repo)
  (rust-mode .
 	    [(1 0 5)
 	     ((emacs
@@ -2589,17 +2002,10 @@
 	     "A major-mode for editing Rust source code" tar
 	     ((:url . "https://github.com/rust-lang/rust-mode")
 	      (:keywords "languages")
-<<<<<<< HEAD
-=======
-	      (:maintainer "Mozilla")
-	      (:authors
-	       ("Mozilla"))
->>>>>>> b67099a (first commit of the repo)
 	      (:commit . "7bff48894dc532caf4010be3060370d315ef75f6"))])
  (sass-mode .
 	    [(3 0 16)
 	     ((haml-mode
-<<<<<<< HEAD
 	       (3 0 15)))
 	     "Major mode for editing Sass files" tar
 	     ((:url . "http://github.com/nex3/haml/tree/master")
@@ -2624,44 +2030,12 @@
 	      ((:url . "https://github.com/ensime/emacs-scala-mode")
 	       (:keywords "languages")
 	       (:commit . "3989897168bc0e687e43b8f9a3cf4328f6c79f41"))])
-=======
-	       (3 0 15))
-	      (cl-lib
-	       (0 5)))
-	     "Major mode for editing Sass files" tar
-	     ((:url . "http://github.com/nex3/haml/tree/master")
-	      (:maintainer "Natalie Weizenbaum")
-	      (:authors
-	       ("Natalie Weizenbaum"))
-	      (:keywords "markup" "language" "css"))])
- (scad-mode .
-	    [(93 2)
-	     ((emacs
-	       (27 1)))
-	     "A major mode for editing OpenSCAD code" tar
-	     ((:url . "https://github.com/openscad/emacs-scad-mode")
-	      (:keywords "languages")
-	      (:maintainer "Len Trigg <lenbok@gmail.com>, Daniel Mendler" . "mail@daniel-mendler.de")
-	      (:authors
-	       ("Len Trigg, Łukasz Stelmach, zk_phi, Daniel Mendler"))
-	      (:commit . "749b11df1d3041aa0a90542cba0fe5d9563c3a1f"))])
- (scala-mode .
-	     [(0 23)
-	      nil "Major mode for editing Scala" tar
-	      ((:url . "https://github.com/hvesalai/emacs-scala-mode")
-	       (:keywords "languages"))])
->>>>>>> b67099a (first commit of the repo)
  (scroll-on-drag .
 		 [(0 1)
 		  ((emacs
 		    (26 2)))
-<<<<<<< HEAD
 		  "Interactive scrolling." tar
 		  ((:url . "https://github.com/ideasman42/emacs-scroll-on-drag")
-=======
-		  "Interactive scrolling" tar
-		  ((:url . "https://codeberg.com/ideasman42/emacs-scroll-on-drag")
->>>>>>> b67099a (first commit of the repo)
 		   (:maintainer "Campbell Barton" . "ideasman42@gmail.com")
 		   (:authors
 		    ("Campbell Barton" . "ideasman42@gmail.com"))
@@ -2683,13 +2057,7 @@
 	  "Generic Session Manager" tar
 	  ((:url . "https://github.com/vspinu/sesman")
 	   (:keywords "process")
-<<<<<<< HEAD
 	   (:commit . "083cf73f3f75160bf53f6c0aa1d7f8d2922997a3"))])
-=======
-	   (:maintainer "Vitalie Spinu")
-	   (:authors
-	    ("Vitalie Spinu")))])
->>>>>>> b67099a (first commit of the repo)
  (shellcop .
 	   [(0 1 0)
 	    ((emacs
@@ -2702,37 +2070,23 @@
 	      ("Chen Bin" . "chenbin.sh@gmail.com"))
 	     (:commit . "4e71f5b9199a0ad10017104a6b2bf5ef5f207dfc"))])
  (slime .
-<<<<<<< HEAD
 	[(2 30)
 	 ((emacs
 	   (24 3))
-=======
-	[(2 26 1)
-	 ((cl-lib
-	   (0 5))
->>>>>>> b67099a (first commit of the repo)
 	  (macrostep
 	   (0 9)))
 	 "Superior Lisp Interaction Mode for Emacs" tar
 	 ((:url . "https://github.com/slime/slime")
-<<<<<<< HEAD
 	  (:keywords "languages" "lisp" "slime")
 	  (:commit . "ef2af895a9e79306f0789e72b101aa39e960c900"))])
-=======
-	  (:keywords "languages" "lisp" "slime"))])
->>>>>>> b67099a (first commit of the repo)
  (sly .
       [(1 0 43)
        ((emacs
 	 (24 3)))
        "Sylvester the Cat's Common Lisp IDE" tar
        ((:url . "https://github.com/joaotavora/sly")
-<<<<<<< HEAD
 	(:keywords "languages" "lisp" "sly")
 	(:commit . "613f597ecf72eb5719d4e13a4bfdbeb91373bf09"))])
-=======
-	(:keywords "languages" "lisp" "sly"))])
->>>>>>> b67099a (first commit of the repo)
  (smartparens .
 	      [(1 11 0)
 	       nil "Automatic insertion, wrapping and paredit-like navigation with user defined pairs." tar
@@ -2769,11 +2123,7 @@
 	    ((emacs
 	      (26 2)))
 	    "Fast & light spelling highlighter" tar
-<<<<<<< HEAD
 	    ((:url . "https://gitlab.com/ideasman42/emacs-spell-fu")
-=======
-	    ((:url . "https://codeberg.org/ideasman42/emacs-spell-fu")
->>>>>>> b67099a (first commit of the repo)
 	     (:keywords "convenience")
 	     (:maintainer "Campbell Barton" . "ideasman42@gmail.com")
 	     (:authors
@@ -2818,11 +2168,7 @@
 	  (:maintainer "Sacha Chua" . "sacha@sachachua.com")
 	  (:commit . "e73c0a38039eb32fd43911023ff35007e324c733"))])
  (sweeprolog .
-<<<<<<< HEAD
 	     [(0 27 5)
-=======
-	     [(0 27 2)
->>>>>>> b67099a (first commit of the repo)
 	      ((emacs
 		(27 1))
 	       (compat
@@ -2833,11 +2179,7 @@
 	       (:maintainer "Eshel Yaron" . "~eshel/dev@lists.sr.ht")
 	       (:authors
 		("Eshel Yaron" . "me@eshelyaron.com"))
-<<<<<<< HEAD
 	       (:commit . "d8ea9790b40d74f444ff147f7b98f2023ef2e61a"))])
-=======
-	       (:commit . "e98cf4feb6dab3b01b650b95830ea57b176613e4"))])
->>>>>>> b67099a (first commit of the repo)
  (swift-mode .
 	     [(9 1 0)
 	      ((emacs
@@ -2857,13 +2199,7 @@
  (symbol-overlay .
 		 [(4 1)
 		  ((emacs
-<<<<<<< HEAD
 		    (24 3)))
-=======
-		    (24 3))
-		   (seq
-		    (2 2)))
->>>>>>> b67099a (first commit of the repo)
 		  "Highlight symbols with keymap-enabled overlays" tar
 		  ((:url . "https://github.com/wolray/symbol-overlay/")
 		   (:keywords "faces" "matching")
@@ -2891,24 +2227,14 @@
 	    (:maintainer "Andreas Politz" . "politza@fh-trier.de")
 	    (:authors
 	     ("Andreas Politz" . "politza@fh-trier.de"))
-<<<<<<< HEAD
 	    (:url . "https://elpa.nongnu.org/nongnu/tablist.html")
 	    (:commit . "f6b495d09494784163c3e6ba75b771b71fe226a8"))])
-=======
-	    (:url . "https://elpa.nongnu.org/nongnu/tablist.html"))])
->>>>>>> b67099a (first commit of the repo)
  (tangotango-theme .
 		   [(0 0 7)
 		    nil "Tango Palette color theme for Emacs 24." tar
 		    ((:url . "https://github.com/juba/color-theme-tangotango")
 		     (:keywords "tango" "palette" "color" "theme" "emacs")
-<<<<<<< HEAD
 		     (:commit . "8843dab8109d4334be69038a9c689a929b6be687"))])
-=======
-		     (:maintainer "Julien Barnier")
-		     (:authors
-		      ("Julien Barnier")))])
->>>>>>> b67099a (first commit of the repo)
  (telephone-line .
 		 [(0 5)
 		  ((emacs
@@ -2924,12 +2250,8 @@
 		   (:keywords "mode-line")
 		   (:maintainer "Daniel Bordak" . "dbordak@fastmail.fm")
 		   (:authors
-<<<<<<< HEAD
 		    ("Daniel Bordak" . "dbordak@fastmail.fm"))
 		   (:commit . "ef753fae21de7ca3c4268488b35ee83a36d6d98a"))])
-=======
-		    ("Daniel Bordak" . "dbordak@fastmail.fm")))])
->>>>>>> b67099a (first commit of the repo)
  (testcover-mark-line .
 		      [(0 3)
 		       ((emacs
@@ -2955,7 +2277,6 @@
 	   nil "add table of contents to org-mode files (formerly, org-toc)" tar
 	   ((:url . "https://github.com/snosov1/toc-org")
 	    (:keywords "org-mode" "org-toc" "toc-org" "org" "toc" "table" "of" "contents")
-<<<<<<< HEAD
 	    (:maintainer "Sergei Nosov" . "sergei.nosov[at]gmail.com")
 	    (:authors
 	     ("Sergei Nosov" . "sergei.nosov[at]gmail.com"))
@@ -2973,11 +2294,6 @@
 	      (:authors
 	       ("Vivek Das Mohapatra" . "vivek@etla.org"))
 	      (:commit . "v1.0"))])
-=======
-	    (:maintainer "Sergei Nosov <sergei.nosov [at] gmail.com>")
-	    (:authors
-	     ("Sergei Nosov <sergei.nosov [at] gmail.com>")))])
->>>>>>> b67099a (first commit of the repo)
  (treeview .
 	   [(1 2 0)
 	    ((emacs
@@ -2998,13 +2314,9 @@
 	  "OCaml mode" tar
 	  ((:url . "https://github.com/ocaml/tuareg")
 	   (:keywords "ocaml" "languages")
-<<<<<<< HEAD
 	   (:maintainer
 	    ("Christophe Troestler" . "Christophe.Troestler@umons.ac.be")
 	    ("Stefan Monnier" . "monnier@iro.umontreal.ca"))
-=======
-	   (:maintainer "Christophe Troestler" . "Christophe.Troestler@umons.ac.be")
->>>>>>> b67099a (first commit of the repo)
 	   (:authors
 	    ("Albert Cohen" . "Albert.Cohen@inria.fr")
 	    ("Sam Steingold" . "sds@gnu.org")
@@ -3027,12 +2339,8 @@
 		((:url . "http://github.com/marktran/color-theme-ujelly")
 		 (:maintainer "Mark Tran" . "mark.tran@gmail.com")
 		 (:authors
-<<<<<<< HEAD
 		  ("Mark Tran" . "mark.tran@gmail.com"))
 		 (:commit . "2a35e63545132e24becff21a3daa9325126d8504"))])
-=======
-		  ("Mark Tran" . "mark.tran@gmail.com")))])
->>>>>>> b67099a (first commit of the repo)
  (undo-fu .
 	  [(0 5)
 	   ((emacs
@@ -3074,11 +2382,7 @@
 	       ("Daniel Semyonov" . "daniel@dsemy.com"))
 	      (:commit . "93ae3db40d07ae15e61d34c3c3870de5d2fce2de"))])
  (visual-fill-column .
-<<<<<<< HEAD
 		     [(2 6 3)
-=======
-		     [(2 5 1)
->>>>>>> b67099a (first commit of the repo)
 		      ((emacs
 			(25 1)))
 		      "fill-column for visual-line-mode" tar
@@ -3086,26 +2390,16 @@
 		       (:maintainer "Joost Kremers" . "joostkremers@fastmail.fm")
 		       (:authors
 			("Joost Kremers" . "joostkremers@fastmail.fm"))
-<<<<<<< HEAD
 		       (:commit . "e04d3521b6dc2435de4c4a4b9cac5feb194f0d5b"))])
  (web-mode .
 	   [(17 3 19)
-=======
-		       (:commit . "695a59789209c42fa08a5bce92963ee32f4455be"))])
- (web-mode .
-	   [(17 3 17)
->>>>>>> b67099a (first commit of the repo)
 	    ((emacs
 	      (23 1)))
 	    "major mode for editing web templates" tar
 	    ((:url . "https://web-mode.org")
 	     (:keywords "languages")
 	     (:maintainer "François-Xavier Bois" . "fxbois@gmail.com")
-<<<<<<< HEAD
 	     (:commit . "10f1269ab1007ab3d5fe018c83bb82c979617bfd"))])
-=======
-	     (:commit . "82847071ce93293bdb7945db08d970f13fd883cf"))])
->>>>>>> b67099a (first commit of the repo)
  (webpaste .
 	   [(3 2 2)
 	    ((emacs
@@ -3117,7 +2411,6 @@
 	    "Paste to pastebin-like services" tar
 	    ((:url . "https://github.com/etu/webpaste.el")
 	     (:keywords "convenience" "comm" "paste")
-<<<<<<< HEAD
 	     (:maintainer "Elis etu Hirwing" . "elis@hirwing.se")
 	     (:authors
 	      ("Elis etu Hirwing" . "elis@hirwing.se"))
@@ -3126,25 +2419,12 @@
 	  [(1 2)
 	   ((emacs
 	     (24 4)))
-=======
-	     (:maintainer "Elis \"etu\" Hirwing" . "elis@hirwing.se")
-	     (:authors
-	      ("Elis \"etu\" Hirwing" . "elis@hirwing.se")))])
- (wfnames .
-	  [(1 1)
-	   ((emacs
-	     (24 3)))
->>>>>>> b67099a (first commit of the repo)
 	   "Edit filenames" tar
 	   ((:url . "https://github.com/thierryvolpiatto/wfnames")
 	    (:maintainer "Thierry Volpiatto" . "thievol@posteo.net")
 	    (:authors
 	     ("Thierry Volpiatto" . "thievol@posteo.net"))
-<<<<<<< HEAD
 	    (:commit . "2f014c48fde0979da4ce3c0dbda81389c61a26bc"))])
-=======
-	    (:commit . "4447417c58b063df1fca1ba4bec9cb650c7beb60"))])
->>>>>>> b67099a (first commit of the repo)
  (wgrep .
 	[(3 0 0)
 	 ((emacs
@@ -3212,39 +2492,21 @@
 		  nil "Polish up poor writing on the fly" tar
 		  ((:url . "http://github.com/bnbeckwith/writegood-mode")
 		   (:keywords "writing" "weasel-words" "grammar")
-<<<<<<< HEAD
-=======
-		   (:maintainer "Benjamin Beckwith")
-		   (:authors
-		    ("Benjamin Beckwith"))
->>>>>>> b67099a (first commit of the repo)
 		   (:commit . "d54eadeedb8bf3aa0e0a584c0a7373c69644f4b8"))])
  (ws-butler .
 	    [(0 6)
 	     nil "Unobtrusively remove trailing whitespace." tar
 	     ((:url . "https://github.com/lewang/ws-butler")
-<<<<<<< HEAD
 	      (:commit . "323b651dd70ee40a25accc940b8f80c3a3185205"))])
  (xah-fly-keys .
-	       [(25 7 20240602075123)
-=======
-	      (:maintainer "Le Wang")
-	      (:authors
-	       ("Le Wang")))])
- (xah-fly-keys .
-	       [(24 19 20231212124900)
->>>>>>> b67099a (first commit of the repo)
+	       [(25 8 20240604084157)
 		((emacs
 		  (27)))
 		"ergonomic modal keybinding minor mode." tar
 		((:url . "http://xahlee.info/emacs/misc/xah-fly-keys.html")
 		 (:keywords "convenience" "vi" "vim" "ergoemacs" "keybinding")
 		 (:maintainer "Xah Lee" . "xah@xahlee.org")
-<<<<<<< HEAD
-		 (:commit . "77e49262dccbdf369de814d8e6cf893e98be31e9"))])
-=======
-		 (:commit . "d2f2608a9e283ca45053258086662a1bdd42be65"))])
->>>>>>> b67099a (first commit of the repo)
+		 (:commit . "a61c1807bd4939e71b54d655f8d261e111915ced"))])
  (xkcd .
        [(1 1)
 	((json
@@ -3283,18 +2545,11 @@
 			(0 8 0)))
 		      "Collection of yasnippet snippets" tar
 		      ((:url . "https://github.com/AndreaCrotti/yasnippet-snippets")
-<<<<<<< HEAD
 		       (:keywords "snippets")
 		       (:maintainer "Andrea Crotti" . "andrea.crotti.0@gmail.com")
 		       (:authors
 			("Andrea Crotti" . "andrea.crotti.0@gmail.com"))
 		       (:commit . "39e640c037f51602f821721c200ab43b71febc90"))])
-=======
-		       (:maintainer "Andrea Crotti" . "andrea.crotti.0@gmail.com")
-		       (:authors
-			("Andrea Crotti" . "andrea.crotti.0@gmail.com"))
-		       (:keywords "snippets"))])
->>>>>>> b67099a (first commit of the repo)
  (zenburn-theme .
 		[(2 8 0)
 		 nil "A low contrast color theme for Emacs." tar
@@ -3306,7 +2561,6 @@
  (zig-mode .
 	   [(0 0 8)
 	    ((emacs
-<<<<<<< HEAD
 	      (26 1))
 	     (reformatter
 	      (0 6)))
@@ -3318,12 +2572,3 @@
 	      ("Andrea Orru" . "andreaorru1991@gmail.com")
 	      ("Andrew Kelley" . "superjoe30@gmail.com"))
 	     (:commit . "f3e952c24a9c152307a6e7ca1645b5f72be74314"))]))
-=======
-	      (24 3)))
-	    "A major mode for the Zig programming language" tar
-	    ((:url . "https://github.com/zig-lang/zig-mode")
-	     (:maintainer "Andrea Orru <andreaorru1991@gmail.com>, Andrew Kelley" . "superjoe30@gmail.com")
-	     (:authors
-	      ("Andrea Orru <andreaorru1991@gmail.com>, Andrew Kelley" . "superjoe30@gmail.com"))
-	     (:keywords "zig" "languages"))]))
->>>>>>> b67099a (first commit of the repo)

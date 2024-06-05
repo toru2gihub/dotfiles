@@ -6,4 +6,3 @@
 (setq file-name-history '("~/.emacs.d/config.org"))
 (setq minibuffer-history '("magit-section-20240311.1407"))
 (setq extended-command-history '("nerd-icons-insert-octicon" "package-delete"))
-(setq evil-jumps-history '((45388 #1="/home/toru/dotfiles/.emacs.d/config.org") (45933 #1#) (45323 #1#) (45546 #1#) (45774 #1#) (45274 #1#) (45259 #1#) (45949 #1#) (45546 #1#) (45021 #1#) (45804 #1#)))

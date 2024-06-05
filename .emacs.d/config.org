@@ -25,8 +25,8 @@
 (require 'package)
 
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
-			     ("nongnu" . "https://elpa.nongnu.org/nongnu/")
                          ("org" . "https://orgmode.org/elpa/")
+			     ("nongnu" . "https://elpa.nongnu.org/nongnu/")
                          ("elpa" . "https://elpa.gnu.org/packages/")))
 
 (package-initialize)
@@ -54,6 +54,8 @@
 (setq user-full-name "toru"
       user-mail-address "toru777average@cock.li")
 
+;(global-undo-tree-mode)
+
 ;; Save last place in file
 (save-place-mode 1)
 
@@ -71,17 +73,6 @@
      display-buffer-below-selected)
      (window-height . fit-window-to-buffer)
    )))
-
-;; Auto refresh buffers
-(global-auto-revert-mode 1)
-
-; SETENV
-(setenv "PATH" (concat (getenv "PATH") "/run/current-system/sw/bin"))
-(setq exec-path (append exec-path '("/run/current-system/sw/bin")))
-
-;; Also auto refresh dired, but be quiet about it
-(setq global-auto-revert-non-file-buffers t)
-(setq auto-revert-verbose nil)
 
 ;; Window undo/redo commands
 ;(winner-mode 1)
@@ -129,11 +120,6 @@
 (setq confirm-kill-emacs nil)
 (eval-after-load 'auto-complete '(global-auto-complete-mode 1))
 (global-set-key [escape] 'keyboard-escape-quit)
-;; Buffers
-;(global-tab-line-mode 1)
-
-;; Tabs
-;(tab-bar-mode 1)
 
 (setq use-file-dialog nil)  ;; No file dialog
 (setq use-dialog-box nil)   ;; No dialog box
@@ -147,7 +133,6 @@
                            (setq-local electric-pair-inhibit-predicate
                                        `(lambda (c)
                                           (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c))))))
-;(global-auto-revert-mode t)  ;; Automatically show changes if the file has changed
 (global-auto-revert-mode t)  ;; Automatically show changes if the file has changed
 (global-display-line-numbers-mode 1)
 (setq display-line-numbers-type 'relative)
@@ -178,7 +163,7 @@
 #+begin_src emacs-lisp
 
 ;; Theme
-(load-theme 'ef-symbiosis t)
+(load-theme 'ef-night t)
 
 ; Font
 (set-face-attribute 'default nil
@@ -191,15 +176,23 @@
  `(org-checkbox ((t :box (:line-width 2 :color "gray"
            :style released-button)))))
 
+
+
 (setq modus-themes-org-blocks 'gray-background)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/etc/themes")
 
 ;; Transparency
-(set-frame-parameter nil 'alpha-background 90)
-(add-to-list 'default-frame-alist '(alpha-background . 90))
+(set-frame-parameter nil 'alpha-background 97)
+(add-to-list 'default-frame-alist '(alpha-background . 97))
 
 ;; Blinking cursor
 (setq blink-cursor-mode nil)
+
+;; Buffers
+;(global-tab-line-mode 1)
+
+;; Tabs
+;(tab-bar-mode 1)
 
 (global-prettify-symbols-mode t)
 
@@ -249,9 +242,6 @@
 
 #+end_src
 
-<<<<<<< HEAD
-** 󰧺 Bind-key.
-=======
 ** 󰌌 Keybindings.
 - Keybindings with the package General
 #+begin_src emacs-lisp
@@ -412,7 +402,6 @@
 #+end_src
 
 ** 󰧺 Bindkey.
->>>>>>> tmp
 - Using the built-in package "bind-key"
 #+begin_src emacs-lisp
 
@@ -447,57 +436,6 @@
 
 #+end_src
 
-<<<<<<< HEAD
-** 󰉋 Dired.
-#+begin_src emacs-lisp
-
-(setq dired-clean-confirm-killing-deleted-buffers nil)
-(setq dired-confirm-shell-command nil)
-(setq dired-no-confirm t)
-(setq dired-recursive-deletes (quote always))
-(setq dired-deletion-confirmer '(lambda (x) t))
-(setq dired-recursive-deletes 'always)
-(setq confirm-kill-emacs nil)
-(setq confirm-kill-processes nil)
-(setq confirm-nonexistent-file-or-buffer nil)
-(set-buffer-modified-p nil)
-
-(use-package dired-open
-  :ensure t
-  :after dired
-  :config
-  (setq dired-open-extensions '(
-                                ;; ("jpg" . "nsxiv")
-                                ;; ("png" . "nsxiv")
-                                ("svg" . "inkscape")
-                                ("mp3" . "mpv")
-                                ("ogg" . "mpv")
-                                ("mkv" . "mpv")
-                                ("gif" . "mpv")
-                                ("webm" . "mpv")
-                                ("mp4" . "mpv"))))
-
-(add-hook 'dired-mode-hook
-          (lambda ()
-            (dired-hide-details-mode)
-            (dired-sort-toggle-or-edit)))
-
-;; Sort directories alphabeticly
-(setq dired-listing-switches "-al --dired --group-directories-first -h -G")
-
-;; (use-package dired-sidebar
-;;   :ensure t
-;;   :commands (dired-sidebar-toggle-sidebar))
-
-#+end_src
-
-**  Eglot.
-#+begin_src emacs-lisp
-
-(add-hook 'LaTeX-mode-hook #'eglot-ensure)
-(add-hook 'html-mode-hook #'eglot-ensure)
-;(add-hook 'nix-mode-hook #'eglot-ensure)
-=======
 ** 󰃭 Diary & Calendar.
 #+begin_src emacs-lisp
 
@@ -509,7 +447,6 @@
 (add-hook 'calendar-today-visible-hook 'calendar-mark-today)
 
 (setq org-agenda-include-diary t)
->>>>>>> tmp
 
 #+end_src
 
@@ -694,48 +631,6 @@
 
 #+end_src
 
-** 󰃭 Diary/Calendar.
-#+begin_src emacs-lisp
-
-(setq diary-file "~/pu/org/diary")
-
-(setq calendar-view-diary-initially-flag t
-      diary-number-of-entries 7
-      diary-display-function #'diary-fancy-display)
-(add-hook 'calendar-today-visible-hook 'calendar-mark-today)
-
-(setq org-agenda-include-diary t)
-
-#+end_src
-
-** 󰗊 Ispell.
-#+begin_src emacs-lisp
-
-(setq ispell-dictionary "es")
-(setq ispell-personal-dictionary "~/.emacs.d/var/dictionary.org")
-
-#+end_src
-
-** 󰏶 Abbrev.
-#+begin_src emacs-lisp
-
-(add-hook 'text-mode-hook 'abbrev-mode)
-(add-hook 'prog-mode-hook 'abbrev-mode)
-
-(use-package dabbrev
-  ;; Swap M-/ and C-M-/
-  :bind (("M-/" . dabbrev-completion)
-         ("C-M-/" . dabbrev-expand))
-  :config
-  (add-to-list 'dabbrev-ignored-buffer-regexps "\\` ")
-  ;; Since 29.1, use `dabbrev-ignored-buffer-regexps' on older.
-  (add-to-list 'dabbrev-ignored-buffer-modes 'doc-view-mode)
-  (add-to-list 'dabbrev-ignored-buffer-modes 'pdf-view-mode))
-
-;(define-abbrev global-abbrev-table "" "")
-
-#+end_src
-
 ** 󰑕 Defalias.
 - Aliases
 #+begin_src emacs-lisp
@@ -863,7 +758,7 @@
 
 ;; ORG TODO KEYWORDS
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "NOTE(n)" "|" "CANCELLED(c@)" "DONE(d!)")))
+      '((sequence "TODO(t)" "NOTE(n)" "PLAN(p)" "|" "CANCELLED(c@)" "DONE(d!)")))
 
 #+end_src
 
@@ -1106,9 +1001,6 @@
         ("t" "Todo" entry (file "~/pu/org/agenda.org")
          (file "~/.emacs.d/etc/templates/agenda_template.txt"))
 
-        ("i" "Inbox" entry (file "~/dc/inbox.org")
-         (file "~/.emacs.d/etc/templates/inbox_template.txt"))
-
         ))
 
 #+end_src
@@ -1132,171 +1024,7 @@
 
 #+end_src
 
-<<<<<<< HEAD
-* 󰋜 Active pkgs
-- Many third-party packages
-=======
 * 󰋜 Active Pkgs
->>>>>>> tmp
-
-** 󰌌 General.
-- Keybindings with the package General
-#+begin_src emacs-lisp
-
-(use-package general
-  :ensure t
-  :config
-  (general-evil-setup)
-  (eval-after-load "org" '(define-key org-mode-map (kbd "C-j") nil))
-  (eval-after-load "org" '(define-key org-mode-map (kbd "C-k") nil))
-  (eval-after-load "org" '(define-key org-mode-map (kbd "M-l") nil))
-  (general-define-key
-   :states '(normal insert motion)
-   "C-h" 'evil-window-left
-   "C-j" 'evil-window-down
-   "C-k" 'evil-window-up
-   "C-l" 'evil-window-right
-   "M-l" 'org-make-olist)
-
-  (general-create-definer user/leader-keys
-    :states '(normal insert visual emacs)
-    :keymaps 'override
-    :prefix "SPC" ;; set 'SPC' as leader key
-    :global-prefix "C-SPC") ;; access leader in insert mode
-  
-  (user/leader-keys
-    "." '(find-file :wk "Find file")
-    ;"=" '(perspective-map :wk "Perspective") ;; Lists all the perspective keybindings
-    "TAB TAB" '(comment-line :wk "Comment lines")
-    "u" '(universal-argument :wk "Universal argument"))
-
-   (user/leader-keys
-    "a" '(:ignore t :wk "Agenda buffers")
-    "a" '(org-agenda :wk "Open the agenda"))
-
-  (user/leader-keys
-    "b" '(:ignore t :wk "Bookmarks/Buffers")
-    "b r" '(recentf :wk "Recent files")
-    "b d" '(bookmark-delete :wk "Delete bookmark")
-    "b k" '(kill-current-buffer :wk "Kill current buffer")
-    "b K" '(kill-some-buffers :wk "Kill multiple buffers")
-    "b l" '(consult-bookmark :wk "List bookmarks")
-    "b m" '(bookmark-set :wk "Set bookmark")
-    "b n" '(next-buffer :wk "Next buffer")
-    "b p" '(previous-buffer :wk "Previous buffer")
-    "b x" '(revert-buffer :wk "Reload buffer")
-    "b s" '(basic-save-buffer :wk "Save buffer")
-    "b S" '(save-some-buffers :wk "Save multiple buffers")
-    "b w" '(bookmark-save :wk "Save current bookmarks to bookmark file"))
-
-  (user/leader-keys
-    "e" '(:ignore t :wk "Eshell/Eval/EWW")    
-    "e b" '(eval-buffer :wk "Evaluate elisp in buffer")
-    "e e" '(eval-expression :wk "Evaluate and elisp expression")
-    "e l" '(eval-last-sexp :wk "Evaluate elisp expression before point")
-    "e r" '(eval-region :wk "Evaluate elisp in region")
-    "e w" '(eww :which-key "EWW emacs web wowser"))
-  
-  (user/leader-keys
-    "i" '(:ignore t :wk "Insert")
-    "i d" '(org-id-get-create :wk "Insert id")
-    "i n" '(increment-number-at-point :wk "Increment numbers")
-    "i o" '(org-schedule :wk "Org scheduled")
-    "i f" '(org-deadline :wk "Org deadline")
-    "i m" '(org-time-stamp :wk "Org timestamp")
-    "i t" '(org-set-tags-command :wk "Org set tags")
-    "i y" '(consult-yank-from-kill-ring :wk "Kill ring")
-    "i e" '(org-export-dispatch :wk "Org export")
-    "i l" '(org-make-list :wk "Make automatic numerical lists")
-    "i c" '(org-capture :wk "Capture")
-    "i s" '(consult-yasnippet :wk "Insert snippet"))
-
-  (user/leader-keys
-    "p" '(:ignore t :wk "Projects")
-    "p p" '(project-switch-project :wk "Search projects")
-    "p d" '(project-find-dir :wk "Find directory project"))
-
-  (user/leader-keys
-    "r" '(:ignore t :wk "Org-Roam")
-    "r b" '(org-roam-buffer-toggle :wk "Toggle buffer")
-    "r f" '(org-roam-node-find :wk "Find notes")
-    "r c" '(org-roam-capture :wk "Capture notes")
-    "r d" '(org-roam-dailies-capture-date :wk "Capture date 'dailies'")
-    "r i" '(org-roam-node-insert :wk "Insert note link"))
-
-  (user/leader-keys
-    "s" '(:ignore t :wk "Search")
-    "s o" '(occur :wk "Occur")
-    "s a" '(avy-goto-char :wk "Avy go to char")
-    "s c" '(consult-buffer :wk "Consult global")
-    "s r" '(replace-regexp :wk "Search & replace")
-    "s l" '(consult-outline :wk "Travel on org-headings"))
-
-    (user/leader-keys
-    "h" '(:ignore t :wk "Help")
-    "h b" '(describe-bindings :wk "Describe bindings")
-    "h c" '(describe-char :wk "Describe character under cursor")
-    "h d" '(:ignore t :wk "Emacs documentation")
-    "h d m" '(info-emacs-manual :wk "The Emacs manual")
-    "h e" '(view-echo-area-messages :wk "View echo area messages")
-    "h f" '(describe-function :wk "Describe function")
-    "h F" '(describe-face :wk "Describe face")
-    "h i" '(info :wk "Info")
-    "h I" '(describe-input-method :wk "Describe input method")
-    "h k" '(describe-key :wk "Describe key")
-    "h l" '(view-lossage :wk "Display recent keystrokes and the commands run")
-    "h L" '(describe-language-environment :wk "Describe language environment")
-    "h m" '(describe-mode :wk "Describe mode")
-    "h r" '(:ignore t :wk "Reload")
-    "h r r" '((lambda () (interactive)
-                (load-file "~/.emacs.d/init.el"))
-              :wk "Reload emacs config")
-    "h t" '(consult-theme :wk "Load theme")
-    "h v" '(describe-variable :wk "Describe variable")
-    "h w" '(where-is :wk "Prints keybinding for command if set")
-    "h x" '(describe-command :wk "Display full documentation for command"))
-
-  (user/leader-keys
-    "t" '(:ignore t :wk "Toggle")
-    "t c" '(comment-line :wk "Toggle comment lines")
-    "t v" '(vundo :wk "Vundo")
-    "t s" '(toggle-org-buffer :wk "New scratch buffer")
-    "t o" '(olivetti-mode :wk "Toggle olivetti-mode")
-    "t i" '(org-toggle-inline-images :wk "Toggle images in org")
-    "t n" '(display-line-numbers-mode :wk "Toggle line-numbers"))
-
- (user/leader-keys
-    "w" '(:ignore t :wk "Windows")
-    ;; Window splits
-    "w c" '(evil-window-delete :wk "Close window")
-    "w n" '(evil-window-new :wk "New window")
-    "w s" '(evil-window-split :wk "Horizontal split window")
-    "w v" '(evil-window-vsplit :wk "Vertical split window")
-    "w =" '(balance-windows :wk "Balance your windows")
-
-    ;; Window motions
-    "w h" '(evil-window-left :wk "Window left")
-    "w j" '(evil-window-down :wk "Window down")
-    "w k" '(evil-window-up :wk "Window up")
-    "w l" '(evil-window-right :wk "Window right")
-    "w w" '(evil-window-next :wk "Goto next window")
-
-    ;; Move Windows
-    "w H" '(buf-move-left :wk "Buffer move left")
-    "w J" '(buf-move-down :wk "Buffer move down")
-    "w K" '(buf-move-up :wk "Buffer move up")
-    "w L" '(buf-move-right :wk "Buffer move right"))
-
-  (user/leader-keys
-    "z" '(:ignore t :wk "Hydras")
-    "z p" '(hydra-personal-files/body :wk "Hydra Personal")
-    "z r" '(hydra-OrgRoam/body :wk "Hydra Org Roam")
-    "z i" '(hydra-index/body :wk "Hydra Index")
-    "z t" '(hydra-toggle/body :wk "Hydra Toggle"))
-
-)
-
-#+end_src
 
 **  Evil-Mode.
 #+begin_src emacs-lisp
@@ -1336,52 +1064,47 @@
 
 #+end_src
 
-** 󱦒 Embark.
+** 󰉋 Dired.
 #+begin_src emacs-lisp
 
-(use-package embark
+(setq dired-clean-confirm-killing-deleted-buffers nil)
+(setq dired-confirm-shell-command nil)
+(setq dired-no-confirm t)
+(setq dired-recursive-deletes (quote always))
+(setq dired-deletion-confirmer '(lambda (x) t))
+(setq dired-recursive-deletes 'always)
+(setq confirm-kill-emacs nil)
+(setq confirm-kill-processes nil)
+(setq confirm-nonexistent-file-or-buffer nil)
+(set-buffer-modified-p nil)
+
+(use-package dired-open
   :ensure t
-
-  :bind
-  (("C-c a" . embark-act)         ;; pick some comfortable binding
-   ("C-;" . embark-dwim))        ;; good alternative: M-.
-
-  :init
-
-  ;; Optionally replace the key help with a completing-read interface
-  (setq prefix-help-command #'embark-prefix-help-command)
-
-  ;; Show the Embark target at point via Eldoc. You may adjust the
-  ;; Eldoc strategy, if you want to see the documentation from
-  ;; multiple providers. Beware that using this can be a little
-  ;; jarring since the message shown in the minibuffer can be more
-  ;; than one line, causing the modeline to move up and down:
-
-  ;; (add-hook 'eldoc-documentation-functions #'embark-eldoc-first-target)
-  ;; (setq eldoc-documentation-strategy #'eldoc-documentation-compose-eagerly)
-
+  :after dired
   :config
+  (setq dired-open-extensions '(
+                                ;; ("jpg" . "nsxiv")
+                                ;; ("png" . "nsxiv")
+                                ("svg" . "inkscape")
+                                ("mp3" . "mpv")
+                                ("ogg" . "mpv")
+                                ("mkv" . "mpv")
+                                ("gif" . "mpv")
+                                ("webm" . "mpv")
+                                ("mp4" . "mpv")
+                                ("pdf" . "zathura"))))
 
-  ;; Hide the mode line of the Embark live/completions buffers
-  (add-to-list 'display-buffer-alist
-               '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
-                 nil
-                 (window-parameters (mode-line-format . none)))))
+(add-hook 'dired-mode-hook
+          (lambda ()
+            (dired-hide-details-mode)
+            (dired-sort-toggle-or-edit)))
 
-;; Consult users will also want the embark-consult package.
-(use-package embark-consult
-  :ensure t ; only need to install it, embark loads it after consult if found
-  :hook
-  (embark-collect-mode . consult-preview-at-point-mode))
+;; Sort directories alphabeticly
+(setq dired-listing-switches "-al --dired --group-directories-first -h -G")
 
-#+end_src
-
-** 󰼬 Olivetti.
-#+begin_src emacs-lisp
-
-(use-package olivetti)
-
-(setq olivetti-body-width 100)
+;; (use-package dired-sidebar
+;;   :ensure t
+;;   :commands (dired-sidebar-toggle-sidebar))
 
 #+end_src
 
@@ -1504,8 +1227,6 @@ folder, otherwise delete a word"
 
 #+end_src
 
-<<<<<<< HEAD
-=======
 ** 󱦟 Corfu & Cape.
 #+begin_src emacs-lisp
 
@@ -1604,7 +1325,6 @@ folder, otherwise delete a word"
 
 #+end_src
 
->>>>>>> tmp
 **  Hydra.
 #+begin_src emacs-lisp
 
@@ -1620,13 +1340,12 @@ folder, otherwise delete a word"
   ("Agenda"
    (("t" (find-file "~/pu/org/todos.org") "Tareas")
     ("s" (find-file "~/pu/org/periodic.org") "Periodicos")
-    ("a" (find-file "~/pu/org/aniversarios.org") "Aniversarios"))
     ("a" (find-file "~/pu/org/aniversarios.org") "Aniversarios")
     ("p" (find-file "~/pu/org/plans.org") "Planes"))
 
    "Personal"
    (("r" (find-file "~/pu/org/rutina.org") "Rutina")
-    ("f" (find-file "~/pu/org/1.2.1_Personal_Rutina_Finanzas.org") "Personal y finanzas")))
+    ("f" (find-file "~/pu/org/1.2.1_Personal_Rutina_Finanzas.org") "Personal y finanzas"))))
 
 (global-set-key (kbd "<f1>") 'hydra-personal-files/body)
 
@@ -1681,6 +1400,94 @@ folder, otherwise delete a word"
 
 (global-set-key (kbd "<f3>") 'hydra-index/body)
 
+;; (defhydra hydra-personal (:color blue)
+;;   "Hydra Personal"
+;;   ("r" (find-file "~/pu/org/rutina.org") "Rutina" :color red)
+;;   ("f" (find-file "~/pu/org/1.2.1_Finanzas_Personales.org") "Finanzas")
+;;   ("m" (find-file "~/pu/org/1.2.1_Menu_personal.org") "Menu Personal"))
+
+;; (global-set-key (kbd "<f1>") 'hydra-personal/body)
+
+;; (defhydra hydra-agenda (:color blue)
+;;   "Hydra Personal"
+;;   ("f" (find-file "~/pu/org/todos.org") "Tareas")
+;;   ("r" (find-file "~/pu/org/periodic.org") "Periodicos")
+;;   ("m" (find-file "~/pu/org/plans.org") "Planes"))
+
+;; (global-set-key (kbd "<f2>") 'hydra-agenda/body)
+
+;; SUPER HYDRAS
+
+;; (defhydra hydra-directory (:color blue)
+;;   "Directory Hydra"
+;;   ("s" (find-file "~/.scripts/") "Scripts")
+;;   ("c" (find-file "~/dotfiles/.config/") "Config")
+;;   ("e" (find-file "~/dotfiles/.emacs.d/") "Emacs.d"))
+
+;; (global-set-key (kbd "C-c 2") 'hydra-directory/body)
+
+;; (defhydra hydra-zoom (:color red)
+;;   "Hydra Zoom"
+;;   ("-" text-scale-decrease "Out")
+;;   ("+" text-scale-increase "In"))
+
+;; (global-set-key (kbd "C-c 3") 'hydra-zoom/body)
+
+;; (defun with-alltheicon (icon str &optional height v-adjust face)
+;;   "Display an icon from all-the-icon."
+;;   (s-concat (all-the-icons-alltheicon icon :v-adjust (or v-adjust 0) :height (or height 1) :face face) " " str))
+
+;; (defun with-faicon (icon str &optional height v-adjust face)
+;;   "Display an icon from Font Awesome icon."
+;;   (s-concat (all-the-icons-faicon icon :v-adjust (or v-adjust 0) :height (or height 1) :face face) " " str))
+
+;; (defun with-fileicon (icon str &optional height v-adjust face)
+;;   "Display an icon from the Atom File Icons package."
+;;   (s-concat (all-the-icons-fileicon icon :v-adjust (or v-adjust 0) :height (or height 1) :face face) " " str))
+
+;; (defun with-octicon (icon str &optional height v-adjust face)
+;;   "Display an icon from the GitHub Octicons."
+;;   (s-concat (all-the-icons-octicon icon :v-adjust (or v-adjust 0) :height (or height 1) :face face) " " str))
+
+;; (pretty-hydra-define hydra-personal-files
+;;   (:hint nil :color teal :quit-key "q" :title (with-faicon "book" "Open org Agenda files" 1 -0.05))
+
+;;   ("Agenda"
+;;    (("t" (find-file "~/pu/org/todos.org") "Tareas")
+;;     ("s" (find-file "~/pu/org/periodic.org") "Periodicos")
+;;     ("p" (find-file "~/pu/org/plans.org") "Planes"))
+
+;;    "Personal"
+;;    (("r" (find-file "~/pu/org/rutina.org") "Rutina")
+;;     ("f" (find-file "~/pu/org/1.2.1_Finanzas_Personales.org") "Finanzas")
+;;     ("m" (find-file "~/pu/org/1.2.1_Menu_personal.org") "Menu personal"))))
+
+;; (global-set-key (kbd "<f2>") 'hydra-personal-files/body)
+
+;; ;; (pretty-hydra-define hydra-launcher
+;; ;;   (:hint nil :color teal :quit-key "q" :title (with-octicon "rocket" "Hydra Launcher" 1 -0.05))
+;; ;;   ("Launch"
+
+;; ;;    (("h" man "man")
+;; ;;  ("j" (browse-url "https://jpacheco.xyz") "Jpacheco")
+;; ;;  ("w" (browse-url "http://www.emacswiki.org/") "emacswiki")
+;; ;;  ("g" (browse-url "http://www.google.com") "Google")
+;; ;;  ("d" (browse-url "https://autoliv-mx.leading2lean.com/") "L2L")
+;; ;;  ("s" shell "shell"))))
+
+;; ;; (global-set-key (kbd "<f1>") 'hydra-launcher/body)
+
+;; ;; (pretty-hydra-define hydra-yasnippet 
+;; ;;   (:nit nil :color teal :quit-key "q" :title (with-octicon "code" "Yasnippet" 1 -0.05))
+
+;; ;;   ("Yasnippet Menu"
+;; ;;    (("i" yas-insert-snippet)
+;; ;;  ("e" yas-visit-snippet-file)
+;; ;;  ("m" yas-minor-mode)
+;; ;;  ("n" yas-new-snippet))))
+
+;; ;; (global-set-key (kbd "<f2>") 'hydra-yasnippet/body)
+
 #+end_src
 
 **  Olivetti.
@@ -1692,106 +1499,6 @@ folder, otherwise delete a word"
 
 #+end_src
 
-<<<<<<< HEAD
-** 󱦟 Corfu & Cape.
-#+begin_src emacs-lisp
-
-(use-package corfu
-  :ensure t
-  ;; Optional customizations
-  :custom
-  (corfu-cycle t)                 ; Allows cycling through candidates
-  (corfu-auto t)                  ; Enable auto completion
-  (corfu-auto-prefix 1)
-  (corfu-auto-delay 0.4)
-  (corfu-popupinfo-delay '(0.5 . 0.5))
-  (corfu-preview-current 'insert) ; insert previewed candidate
-  (corfu-preselect 'prompt)
-  (corfu-on-exact-match nil)      ; Don't auto expand tempel snippets
-  ;; Optionally use TAB for cycling, default is `corfu-complete'.
-  :bind (:map corfu-map
-              ("M-SPC"      . corfu-insert-separator)
-              ("TAB"        . corfu-next)
-              ([tab]        . corfu-next)
-              ("S-TAB"      . corfu-previous)
-              ([backtab]    . corfu-previous)
-              ;("S-<return>" . corfu-insert)
-              ("RET"        . corfu-insert))
-
-  :init
-  (global-corfu-mode)
-  (corfu-history-mode)
-  (corfu-popupinfo-mode) ; Popup completion info
-  :config
-  (add-hook 'eshell-mode-hook
-            (lambda () (setq-local corfu-quit-at-boundary t
-                                   corfu-quit-no-match t
-                                   corfu-auto nil)
-              (corfu-mode))
-            nil
-            t))
-
-;; Use Dabbrev with Corfu!
-(use-package dabbrev
-  ;; Swap M-/ and C-M-/
-  :bind (("M-/" . dabbrev-completion)
-         ("C-M-/" . dabbrev-expand))
-  :config
-  (add-to-list 'dabbrev-ignored-buffer-regexps "\\` ")
-  ;; Since 29.1, use `dabbrev-ignored-buffer-regexps' on older.
-  (add-to-list 'dabbrev-ignored-buffer-modes 'doc-view-mode)
-  (add-to-list 'dabbrev-ignored-buffer-modes 'pdf-view-mode))
-
-(use-package cape
-  ;; Bind dedicated completion commands
-  ;; Alternative prefix keys: C-c p, M-p, M-+, ...
-  :bind (("C-c p p" . completion-at-point) ;; capf
-         ("C-c p /" . complete-tag)        ;; etags
-         ("C-c p d" . cape-dabbrev)        ;; or dabbrev-completion
-         ("C-c p h" . cape-history)
-         ("C-c p f" . cape-file)
-         ("C-c p k" . cape-keyword)
-         ("C-c p s" . cape-elisp-symbol)
-         ("C-c p e" . cape-elisp-block)
-         ("C-c p a" . cape-abbrev)
-         ("C-c p l" . cape-line)
-         ("C-c p w" . cape-dict)
-         ("C-c p :" . cape-emoji)
-         ("C-c p t" . cape-tex)
-         ("C-c p _" . cape-tex)
-         ("C-c p ^" . cape-tex)
-         ("C-c p &" . cape-sgml)
-         ("C-c p r" . cape-rfc1345))
-  :init
-  ;; Add to the global default value of `completion-at-point-functions' which is
-  ;; used by `completion-at-point'.  The order of the functions matters, the
-  ;; first function returning a result wins.  Note that the list of buffer-local
-  ;; completion functions takes precedence over the global list.
-  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
-  (add-to-list 'completion-at-point-functions #'cape-tex)
-  (add-to-list 'completion-at-point-functions #'cape-file)
-  (add-to-list 'completion-at-point-functions #'cape-elisp-block)
-  (add-to-list 'completion-at-point-functions #'cape-history)
-  (add-to-list 'completion-at-point-functions #'cape-keyword)
-  (add-to-list 'completion-at-point-functions #'cape-sgml)
-  (add-to-list 'completion-at-point-functions #'cape-rfc1345)
-  (add-to-list 'completion-at-point-functions #'cape-abbrev)
-  (add-to-list 'completion-at-point-functions #'cape-dict)
-  (add-to-list 'completion-at-point-functions #'cape-elisp-symbol)
-  (add-to-list 'completion-at-point-functions #'cape-line)
-  (add-to-list 'completion-at-point-functions #'cape-file)
-  (add-to-list 'completion-at-point-functions #'cape-elisp-block)
-  (add-to-list 'completion-at-point-functions #'cape-tex)
-  ;;(add-to-list 'completion-at-point-functions #'cape-history)
-  ;;(add-to-list 'completion-at-point-functions #'cape-keyword)
-  ;;(add-to-list 'completion-at-point-functions #'cape-sgml)
-  ;;(add-to-list 'completion-at-point-functions #'cape-rfc1345)
-  ;;(add-to-list 'completion-at-point-functions #'cape-abbrev)
-  ;;(add-to-list 'completion-at-point-functions #'cape-dict)
-  ;;(add-to-list 'completion-at-point-functions #'cape-elisp-symbol)
-  ;;(add-to-list 'completion-at-point-functions #'cape-line)
-)
-=======
 ** 󰙅 Vundo.
 :LOGBOOK:
 - Note taken on [2024-05-09 Thu 15:15] \\
@@ -1892,7 +1599,6 @@ folder, otherwise delete a word"
 #+begin_src emacs-lisp
 
 (use-package vundo)
->>>>>>> tmp
 
 #+end_src
 
@@ -1936,14 +1642,10 @@ folder, otherwise delete a word"
 
 (use-package consult-yasnippet)
 
+
 #+end_src
 
-<<<<<<< HEAD
-*  Passive pkgs
-- Many packages that work in the background, you dont have to think about them
-=======
 *  Passive Pkgs
->>>>>>> tmp
 
 **  All-the-icons.
 #+begin_src emacs-lisp
@@ -2002,20 +1704,8 @@ folder, otherwise delete a word"
 (use-package cdlatex)
 (add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)   ; with AUCTeX LaTeX mode
 
-;; (use-package pdf-tools
-;;   :defer t
-;;   :commands (pdf-loader-install)
-;;   :mode "\\.pdf\\'"
-;;   :bind (:map pdf-view-mode-map
-;;               ("j" . pdf-view-next-page)
-;;               ("k" . pdf-view-previous-page))
-;;   :init (pdf-loader-install)
-;;   :config (add-to-list 'revert-without-query ".pdf"))
+#+end_src
 
-<<<<<<< HEAD
-;; (add-hook 'pdf-view-mode-hook #'(lambda () (interactive) (display-line-numbers-mode -1)))
-;; (add-hook 'pdf-view-mode-hook (blink-cursor-mode -1))
-=======
 ** 󱄅 Nix-mode.
 #+begin_src emacs-lisp
 
@@ -2038,22 +1728,19 @@ folder, otherwise delete a word"
 
 **  highlight-indent-guides.
 #+begin_src emacs-lisp
->>>>>>> tmp
 
+(use-package highlight-indent-guides
+  :config
+    (setq highlight-indent-guides-method 'character)
+    (setq highlight-indent-guides-auto-enabled nil)
+
+    (set-face-background 'highlight-indent-guides-odd-face "darkgray")
+    (set-face-background 'highlight-indent-guides-even-face "dimgray")
+    (set-face-foreground 'highlight-indent-guides-character-face "#458588")
+    :init (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
 
 #+end_src
 
-<<<<<<< HEAD
-** 󱄅 Nix-Mode.
-#+begin_src emacs-lisp
-
-(use-package nix-mode
-  :mode "\\.nix\\'")
-
-#+end_src
-
-=======
->>>>>>> tmp
 ** 󰵼 Rainbow modes.
 #+begin_src emacs-lisp
 
@@ -2068,33 +1755,6 @@ folder, otherwise delete a word"
 (use-package rainbow-delimiters
   :hook ((emacs-lisp-mode . rainbow-delimiters-mode)
          (clojure-mode . rainbow-delimiters-mode)))
-
-#+end_src
-
-**  No-littering.
-#+begin_src emacs-lisp
-
-(use-package no-littering)
-
-;; no-littering doesn't set this by default so we must place
-;; auto save files in the same path as it uses for sessions
-(setq auto-save-file-name-transforms
-      `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
-
-#+end_src
-
-**  Highlight-indent-guides.
-#+begin_src emacs-lisp
-
-(use-package highlight-indent-guides
-  :config
-    (setq highlight-indent-guides-method 'bitmap)
-    (setq highlight-indent-guides-auto-enabled nil)
-
-    (set-face-background 'highlight-indent-guides-odd-face "darkgray")
-    (set-face-background 'highlight-indent-guides-even-face "dimgray")
-    (set-face-foreground 'highlight-indent-guides-character-face "#458588")
-    :init (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
 
 #+end_src
 
@@ -2122,7 +1782,7 @@ folder, otherwise delete a word"
 
 #+end_src
 
-** 󰸱 Hl-TODO.
+** Hl-TODO.
 #+begin_src emacs-lisp
 
 (use-package hl-todo
