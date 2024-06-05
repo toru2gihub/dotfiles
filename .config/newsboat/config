@@ -22,10 +22,10 @@ external-url-viewer "urlscan -dc -r 'linkhandler.sh {}'"
 
 color listnormal white default
 color listfocus default black protect
-color listnormal_unread red default bold
+color listnormal_unread blue default bold
 color listfocus_unread default default bold
-color info red black bold
-color article red default
+color info blue black bold
+color article blue default
 
 highlight feedlist "---.*---" default default underline
 highlight feedlist ".*0/0.." default default underline

@@ -25,7 +25,7 @@ autoload -U colors && colors # Load colors
 autoload -Uz add-zsh-hook
 setopt prompt_subst
 add-zsh-hook precmd vcs_info
-PROMPT='%(?.%F{red}λ.%F{9}λ)%f %2~ '
+PROMPT='%(?.%F{blue}λ.%F{9}λ)%f %2~ '
 # Run the `vcs_info` hook to grab git info before displaying the prompt
 add-zsh-hook precmd vcs_info
 
@@ -140,7 +140,7 @@ export FZF_DEFAULT_COMMAND='fd . --hidden --exclude ".git"'
 # display hidden files, and exclude the '.git' directory.
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#ffffff,bg:-1,hl:#d60000 --color=fg+:#ffffff,bg+:#262626,hl+:#ffd700 --color=info:#afaf87,prompt:#d60000,pointer:#d60000 --color=marker:#87ff00,spinner:#ffd700,header:#87afaf'
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#ffffff,bg:-1,hl:#24acd4 --color=fg+:#ffffff,bg+:#262626,hl+:#ffd700 --color=info:#afaf87,prompt:#24acd4,pointer:#24acd4 --color=marker:#87ff00,spinner:#ffd700,header:#87afaf'
 
 #▒▄▀▄░█▒░░█▒▄▀▄░▄▀▀▒██▀░▄▀▀
 #░█▀█▒█▄▄░█░█▀█▒▄██░█▄▄▒▄██
