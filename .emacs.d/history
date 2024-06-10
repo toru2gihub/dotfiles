@@ -6,3 +6,4 @@
 (setq file-name-history '("~/.emacs.d/config.org"))
 (setq minibuffer-history '("magit-section-20240311.1407"))
 (setq extended-command-history '("nerd-icons-insert-octicon" "package-delete"))
+(setq evil-jumps-history 'nil)

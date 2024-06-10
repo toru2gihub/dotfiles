@@ -24,7 +24,7 @@ do
         case "$1" in
 
   "w") 
-    swww img -t fade $file && cp $file ~/.config/wall.png ;;
+    swww img -t center $file && cp $file ~/.config/wall.png ;;
     #xwallpaper --zoom $file && cp $file ~/.config/wall.png ;;
     #"w") xwallpaper --zoom $file && wal -ni $file && cp $file ~/.config/wall.png ;;
 

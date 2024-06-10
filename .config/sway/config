@@ -52,6 +52,7 @@ input "type:keyboard" {
   exec mako
   exec waybar
   exec foot -s
+  exec xrdb ~/dotfiles/.Xdefaults
   exec swww init
 
 # ░█▄▀▒██▀░▀▄▀░██▄░█░█▄░█░█▀▄░█░█▄░█░▄▀▒░▄▀▀
