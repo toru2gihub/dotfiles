@@ -65,7 +65,7 @@
 	default-result-background-corner-radius = 0
 
 	# Selection text
-	selection-color = #24acd4
+	selection-color = #d79921
 	selection-background = #00000000
 	selection-background-padding = 0
 	selection-background-corner-radius = 0

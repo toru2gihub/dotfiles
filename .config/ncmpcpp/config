@@ -72,11 +72,11 @@ seek_time = "5"
 header_visibility = "yes"
 statusbar_visibility = "yes"
 titles_visibility = "yes"
-progressbar_look =  "=>-"
+progressbar_look =  "=λ·"
 locked_screen_width_part = 30
 ask_for_locked_screen_width_part = no
 progressbar_elapsed_color = "white"
-now_playing_prefix = "> "
+now_playing_prefix = "λ "
 song_status_format = " $2%a $4⟫$3⟫ $8%t $4⟫$3⟫ $5%b "
 centered_cursor = "yes"
 display_bitrate = "no"

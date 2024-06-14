@@ -150,7 +150,7 @@
 #+begin_src emacs-lisp
 
 ;; Theme
-(load-theme 'ef-elea-dark t)
+(load-theme 'gruvbox-dark-hard t)
 
 (setq modus-themes-org-blocks 'gray-background)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/etc/themes")
@@ -290,12 +290,14 @@
     "b w" '(bookmark-save :wk "Save current bookmarks to bookmark file"))
 
   (user/leader-keys
-    "e" '(:ignore t :wk "Eshell/Eval/EWW")    
+    "e" '(:ignore t :wk "Eval/Export")    
     "e b" '(eval-buffer :wk "Evaluate elisp in buffer")
     "e e" '(eval-expression :wk "Evaluate and elisp expression")
     "e l" '(eval-last-sexp :wk "Evaluate elisp expression before point")
     "e r" '(eval-region :wk "Evaluate elisp in region")
-    "e w" '(eww :which-key "EWW emacs web wowser"))
+    "e c" '(export-org-to-pdf-and-cleanup :wk "Pdf + cleanup")
+    "e p" '(org-publish-project :wk "Org Publish Project")
+    "e e" '(org-export-dispatch :wk "Org Dispatch"))
   
   (user/leader-keys
     "i" '(:ignore t :wk "Insert")
@@ -306,7 +308,6 @@
     "i m" '(org-time-stamp :wk "Org timestamp")
     "i t" '(org-set-tags-command :wk "Org set tags")
     "i y" '(consult-yank-from-kill-ring :wk "Kill ring")
-    "i e" '(org-export-dispatch :wk "Org export")
     "i l" '(org-make-list :wk "Make automatic numerical lists")
     "i c" '(org-capture :wk "Capture")
     "i s" '(consult-yasnippet :wk "Insert snippet"))
@@ -702,6 +703,7 @@
 (require 'tempo)
 (require 'ox-md)
 (require 'ox-man)
+(require 'ox-publish)
 
 ;; Links org files with their IDs, not their file names
 (setq org-id-link-to-org-use-id t)
@@ -1012,10 +1014,60 @@
 
 #+end_src
 
+** 󰚧 Org-Publish.
+#+begin_src emacs-lisp
+(setq org-publish-project-alist
+      '(
+
+("org-notes"
+ :base-directory "~/pages/org/"
+ :base-extension "org"
+ :publishing-directory "~/pages/"
+ :recursive t
+ ;; :with-toc nil
+ ;; :with-author nil
+ ;; :section-numbers nil
+ :publishing-function org-html-publish-to-html
+ :headline-levels 4             ; Just the default for this project.
+ :auto-preamble t
+ )
+
+;; ("org-static"
+;;  :base-directory "~/pages/org/"
+;;  :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+;;  :publishing-directory "~/pages/"
+;;  :recursive t
+;;  :with-toc nil
+;;  :with-author nil
+;;  :section-numbers nil
+;;  :publishing-function org-publish-attachment
+;;  )
+
+("org" :components ("org-notes"))
+
+      ))
+
+(setq org-html-validation-link nil)
+(org-publish-all t)
+
+#+end_src
+
 ** 󰈔 Org-Refile.
 #+begin_src emacs-lisp
 
 (setq org-refile-targets '((org-agenda-files :maxlevel . 2)))
+
+#+end_src
+
+** 󰨥 Org-Babel.
+#+begin_src emacs-lisp
+
+(use-package org-auto-tangle
+  :defer t
+  :hook (org-mode . org-auto-tangle-mode)
+  :config
+  ;(setq org-auto-tangle-default t)
+  )
 
 #+end_src
 
@@ -1723,13 +1775,13 @@ folder, otherwise delete a word"
 
 (setq hl-todo-highlight-punctuation ":")
 (setq hl-todo-keyword-faces
-      '(("TODO"       . "#eeee00")
+      '(("TODO"       . "#ff4500")
         ("DONE"       . "#00ff00")
         ("CANCELLED"  . "#696969")
         ("PROJ"       . "#ffd700")
         ("PLAN"       . "#4169e1")
         ("NOTE"       . "#9400d3")
-        ("PERIODIC"   . "#FF4500")
+        ("PERIODIC"   . "#ffffff")
         ("DEADLINE"   . "#FF0000")))
 
 ;; Enable in org-mode hl-line-mode
