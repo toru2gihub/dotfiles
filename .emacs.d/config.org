@@ -1022,7 +1022,7 @@
 ("org-notes"
  :base-directory "~/pages/org/"
  :base-extension "org"
- :publishing-directory "~/pages/"
+ :publishing-directory "../"
  :recursive t
  ;; :with-toc nil
  ;; :with-author nil
