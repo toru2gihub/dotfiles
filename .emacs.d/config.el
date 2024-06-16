@@ -7,6 +7,7 @@
 
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
                          ("org" . "https://orgmode.org/elpa/")
+			     ("nongnu" . "https://elpa.nongnu.org/nongnu/")
                          ("elpa" . "https://elpa.gnu.org/packages/")))
 
 (package-initialize)
@@ -35,6 +36,10 @@
 
 ;; Enable mouse-support for the terminal-version
 (xterm-mouse-mode 1)
+
+; NIXOS
+(setenv "PATH" (concat (getenv "PATH") "/run/current-system/sw/bin"))
+(setq exec-path (append exec-path '("/run/current-system/sw/bin")))
 
 (setq display-buffer-alist
  '(
@@ -103,56 +108,15 @@
                            (setq-local electric-pair-inhibit-predicate
                                        `(lambda (c)
                                           (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c))))))
-(global-auto-revert-mode t)  ;; Automatically show changes if the file has changed
-(global-display-line-numbers-mode 1)
-(setq display-line-numbers-type 'relative)
-(global-visual-line-mode t)  ;; Enable truncated lines
-(scroll-bar-mode -1)         ;; Disable the scroll bar
-(menu-bar-mode 1)           ;; Disable the menu bar
-(tool-bar-mode 1)           ;; Disable the tool bar
-(setq tool-bar-style 'both)
-(setq org-edit-src-content-indentation 0) ;; Set src block automatic indent to 0 instead of 2.
-(setq redisplay-dont-pause t
-      scroll-margin 5
-      scroll-step 1
-      scroll-conservatively 10000
-      scroll-preserve-screen-position 1)
-
-(setenv "PATH" (concat (getenv "PATH") ":/nix/store/2pdl1pbmbjb85xwsd66dmnd5233bsj8d-system-path/bin"))
-(setq exec-path (append exec-path '("/nix/store/2pdl1pbmbjb85xwsd66dmnd5233bsj8d-system-path/bin")))
 
 (setq inhibit-startup-message t) ;doesnt show the default emacs startpage
 (setq inhibit-startup-screen t)
-;(setq initial-buffer-choice 'about-emacs)
-;(switch-to-buffer-other-window "*scratch*")
-
-;; (use-package dashboard
-;;   :ensure t
-;;   :init
-;;   (setq initial-buffer-choice 'dashboard-open)
-;;   (setq dashboard-set-footer nil)
-
-;;   (setq dashboard-icon-type 'all-the-icons) ;; use `all-the-icons' package
-;;   (setq dashboard-display-icons-p t) ;; display icons on both GUI and terminal
-;;   (setq dashboard-icon-type 'nerd-icons) ;; use `nerd-icons' package
-;;   (setq dashboard-set-heading-icons t)
-;;   (setq dashboard-set-file-icons t)
-
-;;   (setq dashboard-set-init-info t)
-;;    ;(setq dashboard-init-info "This is an init message!")
-;;    (setq dashboard-show-shortcuts t)
-;;    (setq dashboard-banner-logo-title "More Than a Text Editor")
-;;    (setq dashboard-startup-banner 'logo) ;; use standard emacs logo as banner
-;;   (setq dashboard-startup-banner "~/.emacs.d/img/dr.png")  ;; use custom image as banner
-;;   (setq dashboard-page-separator "\n\^L\n")
-;;   (setq dashboard-center-content t) ;; set to 't' for centered content
-;;   (setq dashboard-items '((recents  . 5)
-;;                        (bookmarks . 5)))
-;; :config
-;;   (dashboard-setup-startup-hook))
 
 ;; Theme
-(load-theme 'doom-one t)
+(load-theme 'gruvbox-dark-hard t)
+
+(setq modus-themes-org-blocks 'gray-background)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/etc/themes")
 
 ; Font
 (set-face-attribute 'default nil
@@ -161,27 +125,34 @@
 		    ;;:weight 'semilight
 		    )
 
+;; Transparency
+(set-frame-parameter nil 'alpha-background 95)
+(add-to-list 'default-frame-alist '(alpha-background . 95))
+
 (custom-set-faces
  `(org-checkbox ((t :box (:line-width 2 :color "gray"
            :style released-button)))))
 
-
-
-(setq modus-themes-org-blocks 'gray-background)
-(add-to-list 'custom-theme-load-path "~/.emacs.d/etc/themes")
-
-;; Transparency
-(set-frame-parameter nil 'alpha-background 97)
-(add-to-list 'default-frame-alist '(alpha-background . 97))
-
 ;; Blinking cursor
 (setq blink-cursor-mode nil)
 
-;; Buffers
-;(global-tab-line-mode 1)
+(global-auto-revert-mode t)  ;; Automatically show changes if the file has changed
+(setq display-line-numbers-type 'relative)
+(global-visual-line-mode t)  ;; Enable truncated lines
+(menu-bar-mode 1)           ;; Disable the menu bar
+(tool-bar-mode 1)           ;; Disable the tool bar
+(global-display-line-numbers-mode 1) ;; Enable global lines numbers
+(global-tab-line-mode -1) ;; Disable buffers like tabs
+(tab-bar-mode -1) ;; Disable tabs
+(scroll-bar-mode -1)         ;; Disable the scroll bar
+(setq tool-bar-style 'both)
+(setq org-edit-src-content-indentation 0) ;; Set src block automatic indent to 0 instead of 2.
+(setq redisplay-dont-pause t
+      scroll-margin 5
+      scroll-step 1
+      scroll-conservatively 10000
+      scroll-preserve-screen-position 1)
 
-;; Tabs
-;(tab-bar-mode 1)
 
 (global-prettify-symbols-mode t)
 
@@ -215,10 +186,10 @@
 ;; (set-face-attribute 'mode-line nil
 ;;                 :box '(:line-width 1 :color "white"))
 
-(setq display-time-day-and-date t
-      display-time-format "%a, %d-%m-%y %I:%M") ;; displays date
+;; (setq display-time-day-and-date t
+;;       display-time-format "%a, %d-%m-%y %I:%M") ;; displays date
 
-(display-time-mode 1) ;; displays current time
+(display-time-mode -1) ;; displays current time
 
 (setq display-time-default-load-average nil)
 (setq display-time-load-average nil)
@@ -270,16 +241,17 @@
     "b w" '(bookmark-save :wk "Save current bookmarks to bookmark file"))
 
   (user/leader-keys
-    "e" '(:ignore t :wk "Eshell/Eval/EWW")
+    "e" '(:ignore t :wk "Eval/Export")    
     "e b" '(eval-buffer :wk "Evaluate elisp in buffer")
     "e e" '(eval-expression :wk "Evaluate and elisp expression")
     "e l" '(eval-last-sexp :wk "Evaluate elisp expression before point")
     "e r" '(eval-region :wk "Evaluate elisp in region")
-    "e w" '(eww :which-key "EWW emacs web wowser"))
+    "e c" '(export-org-to-pdf-and-cleanup :wk "Pdf + cleanup")
+    "e p" '(org-publish-project :wk "Org Publish Project")
+    "e e" '(org-export-dispatch :wk "Org Dispatch"))
   
   (user/leader-keys
     "i" '(:ignore t :wk "Insert")
-    "i i" '(ispell :wk "Insert ispell")
     "i d" '(org-id-get-create :wk "Insert id")
     "i n" '(increment-number-at-point :wk "Increment numbers")
     "i o" '(org-schedule :wk "Org scheduled")
@@ -287,7 +259,6 @@
     "i m" '(org-time-stamp :wk "Org timestamp")
     "i t" '(org-set-tags-command :wk "Org set tags")
     "i y" '(consult-yank-from-kill-ring :wk "Kill ring")
-    "i e" '(org-export-dispatch :wk "Org export")
     "i l" '(org-make-list :wk "Make automatic numerical lists")
     "i c" '(org-capture :wk "Capture")
     "i s" '(consult-yasnippet :wk "Insert snippet"))
@@ -308,7 +279,6 @@
   (user/leader-keys
     "s" '(:ignore t :wk "Search")
     "s o" '(occur :wk "Occur")
-    "s s" '(consult-line :wk "Consult line")
     "s a" '(avy-goto-char :wk "Avy go to char")
     "s c" '(consult-buffer :wk "Consult global")
     "s r" '(replace-regexp :wk "Search & replace")
@@ -319,19 +289,10 @@
     "h b" '(describe-bindings :wk "Describe bindings")
     "h c" '(describe-char :wk "Describe character under cursor")
     "h d" '(:ignore t :wk "Emacs documentation")
-    "h d a" '(about-emacs :wk "About Emacs")
-    "h d d" '(view-emacs-debugging :wk "View Emacs debugging")
-    "h d f" '(view-emacs-FAQ :wk "View Emacs FAQ")
     "h d m" '(info-emacs-manual :wk "The Emacs manual")
-    "h d n" '(view-emacs-news :wk "View Emacs news")
-    "h d o" '(describe-distribution :wk "How to obtain Emacs")
-    "h d p" '(view-emacs-problems :wk "View Emacs problems")
-    "h d t" '(view-emacs-todo :wk "View Emacs todo")
-    "h d w" '(describe-no-warranty :wk "Describe no warranty")
     "h e" '(view-echo-area-messages :wk "View echo area messages")
     "h f" '(describe-function :wk "Describe function")
     "h F" '(describe-face :wk "Describe face")
-    "h g" '(describe-gnu-project :wk "Describe GNU Project")
     "h i" '(info :wk "Info")
     "h I" '(describe-input-method :wk "Describe input method")
     "h k" '(describe-key :wk "Describe key")
@@ -383,6 +344,7 @@
     "z p" '(hydra-personal-files/body :wk "Hydra Personal")
     "z r" '(hydra-OrgRoam/body :wk "Hydra Org Roam")
     "z i" '(hydra-index/body :wk "Hydra Index")
+    "z o" '(hydra-Timer/body :wk "Hydra Timer")
     "z t" '(hydra-toggle/body :wk "Hydra Toggle"))
 
 )
@@ -416,11 +378,20 @@
 (global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
 (global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
 
+(setq diary-file "~/pu/org/diary")
+
+(setq calendar-view-diary-initially-flag t
+      diary-number-of-entries 7
+      diary-display-function #'diary-fancy-display)
+(add-hook 'calendar-today-visible-hook 'calendar-mark-today)
+
+(setq org-agenda-include-diary t)
+
 (defun export-org-to-pdf-and-cleanup ()
   "Export current org file to PDF, delete generated .log and .tex files, and move PDF to a specific folder."
   (interactive)
   (let* ((org-file (buffer-file-name)) 
-         (pdf-folder "~/dc/craft-tools/mispdfs/") 
+         (pdf-folder "~/dc/") 
          (pdf-file (concat pdf-folder (file-name-base org-file) ".pdf")) 
          (default-directory (file-name-directory org-file))) ; Set default directory for export
     (org-latex-export-to-pdf) 
@@ -600,18 +571,27 @@
 (defalias 'id 'org-roam-update-org-id-locations)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(add-hook 'text-mode-hook 'abbrev-mode)
+(add-hook 'prog-mode-hook 'abbrev-mode)
+
+;(define-abbrev global-abbrev-table "" "")
+
+(setq ispell-dictionary "es")
+(setq ispell-personal-dictionary "~/.emacs.d/var/dictionary.org")
+
 ;; Org-directory
 (setq org-directory "~/pu/org/")
 
 (setq org-ellipsis "⤵")
 
 ;; Org images
-
 (setq org-startup-with-inline-images t)
-
 (setq org-image-actual-width (list 400))
 
 ;(setq org-M-RET-may-split-line nil)
+
+;; Org-timer
+(setq org-clock-sound "~/ms/Beats/Audios/bonk.wav")
 
 ;; Abre el org-link en una nueva ventana en vez de un split
 (setq org-link-frame-setup
@@ -623,12 +603,12 @@
 ;; Scratch buffer default > org-mode
 (setq initial-major-mode 'org-mode)
 
+;; REQUIRE
 (require 'org-id)
-
-;; Export
+(require 'tempo)
 (require 'ox-md)
 (require 'ox-man)
-
+(require 'ox-publish)
 
 ;; Links org files with their IDs, not their file names
 (setq org-id-link-to-org-use-id t)
@@ -667,10 +647,7 @@
   (set-face-attribute 'line-number nil :inherit 'fixed-pitch)
   (set-face-attribute 'line-number-current-line nil :inherit 'fixed-pitch)
 
-(setq org-agenda-files '("~/pu/org/todos.org"
-                           "~/pu/org/plans.org"
-                           "~/pu/org/aniversarios.org"
-                           "~/pu/org/periodic.org"))
+(setq org-agenda-files '("~/pu/org/agenda.org"))
 
 (setq org-log-done 'time) ;;put a timestamp when a TODO is done
 (setq org-agenda-compact-blocks t)
@@ -685,7 +662,9 @@
 
 ;; ORG TODO KEYWORDS
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "NOTE(n)" "PLAN(p)" "|" "CANCELLED(c@)" "DONE(d!)")))
+      '((sequence "TODO(t)" "PERIODIC(p)" "DEADLINE(l)" "NOTE(n)" "|" "CANCELLED(c@)" "DONE(d!)")))
+
+(setq org-deadline-warning-days 21)
 
 ;; BASE
 (use-package org-roam
@@ -915,15 +894,45 @@
 (setq org-capture-templates
       '(
 
-        ("t" "Todo" entry (file "~/pu/org/todos.org")
-         (file "~/.emacs.d/etc/templates/todo-template.txt"))
+        ("t" "Tarea" entry (file "~/pu/org/agenda.org")
+         (file "~/.emacs.d/etc/templates/agenda_template.txt"))
 
-        ("p" "Plan" entry (file "~/pu/org/plans.org")
-         (file "~/.emacs.d/etc/templates/plan-template.txt"))
+        ("d" "Deadline" entry (file "~/pu/org/agenda.org")
+         (file "~/.emacs.d/etc/templates/deadline_template.txt"))
 
         ))
 
+(setq org-publish-project-alist
+      '(
+
+("org-notes"
+ :base-directory "~/pages/org/"
+ :base-extension "org"
+ :publishing-directory "../"
+ :recursive t
+ ;; :with-toc nil
+ ;; :with-author nil
+ ;; :section-numbers nil
+ :publishing-function org-html-publish-to-html
+ :headline-levels 4             ; Just the default for this project.
+ :auto-preamble t
+ )
+
+("org" :components ("org-notes"))
+
+      ))
+
+(setq org-html-validation-link nil)
+;(org-publish-all t)
+
 (setq org-refile-targets '((org-agenda-files :maxlevel . 2)))
+
+(use-package org-auto-tangle
+  :defer t
+  :hook (org-mode . org-auto-tangle-mode)
+  :config
+  ;(setq org-auto-tangle-default t)
+  )
 
 (use-package toc-org
   :ensure t
@@ -931,16 +940,6 @@
   :init (add-hook 'org-mode-hook 'toc-org-enable))
 
 (setq toc-org-max-depth 3)
-
-(use-package org-bullets
-  :ensure t
-  :config)
-
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-
-(use-package org-download)
-
-(add-hook 'dired-mode-hook 'org-download-enable)
 
 (use-package evil
   :ensure t
@@ -985,6 +984,8 @@
 (setq confirm-kill-processes nil)
 (setq confirm-nonexistent-file-or-buffer nil)
 (set-buffer-modified-p nil)
+;; Auto-refresh dired on file change
+(add-hook 'dired-mode-hook 'auto-revert-mode)
 
 (use-package dired-open
   :ensure t
@@ -999,8 +1000,8 @@
                                 ("mkv" . "mpv")
                                 ("gif" . "mpv")
                                 ("webm" . "mpv")
-                                ("mp4" . "mpv")
-                                ("pdf" . "zathura"))))
+                                ("mp4" . "mpv"))))
+                                ;("pdf" . "zathura")
 
 (add-hook 'dired-mode-hook
           (lambda ()
@@ -1050,8 +1051,6 @@ folder, otherwise delete a word"
           (zap-up-to-char (- arg) ?/)
         (delete-minibuffer-contents))
       (backward-kill-word arg)))
-
-(use-package vundo)
 
 (use-package consult
   ;; Replace bindings. Lazily loaded due by `use-package'.
@@ -1124,174 +1123,6 @@ folder, otherwise delete a word"
   (setq consult-narrow-key "<") ;; "C-+"
 
 )
-
-(add-hook 'text-mode-hook 'abbrev-mode)
-(add-hook 'prog-mode-hook 'abbrev-mode)
-
-;(define-abbrev global-abbrev-table "" "")
-
-(use-package hydra
-  :ensure t)
-
-(use-package major-mode-hydra
-  :after hydra)
-
-(pretty-hydra-define hydra-personal-files
-  (:hint nil :color teal :quit-key "q")
-
-  ("Agenda"
-   (("t" (find-file "~/pu/org/todos.org") "Tareas")
-    ("s" (find-file "~/pu/org/periodic.org") "Periodicos")
-    ("a" (find-file "~/pu/org/aniversarios.org") "Aniversarios")
-    ("p" (find-file "~/pu/org/plans.org") "Planes"))
-
-   "Personal"
-   (("r" (find-file "~/pu/org/rutina.org") "Rutina")
-    ("f" (find-file "~/pu/org/1.2.1_Personal_Rutina_Finanzas.org") "Personal y finanzas"))))
-
-(global-set-key (kbd "<f1>") 'hydra-personal-files/body)
-
-(pretty-hydra-define hydra-OrgRoam
-  (:color amaranth :quit-key "q")
-
-  ("Org Roam"
-   (("f" org-roam-node-find "Find node")
-    ("c" org-roam-capture "Capture node")
-    ("t" org-roam-buffer-toggle "Toggle buffer node")
-    ("u" org-roam-ui-open "Open Roam UI")
-    ("d" org-roam-dailies-capture-date "Capture date node")
-    ("i" org-roam-node-insert "Insert node"))
-
-  "Consult + Roam"
-   (("l" consult-org-roam-foward-links "Fowardlinks")
-    ("b" consult-org-roam-backlinks "Backlinks")
-    ("s" consult-org-roam-search "Search in nodes"))))
-
-(global-set-key (kbd "<f4>") 'hydra-OrgRoam/body)
-
-(pretty-hydra-define hydra-toggle
-  (:color amaranth :quit-key "q")
-
-  ("Basic"
-   (("n" display-line-numbers-mode "Line Numbers" :toggle t)
-    ("r" rainbow-mode "Rainbow Mode" :toggle t)
-    ("o" olivetti-mode "Olivetti Mode" :toggle t))
-
-   "Highlight"
-   (("l" hl-line-mode "Hl-Line" :toggle t)
-    ("t" hl-todo-mode "Hl-TODO" :toggle t))))
-
-(global-set-key (kbd "<f2>") 'hydra-toggle/body)
-
-(pretty-hydra-define hydra-index
-  (:hint nil :color teal :quit-key "q")
-
-  ("Notas"
-   (("i" (find-file "~/pu/org/1.0_Index_Index.org") "Index Index")
-    ("e" (find-file "~/pu/org/1.1_Estudio_Index.org") "Estudio Index")
-    ("p" (find-file "~/pu/org/1.2_Personal_Index.org") "Personal Index")
-    ("f" (find-file "~/pu/org/1.3_Craft_Index.org") "Craft Index")
-    ("t" (find-file "~/pu/org/1.4_Trabajo_Index.org") "Trabajo Index")
-    ("b" (find-file "~/pu/org/1.5_Baile_Index.org") "Baile Index"))
-
-   "Libros"
-   (("z" (find-file "~/pu/org/2.0_Zaralia_Index.org") "Zaralia Index")
-    ("m" (find-file "~/pu/org/2.0_Mindbreak_Index.org") "Mindbreak Index")
-    ("k" (find-file "~/pu/org/2.0_Kurai_Sekai_Index.org") "Kurai Sekai Index")
-    ("c" (find-file "~/pu/org/2.0_Crazy_Mythos_Index.org") "Crazy Mythos Index"))))
-
-(global-set-key (kbd "<f3>") 'hydra-index/body)
-
-;; (defhydra hydra-personal (:color blue)
-;;   "Hydra Personal"
-;;   ("r" (find-file "~/pu/org/rutina.org") "Rutina" :color red)
-;;   ("f" (find-file "~/pu/org/1.2.1_Finanzas_Personales.org") "Finanzas")
-;;   ("m" (find-file "~/pu/org/1.2.1_Menu_personal.org") "Menu Personal"))
-
-;; (global-set-key (kbd "<f1>") 'hydra-personal/body)
-
-;; (defhydra hydra-agenda (:color blue)
-;;   "Hydra Personal"
-;;   ("f" (find-file "~/pu/org/todos.org") "Tareas")
-;;   ("r" (find-file "~/pu/org/periodic.org") "Periodicos")
-;;   ("m" (find-file "~/pu/org/plans.org") "Planes"))
-
-;; (global-set-key (kbd "<f2>") 'hydra-agenda/body)
-
-;; SUPER HYDRAS
-
-;; (defhydra hydra-directory (:color blue)
-;;   "Directory Hydra"
-;;   ("s" (find-file "~/.scripts/") "Scripts")
-;;   ("c" (find-file "~/dotfiles/.config/") "Config")
-;;   ("e" (find-file "~/dotfiles/.emacs.d/") "Emacs.d"))
-
-;; (global-set-key (kbd "C-c 2") 'hydra-directory/body)
-
-;; (defhydra hydra-zoom (:color red)
-;;   "Hydra Zoom"
-;;   ("-" text-scale-decrease "Out")
-;;   ("+" text-scale-increase "In"))
-
-;; (global-set-key (kbd "C-c 3") 'hydra-zoom/body)
-
-;; (defun with-alltheicon (icon str &optional height v-adjust face)
-;;   "Display an icon from all-the-icon."
-;;   (s-concat (all-the-icons-alltheicon icon :v-adjust (or v-adjust 0) :height (or height 1) :face face) " " str))
-
-;; (defun with-faicon (icon str &optional height v-adjust face)
-;;   "Display an icon from Font Awesome icon."
-;;   (s-concat (all-the-icons-faicon icon :v-adjust (or v-adjust 0) :height (or height 1) :face face) " " str))
-
-;; (defun with-fileicon (icon str &optional height v-adjust face)
-;;   "Display an icon from the Atom File Icons package."
-;;   (s-concat (all-the-icons-fileicon icon :v-adjust (or v-adjust 0) :height (or height 1) :face face) " " str))
-
-;; (defun with-octicon (icon str &optional height v-adjust face)
-;;   "Display an icon from the GitHub Octicons."
-;;   (s-concat (all-the-icons-octicon icon :v-adjust (or v-adjust 0) :height (or height 1) :face face) " " str))
-
-;; (pretty-hydra-define hydra-personal-files
-;;   (:hint nil :color teal :quit-key "q" :title (with-faicon "book" "Open org Agenda files" 1 -0.05))
-
-;;   ("Agenda"
-;;    (("t" (find-file "~/pu/org/todos.org") "Tareas")
-;;     ("s" (find-file "~/pu/org/periodic.org") "Periodicos")
-;;     ("p" (find-file "~/pu/org/plans.org") "Planes"))
-
-;;    "Personal"
-;;    (("r" (find-file "~/pu/org/rutina.org") "Rutina")
-;;     ("f" (find-file "~/pu/org/1.2.1_Finanzas_Personales.org") "Finanzas")
-;;     ("m" (find-file "~/pu/org/1.2.1_Menu_personal.org") "Menu personal"))))
-
-;; (global-set-key (kbd "<f2>") 'hydra-personal-files/body)
-
-;; ;; (pretty-hydra-define hydra-launcher
-;; ;;   (:hint nil :color teal :quit-key "q" :title (with-octicon "rocket" "Hydra Launcher" 1 -0.05))
-;; ;;   ("Launch"
-
-;; ;;    (("h" man "man")
-;; ;;  ("j" (browse-url "https://jpacheco.xyz") "Jpacheco")
-;; ;;  ("w" (browse-url "http://www.emacswiki.org/") "emacswiki")
-;; ;;  ("g" (browse-url "http://www.google.com") "Google")
-;; ;;  ("d" (browse-url "https://autoliv-mx.leading2lean.com/") "L2L")
-;; ;;  ("s" shell "shell"))))
-
-;; ;; (global-set-key (kbd "<f1>") 'hydra-launcher/body)
-
-;; ;; (pretty-hydra-define hydra-yasnippet 
-;; ;;   (:nit nil :color teal :quit-key "q" :title (with-octicon "code" "Yasnippet" 1 -0.05))
-
-;; ;;   ("Yasnippet Menu"
-;; ;;    (("i" yas-insert-snippet)
-;; ;;  ("e" yas-visit-snippet-file)
-;; ;;  ("m" yas-minor-mode)
-;; ;;  ("n" yas-new-snippet))))
-
-;; ;; (global-set-key (kbd "<f2>") 'hydra-yasnippet/body)
-
-(use-package avy
-  :ensure t)
 
 (use-package corfu
   :ensure t
@@ -1378,15 +1209,95 @@ folder, otherwise delete a word"
   ;;(add-to-list 'completion-at-point-functions #'cape-line)
 )
 
-;; (use-package ledger-mode
-;;    :ensure t)
+(use-package avy
+  :ensure t)
 
-;; (add-to-list 'load-path "~/.emacs.d/config/ledger-mode")
-;; (require 'ledger-mode)
+(use-package hydra
+  :ensure t)
 
-;; (use-package flycheck-ledger
-;;   :ensure t
-;;   :after ledger-mode)
+(use-package major-mode-hydra
+  :after hydra)
+
+(pretty-hydra-define hydra-personal-files
+  (:hint nil :color teal :quit-key "q")
+
+  ("Agenda"
+   (("t" (find-file "~/pu/org/todos.org") "Tareas")
+    ("s" (find-file "~/pu/org/periodic.org") "Periodicos")
+    ("a" (find-file "~/pu/org/aniversarios.org") "Aniversarios"))
+
+   "Personal"
+   (("r" (find-file "~/pu/org/rutina.org") "Rutina")
+    ("f" (find-file "~/pu/org/1.2.1_Personal_Rutina_Finanzas.org") "Personal y finanzas"))))
+
+(global-set-key (kbd "<f1>") 'hydra-personal-files/body)
+
+(pretty-hydra-define hydra-OrgRoam
+  (:color amaranth :quit-key "q")
+
+  ("Org Roam"
+   (("f" org-roam-node-find "Find node")
+    ("c" org-roam-capture "Capture node")
+    ("t" org-roam-buffer-toggle "Toggle buffer node")
+    ("u" org-roam-ui-open "Open Roam UI")
+    ("d" org-roam-dailies-capture-date "Capture date node")
+    ("i" org-roam-node-insert "Insert node"))
+
+  "Consult + Roam"
+   (("l" consult-org-roam-foward-links "Fowardlinks")
+    ("b" consult-org-roam-backlinks "Backlinks")
+    ("s" consult-org-roam-search "Search in nodes"))))
+
+(global-set-key (kbd "<f4>") 'hydra-OrgRoam/body)
+
+(pretty-hydra-define hydra-toggle
+  (:color amaranth :quit-key "q")
+
+  ("Basic"
+   (("n" display-line-numbers-mode "Line Numbers" :toggle t)
+    ("r" rainbow-mode "Rainbow Mode" :toggle t)
+    ("o" olivetti-mode "Olivetti Mode" :toggle t))
+
+   "Highlight"
+   (("l" hl-line-mode "Hl-Line" :toggle t)
+    ("t" hl-todo-mode "Hl-TODO" :toggle t))))
+
+(global-set-key (kbd "<f2>") 'hydra-toggle/body)
+
+(pretty-hydra-define hydra-index
+  (:hint nil :color teal :quit-key "q")
+
+  ("Notas"
+   (("i" (find-file "~/pu/org/1.0_Index_Index.org") "Index Index")
+    ("e" (find-file "~/pu/org/1.1_Estudio_Index.org") "Estudio Index")
+    ("p" (find-file "~/pu/org/1.2_Personal_Index.org") "Personal Index")
+    ("f" (find-file "~/pu/org/1.3_Craft_Index.org") "Craft Index")
+    ("t" (find-file "~/pu/org/1.4_Trabajo_Index.org") "Trabajo Index")
+    ("b" (find-file "~/pu/org/1.5_Baile_Index.org") "Baile Index"))
+
+   "Libros"
+   (("z" (find-file "~/pu/org/2.0_Zaralia_Index.org") "Zaralia Index")
+    ("m" (find-file "~/pu/org/2.0_Mindbreak_Index.org") "Mindbreak Index")
+    ("k" (find-file "~/pu/org/2.0_Kurai_Sekai_Index.org") "Kurai Sekai Index")
+    ("c" (find-file "~/pu/org/2.0_Crazy_Mythos_Index.org") "Crazy Mythos Index"))))
+
+(global-set-key (kbd "<f3>") 'hydra-index/body)
+
+(pretty-hydra-define hydra-Timer
+  (:color amaranth :quit-key "q")
+
+  ("Org-Timer"
+   (("s" org-timer-set-timer "Set a Timer")
+    ("p" org-timer-pause-or-continue "Pause/continue a timer")
+    ("k" org-timer-stop "Kill a timer"))))
+
+(global-set-key (kbd "<f5>") 'hydra-Timer/body)
+
+(use-package olivetti)
+
+(setq olivetti-body-width 100)
+
+(use-package vundo)
 
 (use-package which-key
   :ensure t
@@ -1408,15 +1319,6 @@ folder, otherwise delete a word"
         which-key-allow-imprecise-window-fit nil
         which-key-separator " > " ))
 
-(setq diary-file "~/pu/org/diary")
-
-(setq calendar-view-diary-initially-flag t
-      diary-number-of-entries 7
-      diary-display-function #'diary-fancy-display)
-(add-hook 'calendar-today-visible-hook 'calendar-mark-today)
-
-(setq org-agenda-include-diary t)
-
 (setq-default abbrev-mode 1)
 
 (use-package yasnippet
@@ -1429,40 +1331,6 @@ folder, otherwise delete a word"
 (yas-reload-all)
 
 (use-package consult-yasnippet)
-
-(setq ispell-dictionary "es")
-(setq ispell-personal-dictionary "~/.emacs.d/var/dictionary.org")
-
-(use-package no-littering)
-
-;; no-littering doesn't set this by default so we must place
-;; auto save files in the same path as it uses for sessions
-(setq auto-save-file-name-transforms
-      `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
-
-(use-package nix-mode
-  :mode "\\.nix\\'")
-
-(use-package solaire-mode)
-
-(setq solaire-mode t)
-(solaire-global-mode +1)
-
-;; (use-package markdown-mode
-;;   :ensure t
-;;   :mode ("README\\.md\\'" . gfm-mode)
-;;   :init (setq markdown-command "multimarkdown")
-;;          ("C-c C-e" . markdown-do))
-
-(use-package highlight-indent-guides
-  :config
-    (setq highlight-indent-guides-method 'character)
-    (setq highlight-indent-guides-auto-enabled nil)
-
-    (set-face-background 'highlight-indent-guides-odd-face "darkgray")
-    (set-face-background 'highlight-indent-guides-even-face "dimgray")
-    (set-face-foreground 'highlight-indent-guides-character-face "#458588")
-    :init (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
 
 (use-package all-the-icons
   :ensure t
@@ -1487,6 +1355,52 @@ folder, otherwise delete a word"
 
 ;; (setq nerd-icons-dired-mode t)
 
+(use-package auctex)
+
+(use-package tex
+  :defer t
+  :ensure auctex
+  :mode
+  ("\\.tex\\'" . latex-mode)
+  :init (add-hook 'latex-mode-hook
+                  (lambda ()  (interactive) (outline-minor-mode)
+                    (setq-local page-delimiter "\\\\section\\**{")
+                    (setq-local outline-regexp "\\\\\\(sub\\)*section\\**{")
+                    (outline-hide-sublevels 3)
+                    ))
+  :defines (TeX-auto-save
+            TeX-parse-self
+            TeX-electric-escape
+            TeX-PDF-mode
+            TeX-source-correlate-method
+            TeX-newline-function
+            TeX-view-program-list
+            TeX-view-program-selection
+            TeX-mode-map))
+
+(use-package cdlatex)
+(add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)   ; with AUCTeX LaTeX mode
+
+(use-package nix-mode
+  :mode "\\.nix\\'")
+
+(use-package no-littering)
+
+;; no-littering doesn't set this by default so we must place
+;; auto save files in the same path as it uses for sessions
+(setq auto-save-file-name-transforms
+      `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
+
+(use-package highlight-indent-guides
+  :config
+    (setq highlight-indent-guides-method 'character)
+    (setq highlight-indent-guides-auto-enabled nil)
+
+    (set-face-background 'highlight-indent-guides-odd-face "darkgray")
+    (set-face-background 'highlight-indent-guides-even-face "dimgray")
+    (set-face-foreground 'highlight-indent-guides-character-face "#458588")
+    :init (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
+
 (use-package rainbow-mode)
 
 ;; (add-hook 'text-mode-hook (lambda () (rainbow-mode t)))
@@ -1507,10 +1421,6 @@ folder, otherwise delete a word"
   :init
   (marginalia-mode))
 
-(use-package olivetti)
-
-(setq olivetti-body-width 100)
-
 (use-package flycheck
   :ensure t
   :defer t
@@ -1524,61 +1434,14 @@ folder, otherwise delete a word"
 
 (setq hl-todo-highlight-punctuation ":")
 (setq hl-todo-keyword-faces
-      '(("TODO"       . "#FF0000")
+      '(("TODO"       . "#ff4500")
         ("DONE"       . "#00ff00")
         ("CANCELLED"  . "#696969")
-        ("NOTE"       . "#ffd700")
-        ("REVIEW"     . "#A020F0")
-        ("PERIODIC"   . "#FF4500")
-        ("PLAN"       . "#1E90FF")))
+        ("PROJ"       . "#ffd700")
+        ("PLAN"       . "#4169e1")
+        ("NOTE"       . "#9400d3")
+        ("PERIODIC"   . "#ffffff")
+        ("DEADLINE"   . "#FF0000")))
 
 ;; Enable in org-mode hl-line-mode
 (add-hook 'org-mode-hook #'(lambda () (interactive) (hl-line-mode 1)))
-
-;; (use-package fireplace
-;;   :ensure t
-;;   :config)
-
-;; (use-package org-drill
-;;   :config (progn
-;;             (add-to-list 'org-modules 'org-drill)
-;;             (setq org-drill-add-random-noise-to-intervals-p t)
-;;             (setq org-drill-hint-separator "||")
-;;             (setq org-drill-left-cloze-delimiter "<[")
-;;             (setq org-drill-right-cloze-delimiter "]>")
-;;             (setq org-drill-learn-fraction 0.25)
-;;             (setq org-drill-use-visible-cloze-face-p t) ;;cloze-deleted text show special font
-;;             (setq org-drill-hide-item-headings-p t) ;; item headings made invisible while each item is being tested
-;;             (setq org-drill-maximum-items-per-session 40) ;; number of review items
-;;              ;(setq org-drill-save-buffers-after-drill-sessions-p nil) ;; prompted to save all unsaved buffers at the end of a drill session
-;;             (setq org-drill-maximum-duration 10) ;; minutes
-;;             (setq org-drill-overdue-interval-factor 1.1) ;; cannot be less than 1.0
-;;             (setq org-drill-days-before-old 7) ;; inter-repetition interval of 10 days or less
-;;             (setq org-drill-adjust-intervals-for-early-and-late-repetitions-p t)
-;;             (setq org-drill-learn-fraction 0.45)   ; change the value as desired
-;;             (setq org-drill-directory "/media/tomb/org/drill")))
-
-;; (use-package emms
-;;     :commands emms
-;;     :bind (("C-c m n" . emms-next)
-;;            ("C-c m p" . emms-previous)
-;;            ("C-c m b" . emms-smart-browse)
-;;            ("C-c m l" . emms-playlist-mode-go)
-;;            ("C-c m SPC" . emms-pause)
-;;            ("C-c m a" . emms-add-directory-tree)
-;;            ("C-c m s s" . emms-browser-search-by-names)
-;;            ("C-c m u" . emms-player-mpd-update-all-reset-cache))
-;;     :config
-;;     (require 'emms-setup)
-;;     (require 'emms-player-mpd)
-;;     (emms-standard)
-;;     (emms-default-players)
-;;     (setq emms-mode-line-format "♫ %s ")
-;;     (setq emms-player-list '(emms-player-mpd))
-;;     (setq emms-player-mpd-server-name "localhost")
-;;     (setq emms-player-mpd-server-port "6600"))
-
-;; (use-package page-break-lines
-;;   :ensure t)
-
-;; (setq page-break-lines-mode t)

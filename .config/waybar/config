@@ -18,7 +18,7 @@
 
     // Choose the order of the modules
 
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
+    "modules-left": ["hyprland/workspaces", "custom/media"],
 
     "modules-center": ["clock"],
 

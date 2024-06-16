@@ -45,7 +45,7 @@ case $chosen in
         ;;
 
     $logout)
-  pkill sway
+  pkill Hyprland
         ;;
 
     $suspend)
