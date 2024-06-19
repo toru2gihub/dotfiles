@@ -54,28 +54,37 @@ button:hover {
 #workspaces button:hover {
     
     /* background: rgba(0, 0, 0, 0.2); */
+    color: #ffffff;
 
 }
 
 #workspaces button.focused {
 
     /* background-color: rgba(0,0,0,0.5); */
+    color: #ffffff;
+    background: #ff0000;
 
-    box-shadow: inset 0 -3px #d79921;
+    box-shadow: inset 0 -3px #ff0000;
 }
 
 #workspaces button.urgent {
 
-    background-color: #d79921;
+    background-color: #ff0000;
     
 /*     background-color: #cc241d; */
 } 
 
+#workspaces button.active {
+    background-color: transparent;
+    color: #ff0000;
+    box-shadow: #ff0000;
+}
+
 #mode {
     background-color: #64727D;
-     border-bottom: 3px solid #d79921; 
+     border-bottom: 3px solid #ff0000; 
 
-     /* border-bottom: 3px solid #d79921; */
+     /* border-bottom: 3px solid #ff0000; */
 
 }
 
@@ -134,7 +143,7 @@ label:focus {
 
     /* color: #cc241d; */
 
-   color: #d79921;
+   color: #ff0000;
 }
 
 #custom-recorder {
@@ -143,7 +152,7 @@ label:focus {
 
  /* color:#fb4934; */
 
-   color: #d79921;
+   color: #ff0000;
 }
 
 #memory {
@@ -152,7 +161,7 @@ label:focus {
 
     /* color: #98971a; */
 
-   color: #d79921;
+   color: #ff0000;
 
 
 }
@@ -216,9 +225,9 @@ label:focus {
 
     /* background: rgba(0, 0, 0, 0.2); */
 
-   /* color: #d79921; */
+   /* color: #ff0000; */
 
-   color: #d79921;
+   color: #ff0000;
 
 }
 

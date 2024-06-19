@@ -9,6 +9,7 @@
 *  Overall
 ** 󱜥 Scripts. 
 - Require packages to bring to the emacs config
+#+name: scripts block
 #+begin_src emacs-lisp
 
 (add-to-list 'load-path "~/.emacs.d/config/")
@@ -20,6 +21,7 @@
 
 ** 󰏖 Package Manager. 
 - My package manager
+#+name: package manager block
 #+begin_src emacs-lisp
 
 (require 'package)
@@ -44,6 +46,7 @@
 
 ** 󱁤 Settings.
 - Overall settings
+#+name: settings block
 #+begin_src emacs-lisp
 
 (setq default-directory "~/")
@@ -138,6 +141,7 @@
 
 ** 󰕮 Dashboard
 - The startpage/dashboard
+#+name: dashboard block
 #+begin_src emacs-lisp
 
 (setq inhibit-startup-message t) ;doesnt show the default emacs startpage
@@ -147,10 +151,11 @@
 
 ** 󰔎 Theming.
 - My colors and theme
+#+name: theming block
 #+begin_src emacs-lisp
 
 ;; Theme
-(load-theme 'gruvbox-dark-hard t)
+(load-theme 'doom-badger t)
 
 (setq modus-themes-org-blocks 'gray-background)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/etc/themes")
@@ -206,6 +211,7 @@
 
 ** 󱖫 Modeline.
 - The "status-bar"
+#+name: modeline block
 #+begin_src emacs-lisp
 
  (use-package simple-modeline
@@ -241,6 +247,7 @@
 
 ** 󰌌 Keybindings.
 - Keybindings with the package General
+#+name: keybindings block
 #+begin_src emacs-lisp
 
 (use-package general
@@ -361,6 +368,7 @@
     "t" '(:ignore t :wk "Toggle")
     "t c" '(comment-line :wk "Toggle comment lines")
     "t v" '(vundo :wk "Vundo")
+    "t d" '(org-todo :wk "Org-todo")
     "t s" '(toggle-org-buffer :wk "New scratch buffer")
     "t o" '(olivetti-mode :wk "Toggle olivetti-mode")
     "t i" '(org-toggle-inline-images :wk "Toggle images in org")
@@ -399,7 +407,9 @@
 )
 
 #+end_src
+
 ** 󰙱 Eglot
+#+name: eglot block
 #+begin_src
 
 (add-hook 'LaTeX-mode-hook 'eglot-ensure)
@@ -409,6 +419,7 @@
 
 ** 󰧺 Bindkey.
 - Using the built-in package "bind-key"
+#+name: bindkey block
 #+begin_src emacs-lisp
 
 (require 'bind-key)
@@ -443,6 +454,7 @@
 #+end_src
 
 ** 󰃭 Diary & Calendar.
+#+name: diary & calendar block
 #+begin_src emacs-lisp
 
 (setq diary-file "~/pu/org/diary")
@@ -457,6 +469,7 @@
 #+end_src
 
 ** 󰛢 Functions/Hooks.
+#+name: functions & hooks block
 #+begin_src emacs-lisp
 
 (defun export-org-to-pdf-and-cleanup ()
@@ -639,6 +652,7 @@
 
 ** 󰑕 Defalias.
 - Aliases
+#+name: defalias block
 #+begin_src emacs-lisp
 
 (defalias 'lp 'org-latex-export-to-pdf)
@@ -652,6 +666,7 @@
 #+end_src
 
 ** 󰏶 Abbrev.
+#+name: abbrev block
 #+begin_src emacs-lisp
 
 (add-hook 'text-mode-hook 'abbrev-mode)
@@ -662,6 +677,7 @@
 #+end_src
 
 ** 󰗊 Ispell.
+#+name: ispell block
 #+begin_src emacs-lisp
 
 (setq ispell-dictionary "es")
@@ -672,6 +688,7 @@
 *  Org
 ** 󱗂 Settings.
 - Org related modules & org settings
+#+name: org settings block
 #+begin_src emacs-lisp
 
 ;; Org-directory
@@ -745,6 +762,7 @@
 #+end_src
 
 **  Org-Agenda.
+#+name: org-agenda block
 #+begin_src emacs-lisp
 
 (setq org-agenda-files '("~/pu/org/agenda.org"))
@@ -769,6 +787,7 @@
 #+end_src
 
 ** 󰧑 Org-Roam.
+#+name: org-roam block
 #+begin_src emacs-lisp
 
 ;; BASE
@@ -999,6 +1018,7 @@
 #+end_src
 
 ** 󰜃 Org-Capture.
+#+name: org-capture block
 #+begin_src emacs-lisp
 
 (setq org-capture-templates
@@ -1010,11 +1030,15 @@
         ("d" "Deadline" entry (file "~/pu/org/agenda.org")
          (file "~/.emacs.d/etc/templates/deadline_template.txt"))
 
+        ("i" "Inbox" entry (file "~/dc/inbox.org")
+         (file "~/.emacs.d/etc/templates/inbox_template.txt"))
+
         ))
 
 #+end_src
 
 ** 󰚧 Org-Publish.
+#+name: org-publish block
 #+begin_src emacs-lisp
 
 (setq org-publish-project-alist
@@ -1043,6 +1067,7 @@
 #+end_src
 
 ** 󰈔 Org-Refile.
+#+name: org-refile block
 #+begin_src emacs-lisp
 
 (setq org-refile-targets '((org-agenda-files :maxlevel . 2)))
@@ -1050,6 +1075,7 @@
 #+end_src
 
 ** 󰨥 Org-Babel.
+#+name: org-babel block
 #+begin_src emacs-lisp
 
 (use-package org-auto-tangle
@@ -1062,6 +1088,7 @@
 #+end_src
 
 ** 󱖫 Org-Toc.
+#+name: org-toc block
 #+begin_src emacs-lisp
 
 (use-package toc-org
@@ -1076,6 +1103,7 @@
 * 󰋜 Active Pkgs
 
 **  Evil-Mode.
+#+name: evil-mode block
 #+begin_src emacs-lisp
 
 (use-package evil
@@ -1114,6 +1142,7 @@
 #+end_src
 
 ** 󰉋 Dired.
+#+name: dired block
 #+begin_src emacs-lisp
 
 (setq dired-clean-confirm-killing-deleted-buffers nil)
@@ -1140,7 +1169,7 @@
                                 ("mp3" . "mpv")
                                 ("ogg" . "mpv")
                                 ("mkv" . "mpv")
-                                ("gif" . "mpv")
+                                ("gif" . "nsxiv -a")
                                 ("webm" . "mpv")
                                 ("mp4" . "mpv"))))
                                 ;("pdf" . "zathura")
@@ -1160,6 +1189,7 @@
 #+end_src
 
 **  Vertico.
+#+name: vertico block
 #+begin_src emacs-lisp
 
 (use-package vertico
@@ -1202,6 +1232,7 @@ folder, otherwise delete a word"
 #+end_src
 
 ** 󰈈 Consult.
+#+name: consult block
 #+begin_src emacs-lisp
 
 (use-package consult
@@ -1279,6 +1310,7 @@ folder, otherwise delete a word"
 #+end_src
 
 ** 󱦟 Corfu & Cape.
+#+name: corfu & cape block
 #+begin_src emacs-lisp
 
 (use-package corfu
@@ -1369,6 +1401,7 @@ folder, otherwise delete a word"
 #+end_src
 
 ** 󰖇 Avy.
+#+name: avy block
 #+begin_src emacs-lisp
 
 (use-package avy
@@ -1377,6 +1410,7 @@ folder, otherwise delete a word"
 #+end_src
 
 **  Hydra.
+#+name: hydra block
 #+begin_src emacs-lisp
 
 (use-package hydra
@@ -1464,6 +1498,7 @@ folder, otherwise delete a word"
 #+end_src
 
 **  Olivetti.
+#+name: olivetti block
 #+begin_src emacs-lisp
 
 (use-package olivetti)
@@ -1473,6 +1508,7 @@ folder, otherwise delete a word"
 #+end_src
 
 ** 󰙅 Vundo.
+#+name: vundo block
 #+begin_src emacs-lisp
 
 (use-package vundo)
@@ -1480,6 +1516,7 @@ folder, otherwise delete a word"
 #+end_src
 
 ** 󰺴 Which-key.
+#+name: which-key block
 #+begin_src emacs-lisp
 
 (use-package which-key
@@ -1504,6 +1541,7 @@ folder, otherwise delete a word"
 #+end_src
 
 ** 󰔣 Snippets.
+#+name: snippets block
 #+begin_src emacs-lisp
 
 (setq-default abbrev-mode 1)
@@ -1525,6 +1563,7 @@ folder, otherwise delete a word"
 *  Passive Pkgs
 
 **  All-the-icons.
+#+name: all-the-icons block
 #+begin_src emacs-lisp
 
 (use-package all-the-icons
@@ -1553,6 +1592,7 @@ folder, otherwise delete a word"
 #+end_src
 
 **  AucteX.
+#+name: auctex block
 #+begin_src emacs-lisp
 
 (use-package auctex)
@@ -1584,6 +1624,7 @@ folder, otherwise delete a word"
 #+end_src
 
 ** 󱄅 Nix-mode.
+#+name: nix-mode block
 #+begin_src emacs-lisp
 
 (use-package nix-mode
@@ -1592,6 +1633,7 @@ folder, otherwise delete a word"
 #+end_src
 
 **  No-littering.
+#+name: No-littering block
 #+begin_src emacs-lisp
 
 (use-package no-littering)
@@ -1604,6 +1646,7 @@ folder, otherwise delete a word"
 #+end_src
 
 **  highlight-indent-guides.
+#+name: highlight-indent-guides block
 #+begin_src emacs-lisp
 
 (use-package highlight-indent-guides
@@ -1619,6 +1662,7 @@ folder, otherwise delete a word"
 #+end_src
 
 ** 󰵼 Rainbow modes.
+#+name: rainbow-modes block
 #+begin_src emacs-lisp
 
 (use-package rainbow-mode)
@@ -1636,6 +1680,7 @@ folder, otherwise delete a word"
 #+end_src
 
 **  Marginalia.
+#+name: marginalia block
 #+begin_src emacs-lisp
 
 (use-package marginalia
@@ -1649,6 +1694,7 @@ folder, otherwise delete a word"
 #+end_src
 
 ** 󰓆 Flycheck.
+#+name: flycheck block
 #+begin_src emacs-lisp
 
 (use-package flycheck
@@ -1660,6 +1706,7 @@ folder, otherwise delete a word"
 #+end_src
 
 ** Hl-TODO.
+#+name: hl-TODO block
 #+begin_src emacs-lisp
 
 (use-package hl-todo

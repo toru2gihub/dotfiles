@@ -36,9 +36,10 @@ input {
     kb_options =
     kb_rules =
 
-    follow_mouse = 1
+    follow_mouse = true
+    mouse_refocus = true
 
-    sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+    sensitivity = 1.0 # -1.0 - 1.0, 0 means no modification.
 
     touchpad {
         natural_scroll = false
@@ -62,6 +63,7 @@ device {
 exec-once = waybar
 exec-once = mako
 exec-once = swww-daemon
+exec-once = xrdb ~/dotfiles/.Xdefaults
 
 #+end_src
 
@@ -74,7 +76,6 @@ env = HYPRCURSOR_SIZE,24
 #+end_src
 
 * Theming
-
 ** General
 #+begin_src conf
 
@@ -82,14 +83,19 @@ general {
     gaps_in = 5
     gaps_out = 20
 
-    border_size = 2
+    border_size = 1
 
-    col.active_border = rgb(997911)
-    col.inactive_border = rgb(595959)
+    col.active_border = rgb(999999) # white
+    #col.active_border = rgb(991911) # Red
+    #col.active_border = rgb(997911) # Yellow
+
+    col.inactive_border = rgb(111111) # black
 
     resize_on_border = false 
 
     allow_tearing = false
+
+    no_border_on_floating = 0
 
     layout = master # dwm-like
     #layout = dwindle # bspwm-like
@@ -97,20 +103,23 @@ general {
 
 #+end_src
 
-** Borders & Transparency
+** Decoration (Borders & Transparency)
 #+begin_src conf
 
 decoration {
-    rounding = 5
+    rounding = 10
 
     # Change transparency of focused and unfocused windows
     active_opacity = 1.0
     inactive_opacity = 1.0
 
     drop_shadow = false
-    shadow_range = 4
+    shadow_range = 8
     shadow_render_power = 3
     col.shadow = rgba(1a1a1aee)
+
+    dim_inactive = false
+    dim_strength = 0.2
 
 #+end_src
 
@@ -119,7 +128,7 @@ decoration {
 
     blur {
         enabled = false
-        size = 3
+        size = 2
         passes = 1
         vibrancy = 0.1696
     }
@@ -132,17 +141,29 @@ decoration {
 
 animations {
     enabled = true
+    first_launch_animation = true
 
     bezier = myBezier, 0.05, 0.9, 0.1, 1.05
-
     animation = windows, 1, 7, myBezier
     animation = windowsOut, 1, 7, default, popin 80%
-    animation = border, 1, 10, default
-    animation = borderangle, 1, 8, default
-    animation = fade, 1, 7, default
-    animation = workspaces, 1, 6, default
+    animation = border, 1, 7, default
+    animation = borderangle, 1, 7, default
+    animation = fade, 1, 4, default
+    animation = workspaces, 1, 5, default
+
+    # animation=windows,1,9,default,popin 50%
+
 }
 
+#+end_src
+
+** Group
+#+begin_src conf
+
+group {
+      focus_removed_window = false
+
+}
 #+end_src
 
 ** Others
@@ -154,12 +175,15 @@ dwindle {
 }
 
 master {
-    new_is_master = true
+    new_is_master = false
 }
 
 misc { 
     force_default_wallpaper = 0 # Set to 0 or 1 to disable the anime mascot wallpapers
     disable_hyprland_logo = true # If true disables the random hyprland logo / anime girl background. :(
+    focus_on_activate = false
+    enable_swallow = 1
+    swallow_regex = ^(foot|footclient)$
 }
 
 #+end_src
@@ -180,10 +204,8 @@ bind = $mainMod, RETURN, exec, $terminal
 bind = $mainMod, D, exec, $menu
 bind = $mainMod, E, exec, emacsclient -c
 bind = $mainMod, S, exec, foot -e pulsemixer
-bind = $mainMod, P, exec, mpc toggle
-bind = $mainMod, N, exec, mpc next
-bind = $mainMod, B, exec, mpc previous
 bind = $mainMod, X, exec, hyprlock
+bind = $mainMod, Z, exec, tofipower.sh
 bind = $mainMod, W, exec, slurp | grim -g - - | wl-copy
 
 # Windows
@@ -193,6 +215,18 @@ bind = $mainMod, Q, killactive,
 bind = $mainMod, F, fullscreen,
 # bind = $mainMod, Z, pseudo, # dwindle
 # bind = $mainMod, X, togglesplit, # dwindle
+
+# Audio (mpc)
+bind = $mainMod, P, exec, mpc toggle
+bind = $mainMod, N, exec, mpc next
+bind = $mainMod, B, exec, mpc previous
+# bind = ,XF86AudioPlay, exec, mpc toggle
+# bind = ,XF86AudioStop, exec, mpc stop
+# bind = ,XF86AudioNext, exec, mpc next
+# bind = ,XF86AudioPrev, exec, mpc prev
+# binde = , XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
+# binde = , XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+# bindl = , XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 
 #+end_src
 
@@ -267,5 +301,7 @@ bindm = $mainMod, mouse:273, resizewindow
 # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
 
 windowrulev2 = suppressevent maximize, class:.* # You'll probably like this.
+windowrulev2 = noborder, onworkspace:w[t1] # no border with one window
+windowrulev2 = bordersize 0, floating:1 #no border with floating window
 
 #+end_src
