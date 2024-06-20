@@ -75,6 +75,14 @@ env = HYPRCURSOR_SIZE,24
 
 #+end_src
 
+** Window Rules
+#+begin_src conf
+
+windowrulev2 = suppressevent maximize, class:.* # You'll probably like this.
+windowrulev2 = noborder, onworkspace:w[t1] # no border with one window
+windowrulev2 = bordersize 0, floating:1 #no border with floating window
+
+#+end_src
 * Theming
 ** General
 #+begin_src conf
@@ -291,17 +299,3 @@ bindm = $mainMod, mouse:273, resizewindow
 
 #+end_src
 
-* Windows
-#+begin_src conf
-
-# Example windowrule v1
-# windowrule = float, ^(kitty)$
-
-# Example windowrule v2
-# windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
-
-windowrulev2 = suppressevent maximize, class:.* # You'll probably like this.
-windowrulev2 = noborder, onworkspace:w[t1] # no border with one window
-windowrulev2 = bordersize 0, floating:1 #no border with floating window
-
-#+end_src

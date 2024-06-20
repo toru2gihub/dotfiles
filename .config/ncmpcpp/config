@@ -23,12 +23,14 @@ mpd_crossfade_time = "5"
 
 # Playlist
 playlist_disable_highlight_delay = "0"
+#playlist_display_mode = "classic"
+#browser_display_mode = "classic"
 playlist_display_mode = "columns"
-playlist_show_remaining_time = "yes"
 browser_display_mode = "columns"
+playlist_show_remaining_time = "yes"
 autocenter_mode = "yes"
 follow_now_playing_lyrics = "yes"
-allow_for_physical_item_deletion = yes
+allow_for_physical_item_deletion = "yes"
 colors_enabled = "yes"
 main_window_color = "white"
 header_window_color = "white"
@@ -39,7 +41,8 @@ active_window_border = "black"
 alternative_header_first_line_format = "$0$aqqu$/a {$7%a - $9}{$5%t$9}|{$8%f$9} $0$atqq$/a$9"
 alternative_header_second_line_format = "{{$6%b$9}{ [$6%y$9]}}|{%D}"
 song_list_format = "{$3%n │ $9}{$7%a - $9}{$5%t$9}|{$8%f$9}$R{$6 │ %b$9}{$3 │ %l$9}"
-user_interface = "classic"
+user_interface = "alternative"
+#user_interface = "classic"
 default_place_to_search_in = "database"
 
 # visualizer
@@ -58,7 +61,7 @@ lines_scrolled = "2"
 ## Other ##
 system_encoding = "utf-8"
 regular_expressions = "extended"
-ask_before_clearing_playlists = no
+ask_before_clearing_playlists = "yes"
 
 ## Selected tracks ##
 selected_item_prefix = "* "
@@ -73,13 +76,13 @@ header_visibility = "yes"
 statusbar_visibility = "yes"
 titles_visibility = "yes"
 progressbar_look =  "=λ·"
-locked_screen_width_part = 30
-ask_for_locked_screen_width_part = no
+locked_screen_width_part = "30"
+ask_for_locked_screen_width_part = "no"
 progressbar_elapsed_color = "white"
 now_playing_prefix = "λ "
 song_status_format = " $2%a $4⟫$3⟫ $8%t $4⟫$3⟫ $5%b "
 centered_cursor = "yes"
-display_bitrate = "no"
+display_bitrate = "yes"
 enable_window_title = "yes"
 ignore_leading_the = "yes"
 empty_tag_marker = ""

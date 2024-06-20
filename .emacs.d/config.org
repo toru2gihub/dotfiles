@@ -472,6 +472,23 @@
 #+name: functions & hooks block
 #+begin_src emacs-lisp
 
+(defun consult-font (font)
+  "Replace current font with FONT from `font-family-list'."
+  (interactive
+   (list
+    (let ((saved-font (symbol-name (font-get (face-attribute 'default :font) :family))))
+      (consult--read
+       (font-family-list)
+       :prompt "Font: "
+       :require-match t
+       :state (lambda (action font)
+                (pcase action
+                  ('return (consult-font (or font saved-font)))
+                  ((and 'preview (guard font)) (consult-font font))))
+       ))))
+  (when font
+    (set-face-attribute 'default nil :font (format "%s %d" font (font-get (face-attribute 'default :font) :size)))))
+
 (defun export-org-to-pdf-and-cleanup ()
   "Export current org file to PDF, delete generated .log and .tex files, and move PDF to a specific folder."
   (interactive)
@@ -1216,7 +1233,11 @@
   :init
   (setq completion-styles '(orderless)
         completion-category-defaults nil
-        completion-category-overrides '((file (styles . (partial-completion))))))
+        completion-category-overrides '((file (styles . (partial-completion)))))
+  :config
+  ;; Fix completing hostnames when using /ssh:
+  (setq completion-styles '(orderless)
+        completion-category-overrides '((file (styles basic partial-completion)))))
 
 (defun dw/minibuffer-backward-kill (arg)
 
@@ -1314,31 +1335,33 @@ folder, otherwise delete a word"
 #+begin_src emacs-lisp
 
 (use-package corfu
-  :ensure t
-  ;; Optional customizations
+  ;; TAB-and-Go customizations
   :custom
   (corfu-cycle t)                 ; Allows cycling through candidates
   (corfu-auto t)                  ; Enable auto completion
   (corfu-auto-prefix 1)
-  (corfu-auto-delay 0.4)
+  (corfu-auto-delay 0.2)
   (corfu-popupinfo-delay '(0.5 . 0.5))
   (corfu-preview-current 'insert) ; insert previewed candidate
   (corfu-preselect 'prompt)
   (corfu-on-exact-match nil)      ; Don't auto expand tempel snippets
-  ;; Optionally use TAB for cycling, default is `corfu-complete'.
-  :bind (:map corfu-map
-              ("M-SPC"      . corfu-insert-separator)
-              ("TAB"        . corfu-next)
-              ([tab]        . corfu-next)
-              ("S-TAB"      . corfu-previous)
-              ([backtab]    . corfu-previous)
-              ;("S-<return>" . corfu-insert)
-              ("RET"        . corfu-insert))
+  (corfu-min-width 40)
+  (corfu-max-width corfu-min-width)     ; Always have the same width
+  (corfu-count 14)
+
+  ;; Use TAB for cycling, default is `corfu-complete'.
+  :bind
+  (:map corfu-map
+        ("TAB" . corfu-next)
+        ([tab] . corfu-next)
+        ("S-TAB" . corfu-previous)
+        ([backtab] . corfu-previous))
 
   :init
   (global-corfu-mode)
   (corfu-history-mode)
   (corfu-popupinfo-mode) ; Popup completion info
+
   :config
   (add-hook 'eshell-mode-hook
             (lambda () (setq-local corfu-quit-at-boundary t
@@ -1346,21 +1369,84 @@ folder, otherwise delete a word"
                                    corfu-auto nil)
               (corfu-mode))
             nil
-            t))
+            t)
+  )
 
-;; Use Dabbrev with Corfu!
-(use-package dabbrev
-  ;; Swap M-/ and C-M-/
-  :bind (("M-/" . dabbrev-completion)
-         ("C-M-/" . dabbrev-expand))
+(use-package corfu-doc
+  :after corfu
   :config
-  (add-to-list 'dabbrev-ignored-buffer-regexps "\\` ")
-  ;; Since 29.1, use `dabbrev-ignored-buffer-regexps' on older.
-  (add-to-list 'dabbrev-ignored-buffer-modes 'doc-view-mode)
-  (add-to-list 'dabbrev-ignored-buffer-modes 'pdf-view-mode))
+  (define-key corfu-map (kbd "M-p") #'corfu-doc-scroll-down) ;; corfu-next
+  (define-key corfu-map (kbd "M-n") #'corfu-doc-scroll-up)  ;; corfu-previous
+  ;; (setq corfu-doc-display-within-parent-frame nil)
+  (add-hook 'corfu-mode-hook #'corfu-doc-mode))
+
+(use-package kind-icon
+  :ensure t
+  :after corfu
+  ;:custom
+  ; (kind-icon-blend-background t)
+  ; (kind-icon-default-face 'corfu-default) ; only needed with blend-background
+  :config
+  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+
+(use-package svg-lib
+  :ensure t)
+
+(setq kind-icon-mapping
+      '((array          "a"   :icon "symbol-array"       :face font-lock-type-face              :collection "vscode")
+        (boolean        "b"   :icon "symbol-boolean"     :face font-lock-builtin-face           :collection "vscode")
+        (color          "#"   :icon "symbol-color"       :face success                          :collection "vscode")
+        (command        "cm"  :icon "chevron-right"      :face default                          :collection "vscode")
+        (constant       "co"  :icon "symbol-constant"    :face font-lock-constant-face          :collection "vscode")
+        (class          "c"   :icon "symbol-class"       :face font-lock-type-face              :collection "vscode")
+        (constructor    "cn"  :icon "symbol-method"      :face font-lock-function-name-face     :collection "vscode")
+        (enum           "e"   :icon "symbol-enum"        :face font-lock-builtin-face           :collection "vscode")
+        (enummember     "em"  :icon "symbol-enum-member" :face font-lock-builtin-face           :collection "vscode")
+        (enum-member    "em"  :icon "symbol-enum-member" :face font-lock-builtin-face           :collection "vscode")
+        (event          "ev"  :icon "symbol-event"       :face font-lock-warning-face           :collection "vscode")
+        (field          "fd"  :icon "symbol-field"       :face font-lock-variable-name-face     :collection "vscode")
+        (file           "f"   :icon "symbol-file"        :face font-lock-string-face            :collection "vscode")
+        (folder         "d"   :icon "folder"             :face font-lock-doc-face               :collection "vscode")
+        (function       "f"   :icon "symbol-method"      :face font-lock-function-name-face     :collection "vscode")
+        (interface      "if"  :icon "symbol-interface"   :face font-lock-type-face              :collection "vscode")
+        (keyword        "kw"  :icon "symbol-keyword"     :face font-lock-keyword-face           :collection "vscode")
+        (macro          "mc"  :icon "lambda"             :face font-lock-keyword-face)
+        (magic          "ma"  :icon "lightbulb-autofix"  :face font-lock-builtin-face           :collection "vscode")
+        (method         "m"   :icon "symbol-method"      :face font-lock-function-name-face     :collection "vscode")
+        (module         "{"   :icon "file-code-outline"  :face font-lock-preprocessor-face)
+        (numeric        "nu"  :icon "symbol-numeric"     :face font-lock-builtin-face           :collection "vscode")
+        (operator       "op"  :icon "symbol-operator"    :face font-lock-comment-delimiter-face :collection "vscode")
+        (param          "pa"  :icon "gear"               :face default                          :collection "vscode")
+        (property       "pr"  :icon "symbol-property"    :face font-lock-variable-name-face     :collection "vscode")
+        (reference      "rf"  :icon "library"            :face font-lock-variable-name-face     :collection "vscode")
+        (snippet        "S"   :icon "symbol-snippet"     :face font-lock-string-face            :collection "vscode")
+        (string         "s"   :icon "symbol-string"      :face font-lock-string-face            :collection "vscode")
+        (struct         "%"   :icon "symbol-structure"   :face font-lock-variable-name-face     :collection "vscode")
+        (text           "tx"  :icon "symbol-key"         :face font-lock-doc-face               :collection "vscode")
+        (typeparameter  "tp"  :icon "symbol-parameter"   :face font-lock-type-face              :collection "vscode")
+        (type-parameter "tp"  :icon "symbol-parameter"   :face font-lock-type-face              :collection "vscode")
+        (unit           "u"   :icon "symbol-ruler"       :face font-lock-constant-face          :collection "vscode")
+        (value          "v"   :icon "symbol-enum"        :face font-lock-builtin-face           :collection "vscode")
+        (variable       "va"  :icon "symbol-variable"    :face font-lock-variable-name-face     :collection "vscode")
+        (t              "."   :icon "question"           :face font-lock-warning-face           :collection "vscode")))
+
+;; Enable auto completion and configure quitting
+(setq corfu-auto t
+      corfu-quit-no-match 'separator) ;; or t
+
+;; Make ‘lsp-completion-at-point’ nonexclusive
+(advice-add #'lsp-completion-at-point :around
+  (lambda (orig-fn)
+    (cape-wrap-properties orig-fn :exclusive 'no)))
+
+(setq lsp-completion-provider :none)
+(defun corfu-lsp-setup ()
+  (setq-local completion-styles '(orderless)
+              completion-category-defaults nil))
+(add-hook 'lsp-mode-hook #'corfu-lsp-setup)
 
 (use-package cape
-  ;; Bind dedicated completion commands
+  :ensure t
   ;; Alternative prefix keys: C-c p, M-p, M-+, ...
   :bind (("C-c p p" . completion-at-point) ;; capf
          ("C-c p /" . complete-tag)        ;; etags
@@ -1397,6 +1483,30 @@ folder, otherwise delete a word"
   ;;(add-to-list 'completion-at-point-functions #'cape-elisp-symbol)
   ;;(add-to-list 'completion-at-point-functions #'cape-line)
 )
+
+;; Use Dabbrev with Corfu!
+ (use-package dabbrev
+   ;; Swap M-/ and C-M-/
+   :bind (("M-/" . dabbrev-completion)
+          ("C-M-/" . dabbrev-expand))
+   :config
+   (add-to-list 'dabbrev-ignored-buffer-regexps "\\` ")
+   ;; Since 29.1, use `dabbrev-ignored-buffer-regexps' on older.
+   (add-to-list 'dabbrev-ignored-buffer-modes 'doc-view-mode)
+   (add-to-list 'dabbrev-ignored-buffer-modes 'pdf-view-mode))
+
+(use-package yasnippet-capf
+  :after cape
+  :config
+  (add-to-list 'completion-at-point-functions #'yasnippet-capf))
+
+(defun my/eglot-capf ()
+  (setq-local completion-at-point-functions
+              (list (cape-super-capf
+                     #'cape-yasnippet
+                     #'eglot-completion-at-point))))
+
+(add-hook 'eglot-managed-mode-hook #'my/eglot-capf)
 
 #+end_src
 
@@ -1549,14 +1659,22 @@ folder, otherwise delete a word"
 (use-package yasnippet
   :ensure t
   :defer 2
+  :hook ((prog-mode . yas-minor-mode)
+         (conf-mode . yas-minor-mode)
+         (text-mode . yas-minor-mode)
+         (snippet-mode . yas-minor-mode))
   :config
   :init
   (yas-global-mode 1))
 (add-hook 'emacs-startup-hook (lambda () (yas-load-directory "~/.emacs.d/snippets")))
+
 (yas-reload-all)
 
-(use-package consult-yasnippet)
+(use-package yasnippet-snippets
+  :ensure t
+  :after (yasnippet))
 
+(use-package consult-yasnippet)
 
 #+end_src
 
