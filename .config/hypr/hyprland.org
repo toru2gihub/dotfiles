@@ -70,7 +70,7 @@ exec-once = xrdb ~/dotfiles/.Xdefaults
 ** Enviroment Variables
 #+begin_src conf
 
-env = XCURSOR_SIZE,24
+#env = XCURSOR_SIZE,24
 env = HYPRCURSOR_SIZE,24
 
 #+end_src

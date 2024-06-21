@@ -172,15 +172,16 @@ alias gp="git push -u"
 
 ## Programs ##
 alias e="emacsclient -c -a 'emacs'"
-alias x='nsxiv -t .'
-alias v='nvim'
-alias zj='zellij'
-alias rs='rsync -vuP'
-alias s='nsxiv'
-alias ncp='ncmpcpp'
+alias x="nsxiv -t ."
+alias v="nvim"
+alias zj="zellij"
+alias ff="fastfetch"
+alias rs="rsync -vuP"
+alias s="nsxiv"
+alias ncp="ncmpcpp"
 alias ytd="yt-dlp --embed-metadata -i"
 alias ffmpeg="ffmpeg -hide_banner"
-alias yt='cd ~/dl; ytfzf -t -d'
+alias yt="cd ~/dl; ytfzf -t -d"
 alias tb="nc termbin.com 9999" #antes del "tb", usa | (pipe)
 
 ## Pacman ##

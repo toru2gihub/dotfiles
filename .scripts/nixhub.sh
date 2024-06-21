@@ -69,7 +69,7 @@ while [ $opt != '' ]
             show_menu;
         ;;
         5) clear; #
-            nix-env --list-generations;
+            sudo nix-env -p /nix/var/nix/profiles/system --list-generations;
             show_menu;
         ;;
         q)exit;
