@@ -410,10 +410,15 @@
 
 ** 󰙱 Eglot
 #+name: eglot block
-#+begin_src
+#+begin_src emacs-lisp
 
-(add-hook 'LaTeX-mode-hook 'eglot-ensure)
-(add-hook 'html-mode-hook 'eglot-ensure)
+(use-package eglot
+  :ensure nil
+  :hook ((prog-mode . eglot-ensure)
+         (eglot-managed-mode . my-prioritize-yasnippet-capf)))
+
+;; (add-hook 'LaTeX-mode-hook 'eglot-ensure)
+;; (add-hook 'html-mode-hook 'eglot-ensure)
 
 #+end_src
 
@@ -1047,7 +1052,7 @@
         ("d" "Deadline" entry (file "~/pu/org/agenda.org")
          (file "~/.emacs.d/etc/templates/deadline_template.txt"))
 
-        ("i" "Inbox" entry (file "~/dc/inbox.org")
+        ("i" "Inbox" entry (file "~/pu/org/1.2.1_inbox.org")
          (file "~/.emacs.d/etc/templates/inbox_template.txt"))
 
         ))

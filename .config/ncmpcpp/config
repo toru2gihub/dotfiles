@@ -61,7 +61,7 @@ lines_scrolled = "2"
 ## Other ##
 system_encoding = "utf-8"
 regular_expressions = "extended"
-ask_before_clearing_playlists = "yes"
+ask_before_clearing_playlists = "no"
 
 ## Selected tracks ##
 selected_item_prefix = "* "
