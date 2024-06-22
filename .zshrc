@@ -97,10 +97,10 @@ set -o allexport
 #░█▒█▒▄▀▄▒█▀▄░█▒▄▀▄░██▄░█▒░▒██▀░▄▀▀
 #░▀▄▀░█▀█░█▀▄░█░█▀█▒█▄█▒█▄▄░█▄▄▒▄██
 TERMINAL="foot"
-#EDITOR="emacsclient -c -a 'emacs'"
-#VISUAL="emacsclient -c -a 'emacs'"
-EDITOR="nvim"
-VISUAL="nvim"
+EDITOR="emacsclient -c -a 'emacs'"
+VISUAL="emacsclient -c -a 'emacs'"
+# EDITOR="nvim"
+# VISUAL="nvim"
 #FILE="lf"
 BROWSER="firefox"
 IMAGEVIEWER="nsxiv"
@@ -162,9 +162,10 @@ alias xup='xrdb -load ~/dotfiles/.Xdefaults'
 alias store="nix-store --query --requisites /run/current-system | cut -d- -f2- | sort | uniq"
 
 ## Git ##
-alias gts="git status"
+alias gst="git status"
 alias gw="git switch"
 alias gl="git log --oneline | fzf --preview 'git show --name-only {1}'" #commit history
+alias glog='git log --graph --topo-order --pretty='\''%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N'\'' --abbrev-commit'
 alias gb="git branch"
 alias ga="git add ."
 alias gc="git commit"
