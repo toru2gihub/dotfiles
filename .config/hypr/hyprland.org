@@ -211,13 +211,14 @@ bind = SUPER, Tab, workspace, previous
 # Aplications
 bind = $mainMod, RETURN, exec, $terminal
 bind = $mainMod, D, exec, $menu
-bind = $mainMod, E, exec, emacsclient -c
+bind = $mainMod, C, exec, foot -e yazi
 bind = $mainMod, S, exec, foot -e pulsemixer
-bind = $mainMod, X, exec, hyprlock
-bind = $mainMod, Z, exec, tofipower.sh
+bind = $mainMod, E, exec, emacsclient -c 
+bind = $mainMod  SHIFT, X, exec, hyprlock
+bind = $mainMod  SHIFT, Z, exec, tofipower.sh
 bind = $mainMod, R, exec, tofirecorder.sh
 bind = $mainMod, W, exec, slurp | grim -g - - | wl-copy
-bind = $mainMod, C, exec, pkill -SIGUSR1 waybar
+bind = $mainMod, B, exec, pkill -SIGUSR1 waybar
 bind = $mainMod, V, exec, pkill -SIGUSR2 waybar
 
 # Windows
@@ -229,9 +230,9 @@ bind = $mainMod, F, fullscreen,
 # bind = $mainMod, X, togglesplit, # dwindle
 
 # Audio (mpc)
-bind = $mainMod, P, exec, mpc toggle
+bind = $mainMod, T, exec, mpc toggle
 bind = $mainMod, N, exec, mpc next
-bind = $mainMod, B, exec, mpc previous
+bind = $mainMod, P, exec, mpc previous
 # bind = ,XF86AudioPlay, exec, mpc toggle
 # bind = ,XF86AudioStop, exec, mpc stop
 # bind = ,XF86AudioNext, exec, mpc next
