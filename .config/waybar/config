@@ -14,15 +14,15 @@
   "margin-right": 0,
   "margin-bottom": 0,
 
-    "spacing": 1, // Gaps between modules (2px)
+    "spacing": 1, // Gaps between modules
 
     // Choose the order of the modules
 
-    "modules-left": ["hyprland/workspaces", "custom/media"],
+    "modules-left": ["hyprland/workspaces"],
 
-    "modules-center": ["clock"],
+    "modules-center": [""],
 
-    "modules-right": ["pulseaudio", "tray", "custom/recorder"],
+    "modules-right": ["tray", "pulseaudio", "custom/recorder", "cpu", "memory", "clock"],
 
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -73,7 +73,7 @@
         "format": "",
     },
     "memory": {
-        "format": ""
+        "format": ""
     },
 
     "pulseaudio": {
@@ -101,7 +101,7 @@
   "return-type": "json",
   "interval": 1,
   "exec": "echo '{\"class\": \"recording\"}'",
-  "exec-if": "pgrep recorder.sh"
+  "exec-if": "pgrep tofirecorder.sh"
  },
 
 }

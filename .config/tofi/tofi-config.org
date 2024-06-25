@@ -1,10 +1,29 @@
+#+title: Tofi config
+#+author: toru
+#+property: header-args :tangle config
+#+startup: content
+#+auto_tangle: t
+
+* General
+#+begin_src conf
+
 # include = /path/to/config
+
+#+end_src
+
+* Fonts
+#+begin_src conf
 
 font = "Jetbrains Mono"
 
 font-size = 15
 
 hint-font = true
+
+#+end_src
+
+* Text Theming
+#+begin_src conf
 
 # All text defaults to this color if not otherwise specified.
 text-color = #ffffff
@@ -42,6 +61,11 @@ selection-background-corner-radius = 0
 # Matching portion of selection text
 selection-match-color = #ff0000
 
+#+end_src
+
+* Text cursor theme
+#+begin_src conf
+
 # Style of the optional text cursor.
 #
 # Supported values: bar, block, underscore
@@ -58,6 +82,11 @@ text-cursor-corner-radius = 0
 
 # Thickness of the bar and underscore text cursors.
 text-cursor-thickness = 2
+
+#+end_src
+
+* Text layout
+#+begin_src conf
 
 # Prompt to display.
 prompt-text = "λ: "
@@ -80,6 +109,11 @@ horizontal = false
 
 # Minimum width of input in horizontal mode.
 min-input-width = 0
+
+#+end_src
+
+* Window theming 
+#+begin_src conf
 
 # Width and height of the window. Can be pixels or a percentage.
 width = 20%
@@ -118,6 +152,11 @@ clip-to-padding = true
 # Whether to scale the window by the output's scale factor.
 scale = true
 
+#+end_src
+
+* Window positioning
+#+begin_src conf
+
 # The name of the output to appear on. An empty string will use the
 # default output chosen by the compositor.
 output = ""
@@ -142,6 +181,11 @@ margin-top = 0
 margin-bottom = 0
 margin-left = 0
 margin-right = 0
+
+#+end_src
+
+* Behaviour
+#+begin_src conf
 
 # Hide the mouse cursor.
 hide-cursor = false
@@ -219,3 +263,5 @@ multi-instance = false
 # functions. This is faster, but means e.g. a search for "e" will not
 # match "é".
 ascii-input = false
+
+#+end_src

@@ -7,8 +7,6 @@
 # Repository: https://codeberg.org/toru
 # Email: torupublic11@waifu.club
 
-# A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.
-# If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
 [manager]
@@ -61,7 +59,7 @@ keymap = [
 	{ on = [ "G" ],      run = "arrow 99999999",  desc = "Move cursor to the bottom" },
 
 	# Selection
-	{ on = [ "<Space>" ], run = [ "select --state=none", "arrow 1" ], desc = "Toggle the current selection state" },
+	{ on = [ "m" ], run = [ "select --state=none", "arrow 1" ], desc = "Toggle the current selection state" },
 	{ on = [ "v" ],       run = "visual_mode",                        desc = "Enter visual mode (selection mode)" },
 	{ on = [ "V" ],       run = "visual_mode --unset",                desc = "Enter visual mode (unset mode)" },
 	{ on = [ "<C-a>" ],   run = "select_all --state=true",            desc = "Select all files" },
@@ -90,14 +88,13 @@ keymap = [
 	{ on = [ "s" ],         run = "search fd",                  desc = "Search files by name using fd" },
 	{ on = [ "S" ],         run = "search rg",                  desc = "Search files by content using ripgrep" },
 	{ on = [ "<C-s>" ],     run = "search none",                desc = "Cancel the ongoing search" },
-	{ on = [ "z" ],         run = "plugin zoxide",              desc = "Jump to a directory using zoxide" },
-	{ on = [ "Z" ],         run = "plugin fzf",                 desc = "Jump to a directory, or reveal a file using fzf" },
+	{ on = [ "z" ],         run = "plugin fzf",                 desc = "Jump to a directory, or reveal a file using fzf" },
 
 	# Linemode
-	{ on = [ "m", "s" ], run = "linemode size",        desc = "Set linemode to size" },
-	{ on = [ "m", "p" ], run = "linemode permissions", desc = "Set linemode to permissions" },
-	{ on = [ "m", "m" ], run = "linemode mtime",       desc = "Set linemode to mtime" },
-	{ on = [ "m", "n" ], run = "linemode none",        desc = "Set linemode to none" },
+	{ on = [ "b", "s" ], run = "linemode size",        desc = "Set linemode to size" },
+	{ on = [ "b", "p" ], run = "linemode permissions", desc = "Set linemode to permissions" },
+	{ on = [ "b", "m" ], run = "linemode mtime",       desc = "Set linemode to mtime" },
+	{ on = [ "b", "n" ], run = "linemode none",        desc = "Set linemode to none" },
 
 	# Copy
 	{ on = [ "c", "c" ], run = "copy path",             desc = "Copy the absolute path" },
@@ -129,7 +126,7 @@ keymap = [
 	{ on = [ ",", "S" ], run = "sort size --reverse --dir-first",         desc = "Sort by size (reverse)" },
 
 	# Tabs
-	{ on = [ "t" ], run = "tab_create --current", desc = "Create a new tab using the current path" },
+	{ on = [ "<C-t>" ], run = "tab_create --current", desc = "Create a new tab using the current path" },
 
 	{ on = [ "1" ], run = "tab_switch 0", desc = "Switch to the first tab" },
 	{ on = [ "2" ], run = "tab_switch 1", desc = "Switch to the second tab" },
@@ -148,14 +145,19 @@ keymap = [
 	{ on = [ "}" ], run = "tab_swap 1",  desc = "Swap the current tab with the next tab" },
 
 	# Tasks
-	{ on = [ "w" ], run = "tasks_show", desc = "Show the tasks manager" },
+	{ on = [ "t" ], run = "tasks_show", desc = "Show the tasks manager" },
 
 	# Goto
-	{ on = [ "g", "h" ],       run = "cd ~",             desc = "Go to the home directory" },
-	{ on = [ "g", "c" ],       run = "cd ~/.config",     desc = "Go to the config directory" },
-	{ on = [ "g", "d" ],       run = "cd ~/Downloads",   desc = "Go to the downloads directory" },
-	{ on = [ "g", "t" ],       run = "cd /tmp",          desc = "Go to the temporary directory" },
-	{ on = [ "g", "<Space>" ], run = "cd --interactive", desc = "Go to a directory interactively" },
+	{ on = [ "g", "h" ],       run = "cd ~",             desc = "Home" },
+	{ on = [ "g", "v" ],       run = "cd ~/vd",   desc = "Videos" },
+	{ on = [ "g", "m" ],       run = "cd ~/ms",   desc = "Music" },
+	{ on = [ "g", "c" ],       run = "cd ~/dotfiles",   desc = "Dotfiles" },
+	{ on = [ "g", "/" ],       run = "cd /",   desc = "Root" },
+	{ on = [ "g", "p" ],       run = "cd ~/pages",   desc = "Website" },
+	{ on = [ "g", "d" ],       run = "cd ~/dl",   desc = "Downloads" },
+	{ on = [ "g", "f" ], run = "cd --interactive", desc = "Directory" },
+	{ on = [ "g", "t" ],       run = "cd /tmp",          desc = "Temporary" },
+	#{ on = [ "g", "<Space>" ], run = "cd --interactive", desc = "Go to a directory interactively" },
 
 	# Help
 	{ on = [ "~" ], run = "help", desc = "Open help" },
@@ -316,3 +318,8 @@ keymap = [
 	# Filtering
 	{ on = [ "/" ], run = "filter", desc = "Apply a filter for the help items" },
 ]
+
+[[manager.prepend_keymap]]
+on   = [ "<C-s>" ]
+run  = 'shell "$SHELL" --block --confirm'
+desc = "Open shell here"

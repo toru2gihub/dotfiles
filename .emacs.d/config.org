@@ -1684,8 +1684,7 @@ folder, otherwise delete a word"
     ("a" (find-file "~/pu/org/aniversarios.org") "Aniversarios"))
 
    "Personal"
-   (("r" (find-file "~/pu/org/rutina.org") "Rutina")
-    ("f" (find-file "~/pu/org/1.2.1_Personal_Rutina_Finanzas.org") "Personal y finanzas"))))
+   (("b" (find-file "~/pu/org/1.2.1_second_brain.org") "Second Brain"))))
 
 (global-set-key (kbd "<f1>") 'hydra-personal-files/body)
 
