@@ -1,0 +1,22 @@
+[pyprland]
+plugins = [
+  "scratchpads",
+  "expose",
+]
+
+[scratchpads.term]
+animation = "fromTop"
+command = "foot -a scratchpad"
+lazy = true
+size = "75% 60%"
+max_size = "1920px 100%"
+margin = 50
+
+[scratchpads.music_player]
+animation = "fromRight"
+command = "foot -a scratchpad -e ncmpcpp"
+class = "scratchpad"
+lazy = true
+size = "75% 60%"
+max_size = "1920px 100%"
+margin = 50

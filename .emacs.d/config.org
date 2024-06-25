@@ -28,8 +28,9 @@
 
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
                          ("org" . "https://orgmode.org/elpa/")
-			     ("nongnu" . "https://elpa.nongnu.org/nongnu/")
-                         ("elpa" . "https://elpa.gnu.org/packages/")))
+			     ;("nongnu" . "https://elpa.nongnu.org/nongnu/")
+                         ;("elpa" . "https://elpa.gnu.org/packages/")
+                         ))
 
 (package-initialize)
 (unless package-archive-contents
@@ -155,7 +156,25 @@
 #+begin_src emacs-lisp
 
 ;; Theme
-(load-theme 'doom-badger t)
+(use-package doom-themes
+  :ensure t
+  :config
+  ;; Global settings (defaults)
+  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+        doom-themes-enable-italic t) ; if nil, italics is universally disabled
+
+  (load-theme 'doom-badger t)
+
+  ;; Enable flashing mode-line on errors
+  (doom-themes-visual-bell-config)
+
+  ;; or for treemacs users
+  (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
+
+  (doom-themes-treemacs-config)
+
+  ;; Corrects (and improves) org-mode's native fontification.
+  (doom-themes-org-config))
 
 (setq modus-themes-org-blocks 'gray-background)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/etc/themes")
@@ -168,8 +187,8 @@
 		    )
 
 ;; Transparency
-(set-frame-parameter nil 'alpha-background 95)
-(add-to-list 'default-frame-alist '(alpha-background . 95))
+(set-frame-parameter nil 'alpha-background 96)
+(add-to-list 'default-frame-alist '(alpha-background . 96))
 
 (custom-set-faces
  `(org-checkbox ((t :box (:line-width 2 :color "gray"
@@ -181,8 +200,8 @@
 (global-auto-revert-mode t)  ;; Automatically show changes if the file has changed
 (setq display-line-numbers-type 'relative)
 (global-visual-line-mode t)  ;; Enable truncated lines
-(menu-bar-mode 1)           ;; Disable the menu bar
-(tool-bar-mode 1)           ;; Disable the tool bar
+(menu-bar-mode -1)           ;; Disable the menu bar
+(tool-bar-mode -1)           ;; Disable the tool bar
 (global-display-line-numbers-mode 1) ;; Enable global lines numbers
 (global-tab-line-mode -1) ;; Disable buffers like tabs
 (tab-bar-mode -1) ;; Disable tabs
@@ -417,12 +436,12 @@
 (use-package lsp-mode
   :ensure t)
 
-(use-package lsp-nix
-  :ensure lsp-mode
-  :after (lsp-mode)
-  :demand t
-  :custom
-  (lsp-nix-nil-formatter ["nixpkgs-fmt"]))
+;(use-package lsp-nix
+;  :ensure lsp-mode
+;  :after (lsp-mode)
+;  :demand t
+;  :custom
+;  (lsp-nix-nil-formatter ["nixpkgs-fmt"]))
 
 ;; (defun jp/lsp-mode-setup ()   (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))   (lsp-headerline-breadcrumb-mode))  (use-package lsp-mode   :commands (lsp lsp-deferred)   :hook (lsp-mode . jp/lsp-mode-setup)   :init   (setq lsp-keymap-prefix "C-c l")  ;; Or 'C-l', 's-l'   :config   (lsp-enable-which-key-integration t)   (setq lsp-auto-guess-root t)   (setq lsp-log-io nil)   (setq lsp-restart 'auto-restart)   (setq lsp-enable-symbol-highlighting nil)   (setq lsp-enable-on-type-formatting nil)   (setq lsp-signature-auto-activate nil)   (setq lsp-signature-render-documentation nil)   (setq lsp-headerline-breadcrumb-icons-enable t)   (setq lsp-eldoc-hook nil)   (setq lsp-modeline-code-actions-enable nil)   (setq lsp-modeline-diagnostics-enable nil)   (setq lsp-semantic-tokens-enable nil)   (setq lsp-enable-folding nil)   (setq lsp-enable-imenu nil)   (setq lsp-enable-snippet nil)   (setq read-process-output-max (* 1024 1024)) ;; 1MB   (setq lsp-treemacs-symbols-position-params '((side . right) (slot . 2) (window-width . 35)))   (setq lsp-idle-delay 0.0))  (global-set-key (kbd "<f5>") 'lsp-treemacs-symbols)  (use-package lsp-ui   :commands lsp-ui-mode   :config   (setq lsp-ui-doc-position 'at-point)   (setq lsp-ui-doc-enable nil)   (setq lsp-ui-doc-header t)   (setq lsp-ui-doc-include-signature t)   (setq lsp-ui-doc-border (face-foreground 'default))   (setq lsp-ui-sideline-show-code-actions t)   (setq lsp-ui-sideline-delay 0.05))  (use-package dap-mode   ;; Uncomment the config below if you want all UI panes to be hidden by default!   ;; :custom   ;; (lsp-enable-dap-auto-configure nil)   ;; :config   ;; (dap-ui-mode 1)   :commands dap-debug   :config   ;; Set up Node debugging   (require 'dap-node)   (dap-node-setup) ;; Automatically installs Node debug adapter if needed    ;; Bind `C-c l d` to `dap-hydra` for easy access   (general-define-key     :keymaps 'lsp-mode-map     :prefix lsp-keymap-prefix     "d" '(dap-hydra t :wk "debugger"))) (edited)
 
@@ -1933,17 +1952,17 @@ folder, otherwise delete a word"
 #+name: rainbow-modes block
 #+begin_src emacs-lisp
 
-(use-package rainbow-mode)
+;; (use-package rainbow-mode)
 
-;; (add-hook 'text-mode-hook (lambda () (rainbow-mode t)))
-;; (add-hook 'prog-mode-hook (lambda () (rainbow-mode t)))
+;; ;; (add-hook 'text-mode-hook (lambda () (rainbow-mode t)))
+;; ;; (add-hook 'prog-mode-hook (lambda () (rainbow-mode t)))
 
-(add-hook 'text-mode-hook 'rainbow-mode)
-(add-hook 'prog-mode-hook 'rainbow-mode)
+;; (add-hook 'text-mode-hook 'rainbow-mode)
+;; (add-hook 'prog-mode-hook 'rainbow-mode)
 
-(use-package rainbow-delimiters
-  :hook ((emacs-lisp-mode . rainbow-delimiters-mode)
-         (clojure-mode . rainbow-delimiters-mode)))
+;; (use-package rainbow-delimiters
+;;   :hook ((emacs-lisp-mode . rainbow-delimiters-mode)
+;;          (clojure-mode . rainbow-delimiters-mode)))
 
 #+end_src
 

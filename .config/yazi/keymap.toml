@@ -153,7 +153,7 @@ keymap = [
 	{ on = [ "g", "m" ],       run = "cd ~/ms",   desc = "Music" },
 	{ on = [ "g", "c" ],       run = "cd ~/dotfiles",   desc = "Dotfiles" },
 	{ on = [ "g", "/" ],       run = "cd /",   desc = "Root" },
-	{ on = [ "g", "p" ],       run = "cd ~/pages",   desc = "Website" },
+	{ on = [ "g", "p" ],       run = "cd ~/pic",   desc = "Pictures" },
 	{ on = [ "g", "d" ],       run = "cd ~/dl",   desc = "Downloads" },
 	{ on = [ "g", "f" ], run = "cd --interactive", desc = "Directory" },
 	{ on = [ "g", "t" ],       run = "cd /tmp",          desc = "Temporary" },

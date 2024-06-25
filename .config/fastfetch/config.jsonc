@@ -22,7 +22,7 @@
         },
         {
             "type": "os",
-            "key": "├", // Just get your distro's logo off nerdfonts.com
+            "key": "├󱄅", // Just get your distro's logo off nerdfonts.com
             "keyColor": "yellow",
             "format": "{6}{?6} {?}{10}{?10} {?}{8}{?8} {?}{11}"
         },

@@ -60,8 +60,9 @@ device {
 ** Autostart
 #+begin_src conf
 
-exec-once = waybar &
+exec-once = waybar
 exec-once = mako
+exec-once = pypr
 exec-once = swww-daemon
 exec-once = hypridle &
 exec-once = xrdb ~/dotfiles/.Xdefaults
@@ -81,11 +82,21 @@ env = HYPRCURSOR_SIZE,24
 
 windowrulev2 = suppressevent maximize, class:.* # You'll probably like this.
 windowrulev2 = noborder, onworkspace:w[t1] # no border with one window
-windowrulev2 = bordersize 0, floating:1 #no border with floating window
+windowrulev2 = bordersize 0, floating:1 # no border with floating window
+windowrulev2 = tile, class:^([Nn]sxiv)$ #tile for nsxiv
+windowrulev2 = opacity 0.9 0.9,floating:1 # opacity with floating window
+#windowrulev2 = opacity 0.96 0.96,class:^(Emacs)$ # opacity for emacs
 
 windowrule = float, mpv
 windowrule = center, mpv
 windowrule = size 1200 700, mpv
+ 
+#+end_src
+
+** Workspace Rules
+#+begin_src conf
+
+workspace = special:exposed,rounding:5,gapsout:60,gapsin:60,bordersize:3,border:true,shadow:false
 
 #+end_src
 
@@ -112,8 +123,10 @@ general {
 
     no_border_on_floating = 0
 
-    layout = master # dwm-like
-    #layout = dwindle # bspwm-like
+    # LAYOUTS		  
+    #layout = master # dwm-like
+    layout = dwindle # bspwm-like
+
 }
 
 #+end_src
@@ -122,7 +135,7 @@ general {
 #+begin_src conf
 
 decoration {
-    rounding = 20
+    rounding = 13
 
     # Change transparency of focused and unfocused windows
     active_opacity = 1.0
@@ -213,7 +226,7 @@ allow_workspace_cycles = true
 }
 bind = SUPER, Tab, workspace, previous
 
-# Aplications
+     # Aplications
 bind = $mainMod, RETURN, exec, $terminal
 bind = $mainMod, D, exec, $menu
 bind = $mainMod, C, exec, foot -e yazi
@@ -225,6 +238,9 @@ bind = $mainMod, R, exec, tofirecorder.sh
 bind = $mainMod, W, exec, slurp | grim -g - - | wl-copy
 bind = $mainMod, B, exec, pkill -SIGUSR1 waybar
 bind = $mainMod, V, exec, pkill -SIGUSR2 waybar
+
+     # Pypr
+bind = $mainMod, Z, exec, pypr expose
 
 # Windows
 bind = $mainMod, SPACE, togglefloating,

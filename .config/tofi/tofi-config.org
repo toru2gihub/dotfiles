@@ -42,7 +42,7 @@ placeholder-background-corner-radius = 0
 
 # Input text theme
 input-color = #ffffff
-input-background = #000000
+#input-background = #000000
 input-background-padding = 0
 input-background-corner-radius = 0
 
@@ -89,7 +89,7 @@ text-cursor-thickness = 2
 #+begin_src conf
 
 # Prompt to display.
-prompt-text = "λ: "
+prompt-text = " " 
 
 # Extra horizontal padding between prompt and input.
 prompt-padding = 0

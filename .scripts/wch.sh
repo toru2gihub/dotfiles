@@ -20,14 +20,14 @@
 
 # Set the directory containing your wallpapers
 #
-#WALLPAPER_DIR="/home/toru/pic/wallpapers/guweiz"
+WALLPAPER_DIR="/home/toru/pic/wallpapers/guweiz"
 #WALLPAPER_DIR="/home/toru/pic/wallpapers/based"
 #WALLPAPER_DIR="/home/toru/pic/wallpapers/animation"
 #WALLPAPER_DIR="/home/toru/pic/wallpapers/fantasy"
 #WALLPAPER_DIR="/home/toru/pic/wallpapers/anime"
 #WALLPAPER_DIR="/home/toru/pic/wallpapers/samurais"
 #WALLPAPER_DIR="/home/toru/pic/wallpapers/real"
-WALLPAPER_DIR="/home/toru/pic/classic/art"
+#WALLPAPER_DIR="/home/toru/pic/classic/art"
 
 # Get a random wallpaper from the directory
 RANDOM_WALLPAPER=$(ls $WALLPAPER_DIR | shuf -n 1)
