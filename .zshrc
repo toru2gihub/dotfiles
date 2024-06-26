@@ -116,8 +116,8 @@ XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
 XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
 XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
 XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
-#MANPAGER="dmenuman +Man!"
 #MANPAGER="nvim +Man!"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 #SUDO_ASKPASS=/usr/X11R6/bin/ssh-askpass
 XDG_DESKTOP_DIR="$HOME/dk"
 XDG_DOCUMENTS_DIR="$HOME/dc"
@@ -157,6 +157,7 @@ alias hist="history | fzf | xclip -sel c"
 alias srm='shred -uzvn3'
 alias mkdir="mkdir -pv"
 alias xup='xrdb -load ~/dotfiles/.Xdefaults'
+alias fbat='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
 
 ## Nix ##
 alias store="nix-store --query --requisites /run/current-system | cut -d- -f2- | sort | uniq"

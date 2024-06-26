@@ -239,7 +239,7 @@
 (use-package doom-modeline
   :ensure t
   :hook (after-init . doom-modeline-mode))
-(setq doom-modeline-enable-word-count t)
+(setq doom-modeline-enable-word-count nil)
 
 (use-package diminish
   :ensure t)
