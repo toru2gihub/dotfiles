@@ -1,10 +1,11 @@
 :PROPERTIES:
 :ID:       80a62015-df7b-4579-a867-74d59288693b
 :END:
-#+TITLE: Torumacs 
-#+AUTHOR: toru
-#+DESCRIPTION: toru config of emacs
-#+STARTUP: content
+#+title: Torumacs 
+#+author: toru
+#+description: toru config of emacs
+#+startup: content
+
 
 *  Overall
 ** 󱜥 Scripts. 
@@ -28,8 +29,8 @@
 
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
                          ("org" . "https://orgmode.org/elpa/")
-			     ;("nongnu" . "https://elpa.nongnu.org/nongnu/")
-                         ;("elpa" . "https://elpa.gnu.org/packages/")
+			     ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+                         ("elpa" . "https://elpa.gnu.org/packages/")
                          ))
 
 (package-initialize)
@@ -62,6 +63,9 @@
 
 ;; Save last place in file
 (save-place-mode 1)
+
+;; Auto save
+(auto-save-mode 1)
 
 ;; Enable mouse-support for the terminal-version
 (xterm-mouse-mode 1)
@@ -240,6 +244,7 @@
   :ensure t
   :hook (after-init . doom-modeline-mode))
 (setq doom-modeline-enable-word-count nil)
+(setq doom-modeline-column-zero-based nil)
 
 (use-package diminish
   :ensure t)
@@ -1100,7 +1105,7 @@
 (setq org-publish-project-alist
       '(
 
-("org-notes"
+("Pages"
  :base-directory "~/pages/org/"
  :base-extension "org"
  :publishing-directory "../"
@@ -1113,7 +1118,20 @@
  :auto-preamble t
  )
 
-("org" :components ("org-notes"))
+("Notes"
+ :base-directory "~/pu/org/"
+ :base-extension "org"
+ :publishing-directory "~/tem"
+ :recursive t
+ ; :with-toc nil
+ ;; :with-author nil
+ ;; :section-numbers nil
+ :publishing-function org-html-publish-to-html
+ :headline-levels 4             ; Just the default for this project.
+ :auto-preamble t
+ )
+
+("org" :components ("Pages" "Notes"))
 
       ))
 
@@ -1379,7 +1397,7 @@ folder, otherwise delete a word"
   (corfu-cycle t)                 ; Allows cycling through candidates
   (corfu-auto t)                  ; Enable auto completion
   (corfu-auto-prefix 1)
-  (corfu-auto-delay 0.2)
+  (corfu-auto-delay 0.5)
   (corfu-popupinfo-delay '(0.5 . 0.5))
   (corfu-preview-current 'insert) ; insert previewed candidate
   (corfu-preselect 'prompt)
@@ -1743,18 +1761,18 @@ folder, otherwise delete a word"
   (:hint nil :color teal :quit-key "q")
 
   ("Notas"
-   (("i" (find-file "~/pu/org/1.0_Index_Index.org") "Index Index")
-    ("e" (find-file "~/pu/org/1.1_Estudio_Index.org") "Estudio Index")
-    ("p" (find-file "~/pu/org/1.2_Personal_Index.org") "Personal Index")
-    ("f" (find-file "~/pu/org/1.3_Craft_Index.org") "Craft Index")
-    ("t" (find-file "~/pu/org/1.4_Trabajo_Index.org") "Trabajo Index")
-    ("b" (find-file "~/pu/org/1.5_Baile_Index.org") "Baile Index"))
+   (("i" (find-file "~/pu/org/1.0_Index_Index.org") "Index.db")
+    ("e" (find-file "~/pu/org/1.1_Estudio_Index.org") "Estudio.db")
+    ("p" (find-file "~/pu/org/1.2_Personal_Index.org") "Personal.db")
+    ("f" (find-file "~/pu/org/1.3_Craft_Index.org") "Craft.db")
+    ("t" (find-file "~/pu/org/1.4_Trabajo_Index.org") "Trabajo.db")
+    ("b" (find-file "~/pu/org/1.5_Baile_Index.org") "Baile.db"))
 
    "Libros"
-   (("z" (find-file "~/pu/org/2.0_Zaralia_Index.org") "Zaralia Index")
-    ("m" (find-file "~/pu/org/2.0_Mindbreak_Index.org") "Mindbreak Index")
-    ("k" (find-file "~/pu/org/2.0_Kurai_Sekai_Index.org") "Kurai Sekai Index")
-    ("c" (find-file "~/pu/org/2.0_Crazy_Mythos_Index.org") "Crazy Mythos Index"))))
+   (("z" (find-file "~/pu/org/2.0_Zaralia_Index.org") "Zaralia.db")
+    ("m" (find-file "~/pu/org/2.0_Mindbreak_Index.org") "Mindbreak.db")
+    ("k" (find-file "~/pu/org/2.0_Kurai_Sekai_Index.org") "Kurai Sekai.db")
+    ("c" (find-file "~/pu/org/2.0_Crazy_Mythos_Index.org") "Crazy Mythos.db"))))
 
 (global-set-key (kbd "<f3>") 'hydra-index/body)
 
@@ -1952,17 +1970,17 @@ folder, otherwise delete a word"
 #+name: rainbow-modes block
 #+begin_src emacs-lisp
 
-;; (use-package rainbow-mode)
+(use-package rainbow-mode)
 
-;; ;; (add-hook 'text-mode-hook (lambda () (rainbow-mode t)))
-;; ;; (add-hook 'prog-mode-hook (lambda () (rainbow-mode t)))
+;; (add-hook 'text-mode-hook (lambda () (rainbow-mode t)))
+;; (add-hook 'prog-mode-hook (lambda () (rainbow-mode t)))
 
-;; (add-hook 'text-mode-hook 'rainbow-mode)
-;; (add-hook 'prog-mode-hook 'rainbow-mode)
+(add-hook 'text-mode-hook 'rainbow-mode)
+(add-hook 'prog-mode-hook 'rainbow-mode)
 
-;; (use-package rainbow-delimiters
-;;   :hook ((emacs-lisp-mode . rainbow-delimiters-mode)
-;;          (clojure-mode . rainbow-delimiters-mode)))
+(use-package rainbow-delimiters
+  :hook ((emacs-lisp-mode . rainbow-delimiters-mode)
+         (clojure-mode . rainbow-delimiters-mode)))
 
 #+end_src
 
@@ -1979,7 +1997,16 @@ folder, otherwise delete a word"
   (marginalia-mode))
 
 #+end_src
+**  Page-break-lines.
+#+begin_src emacs-lisp
 
+(use-package page-break-lines)
+
+(setq global-page-break-lines-mode t)
+
+(add-hook 'org-mode-hook #'(lambda () (interactive) (page-break-lines-mode 1)))
+
+#+end_src
 ** 󰓆 Flycheck.
 #+name: flycheck block
 #+begin_src emacs-lisp
@@ -1992,7 +2019,7 @@ folder, otherwise delete a word"
 
 #+end_src
 
-** Hl-TODO.
+**   Hl-TODO.
 #+name: hl-TODO block
 #+begin_src emacs-lisp
 

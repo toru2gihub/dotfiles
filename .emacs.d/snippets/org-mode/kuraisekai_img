@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: kuraisekai_img
+# key: <i
+# --
+
+[[./kimg/${1:img}.jpg]]

@@ -20,8 +20,8 @@
 # warpper
 #--wrap=never
 
-# Set the theme to "TwoDark"
---theme="TwoDark"
+# Theme
+--theme="Catppuccin Mocha"
 
 # Show line numbers, Git modifications and file header (but no grid)
 # --style="grid,numbers,changes,header"

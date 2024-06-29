@@ -14,18 +14,11 @@
  # | | | |  __/\ V  V /\__ \ |_) | (_) | (_| | |_ 
  # |_| |_|\___| \_/\_/ |___/_.__/ \___/ \__,_|\__|
 
+include ~/dotfiles/.config/newsboat/dark
+
 auto-reload yes
 max-items 50
 browser linkhandler.sh
-#include /usr/share/doc/newsboat/contrib/colorschemes/inkpot
 external-url-viewer "urlscan -dc -r 'linkhandler.sh {}'"
-
-color listnormal white default
-color listfocus default black protect
-color listnormal_unread red default bold
-color listfocus_unread default default bold
-color info red black bold
-color article red default
-
 highlight feedlist "---.*---" default default underline
 highlight feedlist ".*0/0.." default default underline

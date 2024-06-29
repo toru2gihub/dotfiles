@@ -140,7 +140,26 @@ export FZF_DEFAULT_COMMAND='fd . --hidden --exclude ".git"'
 # display hidden files, and exclude the '.git' directory.
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#ffffff,bg:-1,hl:#ff0000 --color=fg+:#ffffff,bg+:#262626,hl+:#ffd700 --color=info:#afaf87,prompt:#ff0000,pointer:#ff0000 --color=marker:#87ff00,spinner:#ffd700,header:#87afaf'
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+  --color=fg:#d0d0d0,fg+:#d0d0d0,bg:#121212,bg+:#262626
+
+  --color=hl:#5f87af,hl+:#5fd7ff,info:#afaf87,marker:#87ff00
+
+  --color=prompt:#d7005f,spinner:#af5fff,pointer:#af5fff,header:#87afaf
+
+  --color=border:#262626,label:#aeaeae,query:#d9d9d9
+
+  --preview-window="border-double"
+
+  --prompt="> "
+
+  --marker=">"
+
+  --pointer="λ"
+
+  --separator="."
+
+  --scrollbar="│"'
 
 #▒▄▀▄░█▒░░█▒▄▀▄░▄▀▀▒██▀░▄▀▀
 #░█▀█▒█▄▄░█░█▀█▒▄██░█▄▄▒▄██

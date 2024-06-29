@@ -5,11 +5,11 @@
 
     "height": 38, // Waybar height (to be removed for auto height)
 
-    "width": 1920, // Waybar width
+    "width": 1885, // Waybar width
 
     "mode": "dock",
 
-  "margin-top": 0,
+  "margin-top": 10,
   "margin-left": 0,
   "margin-right": 0,
   "margin-bottom": 0,
@@ -18,15 +18,18 @@
 
     // Choose the order of the modules
 
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["custom/os", "hyprland/workspaces"],
 
     "modules-center": [""],
 
-    "modules-right": ["tray", "pulseaudio", "custom/recorder", "cpu", "memory", "clock"],
+    "modules-right": ["custom/recorder", "tray", "pulseaudio", "clock"],
 
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
+
+    "custom/os": {"format": "  "},
+
     "sway/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
@@ -34,6 +37,7 @@
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
+
     "mpd": {
         "format": "{stateIcon} {title}",
         "format-disconnected": "Disconnected ",
@@ -62,23 +66,24 @@
     },
     "tray": {
         // "icon-size": 35,
-        "spacing": 8
+        "spacing": 10
     },
 
-"clock": {
-  "format": " {:%I:%M %p}"
+    "clock": {
+    	"format": " {:%I:%M %p}"
  },
 
     "cpu": {
         "format": "",
     },
+
     "memory": {
         "format": ""
     },
 
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon}",
+        "format": "{icon} {volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
@@ -93,7 +98,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "footclient -e pulsemixer"
+        "on-click": "foot -e pulsemixer"
     },
 
 "custom/recorder": {

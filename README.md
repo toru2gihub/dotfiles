@@ -1,5 +1,5 @@
  _______________________________ 
-< this are my config files bruh >
+< these are my config files bruh >
  ------------------------------- 
         \   ^__^
          \  (oo)\_______

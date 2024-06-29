@@ -17,6 +17,8 @@ Email: torupublic11@waifu.club
 ** Settings
 #+begin_src conf
 
+#source=~/dotfiles/.config/hypr/mocha.conf
+
 # Monitors
 monitor=,preferred,auto,auto
 
@@ -65,6 +67,7 @@ exec-once = mako
 exec-once = pypr
 exec-once = swww-daemon
 exec-once = hypridle &
+#exec-once = hyprctl setcursor Bibata-Modern-Classic 24
 exec-once = xrdb ~/dotfiles/.Xdefaults
 
 #+end_src
@@ -72,7 +75,7 @@ exec-once = xrdb ~/dotfiles/.Xdefaults
 ** Enviroment Variables
 #+begin_src conf
 
-#env = XCURSOR_SIZE,24
+env = HYPRCURSOR_THEME,Bibata-Modern-Classic
 env = HYPRCURSOR_SIZE,24
 
 #+end_src
@@ -135,17 +138,19 @@ general {
 #+begin_src conf
 
 decoration {
-    rounding = 13
+    rounding = 10
 
-    # Change transparency of focused and unfocused windows
+    # Transparency (Opacity)
     active_opacity = 1.0
     inactive_opacity = 1.0
 
+    # Shadow
     drop_shadow = false
     shadow_range = 8
     shadow_render_power = 3
     col.shadow = rgba(1a1a1aee)
 
+    # Active window light
     dim_inactive = false
     dim_strength = 0.2
 
@@ -242,7 +247,7 @@ bind = $mainMod, V, exec, pkill -SIGUSR2 waybar
      # Pypr
 bind = $mainMod, Z, exec, pypr expose
 
-# Windows
+     # Windows
 bind = $mainMod, SPACE, togglefloating,
 bind = $mainMod SHIFT, Q, exit,
 bind = $mainMod, Q, killactive,
@@ -250,7 +255,7 @@ bind = $mainMod, F, fullscreen,
 # bind = $mainMod, Z, pseudo, # dwindle
 # bind = $mainMod, X, togglesplit, # dwindle
 
-# Audio (mpc)
+  # Audio (mpc)
 bind = $mainMod, T, exec, mpc toggle
 bind = $mainMod, N, exec, mpc next
 bind = $mainMod, P, exec, mpc previous
