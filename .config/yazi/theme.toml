@@ -16,9 +16,9 @@
 [manager]
 cwd = { fg = "white", bold = true }
 
-# Hovered
-hovered = { reversed = true }
-preview_hovered = { underline = true }
+# Hoveblue
+hoveblue = { reversed = true }
+preview_hoveblue = { underline = true }
 
 # Find
 find_keyword  = { fg = "yellow", italic = true }
@@ -27,10 +27,10 @@ find_position = { fg = "magenta", bg = "reset", italic = true }
 # Marker
 marker_selected = { fg = "lightgreen",  bg = "lightgreen" }
 marker_copied   = { fg = "lightyellow", bg = "lightyellow" }
-marker_cut      = { fg = "lightred",    bg = "lightred" }
+marker_cut      = { fg = "lightblue",    bg = "lightblue" }
 
 # Tab
-tab_active   = { fg = "black", bg = "lightred" }
+tab_active   = { fg = "black", bg = "lightblue" }
 tab_inactive = { fg = "white", bg = "darkgray" }
 tab_width    = 1
 
@@ -52,19 +52,19 @@ separator_close = ""
 separator_style = { fg = "darkgray", bg = "darkgray" }
 
 # Mode
-mode_normal = { fg = "black", bg = "lightred",    bold = false }
+mode_normal = { fg = "black", bg = "lightblue",    bold = false }
 mode_select = { fg = "black", bg = "lightgreen",   bold = false }
 mode_unset  = { fg = "black", bg = "lightmagenta", bold = false }
 
 # Progress
 progress_label  = { bold = true }
-progress_normal = { fg = "red", bg = "black" }
-progress_error  = { fg = "red",  bg = "black" }
+progress_normal = { fg = "blue", bg = "black" }
+progress_error  = { fg = "blue",  bg = "black" }
 
 # Permissions
 permissions_t = { fg = "lightgreen" }
 permissions_r = { fg = "lightyellow" }
-permissions_w = { fg = "lightred" }
+permissions_w = { fg = "lightblue" }
 permissions_x = { fg = "lightcyan" }
 permissions_s = { fg = "darkgray" }
 
@@ -74,7 +74,7 @@ permissions_s = { fg = "darkgray" }
 # : Select {{{
 
 [select]
-border   = { fg = "red" }
+border   = { fg = "blue" }
 active   = { fg = "magenta" }
 inactive = {}
 
@@ -84,7 +84,7 @@ inactive = {}
 # : Input {{{
 
 [input]
-border   = { fg = "red" }
+border   = { fg = "blue" }
 title    = {}
 value    = {}
 selected = { reversed = true }
@@ -95,7 +95,7 @@ selected = { reversed = true }
 # : Completion {{{
 
 [completion]
-border   = { fg = "red" }
+border   = { fg = "blue" }
 active   = { bg = "darkgray" }
 inactive = {}
 
@@ -110,9 +110,9 @@ icon_command = ""
 # : Tasks {{{
 
 [tasks]
-border  = { fg = "red" }
+border  = { fg = "blue" }
 title   = {}
-hovered = { underline = true }
+hoveblue = { underline = true }
 
 # : }}}
 
@@ -137,7 +137,7 @@ separator_style = { fg = "darkgray" }
 on      = { fg = "magenta" }
 exec    = { fg = "cyan" }
 desc    = { fg = "gray" }
-hovered = { bg = "darkgray", bold = true }
+hoveblue = { bg = "darkgray", bold = true }
 footer  = { fg = "black", bg = "white" }
 
 # : }}}
@@ -156,14 +156,14 @@ rules = [
     { mime = "audio/*", fg = "green" },
 
     # Archives
-    { mime = "application/zip",             fg = "red" },
-    { mime = "application/gzip",            fg = "red" },
-    { mime = "application/x-tar",           fg = "red" },
-    { mime = "application/x-bzip",          fg = "red" },
-    { mime = "application/x-bzip2",         fg = "red" },
-    { mime = "application/x-7z-compressed", fg = "red" },
-    { mime = "application/x-rar",           fg = "red" },
-    { mime = "application/xz",              fg = "red" },
+    { mime = "application/zip",             fg = "blue" },
+    { mime = "application/gzip",            fg = "blue" },
+    { mime = "application/x-tar",           fg = "blue" },
+    { mime = "application/x-bzip",          fg = "blue" },
+    { mime = "application/x-bzip2",         fg = "blue" },
+    { mime = "application/x-7z-compressed", fg = "blue" },
+    { mime = "application/x-rar",           fg = "blue" },
+    { mime = "application/xz",              fg = "blue" },
 
     # Documents
     # { mime = "application/doc",   fg = "green" },
@@ -176,7 +176,7 @@ rules = [
     { name = "*",  fg = "cyan",   bold = true, is = "link" },
     { name = "*",  fg = "green",  bold = true, is = "exec" },
     { name = "*/", fg = "cyan",   bold = true, is = "link" },
-    { name = "*/", fg = "red",   bold = true }
+    { name = "*/", fg = "blue",   bold = true }
 ]
 
 [icon]
