@@ -70,7 +70,7 @@
     },
 
     "clock": {
-    	"format": " {:%I:%M %p}"
+    	"format": "󰃭 {:%d/%m/%Y %I:%M %p}"
  },
 
     "cpu": {

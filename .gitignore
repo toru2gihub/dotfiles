@@ -4,7 +4,6 @@
 .config/GIMP
 .config/procps
 .config/pulse
-.config/systemd
 .config/mimeapps.list
 .config/wall.png
 .config/QtProject.conf

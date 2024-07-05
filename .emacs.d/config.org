@@ -7,6 +7,56 @@
 #+startup: content
 
 
+* Table :toc:
+- [[#-overall][ Overall]]
+  - [[#-scripts][󱜥 Scripts.]]
+  - [[#-package-manager][󰏖 Package Manager.]]
+  - [[#-settings][󱁤 Settings.]]
+  - [[#-dashboard][󰕮 Dashboard]]
+  - [[#-theming][󰔎 Theming.]]
+  - [[#-modeline][󱖫 Modeline.]]
+  - [[#-keybindings][󰌌 Keybindings.]]
+  - [[#-eglotlsp][󰙱 Eglot/LSP]]
+  - [[#-bindkey][󰧺 Bindkey.]]
+  - [[#-diary--calendar][󰃭 Diary & Calendar.]]
+  - [[#-functionshooks][󰛢 Functions/Hooks.]]
+  - [[#-defalias][󰑕 Defalias.]]
+  - [[#-abbrev][󰏶 Abbrev.]]
+  - [[#-ispell][󰗊 Ispell.]]
+- [[#-org][ Org]]
+  - [[#-settings-1][󱗂 Settings.]]
+  - [[#-org-agenda][ Org-Agenda.]]
+  - [[#-org-roam][󰧑 Org-Roam.]]
+  - [[#-org-capture][󰜃 Org-Capture.]]
+  - [[#-org-publish][󰚧 Org-Publish.]]
+  - [[#-org-refile][󰈔 Org-Refile.]]
+  - [[#-org-babel][󰨥 Org-Babel.]]
+  - [[#-org-toc][󱖫 Org-Toc.]]
+- [[#-active-pkgs][󰋜 Active Pkgs]]
+  - [[#-evil-mode][ Evil-Mode.]]
+  - [[#-dired][󰉋 Dired.]]
+  - [[#-vertico][ Vertico.]]
+  - [[#-consult][󰈈 Consult.]]
+  - [[#-corfu--cape][󱦟 Corfu & Cape.]]
+  - [[#-avy][󰖇 Avy.]]
+  - [[#-treemacs][ Treemacs]]
+  - [[#-hydra][ Hydra.]]
+  - [[#-olivetti][ Olivetti.]]
+  - [[#-vundo][󰙅 Vundo.]]
+  - [[#-which-key][󰺴 Which-key.]]
+  - [[#-snippets][󰔣 Snippets.]]
+- [[#-passive-pkgs][ Passive Pkgs]]
+  - [[#-all-the-icons][ All-the-icons.]]
+  - [[#-auctex][ AucteX.]]
+  - [[#-nix-mode][󱄅 Nix-mode.]]
+  - [[#-no-littering][ No-littering.]]
+  - [[#-highlight-indent-guides][ highlight-indent-guides.]]
+  - [[#-rainbow-modes][󰵼 Rainbow modes.]]
+  - [[#-marginalia][ Marginalia.]]
+  - [[#-page-break-lines][ Page-break-lines.]]
+  - [[#-flycheck][󰓆 Flycheck.]]
+  - [[#--hl-todo][  Hl-TODO.]]
+
 *  Overall
 ** 󱜥 Scripts. 
 - Require packages to bring to the emacs config
@@ -191,8 +241,8 @@
 		    )
 
 ;; Transparency
-(set-frame-parameter nil 'alpha-background 96)
-(add-to-list 'default-frame-alist '(alpha-background . 96))
+(set-frame-parameter nil 'alpha-background 90)
+(add-to-list 'default-frame-alist '(alpha-background . 90))
 
 (custom-set-faces
  `(org-checkbox ((t :box (:line-width 2 :color "gray"
@@ -204,8 +254,8 @@
 (global-auto-revert-mode t)  ;; Automatically show changes if the file has changed
 (setq display-line-numbers-type 'relative)
 (global-visual-line-mode t)  ;; Enable truncated lines
-(menu-bar-mode -1)           ;; Disable the menu bar
-(tool-bar-mode -1)           ;; Disable the tool bar
+(menu-bar-mode 1)           ;; Disable the menu bar
+(tool-bar-mode 1)           ;; Disable the tool bar
 (global-display-line-numbers-mode 1) ;; Enable global lines numbers
 (global-tab-line-mode -1) ;; Disable buffers like tabs
 (tab-bar-mode -1) ;; Disable tabs
@@ -1429,13 +1479,13 @@ folder, otherwise delete a word"
             t)
   )
 
-(use-package corfu-doc
-  :after corfu
-  :config
-  (define-key corfu-map (kbd "M-p") #'corfu-doc-scroll-down) ;; corfu-next
-  (define-key corfu-map (kbd "M-n") #'corfu-doc-scroll-up)  ;; corfu-previous
-  ;; (setq corfu-doc-display-within-parent-frame nil)
-  (add-hook 'corfu-mode-hook #'corfu-doc-mode))
+;; (use-package corfu-doc
+;;   :after corfu
+;;   :config
+;;   (define-key corfu-map (kbd "M-p") #'corfu-doc-scroll-down) ;; corfu-next
+;;   (define-key corfu-map (kbd "M-n") #'corfu-doc-scroll-up)  ;; corfu-previous
+;;   ;; (setq corfu-doc-display-within-parent-frame nil)
+;;   (add-hook 'corfu-mode-hook #'corfu-doc-mode))
 
 (use-package kind-icon
   :ensure t
