@@ -1,8 +1,17 @@
+/* ▀█▀▄▀▄█▀▄█ █ */
+/*  █ ▀▄▀█▀▄▀▄█ */
+/* simple, clean, elegant */
+
+/* Page: https://toru.codeberg.page/ */
+/* Mastodon: @averagetiger89 */
+/* Repository: https://codeberg.org/toru */
+/* Email: torupublic11@waifu.club */
+
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Jetbrains Mono, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 15px;
-    border-radius: 10px;
+    border-radius: 0px;
 }
 
 window#waybar {

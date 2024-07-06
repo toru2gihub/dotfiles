@@ -1,43 +1,49 @@
+// ▀█▀▄▀▄█▀▄█ █
+//  █ ▀▄▀█▀▄▀▄█
+// simple, clean, elegant
+
+// Page: https://toru.codeberg.page/
+// Mastodon: @averagetiger89
+// Repository: https://codeberg.org/toru
+// Email: torupublic11@waifu.club
+
 {
+
+// POSITION
+
     // "layer": "top", // Waybar at top layer
 
     // "position": "bottom", // Waybar position (top|bottom|left|right)
 
-    "height": 38, // Waybar height (to be removed for auto height)
+    "height": 40, // Waybar height (to be removed for auto height)
 
-    "width": 1885, // Waybar width
+    "width": 1920, // Waybar width
 
     "mode": "dock",
 
-  "margin-top": 10,
+  "margin-top": 0,
   "margin-left": 0,
   "margin-right": 0,
   "margin-bottom": 0,
 
-    "spacing": 1, // Gaps between modules
+    "spacing": 7, // Gaps between modules
 
-    // Choose the order of the modules
+// MODULES ORDER
 
     "modules-left": ["custom/os", "hyprland/workspaces"],
 
     "modules-center": [""],
 
-    "modules-right": ["custom/recorder", "tray", "pulseaudio", "clock"],
+    "modules-right": ["custom/recorder", "mpd", "pulseaudio", "memory", "clock", "tray"],
 
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
+// MODULES //
 
-    "custom/os": {"format": "  "},
+// CUSTOM/OS
+    "custom/os": {
+    "format": "  "
+  },
 
-    "sway/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
-    },
-
+// MPD
     "mpd": {
         "format": "{stateIcon} {title}",
         "format-disconnected": "Disconnected ",
@@ -64,23 +70,35 @@
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
+
+// TRAY
     "tray": {
-        // "icon-size": 35,
-        "spacing": 10
+        "icon-size": 18,
+        "spacing": 8
     },
 
+// CLOCK
     "clock": {
-    	"format": "󰃭 {:%d/%m/%Y %I:%M %p}"
+    	"format": " {:%I:%M %p}",
+	"interval": 60,
+	"tooltip": true,
+	"tooltip-format": "{:%d/%m/%Y}"
+
  },
 
+// CPU
     "cpu": {
-        "format": "",
+    	"interval": 5,
+        "format": " {percentage}%",
     },
 
+// MEMORY
     "memory": {
-        "format": ""
+    	"interval": 30,
+        "format":  " {percentage}%"
     },
 
+// PULSEAUDIO
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
@@ -101,6 +119,7 @@
         "on-click": "foot -e pulsemixer"
     },
 
+// CUSTOM/RECORDER
 "custom/recorder": {
   "format": "",
   "return-type": "json",

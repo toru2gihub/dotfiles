@@ -4,7 +4,7 @@
 #+title: Torumacs 
 #+author: toru
 #+description: toru config of emacs
-#+startup: content
+#+startup: showall
 
 
 * Table :toc:
@@ -31,6 +31,7 @@
   - [[#-org-publish][󰚧 Org-Publish.]]
   - [[#-org-refile][󰈔 Org-Refile.]]
   - [[#-org-babel][󰨥 Org-Babel.]]
+  - [[#-org-bullets][󰳳 Org-bullets.]]
   - [[#-org-toc][󱖫 Org-Toc.]]
 - [[#-active-pkgs][󰋜 Active Pkgs]]
   - [[#-evil-mode][ Evil-Mode.]]
@@ -217,7 +218,7 @@
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
         doom-themes-enable-italic t) ; if nil, italics is universally disabled
 
-  (load-theme 'doom-badger t)
+  (load-theme 'doom-homage-black t)
 
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
@@ -1211,6 +1212,15 @@
 
 #+end_src
 
+** 󰳳 Org-bullets.
+#+begin_src emacs-lisp
+
+(use-package org-bullets)
+
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+#+end_src
+
 ** 󱖫 Org-Toc.
 #+name: org-toc block
 #+begin_src emacs-lisp
@@ -1479,13 +1489,13 @@ folder, otherwise delete a word"
             t)
   )
 
-;; (use-package corfu-doc
-;;   :after corfu
-;;   :config
-;;   (define-key corfu-map (kbd "M-p") #'corfu-doc-scroll-down) ;; corfu-next
-;;   (define-key corfu-map (kbd "M-n") #'corfu-doc-scroll-up)  ;; corfu-previous
-;;   ;; (setq corfu-doc-display-within-parent-frame nil)
-;;   (add-hook 'corfu-mode-hook #'corfu-doc-mode))
+(use-package corfu-doc
+  :after corfu
+  :config
+  (define-key corfu-map (kbd "M-p") #'corfu-doc-scroll-down) ;; corfu-next
+  (define-key corfu-map (kbd "M-n") #'corfu-doc-scroll-up)  ;; corfu-previous
+  ;; (setq corfu-doc-display-within-parent-frame nil)
+  (add-hook 'corfu-mode-hook #'corfu-doc-mode))
 
 (use-package kind-icon
   :ensure t
