@@ -14,10 +14,11 @@
 
 -- require('settings')
 
+-- setup must be called before loading
+vim.cmd("colorscheme retrobox")
 
 local g = vim.g
 local o = vim.o
-
 
 local vim = vim
 local Plug = vim.fn['plug#']
@@ -26,7 +27,7 @@ vim.call('plug#begin')
 
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
-Plug 'rebelot/kanagawa.nvim'
+Plug 'xiyaowong/transparent.nvim'
 
 vim.call('plug#end')
 
@@ -158,31 +159,14 @@ require('lualine').setup {
   extensions = {}
 }
 
--- Default options:
-require('kanagawa').setup({
-    compile = false,             -- enable compiling the colorscheme
-    undercurl = true,            -- enable undercurls
-    commentStyle = { italic = true },
-    functionStyle = {},
-    keywordStyle = { italic = true},
-    statementStyle = { bold = true },
-    typeStyle = {},
-    transparent = false,         -- do not set background color
-    dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
-    terminalColors = true,       -- define vim.g.terminal_color_{0,17}
-    colors = {                   -- add/modify theme and palette colors
-        palette = {},
-        theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
-    },
-    overrides = function(colors) -- add/modify highlights
-        return {}
-    end,
-    theme = "wave",              -- Load "wave" theme when 'background' option is not set
-    background = {               -- map the value of 'background' option to a theme
-        dark = "wave",           -- try "dragon" !
-        light = "lotus"
-    },
+require("transparent").setup({ -- Optional, you don't have to run setup.
+  groups = { -- table: default groups
+    'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
+    'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
+    'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
+    'SignColumn', 'CursorLine', 'CursorLineNr', 'StatusLine', 'StatusLineNC',
+    'EndOfBuffer',
+  },
+  extra_groups = {}, -- table: additional groups that should be cleared
+  exclude_groups = {}, -- table: groups you don't want to clear
 })
-
--- setup must be called before loading
-vim.cmd("colorscheme default")
