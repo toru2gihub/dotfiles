@@ -218,7 +218,7 @@
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
         doom-themes-enable-italic t) ; if nil, italics is universally disabled
 
-  (load-theme 'doom-homage-black t)
+  (load-theme 'doom-badger t)
 
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
@@ -806,7 +806,7 @@
 ;; Org-directory
 (setq org-directory "~/pu/org/")
 
-(setq org-ellipsis "⤵")
+(setq org-ellipsis "")
 
 ;; Org images
 (setq org-startup-with-inline-images t)
@@ -1855,7 +1855,7 @@ folder, otherwise delete a word"
 
 (use-package olivetti)
 
-(setq olivetti-body-width 100)
+(setq olivetti-body-width 200)
 
 #+end_src
 
