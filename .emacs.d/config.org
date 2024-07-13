@@ -242,8 +242,8 @@
 		    )
 
 ;; Transparency
-(set-frame-parameter nil 'alpha-background 90)
-(add-to-list 'default-frame-alist '(alpha-background . 90))
+(set-frame-parameter nil 'alpha-background 94)
+(add-to-list 'default-frame-alist '(alpha-background . 94))
 
 (custom-set-faces
  `(org-checkbox ((t :box (:line-width 2 :color "gray"
@@ -588,7 +588,7 @@
   "Export current org file to PDF, delete generated .log and .tex files, and move PDF to a specific folder."
   (interactive)
   (let* ((org-file (buffer-file-name)) 
-         (pdf-folder "~/dc/") 
+         (pdf-folder "~/dc/Iwill/") 
          (pdf-file (concat pdf-folder (file-name-base org-file) ".pdf")) 
          (default-directory (file-name-directory org-file))) ; Set default directory for export
     (org-latex-export-to-pdf) 
@@ -1024,8 +1024,8 @@
       :if-new (file+head "1.5.3_${slug}.org" "#+title: ${title}\n")
       :unnarrowed t)
 
-;; Linea
-     ("nbl" "Linea" plain (file "~/dotfiles/.emacs.d/etc/templates/notas.org")
+;; Teoria
+     ("nbt" "Teoria Musical" plain (file "~/dotfiles/.emacs.d/etc/templates/notas.org")
       :if-new (file+head "1.5.4_${slug}.org" "#+title: ${title}\n")
       :unnarrowed t)
 
