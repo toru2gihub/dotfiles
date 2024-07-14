@@ -25,7 +25,7 @@ autoload -U colors && colors # Load colors
 autoload -Uz add-zsh-hook
 setopt prompt_subst
 add-zsh-hook precmd vcs_info
-PROMPT='%(?.%F{blue}λ.%F{9}λ)%f %2~ '
+PROMPT='%(?.%F{red}λ.%F{9}λ)%f %2~ '
 # Run the `vcs_info` hook to grab git info before displaying the prompt
 add-zsh-hook precmd vcs_info
 
@@ -42,24 +42,6 @@ zstyle ':vcs_info:*:*' check-for-changes true
 
 # Set the right prompt to the vcs_info message
 RPROMPT='⎇ ${vcs_info_msg_0_}'
-
-# newline=$'\n'
-# set_prompt() {
-#     if [[ $UID -eq 0 ]]; then
-#         # PROMPT='%1 %F{cyan}%/%f%F{blue}${vcs_info_msg_0_}%f%b ${newline}%F{red}❯❯ %f'
-# 	#PROMPT='%B%1~%b %F{011}λ %f'
-#         PROMPT='%F{red} λ %f'
-#         RPROMPT='%F{magenta}%~%f%F{magenta}${vcs_info_msg_0_}%f'
-#     else
-#         # PROMPT='%1 %F{cyan}%/%f%F{blue}${vcs_info_msg_0_}%f%b ${newline}%F{blue}❯❯ %f'
-#         PROMPT='%F{yellow} λ %f'
-#         RPROMPT='%F{green}%~%f%F{red}${vcs_info_msg_0_}%f'
-#     fi
-# }
-# set_prompt
-# precmd() {
-#     set_prompt
-# }
 
 ## CTRL+ARROW KEYS
 bindkey "^[[1;5C" forward-word
@@ -141,11 +123,11 @@ export FZF_DEFAULT_COMMAND='fd . --hidden --exclude ".git"'
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-  --color=fg:#d0d0d0,fg+:#d0d0d0,bg:#121212,bg+:#262626
+  --color=fg:#d0d0d0,fg+:#d0d0d0,bg:-1,bg+:-1
 
   --color=hl:#5f87af,hl+:#5fd7ff,info:#afaf87,marker:#87ff00
 
-  --color=prompt:#d7005f,spinner:#af5fff,pointer:#af5fff,header:#87afaf
+  --color=prompt:#d90000,spinner:#d90000,pointer:#d90000,header:#87afaf
 
   --color=border:#262626,label:#aeaeae,query:#d9d9d9
 

@@ -36,7 +36,7 @@ tab_width    = 1
 
 # Border
 border_symbol = "│"
-border_style  = { fg = "gray" }
+border_style  = { fg = "white" }
 
 # Highlighting
 syntect_theme = ""
