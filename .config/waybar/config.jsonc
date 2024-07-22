@@ -70,7 +70,7 @@
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
-
+    
 // TRAY
     "tray": {
         "icon-size": 18,

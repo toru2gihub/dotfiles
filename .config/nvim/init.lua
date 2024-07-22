@@ -15,7 +15,7 @@
 -- require('settings')
 
 -- setup must be called before loading
-vim.cmd("colorscheme default")
+vim.cmd("colorscheme vim")
 
 local g = vim.g
 local o = vim.o
