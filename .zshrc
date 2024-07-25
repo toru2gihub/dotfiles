@@ -22,6 +22,9 @@ echo -e -n "\x1b[\x35 q" # vertical line blinking
 
 autoload -U colors && colors # Load colors
 
+# TOMB SCRIPT
+bindkey -s '^t' 'tmount\n'
+
 autoload -Uz add-zsh-hook
 setopt prompt_subst
 add-zsh-hook precmd vcs_info

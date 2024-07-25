@@ -1489,6 +1489,8 @@ folder, otherwise delete a word"
             t)
   )
 
+  ; (setq tab-always-indent 'complete)
+
 (use-package corfu-doc
   :after corfu
   :config
