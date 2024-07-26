@@ -8,124 +8,112 @@
 // Email: torupublic11@waifu.club
 
 {
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "height": 47,
+    // "width": 1580,
+    "modules-left": ["hyprland/workspaces", "custom/window_state"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["memory", "pulseaudio", "custom/weather", "clock", "tray"],
 
-// POSITION
-
-    // "layer": "top", // Waybar at top layer
-
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-
-    "height": 40, // Waybar height (to be removed for auto height)
-
-    "width": 1920, // Waybar width
-
-    "mode": "dock",
-
-  "margin-top": 0,
-  "margin-left": 0,
-  "margin-right": 0,
-  "margin-bottom": 0,
-
-    "spacing": 7, // Gaps between modules
-
-// MODULES ORDER
-
-    "modules-left": ["custom/os", "hyprland/workspaces"],
-
-    "modules-center": [""],
-
-    "modules-right": ["custom/recorder", "mpd", "pulseaudio", "memory", "clock", "tray"],
-
-// MODULES //
-
-// CUSTOM/OS
-    "custom/os": {
-    "format": "  "
-  },
-
-// MPD
-    "mpd": {
-        "format": "{stateIcon} {title}",
-        "format-disconnected": "Disconnected ",
-        "format-stop": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stop ",
-        "unknown-tag": "?",
-        "interval": 2,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
+    "hyprland/window": {
+        "format": "{}",
+        "icon": true,
+        "icon-size": 20,
     },
-    
-// TRAY
+
+    "hyprland/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": false,
+        "on-click": "activate",
+
+        // "persistent-workspaces": {
+        //    "1": []
+        // },
+
+        "format-icons": {
+          "active": []
+        }
+    },
+
     "tray": {
-        "icon-size": 18,
+        "icon-size": 19,
         "spacing": 8
     },
 
-// CLOCK
     "clock": {
-    	"format": " {:%I:%M %p}",
-	"interval": 60,
-	"tooltip": true,
-	"tooltip-format": "{:%d/%m/%Y}"
-
- },
-
-// CPU
-    "cpu": {
-    	"interval": 5,
-        "format": " {percentage}%",
+        "format": " {:%I:%M %p   %a, %b %e}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
 
-// MEMORY
-    "memory": {
-    	"interval": 30,
-        "format":  " {percentage}%"
-    },
-
-// PULSEAUDIO
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format": "{icon}  {volume}%",
+        "tooltip": false,
+        "format-muted": " Muted",
+        "on-click": "foot -e pulsemixer",
+        "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+",
+        "on-scroll-down": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%-",
+        "scroll-step": 5,
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "",
+            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
             "default": ["", "", ""]
-        },
-        "on-click": "foot -e pulsemixer"
+        }
     },
 
-// CUSTOM/RECORDER
-"custom/recorder": {
-  "format": "",
-  "return-type": "json",
-  "interval": 1,
-  "exec": "echo '{\"class\": \"recording\"}'",
-  "exec-if": "pgrep tofirecorder.sh"
- },
+    "memory": {
+        "interval": 10,
+        "format": "󰍛 {used:0.1f}G"
+    },
+    
+    "temperature": {
+        "thermal-zone": 2,
+        "format": "{temperatureC}°C ",
+        "critical-threshold": 80,
+        "format-critical": "{temperatureC}°C "
+    },
 
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "  {signalStrength}%",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip-format": "{essid} - {ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}"
+    },
+
+    "bluetooth": {
+        "format": " {status}",
+        "format-disabled": "", // an empty format will hide the module
+        "format-connected": " {num_connections}",
+        "tooltip-format": "{device_alias}",
+        "tooltip-format-connected": " {device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}"
+    },
+
+    "custom/weather": {
+        "exec": "curl 'https://wttr.in/Caracas?format=1' | grep -v Unknown",
+        "interval": 100
+    },
+
+  "custom/recorder": {
+       "format": " ",
+       "return-type": "json",
+       "interval": 1,
+       "exec": "echo '{\"class\": \"recording\"}'",
+       "exec-if": "pgrep wf-recorder"
+    },
+
+  "custom/window_state": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "/usr/bin/env cat /tmp/hyprwindow",
+        "signal": 10,
+    },
 }
