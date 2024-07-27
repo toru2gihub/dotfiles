@@ -31,7 +31,7 @@
 
 window#waybar {
     background: transparent;
-    color: #cdd6f4;
+    color: #98971a;
 }
 
 window#waybar.empty #window {
@@ -43,7 +43,10 @@ window#waybar.floating {
 }
 
 tooltip {
-    background: #181818;
+    /* background: #181818; */
+
+    background: #282828;
+
     border-radius: 0px;
     border-width: 2px;
     border-style: solid;
@@ -55,24 +58,27 @@ tooltip {
 }
 
 #workspaces button.active {
-    color: #ff0000;
+
+    /* color: #ff0000; */
+
+    color: #cc241d;
 }
 
 #workspaces button.focused {
     color: #a6adc8;
-    background: #eba0ac;
+    background: #d3869b;
     border-radius: 5px;
 }
 
 #workspaces button.urgent {
-    color: #11111b;
-    background: #a6e3a1;
+    color: #fb4934;
+    background: #ff0000;
     border-radius: 5px;
 }
 
 #workspaces button:hover {
-    background: #181818;
-    color: #cdd6f4;
+    background: #282828;
+    color: #d65d0e;
     border-radius: 5px;
 }
 
@@ -85,6 +91,7 @@ tooltip {
 #network,
 #bluetooth,
 #memory,
+#mpd,
 #temperature,
 #workspaces,
 #tray {
@@ -96,6 +103,27 @@ tooltip {
     border: 0px solid #181825;
 }
 
+#mpd {
+    padding: 0 10px;
+    color: #ebdbb2;
+}
+
+#mpd.disconnected {
+    background-color: #ff0000;
+}
+
+#mpd.stopped {
+
+    /* background-color: rgba(0,0,0,0.5); */
+
+}
+
+#mpd.paused {
+
+    /* background-color: rgba(0,0,0,0.5); */
+
+}
+
 #temperature {
     border-radius: 5px 0px 0px 5px;
 }
@@ -105,14 +133,14 @@ tooltip {
 }
 
 #tray {
-    border-radius: 5px;
+    border-radius: 0px;
     margin-right: 10px;
     margin-left: 10px;
 }
 
 #workspaces {
     background: #181818;
-    border-radius: 5px 0px 0px 5px;
+    border-radius: 0px 0px 0px 0px;
     padding: 0;
     margin-left: 10px;
     margin-right: 0px;
@@ -125,14 +153,17 @@ tooltip {
 }
 
 #window {
-    border-radius: 5px;
+    border-radius: 0px;
     margin-left: 40px;
     margin-right: 40px;
 }
 
 #clock {
-    color: #fab387;
-    border-radius: 5px 0px 0px 5px;
+    /* color: #fab387; */
+
+    color: #d79921;
+    
+    border-radius: 0px 0px 0px 0px;
     margin-left: 10px;
     border-right: 0px;
 }
@@ -153,13 +184,16 @@ tooltip {
 } 
 
 #pulseaudio {
-    color: #89b4fa;
+    /* color: #89b4fa; */
+
+    color: #458588;
+
     border-left: 0px;
     border-right: 0px;
 }
 
 #memory {
-    color: #f5c2e7;
+    color: #b16286;
     border-left: 0px;
     border-right: 0px;
     border-radius: 0px 0px 0px 0px; 
@@ -189,6 +223,6 @@ tooltip {
     color: #ffffff;
     border-left: 0px;
     border-right: 0px;
-    border-radius: 0px 5px 5px 0px;
+    border-radius: 0px 0px 0px 0px;
     margin-right: 10px;
 }
