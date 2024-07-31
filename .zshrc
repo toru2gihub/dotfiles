@@ -99,7 +99,7 @@ XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
 XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
 XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
 #MANPAGER="nvim +Man!"
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+#MANPAGER="sh -c 'col -bx | bat -l man -p'"
 #SUDO_ASKPASS=/usr/X11R6/bin/ssh-askpass
 XDG_DESKTOP_DIR="$HOME/dk"
 XDG_DOCUMENTS_DIR="$HOME/dc"

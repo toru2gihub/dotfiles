@@ -222,6 +222,9 @@
 
   (load-theme 'doom-gruvbox t)
 
+(custom-set-faces
+  '(default ((t (:background "#1a1a1a")))))
+
   (setq doom-gruvbox-dark-variant t)
   (setq doom-gruvbox-padded-modeline t)
 

@@ -48,7 +48,7 @@ default_place_to_search_in = "database"
 # visualizer
 visualizer_data_source = "/tmp/mpd.fifo"
 visualizer_output_name = "my_fifo"
-visualizer_type = "wave"
+visualizer_type = "spectrum"
 visualizer_in_stereo = "yes"
 visualizer_look = "+|"
 
