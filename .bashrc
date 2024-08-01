@@ -18,53 +18,112 @@ bind -m vi-command 'Control-l: clear-screen'
 bind -m vi-insert 'Control-l: clear-screen'
 bind -s 'set completion-ignore-case on'
 
+
 # EXPORT
-## export all variables
+
+## EXPORT ALL VARIABLES
 set -o allexport
 
 #░█▒█▒▄▀▄▒█▀▄░█▒▄▀▄░██▄░█▒░▒██▀░▄▀▀
 #░▀▄▀░█▀█░█▀▄░█░█▀█▒█▄█▒█▄▄░█▄▄▒▄██
-PATH="$HOME/.scripts":$PATH
+PROMPT='%(?.%F{red}λ.%F{9}λ)%f %2~ '
 TERMINAL="foot"
-EDITOR="nvim"
-VISUAL="nvim"
-#FILE="lf"
+EDITOR="emacsclient -c -a 'emacs'"
+VISUAL="emacsclient -c -a 'emacs'"
+# EDITOR="nvim"
+# VISUAL="nvim"
+FILE="yazi"
+BROWSER="firefox"
 IMAGEVIEWER="nsxiv"
-MANPAGER="nvim +Man!"
 READER="zathura"
 PAGER="less"
-BROWSER="firefox"
-SUDO_ASKPASS="$HOME/.scripts/dmenupass"
 HISTSIZE=10000000
 SAVEHIST=10000000
-HISTFILE=~/.zsh_history
+HISTDUP=erase
+HISTFILE="$HOME/.local/share/.zsh_history"
+PATH="$HOME/.scripts":$PATH
+#SUDO_ASKPASS="$HOME/.scripts/tofipass.sh"
 XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
 XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
 XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
 XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
-HISTFILE="${XDG_STATE_HOME}"/bash/history
-GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+#MANPAGER="nvim +Man!"
+#MANPAGER="sh -c 'col -bx | bat -l man -p'"
 #SUDO_ASKPASS=/usr/X11R6/bin/ssh-askpass
-#SUDO_ASKPASS=/usr/X11R6/bin/ssh-askpass
-PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
+XDG_DESKTOP_DIR="$HOME/dk"
+XDG_DOCUMENTS_DIR="$HOME/dc"
+XDG_DOWNLOAD_DIR="$HOME/dl"
+XDG_MUSIC_DIR="$HOME/ms"
+XDG_PICTURES_DIR="$HOME/pic"
+XDG_PUBLICSHARE_DIR="$HOME/pu"
+XDG_TEMPLATES_DIR="$HOME/tem"
+XDG_VIDEOS_DIR="$HOME/vd"
+
+# Use the CLI find to get all files, excluding any filepath
+# containing the string "git".
+export FZF_DEFAULT_COMMAND='find . -type f ! -path "*git*"'
+
+# Use the CLI fd to respect ignore files (like '.gitignore'),
+# display hidden files, and exclude the '.git' directory.
+export FZF_DEFAULT_COMMAND='fd . --hidden --exclude ".git"'
+
+# Use the CLI ripgrep to respect ignore files (like '.gitignore'),
+# display hidden files, and exclude the '.git' directory.
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
+
+# DRACULA FZF
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+--color=dark
+--color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#ffaf5f
+--color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7
+'
+
+# export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+#   --color=fg:#d0d0d0,fg+:#d0d0d0,bg:-1,bg+:-1
+
+#   --color=hl:#5f87af,hl+:#5fd7ff,info:#afaf87,marker:#87ff00
+
+#   --color=prompt:#d90000,spinner:#d90000,pointer:#d90000,header:#87afaf
+
+#   --color=border:#262626,label:#aeaeae,query:#d9d9d9
+
+#   --preview-window="border-double"
+
+#   --prompt="> "
+
+#   --marker=">"
+
+#   --pointer="λ"
+
+#   --separator="."
+
+#   --scrollbar="│"'
 
 #▒▄▀▄░█▒░░█▒▄▀▄░▄▀▀▒██▀░▄▀▀
 #░█▀█▒█▄▄░█░█▀█▒▄██░█▄▄▒▄██
 
 ## Coreutils ##
-alias ls="ls -lhN --color=auto --group-directories-first"
-alias la="ls -lahN --color=auto --group-directories-first"
+#alias ls="ls -lhN --color=auto --group-directories-first"
+#alias la="ls -lahN --color=auto --group-directories-first"
+alias la='eza -la --icons --git --group-directories-first'
+alias ls='eza -l --icons --git --group-directories-first'
 alias cat='bat'
 alias cp="cp -iv"
 alias mv="mv -iv"
 alias hist="history | fzf | xclip -sel c"
-alias rm='shred -uzvn3'
+alias srm='shred -uzvn3'
 alias mkdir="mkdir -pv"
-alias xup='xrdb -load ~/.config/.Xresources'
+alias xup='xrdb -load ~/dotfiles/.Xdefaults'
+alias fbat='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
+
+## Nix ##
+alias store="nix-store --query --requisites /run/current-system | cut -d- -f2- | sort | uniq"
 
 ## Git ##
-alias gs="git status"
+alias gst="git status"
 alias gw="git switch"
+alias gl="git log --oneline | fzf --preview 'git show --name-only {1}'" #commit history
+alias glog='git log --graph --topo-order --pretty='\''%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N'\'' --abbrev-commit'
 alias gb="git branch"
 alias ga="git add ."
 alias gc="git commit"
@@ -72,28 +131,52 @@ alias gp="git push -u"
 
 ## Programs ##
 alias e="emacsclient -c -a 'emacs'"
-alias x='nsxiv -t .'
-alias v='nvim'
-alias s='nsxiv'
-alias txr="tmux source "~/.config/tmux/tmux.conf""
-alias ncp='ncmpcpp'
-alias ytd="yt-dlp --embed-metadata -i"
+alias x="nsxiv -t ."
+alias v="nvim"
+alias zj="zellij"
+alias ff="fastfetch"
+alias rs="rsync -vuP"
+alias s="nsxiv"
+alias ncp="ncmpcpp"
+alias ytd="cd ~/dl; yt-dlp --embed-metadata -i"
 alias ffmpeg="ffmpeg -hide_banner"
-alias yt='cd ~/dl; ytfzf -t -d'
+alias yt="cd ~/dl; ytfzf -t -d"
+alias tb="nc termbin.com 9999" #antes del "tb", usa | (pipe)
+
+## Pacman ##
+#alias pacr="pacman -Qq | fzf --multi --preview 'pacman -Qi {2}' | xargs -ro sudo pacman -Rncs"
+#alias pacs='pacman -Slq | fzf --multi --preview '\''pacman -Si {1}'\'' | xargs -ro sudo pacman -S'
+#alias yays='yay -Slq | fzf --multi --preview '\''yay -Si {1}'\'' | xargs -ro yay --sudo sudo --sudoflags -- --save -S'
+#alias yayr="yay -Qq | fzf --multi --preview 'yay -Qi {1}' | xargs -ro yay --sudo sudo --sudoflags -- --save -Rncs"
+#alias pacsyu='sudo pacman -Syu'
 
 ## Not in use ##
-#alias la='eza -la --icons --git --group-directories-first'
-#alias ls='eza -l --icons --git --group-directories-first'
 #alias rm="rm -vI"
 #alias rem="killall emacs | /usr/bin/emacs --daemon"
-#alias tb='nc termbin.com 9999'
 #alias chafa='chafa -c full -s 40x40'
 #alias h="history | cut -c 8- | sort | uniq | fzf | tr -d '\n' | xclip -selection c"
 
 #▒█▀░█▒█░█▄░█░▄▀▀░▀█▀░█░▄▀▄░█▄░█░▄▀▀
 #░█▀░▀▄█░█▒▀█░▀▄▄░▒█▒░█░▀▄▀░█▒▀█▒▄██
+
 fcd() {
-        cd "$(find -type d | fzf)"
+
+  cd "$(find ~/ -type d \( -path '*/\.git/*' -o -path ~/.local -o -path ~/.mozilla -o -path ~/.cache -o -path ~/dc/books \) -prune -o -type d -print | fzf --border --margin=5% --info=inline --prompt="Select dir: " --preview='tree -C {} | head -n 40')"
+
+}
+
+fpf() {
+
+    fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
+}
+
+ frf() {
+ command rm -rf $(command ls -a | fzf --multi --border --margin=3% --info=inline --prompt="Delete File: " --preview='tree -C {} | head -n 40')
+ }
+
+open() {
+
+    xdg-open "$(find -type f | fzf)"
 }
 
 # OTROS

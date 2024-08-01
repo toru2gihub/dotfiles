@@ -122,26 +122,33 @@ export FZF_DEFAULT_COMMAND='fd . --hidden --exclude ".git"'
 # display hidden files, and exclude the '.git' directory.
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 
+# DRACULA FZF
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-  --color=fg:#d0d0d0,fg+:#d0d0d0,bg:-1,bg+:-1
+--color=dark
+--color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#ffaf5f
+--color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7
+'
 
-  --color=hl:#5f87af,hl+:#5fd7ff,info:#afaf87,marker:#87ff00
+# export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+#   --color=fg:#d0d0d0,fg+:#d0d0d0,bg:-1,bg+:-1
 
-  --color=prompt:#d90000,spinner:#d90000,pointer:#d90000,header:#87afaf
+#   --color=hl:#5f87af,hl+:#5fd7ff,info:#afaf87,marker:#87ff00
 
-  --color=border:#262626,label:#aeaeae,query:#d9d9d9
+#   --color=prompt:#d90000,spinner:#d90000,pointer:#d90000,header:#87afaf
 
-  --preview-window="border-double"
+#   --color=border:#262626,label:#aeaeae,query:#d9d9d9
 
-  --prompt="> "
+#   --preview-window="border-double"
 
-  --marker=">"
+#   --prompt="> "
 
-  --pointer="λ"
+#   --marker=">"
 
-  --separator="."
+#   --pointer="λ"
 
-  --scrollbar="│"'
+#   --separator="."
+
+#   --scrollbar="│"'
 
 #▒▄▀▄░█▒░░█▒▄▀▄░▄▀▀▒██▀░▄▀▀
 #░█▀█▒█▄▄░█░█▀█▒▄██░█▄▄▒▄██

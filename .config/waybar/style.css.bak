@@ -7,7 +7,7 @@
 /* Repository: https://codeberg.org/toru */
 /* Email: torupublic11@waifu.club */
 
-/* DRACULA */
+/* GRUVBOX */
 
 /* Animations and FX */
 @keyframes animate{ 
@@ -33,7 +33,7 @@
 
 window#waybar {
     background: transparent;
-    color: #FFB86C;
+    color: #98971a;
 }
 
 window#waybar.empty #window {
@@ -47,23 +47,23 @@ window#waybar.floating {
 tooltip {
     /* background: #181818; */
 
-    background: #282A36;
+    background: #282828;
 
     border-radius: 0px;
     border-width: 2px;
     border-style: solid;
-    border-color: #282A36;
+    border-color: #11111b;
 }
 
 #workspaces button {
-    color: #F8F8F2;
+    color: #ffffff;
 }
 
 #workspaces button.active {
 
     /* color: #ff0000; */
 
-    color: #FF5555;
+    color: #cc241d;
 }
 
 #workspaces button.focused {
@@ -73,14 +73,14 @@ tooltip {
 }
 
 #workspaces button.urgent {
-    color: #FF5555;
+    color: #fb4934;
     background: #ff0000;
     border-radius: 5px;
 }
 
 #workspaces button:hover {
-    background: #282A36;
-    color: #FFB86C;
+    background: #282828;
+    color: #d65d0e;
     border-radius: 5px;
 }
 
@@ -97,21 +97,21 @@ tooltip {
 #temperature,
 #workspaces,
 #tray {
-    background: #282A36;
+    background: #181818;
     opacity: 0.8;
     padding: 0px 10px;
     margin: 3px 0px;
     margin-top: 10px;
-    border: 0px solid #282A36;
+    border: 0px solid #181825;
 }
 
 #mpd {
     padding: 0 10px;
-    color: #50FA7B;
+    color: #ebdbb2;
 }
 
 #mpd.disconnected {
-    background-color: #FF5555;
+    background-color: #ff0000;
 }
 
 #mpd.stopped {
@@ -131,7 +131,7 @@ tooltip {
 }
 
 #temperature.critical {
-    color: #FF5555;
+    color: #eba0ac;
 }
 
 #tray {
@@ -141,7 +141,7 @@ tooltip {
 }
 
 #workspaces {
-    background: #282A36;
+    background: #181818;
     border-radius: 0px 0px 0px 0px;
     padding: 0;
     margin-left: 10px;
@@ -149,7 +149,7 @@ tooltip {
 }
 
 #custom-power_profile {
-    color: #50FA7B;
+    color: #a6e3a1;
     border-left: 0px;
     border-right: 0px;
 }
@@ -163,7 +163,7 @@ tooltip {
 #clock {
     /* color: #fab387; */
 
-    color: #FFB86C;
+    color: #d79921;
     
     border-radius: 0px 0px 0px 0px;
     margin-left: 10px;
@@ -171,7 +171,7 @@ tooltip {
 }
 
 #network {
-    color: #F1FA8C;
+    color: #f9e2af;
     border-radius: 5px 0px 0px 5px;
     border-left: 0px;
     border-right: 0px;
@@ -188,14 +188,14 @@ tooltip {
 #pulseaudio {
     /* color: #89b4fa; */
 
-    color: #8BE9FD;
+    color: #458588;
 
     border-left: 0px;
     border-right: 0px;
 }
 
 #memory {
-    color: #FF79C6;
+    color: #b16286;
     border-left: 0px;
     border-right: 0px;
     border-radius: 0px 0px 0px 0px; 
@@ -222,7 +222,7 @@ tooltip {
 }
 
 #custom-window_state {
-    color: #F8F8F2;
+    color: #ffffff;
     border-left: 0px;
     border-right: 0px;
     border-radius: 0px 0px 0px 0px;

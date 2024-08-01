@@ -15,7 +15,7 @@
 -- require('settings')
 
 -- setup must be called before loading
-vim.cmd("colorscheme retrobox")
+vim.cmd("colorscheme default")
 
 local g = vim.g
 local o = vim.o

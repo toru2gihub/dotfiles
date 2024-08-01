@@ -60,9 +60,9 @@ device {
 
 exec-once = waybar
 exec-once = mako
+exec-once = waypaper --restore
 exec-once = pypr
 exec-once = devmon
-exec-once = swww-daemon
 exec-once = hypridle
 exec-once = xrdb ~/dotfiles/.Xdefaults
 

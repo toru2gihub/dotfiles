@@ -24,16 +24,15 @@ do
         case "$1" in
 
   "w") 
-    swww img -t center $file && cp $file ~/.config/wall.png ;;
-    #xwallpaper --zoom $file && cp $file ~/.config/wall.png ;;
-    #"w") xwallpaper --zoom $file && wal -ni $file && cp $file ~/.config/wall.png ;;
+    #swww img -t center $file && cp $file ~/.config/wall.jpg ;;
+    swaybg -i $file && cp $file ~/.config/wall.jpg ;;
 
   "c") 
     cat $file | wl-copy ;;
 	
   "d")
-		#rm "$file" && notify-send "$file deleted." ;;
-		rm "$file" ;;
+		rm "$file" && notify-send "$file deleted." ;;
+		#rm "$file" ;;
 
    #[ "$(printf "No\\nYes" | dmenu -i -p "Really delete $file?")" = "Yes" ] && rm "$file" && notify-send "$file deleted." ;;
 

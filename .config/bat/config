@@ -21,7 +21,7 @@
 #--wrap=never
 
 # Theme
---theme="Catppuccin Mocha"
+--theme="Dracula"
 
 # Show line numbers, Git modifications and file header (but no grid)
 # --style="grid,numbers,changes,header"
