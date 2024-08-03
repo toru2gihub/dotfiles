@@ -7,7 +7,7 @@
 /* Repository: https://codeberg.org/toru */
 /* Email: torupublic11@waifu.club */
 
-/* GRUVBOX */
+/* CATPPUCCIN */
 
 /* Animations and FX */
 @keyframes animate{ 
@@ -33,7 +33,7 @@
 
 window#waybar {
     background: transparent;
-    color: #98971a;
+    color: #fab387;
 }
 
 window#waybar.empty #window {
@@ -45,25 +45,19 @@ window#waybar.floating {
 }
 
 tooltip {
-    /* background: #181818; */
-
-    background: #282828;
-
+    background: #181825;
     border-radius: 0px;
     border-width: 2px;
     border-style: solid;
-    border-color: #11111b;
+    border-color: #181825;
 }
 
 #workspaces button {
-    color: #ffffff;
+    color: #89B4FA;
 }
 
 #workspaces button.active {
-
-    /* color: #ff0000; */
-
-    color: #cc241d;
+    color: #F38BA8;
 }
 
 #workspaces button.focused {
@@ -73,14 +67,14 @@ tooltip {
 }
 
 #workspaces button.urgent {
-    color: #fb4934;
+    color: #F38BA8;
     background: #ff0000;
     border-radius: 5px;
 }
 
 #workspaces button:hover {
-    background: #282828;
-    color: #d65d0e;
+    background: #181825;
+    color: #FAB387;
     border-radius: 5px;
 }
 
@@ -97,7 +91,7 @@ tooltip {
 #temperature,
 #workspaces,
 #tray {
-    background: #181818;
+    background: #181825;
     opacity: 0.8;
     padding: 0px 10px;
     margin: 3px 0px;
@@ -107,11 +101,11 @@ tooltip {
 
 #mpd {
     padding: 0 10px;
-    color: #ebdbb2;
+    color: #A6E3A1;
 }
 
 #mpd.disconnected {
-    background-color: #ff0000;
+    background-color: #F38BA8;
 }
 
 #mpd.stopped {
@@ -131,7 +125,7 @@ tooltip {
 }
 
 #temperature.critical {
-    color: #eba0ac;
+    color: #F38BA8;
 }
 
 #tray {
@@ -141,7 +135,7 @@ tooltip {
 }
 
 #workspaces {
-    background: #181818;
+    background: #181825;
     border-radius: 0px 0px 0px 0px;
     padding: 0;
     margin-left: 10px;
@@ -149,7 +143,7 @@ tooltip {
 }
 
 #custom-power_profile {
-    color: #a6e3a1;
+    color: #A6E3A1;
     border-left: 0px;
     border-right: 0px;
 }
@@ -161,17 +155,14 @@ tooltip {
 }
 
 #clock {
-    /* color: #fab387; */
-
-    color: #d79921;
-    
+    color: #fab387;
     border-radius: 0px 0px 0px 0px;
     margin-left: 10px;
     border-right: 0px;
 }
 
 #network {
-    color: #f9e2af;
+    color: #F1FA8C;
     border-radius: 5px 0px 0px 5px;
     border-left: 0px;
     border-right: 0px;
@@ -186,16 +177,13 @@ tooltip {
 } 
 
 #pulseaudio {
-    /* color: #89b4fa; */
-
-    color: #458588;
-
+    color: #89DCEB;
     border-left: 0px;
     border-right: 0px;
 }
 
 #memory {
-    color: #b16286;
+    color: #CBA6F7;
     border-left: 0px;
     border-right: 0px;
     border-radius: 0px 0px 0px 0px; 
@@ -222,7 +210,7 @@ tooltip {
 }
 
 #custom-window_state {
-    color: #ffffff;
+    color: #89B4FA;
     border-left: 0px;
     border-right: 0px;
     border-radius: 0px 0px 0px 0px;

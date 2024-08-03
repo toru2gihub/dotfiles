@@ -52,6 +52,7 @@ case $chosen in
         ;;
 
     $suspend)
-  systemctl suspend && hyprlock
+  #systemctl suspend && hyprlock
+  systemctl suspend
         ;;
 esac

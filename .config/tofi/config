@@ -1,4 +1,10 @@
 # include = /path/to/config
+selection-color = #d79921
+text-cursor-background = #282828
+selection-match-color = #cc241d
+background-color = #282828
+outline-color = #282828
+border-color = #282828
 
 font = "Jetbrains Mono"
 
@@ -34,15 +40,11 @@ default-result-background-padding = 0
 default-result-background-corner-radius = 0
 
 # Selection text
-selection-color = #50FA7B
-#selection-color = #a6e3a1
 selection-background = #00000000
 selection-background-padding = 0
 selection-background-corner-radius = 0
 
 # Matching portion of selection text
-#selection-match-color = #f38ba8
-selection-match-color = #FF5555
 
 # Style of the optional text cursor.
 #
@@ -53,7 +55,6 @@ text-cursor-style = underscore
 text-cursor-color = #ffffff
 
 # Color of text behind the text cursor when text-cursor-style = block
-text-cursor-background = #282A36
 
 # Corner radius of the text cursor
 text-cursor-corner-radius = 0
@@ -88,22 +89,18 @@ width = 20%
 height = 35%
 
 # Window background color
-background-color = #282A36
 #background-color = #000A
-#background-color = #1e1d2f
 
 # Width of the border outlines in pixels.
 outline-width = 4
 
 # Border outline color
-outline-color = #282A36
 #outline-color = #000a
 
 # Width of the border in pixels.
 border-width = 1
 
 # Border color
-border-color = #282A36
 #border-color = #000a
 
 # Rounding corners
