@@ -17,7 +17,7 @@ Email: torupublic11@waifu.club
 ** Settings
 #+begin_src conf
 
-#source=~/dotfiles/.config/hypr/mocha.conf
+#source=~/dotfiles/.config/hypr/
 
 # Monitors
 monitor=,preferred,auto,auto
@@ -60,9 +60,8 @@ device {
 
 exec-once = waybar
 exec-once = mako
-exec-once = waypaper --restore
+exec-once = swww-daemon
 exec-once = pypr
-exec-once = devmon
 exec-once = hypridle
 exec-once = xrdb ~/dotfiles/.Xdefaults
 
@@ -134,7 +133,7 @@ general {
 #+begin_src conf
 
 decoration {
-    rounding = 0
+    rounding = 12
 
     # Transparency (Opacity)
     active_opacity = 1.0

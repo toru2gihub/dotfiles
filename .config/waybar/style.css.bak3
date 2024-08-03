@@ -7,7 +7,7 @@
 /* Repository: https://codeberg.org/toru */
 /* Email: torupublic11@waifu.club */
 
-/* TORU THEME */
+/* GRUVBOX */
 
 /* Animations and FX */
 @keyframes animate{ 
@@ -27,13 +27,13 @@
     border-radius: 0;
     font-family: "JetBrainsMono Nerd Font";
     font-weight: bold;
-    font-size: 16px;
+    font-size: 15px;
     min-height: 0;
 }
 
 window#waybar {
     background: transparent;
-    color: #ffffff;
+    color: #98971a;
 }
 
 window#waybar.empty #window {
@@ -45,11 +45,14 @@ window#waybar.floating {
 }
 
 tooltip {
-    background: #000000;
-    border-radius: 10px;
+    /* background: #181818; */
+
+    background: #282828;
+
+    border-radius: 0px;
     border-width: 2px;
     border-style: solid;
-    border-color: #000000;
+    border-color: #11111b;
 }
 
 #workspaces button {
@@ -57,7 +60,10 @@ tooltip {
 }
 
 #workspaces button.active {
-    color: #ff0000;
+
+    /* color: #ff0000; */
+
+    color: #cc241d;
 }
 
 #workspaces button.focused {
@@ -67,40 +73,41 @@ tooltip {
 }
 
 #workspaces button.urgent {
-    color: #ffffff;
+    color: #fb4934;
     background: #ff0000;
     border-radius: 5px;
 }
 
 #workspaces button:hover {
-    background: #000000;
+    background: #282828;
     color: #d65d0e;
     border-radius: 5px;
 }
 
+#custom-recorder,
 #custom-window_state,
 #window,
 #clock,
 #custom-weather,
 #pulseaudio,
+#network,
+#bluetooth,
 #memory,
 #mpd,
+#temperature,
 #workspaces,
-#tray
-
-{
-    background: #000000;
+#tray {
+    background: #181818;
     opacity: 0.8;
     padding: 0px 10px;
     margin: 3px 0px;
     margin-top: 10px;
-    border: 0px solid #000000;
+    border: 0px solid #181825;
 }
 
 #mpd {
     padding: 0 10px;
-    /* border-radius: 10px;  */
-    color: #ff0000;
+    color: #ebdbb2;
 }
 
 #mpd.disconnected {
@@ -108,56 +115,116 @@ tooltip {
 }
 
 #mpd.stopped {
+
     /* background-color: rgba(0,0,0,0.5); */
 
 }
 
 #mpd.paused {
+
     /* background-color: rgba(0,0,0,0.5); */
 
 }
 
+#temperature {
+    border-radius: 5px 0px 0px 5px;
+}
+
+#temperature.critical {
+    color: #eba0ac;
+}
+
 #tray {
-    border-radius: 10px;
+    border-radius: 0px;
     margin-right: 10px;
     margin-left: 10px;
 }
 
 #workspaces {
-    background: #000000;
-    border-radius: 10px;
+    background: #181818;
+    border-radius: 0px 0px 0px 0px;
     padding: 0;
     margin-left: 10px;
     margin-right: 0px;
 }
 
+#custom-power_profile {
+    color: #a6e3a1;
+    border-left: 0px;
+    border-right: 0px;
+}
+
 #window {
-    border-radius: 10px;
+    border-radius: 0px;
     margin-left: 40px;
     margin-right: 40px;
 }
 
 #clock {
-    color: #ffffff;
-    border-radius: 10px;
+    /* color: #fab387; */
+
+    color: #d79921;
+    
+    border-radius: 0px 0px 0px 0px;
     margin-left: 10px;
     border-right: 0px;
 }
 
-#pulseaudio {
-    color: #ffffff;
+#network {
+    color: #f9e2af;
+    border-radius: 5px 0px 0px 5px;
     border-left: 0px;
     border-right: 0px;
-    border-radius: 10px 0px 0px 10px;
+    margin-left: 10px;
+    /* margin-right: 10px; */
+}
+
+#bluetooth {
+    color: #89b4fa;
+    border-radius: 0px 5px 5px 0px;
+    margin-right: 10px
+} 
+
+#pulseaudio {
+    /* color: #89b4fa; */
+
+    color: #458588;
+
+    border-left: 0px;
+    border-right: 0px;
 }
 
 #memory {
-    color: #ffffff;
+    color: #b16286;
     border-left: 0px;
     border-right: 0px;
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 0px 0px 0px 0px; 
+}
+
+#battery {
+    color: #a6e3a1;
+    border-radius: 0px 5px 5px 0px;
+    border-left: 0px;
+    margin-right: 10px;
 }
 
 #custom-weather {
     border-radius: 0px 1px 1px 0px;
+}
+
+#custom-recorder {
+    color: #c9545d;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 5px 5px 5px 5px;
+    margin-right: 10px;
+    animation: animate 1.5s linear infinite; 
+}
+
+#custom-window_state {
+    color: #ffffff;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 0px 0px 0px 0px;
+    margin-right: 10px;
 }

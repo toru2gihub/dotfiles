@@ -13,7 +13,7 @@
     "mod": "dock",
     "height": 47,
     // "width": 1580,
-    "modules-left": ["hyprland/workspaces", "custom/window_state"],
+    "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["pulseaudio", "mpd", "memory", "clock", "tray"],
 
@@ -70,32 +70,6 @@
         "interval": 10,
         "format": "󰍛 {used:0.1f}G"
     },
-    
-    "temperature": {
-        "thermal-zone": 2,
-        "format": "{temperatureC}°C ",
-        "critical-threshold": 80,
-        "format-critical": "{temperatureC}°C "
-    },
-
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "  {signalStrength}%",
-        "format-ethernet": "{ipaddr}/{cidr}",
-        "tooltip-format": "{essid} - {ifname} via {gwaddr}",
-        "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}"
-    },
-
-    "bluetooth": {
-        "format": " {status}",
-        "format-disabled": "", // an empty format will hide the module
-        "format-connected": " {num_connections}",
-        "tooltip-format": "{device_alias}",
-        "tooltip-format-connected": " {device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}"
-    },
 
     "custom/weather": {
         "exec": "curl 'https://wttr.in/Caracas?format=1' | grep -v Unknown",
@@ -129,18 +103,4 @@
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
 
-  "custom/recorder": {
-       "format": " ",
-       "return-type": "json",
-       "interval": 1,
-       "exec": "echo '{\"class\": \"recording\"}'",
-       "exec-if": "pgrep wf-recorder"
-    },
-
-  "custom/window_state": {
-        "format": "{}",
-        "return-type": "json",
-        "exec": "/usr/bin/env cat /tmp/hyprwindow",
-        "signal": 10,
-    },
 }

@@ -24,8 +24,7 @@ do
         case "$1" in
 
   "w") 
-    #swww img -t center $file && cp $file ~/.config/wall.jpg ;;
-    swaybg -i $file && cp $file ~/.config/wall.jpg ;;
+    swww img -t center $file && cp $file ~/.config/wall.jpg ;;
 
   "c") 
     cat $file | wl-copy ;;
