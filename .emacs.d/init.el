@@ -47,7 +47,7 @@
    '((simple-modeline-segment-modified simple-modeline-segment-buffer-name simple-modeline-segment-position)
      (simple-modeline-segment-vc simple-modeline-segment-misc-info simple-modeline-segment-process simple-modeline-segment-major-mode)))
  '(telega-server-libs-prefix "/nix/store")
- '(toc-org-max-depth 3)
+ '(toc-org-max-depth 3 t)
  '(warning-suppress-types '((use-package)))
  '(yas-snippet-dirs '("/home/toru/.emacs.d/snippets/")))
 (custom-set-faces
@@ -55,7 +55,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:background "#282A36"))))
+ '(default ((t (:background "#1a1a1a"))))
  '(evil-goggles-change-face ((t (:inherit diff-removed))))
  '(evil-goggles-delete-face ((t (:inherit diff-removed))))
  '(evil-goggles-paste-face ((t (:inherit diff-added))))

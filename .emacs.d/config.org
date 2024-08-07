@@ -222,18 +222,9 @@
 
   (load-theme 'doom-badger t)
 
-
-  ;; CATPPUCCIN
- ;; (custom-set-faces
- ;;   '(default ((t (:background "#1e1e2e")))))
-
-  ;; GRUVBOX
-;; (custom-set-faces
-;;   '(default ((t (:background "#1a1a1a")))))
-
-  ;; DRACULA
-;; (custom-set-faces
-;;   '(default ((t (:background "#282A36")))))
+  ;; BADGER
+ (custom-set-faces
+   '(default ((t (:background "#1a1a1a")))))
 
   (setq doom-gruvbox-dark-variant t)
   (setq doom-gruvbox-padded-modeline t)
@@ -1962,12 +1953,6 @@ folder, otherwise delete a word"
 
  (use-package all-the-icons-dired
    :hook (dired-mode . (lambda () (all-the-icons-dired-mode t))))
-
-;; (use-package nerd-icons-dired
-;;   :hook
-;;   (dired-mode . nerd-icons-dired-mode))
-
-;; (setq nerd-icons-dired-mode t)
 
 #+end_src
 

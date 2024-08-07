@@ -19,7 +19,7 @@
 ############################################################
 
 # Set the directory containing your wallpapers
-
+#
 WALLPAPER_DIR="/home/toru/pic/art"
 #WALLPAPER_DIR="/home/toru/pic/wallpapers/guweiz"
 #WALLPAPER_DIR="/home/toru/pic/wallpapers/based"
@@ -33,7 +33,7 @@ WALLPAPER_DIR="/home/toru/pic/art"
 RANDOM_WALLPAPER=$(ls $WALLPAPER_DIR | shuf -n 1)
 
 # Set the wallpaper using feh
- swww img -t fade $file "$WALLPAPER_DIR/$RANDOM_WALLPAPER"
+swww img -t fade $file "$WALLPAPER_DIR/$RANDOM_WALLPAPER"
 
 # Save the current wallpaper path to a file for later deletion
 echo "$WALLPAPER_DIR/$RANDOM_WALLPAPER" > ~/.config/wall.png

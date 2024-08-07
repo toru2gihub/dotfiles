@@ -14,7 +14,7 @@
  # | | | |  __/\ V  V /\__ \ |_) | (_) | (_| | |_ 
  # |_| |_|\___| \_/\_/ |___/_.__/ \___/ \__,_|\__|
 
-include ~/dotfiles/.config/newsboat/themes/catppuccin
+include ~/dotfiles/.config/newsboat/themes/dracula
 
 auto-reload yes
 max-items 50
