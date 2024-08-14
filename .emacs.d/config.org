@@ -220,14 +220,15 @@
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
         doom-themes-enable-italic t) ; if nil, italics is universally disabled
 
-  (load-theme 'doom-badger t)
+  (load-theme 'doom-one t)
 
   ;; BADGER
- (custom-set-faces
-   '(default ((t (:background "#1a1a1a")))))
+ ;; (custom-set-faces
+ ;;   '(default ((t (:background "#1a1a1a")))))
 
   (setq doom-gruvbox-dark-variant t)
   (setq doom-gruvbox-padded-modeline t)
+  (setq doom-badger-padded-modeline t)
 
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
@@ -264,8 +265,8 @@
 (global-auto-revert-mode t)  ;; Automatically show changes if the file has changed
 (setq display-line-numbers-type 'relative)
 (global-visual-line-mode t)  ;; Enable truncated lines
-(menu-bar-mode -1)           ;; Disable the menu bar
-(tool-bar-mode -1)           ;; Disable the tool bar
+(menu-bar-mode 1)           ;; Disable the menu bar
+(tool-bar-mode 1)           ;; Disable the tool bar
 (global-display-line-numbers-mode 1) ;; Enable global lines numbers
 (global-tab-line-mode -1) ;; Disable buffers like tabs
 (tab-bar-mode -1) ;; Disable tabs

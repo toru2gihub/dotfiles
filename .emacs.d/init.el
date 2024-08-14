@@ -42,7 +42,7 @@
  '(org-safe-remote-resources
    '("\\`https://github\\.com/fniessen/org-html-themes/blob/master/org/theme-readtheorg\\.setup\\'"))
  '(package-selected-packages
-   '(rainbow-delimiters svg-lib lsp-treemacs eglot lsp-mode kind-icon yasnippet-capf nerd-icons-corfu corfu-doc doom-themes org-auto-tangle magit embark-consult cdlatex auctex calfw-org solaire-mode ef-themes vundo evil-goggles org-roam-ui major-mode-hydra consult-org-roam avy consult-yasnippet org-download org-yaap nix-mode all-the-icons-dired org-roam highlight-indent-guides corfu cape modus-themes org-bullets dashboard unicode-fonts page-break-lines auto-complete no-littering olivetti rainbow-mode))
+   '(standard-themes rainbow-delimiters svg-lib lsp-treemacs eglot lsp-mode kind-icon yasnippet-capf nerd-icons-corfu corfu-doc doom-themes org-auto-tangle magit embark-consult cdlatex auctex calfw-org solaire-mode ef-themes vundo evil-goggles org-roam-ui major-mode-hydra consult-org-roam avy consult-yasnippet org-download org-yaap nix-mode all-the-icons-dired org-roam highlight-indent-guides corfu cape modus-themes org-bullets dashboard unicode-fonts page-break-lines auto-complete no-littering olivetti rainbow-mode))
  '(simple-modeline-segments
    '((simple-modeline-segment-modified simple-modeline-segment-buffer-name simple-modeline-segment-position)
      (simple-modeline-segment-vc simple-modeline-segment-misc-info simple-modeline-segment-process simple-modeline-segment-major-mode)))
@@ -55,7 +55,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:background "#1a1a1a"))))
  '(evil-goggles-change-face ((t (:inherit diff-removed))))
  '(evil-goggles-delete-face ((t (:inherit diff-removed))))
  '(evil-goggles-paste-face ((t (:inherit diff-added))))

@@ -351,9 +351,9 @@
 	      ("John Wiegley" . "johnw@newartisans.com"))
 	     (:commit . "4932ed21d40f9e8ad48ad2a1f086fdf9b3847ac9"))])
  (blist .
-	[(0 3)
+	[(0 4)
 	 ((ilist
-	   (0 1))
+	   (0 4))
 	  (emacs
 	   (24)))
 	 "Display bookmarks in an ibuffer way" tar
@@ -362,7 +362,7 @@
 	  (:maintainer "Durand" . "durand@jsdurand.xyz")
 	  (:authors
 	   ("Durand" . "durand@jsdurand.xyz"))
-	  (:commit . "9e1054d3cb2b796704ebeb2575b29ad70f0bb21c"))])
+	  (:commit . "f5751add5626ad437459e484b66219952287c517"))])
  (bluetooth .
 	    [(0 3 1)
 	     ((emacs
@@ -860,7 +860,7 @@
 		 ("Theodor Thornhill" . "theo@thornhill.no"))
 		(:commit . "02c61c219b2c22491eff9b7315fed661fab423d4"))])
  (csv-mode .
-	   [(1 26)
+	   [(1 27)
 	    ((emacs
 	      (27 1))
 	     (cl-lib
@@ -871,7 +871,7 @@
 	     (:authors
 	      ("Francis J. Wright" . "F.J.Wright@qmul.ac.uk"))
 	     (:url . "https://elpa.gnu.org/packages/csv-mode.html")
-	     (:commit . "388bcb9a77118d7b7d9c42aa8b3f9fa2c892b930"))])
+	     (:commit . "a16e9d8b0952de1badf6da8e652b178a7f6c4498"))])
  (cursor-undo .
 	      [(1 1 4)
 	       nil "Undo Cursor Movement" tar
@@ -981,17 +981,17 @@
 	    ("Protesilaos Stavrou" . "info@protesilaos.com"))
 	   (:commit . "75312084112aa8ade19eb98d2ea3dbf6e16434cb"))])
  (denote-menu .
-	      [(1 2 0)
+	      [(1 3 0)
 	       ((emacs
 		 (28 1))
 		(denote
-		 (2 0 0)))
+		 (3 0 0)))
 	       "View denote files in a tabulated list." tar
 	       ((:url . "https://github.com/namilus/denote-menu")
 		(:maintainer "Mohamed Suliman" . "sulimanm@tcd.ie")
 		(:authors
 		 ("Mohamed Suliman" . "sulimanm@tcd.ie"))
-		(:commit . "6d97b6be0511420dca27b294844bdaa5fa72f753"))])
+		(:commit . "d3b890648404eb4df2dabbb3d783105672e0ea23"))])
  (detached .
 	   [(0 10 1)
 	    ((emacs
@@ -1275,7 +1275,7 @@
 	       ("Markus Triska" . "triska@metalevel.at"))
 	      (:commit . "cfcdf9e42821d246b7fbc84877aa4ecacc184a1c"))])
  (eev .
-      [(20240803)
+      [(20240811)
        ((emacs
 	 (25 1)))
        "Support for e-scripts (eepitch blocks, elisp hyperlinks, etc)" tar
@@ -1284,7 +1284,7 @@
 	(:maintainer "Eduardo Ochs" . "eduardoochs@gmail.com")
 	(:authors
 	 ("Eduardo Ochs" . "eduardoochs@gmail.com"))
-	(:commit . "2cac1d27a18ed6a77f43f19e87df662e344983b5"))])
+	(:commit . "39f6dfdd1d38e169469ff56ac93a0881a3fe1c8b"))])
  (ef-themes .
 	    [(1 7 0)
 	     ((emacs
@@ -1981,13 +1981,13 @@
 	     (:url . "https://elpa.gnu.org/packages/greenbar.html")
 	     (:commit . "9526f29d073c533c3e54f0a7597eef1587ffb99e"))])
  (gtags-mode .
-	     [(1 8)
+	     [(1 8 1)
 	      ((emacs
 		(28)))
 	      "GNU Global integration with xref, project and imenu." tar
 	      ((:url . "https://github.com/Ergus/gtags-mode")
 	       (:keywords "xref" "project" "imenu" "gtags" "global")
-	       (:commit . "e29c7d7bc0081f252786a28fbe2a2eb048861c65"))])
+	       (:commit . "bdf5442efd8e8fae4610b0a73daca6ee81a5b0c4"))])
  (guess-language .
 		 [(0 0 1)
 		  ((cl-lib
@@ -2093,14 +2093,14 @@
 	    (:url . "https://elpa.gnu.org/packages/idlwave.html")
 	    (:commit . "e1fcd7244cb32df1e90b09729e53474e50a2e808"))])
  (ilist .
-	[(0 3)
+	[(0 4)
 	 nil "Display a list in an ibuffer way." tar
 	 ((:url . "https://gitlab.com/mmemmew/ilist")
 	  (:keywords "convenience")
 	  (:maintainer "Durand" . "mmemmew@gmail.com")
 	  (:authors
 	   ("Durand" . "mmemmew@gmail.com"))
-	  (:commit . "3f433899ce9ce6a3d6477ae7c9362c8c202f04fb"))])
+	  (:commit . "5a57e52122fe483fa9bd39049c13a25334e408da"))])
  (inspector .
 	    [(0 37)
 	     ((emacs
@@ -3291,6 +3291,32 @@
 	(:authors
 	 ("Adam Porter" . "adam@alphapapa.net"))
 	(:commit . "399ad3e1aafa7b86c1ce0cfab8bcf2e09cb0e956"))])
+ (plz-event-source .
+		   [(0 1 1)
+		    ((emacs
+		      (26 3))
+		     (plz-media-type
+		      (0 1 0)))
+		    "Plz Event Source" tar
+		    ((:url . "https://github.com/r0man/plz-event-source")
+		     (:keywords "comm" "network" "http")
+		     (:maintainer "r0man" . "roman@burningswell.com")
+		     (:authors
+		      ("r0man" . "roman@burningswell.com"))
+		     (:commit . "09e650c8667d0b43be84fb58d9116a739a058bef"))])
+ (plz-media-type .
+		 [(0 2 1)
+		  ((emacs
+		    (26 3))
+		   (plz
+		    (0 9)))
+		  "Plz Media Types" tar
+		  ((:url . "https://github.com/r0man/plz-media-type")
+		   (:keywords "comm" "network" "http")
+		   (:maintainer "r0man" . "roman@burningswell.com")
+		   (:authors
+		    ("r0man" . "roman@burningswell.com"))
+		   (:commit . "a256633ef3e1aa0e1e43f6122e167430897ca790"))])
  (plz-see .
 	  [(0 1)
 	   ((emacs
@@ -4039,16 +4065,16 @@
 		("Christian Johansson" . "christian@cvj.se"))
 	       (:commit . "95fb076c9b657c5f1bfad3ee5bf1f8691c50d428"))])
  (standard-themes .
-		  [(2 0 1)
+		  [(2 1 0)
 		   ((emacs
 		     (27 1)))
 		   "Like the default theme but more consistent" tar
-		   ((:url . "https://git.sr.ht/~protesilaos/standard-themes")
+		   ((:url . "https://github.com/protesilaos/standard-themes")
 		    (:keywords "faces" "theme" "accessibility")
-		    (:maintainer "Standard-Themes Development" . "~protesilaos/standard-themes@lists.sr.ht")
+		    (:maintainer "Protesilaos Stavrou" . "info@protesilaos.com")
 		    (:authors
 		     ("Protesilaos Stavrou" . "info@protesilaos.com"))
-		    (:commit . "4b9e5395d5faad8d831727bc37d2551d68888555"))])
+		    (:commit . "9a982c4fad9a6d1a68e211bd83342bdd47dd7979"))])
  (stream .
 	 [(2 3 0)
 	  ((emacs
@@ -4893,14 +4919,14 @@
 	    (:url . "https://elpa.gnu.org/packages/wpuzzle.html")
 	    (:commit . "9373cbc013b978b31e38822bfdcc9a7fc5e0ed99"))])
  (wrap-search .
-	      [(4 16 17)
+	      [(4 16 19)
 	       nil "wrapped, non-incremental search" tar
 	       ((:url . "https://dataswamp.org/~incal/elpa/wrap-search.el")
 		(:keywords "matching")
 		(:maintainer "Emanuel Berg" . "incal@dataswamp.org")
 		(:authors
 		 ("Emanuel Berg" . "incal@dataswamp.org"))
-		(:commit . "4e913585afc59dffa56d39c4511e31552be4e80e"))])
+		(:commit . "6e4bc3d6258ec367e765a6ab7051f2f2b00f1ac9"))])
  (xclip .
 	[(1 11)
 	 nil "Copy&paste GUI clipboard from text terminal" tar
