@@ -32,7 +32,8 @@
 }
 
 window#waybar {
-    background: transparent;
+    background: #000000;
+    /* background: trasnparent; */
     color: #ffffff;
 }
 

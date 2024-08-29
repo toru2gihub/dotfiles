@@ -514,7 +514,7 @@
 	     ("Kjartan Oli Agustsson" . "kjartanoli@disroot.org"))
 	    (:commit . "855a9cb092eecf1e5c17ea56c440a0200f95eb4c"))])
  (cape .
-       [(1 6)
+       [(1 7)
 	((emacs
 	  (27 1))
 	 (compat
@@ -525,7 +525,7 @@
 	 (:maintainer "Daniel Mendler" . "mail@daniel-mendler.de")
 	 (:authors
 	  ("Daniel Mendler" . "mail@daniel-mendler.de"))
-	 (:commit . "5c468d6d657e8dc604ddf3feb80f70e1e05ac0a1"))])
+	 (:commit . "9110956a5155d5e3c460160fa1b4dac59322c229"))])
  (capf-autosuggest .
 		   [(0 3)
 		    ((emacs
@@ -707,6 +707,17 @@
 	    ("Philip Kaludercic" . "philipk@posteo.net")
 	    ("Daniel Mendler" . "mail@daniel-mendler.de"))
 	   (:commit . "09dce8a193c5a70277512263782b82fa1cba84c0"))])
+ (constants .
+	    [(2 11 1)
+	     ((emacs
+	       (24 1)))
+	     "Enter definition of constants into source code" tar
+	     ((:url . "https://github.com/cdominik/constants-for-Emacs")
+	      (:keywords "programming" "languages")
+	      (:maintainer "Carsten Dominik" . "carsten.dominik@gmail.com")
+	      (:authors
+	       ("Carsten Dominik" . "carsten.dominik@gmail.com"))
+	      (:commit . "f07e221d4d5597c7ccf4b0003c0909a88bdfcc9e"))])
  (consult .
 	  [(1 8)
 	   ((emacs
@@ -902,7 +913,7 @@
 		 (:url . "https://elpa.gnu.org/packages/cycle-quotes.html")
 		 (:commit . "836b19b39651419876e65cdb1a91e3eef83cc4e7"))])
  (dape .
-       [(0 14 0)
+       [(0 15 0)
 	((emacs
 	  (29 1))
 	 (jsonrpc
@@ -910,7 +921,7 @@
 	"Debug Adapter Protocol for Emacs" tar
 	((:url . "https://github.com/svaante/dape")
 	 (:maintainer "Daniel Pettersson" . "daniel@dpettersson.net")
-	 (:commit . "e034ecedebc38c7f4c1e5d62044c231482b155d2"))])
+	 (:commit . "b272d855333ccca6d42ec0957c7f6326a72fe22e"))])
  (darkroom .
 	   [(0 3)
 	    ((cl-lib
@@ -1286,7 +1297,7 @@
 	 ("Eduardo Ochs" . "eduardoochs@gmail.com"))
 	(:commit . "39f6dfdd1d38e169469ff56ac93a0881a3fe1c8b"))])
  (ef-themes .
-	    [(1 7 0)
+	    [(1 8 0)
 	     ((emacs
 	       (27 1)))
 	     "Colorful and legible themes" tar
@@ -1295,7 +1306,7 @@
 	      (:maintainer "Protesilaos Stavrou" . "info@protesilaos.com")
 	      (:authors
 	       ("Protesilaos Stavrou" . "info@protesilaos.com"))
-	      (:commit . "4d7cd1fdef459b9f76b9c1f35ec063d0eafe469a"))])
+	      (:commit . "18960c3bcb87e72418e638602a843be58aef07d1"))])
  (eglot .
 	[(1 17)
 	 ((emacs
@@ -1957,7 +1968,7 @@
 	     ("Sean Allred" . "code@seanallred.com"))
 	    (:commit . "b57b5ca5d2d0837e1fb4a4f30c051d5f3e643f0f"))])
  (greader .
-	  [(0 11 15)
+	  [(0 11 16)
 	   ((emacs
 	     (26 1))
 	    (seq
@@ -1970,7 +1981,7 @@
 	    (:maintainer "Michelangelo Rodriguez" . "michelangelo.rodriguez@gmail.com")
 	    (:authors
 	     ("Michelangelo Rodriguez" . "michelangelo.rodriguez@gmail.com"))
-	    (:commit . "6664c20a6a6a32e3a6c31d13a160fb8c9c8e118c"))])
+	    (:commit . "bb41986d49870c80a53903891648175d2dbb4ff3"))])
  (greenbar .
 	   [(1 1)
 	    nil "Mark comint output with \"greenbar\" background" tar
@@ -2499,7 +2510,7 @@
 		      ("Sean Whitton" . "spwhitton@spwhitton.name"))
 		     (:commit . "c22a15e86acf28da716532c26ba1371574c8e979"))])
  (llm .
-      [(0 17 1)
+      [(0 17 2)
        ((emacs
 	 (28 1))
 	(plz
@@ -2509,7 +2520,7 @@
 	(:maintainer "Andrew Hyatt" . "ahyatt@gmail.com")
 	(:authors
 	 ("Andrew Hyatt" . "ahyatt@gmail.com"))
-	(:commit . "806a703b91580c1c34d3bb5fe1d556b659f89bcf"))])
+	(:commit . "dc98688271afa11e1645744240573592b9d8c38a"))])
  (lmc .
       [(1 4)
        nil "Little Man Computer in Elisp" tar
@@ -3380,7 +3391,7 @@
 	    ("Karthik Chikmagalur" . "karthik.chikmagalur@gmail.com"))
 	   (:commit . "fe4f0b3b8b16f005fb8b5f79bc26b380038400ab"))])
  (posframe .
-	   [(1 4 3)
+	   [(1 4 4)
 	    ((emacs
 	      (26 1)))
 	    "Pop a posframe (just a frame) at point" tar
@@ -3389,7 +3400,7 @@
 	     (:maintainer "Feng Shu" . "tumashu@163.com")
 	     (:authors
 	      ("Feng Shu" . "tumashu@163.com"))
-	     (:commit . "468ac1ab50d7e0feae2c06f12596bbc169f2abe4"))])
+	     (:commit . "570273bcf6c21641f02ccfcc9478607728f0a2a2"))])
  (pq .
      [(0 2)
       ((emacs

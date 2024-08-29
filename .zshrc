@@ -18,3 +18,5 @@ source ~/.config/zsh/aliases.sh
 source ~/.config/zsh/functions.sh 
 source ~/.config/zsh/fzf.sh 
 source ~/.config/zsh/plugins.sh 
+
+fortune | cowsay

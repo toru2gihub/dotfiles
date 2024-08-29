@@ -13,23 +13,57 @@ autoload -U colors && colors # Load colors
 autoload -Uz add-zsh-hook
 setopt prompt_subst
 add-zsh-hook precmd vcs_info
-PROMPT='%(?.%F{red}λ.%F{9}λ)%f %2~ '
 # Run the `vcs_info` hook to grab git info before displaying the prompt
 add-zsh-hook precmd vcs_info
 
-# Style the vcs_info message
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git*' formats '%b%u%c'
-# Format when the repo is in an action (merge, rebase, etc)
-zstyle ':vcs_info:git*' actionformats '%F{14}⏱ %*%f'
-zstyle ':vcs_info:git*' unstagedstr '*'
-zstyle ':vcs_info:git*' stagedstr '+'
-# This enables %u and %c (unstaged/staged changes) to work,
-# but can be slow on large repos
-zstyle ':vcs_info:*:*' check-for-changes true
+# Bail out of rest of setup if we're coming in from TRAMP
+[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
 
-# Set the right prompt to the vcs_info message
-RPROMPT='⎇ ${vcs_info_msg_0_}'
+[ -n "$EAT_SHELL_INTEGRATION_DIR" ] && source "$EAT_SHELL_INTEGRATION_DIR/zsh"
+
+# This tells the shell to expand the call to $(git_prompt_info)
+setopt PROMPT_SUBST
+
+# This is a function that gathers information about the current HEAD.
+# It will show the name of the branch if there is one, otherwise the
+# short hash of the currently checked-out commit.
+git_prompt_info () {
+    local ref
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || ref=$(git rev-parse --short HEAD 2> /dev/null) || return 0
+
+    local STATUS
+    local -a FLAGS
+
+    FLAGS=('--porcelain')
+
+    if [[ "${DISABLE_UNTRACKED_FILES_DIRTY:-}" == "true" ]]
+    then
+    FLAGS+='--untracked-files=no'
+    fi
+    case "${GIT_STATUS_IGNORE_SUBMODULES:-}" in
+    (git)  ;;
+    (*) FLAGS+="--ignore-submodules=${GIT_STATUS_IGNORE_SUBMODULES:-dirty}"  ;;
+    esac
+
+    STATUS=$(git status ${FLAGS} 2> /dev/null | tail -n1)
+
+    if [[ -n $STATUS ]]
+    then
+    echo " %F{red}[%F{yellow}${ref#refs/heads/}%F{red}]%f"
+    else
+    echo " %F{green}(%F{yellow}${ref#refs/heads/}%F{green})%f"
+    fi
+
+}
+
+# If I'm on my home machine, don't show the hostname in the prompt.
+if [[ `hostname` =~ ^my-home-machine.* ]]
+then
+    PROMPT="%(?:%F{green}➤:%F{red}!%?)%f %F{cyan}%~%f\$(git_prompt_info) %(!:# :)"
+else
+    # Add "%m" to print the short hostname on other servers
+    PROMPT="%(?:%F{green}➤:%F{red}!%?)%f %F{blue}%m%f:%F{cyan}%~%f\$(git_prompt_info) %(!:# :)"
+fi
 
 ## CTRL+ARROW KEYS
 bindkey "^[[1;5C" forward-word
@@ -68,6 +102,20 @@ LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:c
 export LS_COLORS 
 
 #theme.sh tango-dark
+#PROMPT='%(?.%F{red}λ.%F{9}λ)%f %2~ '
+# # Style the vcs_info message
+# zstyle ':vcs_info:*' enable git
+# zstyle ':vcs_info:git*' formats '%b%u%c'
+# # Format when the repo is in an action (merge, rebase, etc)
+# zstyle ':vcs_info:git*' actionformats '%F{14}⏱ %*%f'
+# zstyle ':vcs_info:git*' unstagedstr '*'
+# zstyle ':vcs_info:git*' stagedstr '+'
+# # This enables %u and %c (unstaged/staged changes) to work,
+# # but can be slow on large repos
+# zstyle ':vcs_info:*:*' check-for-changes true
+
+# Set the right prompt to the vcs_info message
+#RPROMPT='⎇ ${vcs_info_msg_0_}'
 
 if command -v theme.sh > /dev/null; then
     [ -e ~/.theme_history ] && theme.sh "$(theme.sh -l|tail -n1)"
