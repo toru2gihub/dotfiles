@@ -58,7 +58,7 @@ tooltip {
 }
 
 #workspaces button.active {
-    color: #ff0000;
+    color: #cc241d;
 }
 
 #workspaces button.focused {
@@ -69,7 +69,7 @@ tooltip {
 
 #workspaces button.urgent {
     color: #ffffff;
-    background: #ff0000;
+    background: #cc241d;
     border-radius: 5px;
 }
 
@@ -101,11 +101,11 @@ tooltip {
 #mpd {
     padding: 0 10px;
     /* border-radius: 10px;  */
-    color: #ff0000;
+    color: #cc241d;
 }
 
 #mpd.disconnected {
-    background-color: #ff0000;
+    background-color: #cc241d;
 }
 
 #mpd.stopped {
