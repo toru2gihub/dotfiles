@@ -203,8 +203,49 @@
 #+name: dashboard block
 #+begin_src emacs-lisp
 
-(setq inhibit-startup-message t) ;doesnt show the default emacs startpage
-(setq inhibit-startup-screen t)
+;; (setq inhibit-startup-message t) ;doesnt show the default emacs startpage
+;; (setq inhibit-startup-screen t)
+
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
+
+;; Set the title
+(setq dashboard-banner-logo-title "Welcome to Emacs")
+
+;; Set the banner
+;; (setq dashboard-startup-banner 'logo)
+;; (setq dashboard-startup-banner 'official)
+(setq dashboard-startup-banner "~/pic/toru.png")
+
+;; Content is not centered by default. To center, set
+(setq dashboard-center-content t)
+
+;; vertically center content
+(setq dashboard-vertically-center-content t)
+
+(setq dashboard-startupify-list '(dashboard-insert-banner
+                                  dashboard-insert-newline
+                                  dashboard-insert-banner-title
+                                  dashboard-insert-newline
+                                  dashboard-insert-navigator
+                                  dashboard-insert-newline
+                                  dashboard-insert-init-info
+                                  dashboard-insert-items
+                                  dashboard-insert-newline
+                                  dashboard-insert-footer))
+
+(setq dashboard-items '((recents   . 3)
+                        (bookmarks . 3)
+                        (agenda    . 3)))
+
+(setq dashboard-icon-type 'all-the-icons)  ; use `all-the-icons' package
+
+(setq dashboard-display-icons-p t)     ; display icons on both GUI and terminal
+(setq dashboard-icon-type 'nerd-icons) ; use `nerd-icons' package
+(setq dashboard-set-file-icons t)
+(setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name)))
 
 #+end_src
 
@@ -214,7 +255,7 @@
 #+begin_src emacs-lisp
 
 ;; Theme
-  (load-theme 'ef-dream t)
+  (load-theme 'adwaita-dark t)
 
 (setq modus-themes-org-blocks 'gray-background)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/etc/themes")
@@ -431,6 +472,8 @@
     "t s" '(lsp-treemacs-symbols :wk "Treemacs LSP symbols")
     "t b" '(toggle-org-buffer :wk "New scratch buffer")
     "t o" '(olivetti-mode :wk "Toggle olivetti-mode")
+    "t e" '(org-clock-in :wk "Clock in")
+    "t r" '(org-clock-out :wk "Clock out")
     "t i" '(org-toggle-inline-images :wk "Toggle images in org")
     "t n" '(display-line-numbers-mode :wk "Toggle line-numbers"))
 
