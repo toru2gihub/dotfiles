@@ -59,10 +59,10 @@ git_prompt_info () {
 # If I'm on my home machine, don't show the hostname in the prompt.
 if [[ `hostname` =~ ^my-home-machine.* ]]
 then
-    PROMPT="%(?:%F{green}➤:%F{red}!%?)%f %F{cyan}%~%f\$(git_prompt_info) %(!:# :)"
+    PROMPT="%(?:%F{green}󰘧:%F{red}!%?)%f %F{cyan}%~%f\$(git_prompt_info) %(!:# :)"
 else
     # Add "%m" to print the short hostname on other servers
-    PROMPT="%(?:%F{green}➤:%F{red}!%?)%f %F{blue}%m%f:%F{cyan}%~%f\$(git_prompt_info) %(!:# :)"
+    PROMPT="%(?:%F{green}󰘧:%F{red}!%?)%f %F{blue}%m%f:%F{cyan}%~%f\$(git_prompt_info) %(!:# :)"
 fi
 
 ## CTRL+ARROW KEYS

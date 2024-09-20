@@ -212,7 +212,9 @@
   (dashboard-setup-startup-hook))
 
 ;; Set the title
-(setq dashboard-banner-logo-title "Welcome to Emacs")
+(setq dashboard-banner-logo-title "Welcome to Torumacs")
+
+(setq dashboard-page-separator "\n\f\n")
 
 ;; Set the banner
 ;; (setq dashboard-startup-banner 'logo)
@@ -263,7 +265,7 @@
 ; Font
 (set-face-attribute 'default nil
 		    :family "jetbrains mono"
-		    :height 135
+		    :height 125
 		    ;;:weight 'semilight
 		    )
 
@@ -276,8 +278,8 @@
            :style released-button)))))
 
 (setq blink-cursor-mode nil) ;; Blinking cursor
-(menu-bar-mode 1)           ;; Disable the menu bar
-(tool-bar-mode 1)           ;; Disable the tool bar
+(menu-bar-mode -1)           ;; Disable the menu bar
+(tool-bar-mode -1)           ;; Disable the tool bar
 (tab-bar-mode -1)            ;; Disable tabs
 (scroll-bar-mode -1)         ;; Disable the scroll bar
 (setq display-line-numbers-type 'relative)
@@ -1892,7 +1894,7 @@ folder, otherwise delete a word"
 
 (use-package olivetti)
 
-(setq olivetti-body-width 200)
+(setq olivetti-margin-width 15)
 
 #+end_src
 

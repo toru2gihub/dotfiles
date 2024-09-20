@@ -207,7 +207,7 @@
 	      ("Dave Pearson" . "davep@davep.org"))
 	     (:commit . "fe676396fa7e4372e01bf2c3d9a62e8d53615d46"))])
  (buttercup .
-	    [(1 35)
+	    [(1 36)
 	     ((emacs
 	       (24 4)))
 	     "Behavior-Driven Emacs Lisp Testing" tar
@@ -215,7 +215,7 @@
 	      (:maintainer "Ola Nilsson" . "ola.nilsson@gmail.com")
 	      (:authors
 	       ("Jorgen Schaefer" . "contact@jorgenschaefer.de"))
-	      (:commit . "a1a86b027ffe030e1c78a9f43c50cd20a6fed19a"))])
+	      (:commit . "bf01a33f8bc2d3664121d3b20f7496e67ce55e6a"))])
  (camera .
 	 [(0 3)
 	  ((emacs
@@ -552,7 +552,7 @@
 	    ("Tim Vaughan" . "plugd@thelambdalab.xyz"))
 	   (:commit . "0bd12913940a047724d830725bf8649e4f8df499"))])
  (emacsql .
-	  [(4 0 2)
+	  [(4 0 3)
 	   ((emacs
 	     (25 1)))
 	   "High-level SQL database front-end" tar
@@ -560,7 +560,7 @@
 	    (:maintainer "Jonas Bernoulli" . "emacs.emacsql@jonas.bernoulli.dev")
 	    (:authors
 	     ("Christopher Wellons" . "wellons@nullprogram.com"))
-	    (:commit . "07699353a43f629848c66c0949e7170e8f29e299"))])
+	    (:commit . "fb05d0f72729a4b4452a3b1168a9b7b35a851a53"))])
  (engine-mode .
 	      [(2 2 4)
 	       ((cl-lib
@@ -1032,11 +1032,11 @@
 	       ("Jonas Bernoulli" . "emacs.git-modes@jonas.bernoulli.dev"))
 	      (:commit . "f99010bbeb8b6d8a0819fac0195a2ef0159d08f0"))])
  (gnosis .
-	 [(0 4 1)
+	 [(0 4 3)
 	  ((emacs
 	    (27 2))
 	   (emacsql
-	    (4 0 0))
+	    (4 0 1))
 	   (compat
 	    (29 1 4 2))
 	   (transient
@@ -1047,7 +1047,7 @@
 	   (:maintainer "Thanos Apollo" . "public@thanosapollo.org")
 	   (:authors
 	    ("Thanos Apollo" . "public@thanosapollo.org"))
-	   (:commit . "4fe415d70277046f6b81a00e8e012634e4f0ac05"))])
+	   (:commit . "40f63788afdb74fa71177abd882e852177829881"))])
  (gnu-apl-mode .
 	       [(1 5 1)
 		nil "Emacs mode for GNU APL" tar
@@ -1272,36 +1272,40 @@
 	       ("Akib Azmain Turja" . "akib@disroot.org"))
 	      (:commit . "2d3a3f551b52c07a11b9ea0f842ef39915911c55"))])
  (htmlize .
-	  [(1 56)
-	   nil "Convert buffer text and decorations to HTML." tar
-	   ((:keywords "hypermedia" "extensions")
+	  [(1 58)
+	   ((emacs
+	     (25 1)))
+	   "Convert buffer text and decorations to HTML." tar
+	   ((:url . "https://github.com/hniksic/emacs-htmlize")
+	    (:keywords "hypermedia" "extensions")
 	    (:maintainer "Hrvoje Niksic" . "hniksic@gmail.com")
 	    (:authors
 	     ("Hrvoje Niksic" . "hniksic@gmail.com"))
-	    (:url . "https://elpa.nongnu.org/nongnu/htmlize.html")
-	    (:commit . "7b63aa058c3dd0d9f8c07706cd8bb4e56aaa1fb3"))])
+	    (:commit . "5d2751c4ca101fa0884ce8662f5566736f8257fe"))])
  (hyperdrive .
-	     [(0 3)
+	     [(0 4 1)
 	      ((emacs
 		(28 1))
 	       (map
 		(3 0))
 	       (compat
-		(29 1 4 0))
+		(30 0 0 0))
+	       (org
+		(9 7 6))
 	       (plz
-		(0 7))
+		(0 9 1))
 	       (persist
-		(0 5))
+		(0 6 1))
 	       (taxy-magit-section
-		(0 12 1))
+		(0 14))
 	       (transient
-		(0 5 0)))
+		(0 7 4)))
 	      "P2P filesystem" tar
 	      ((:url . "https://git.sr.ht/~ushin/hyperdrive.el")
 	       (:maintainer "Joseph Turner" . "~ushin/ushin@lists.sr.ht")
 	       (:authors
 		("Joseph Turner" . "joseph@ushin.org"))
-	       (:commit . "38d9b17dc0eefab1c31124d8aae3728372535e70"))])
+	       (:commit . "8e646524d282a8e4746238770e69b64adb6d409b"))])
  (idle-highlight-mode .
 		      [(1 1 4)
 		       ((emacs
@@ -1702,7 +1706,7 @@
 		     ("Yilkal Argaw" . "yilkalargawworkneh@gmail.com"))
 		    (:commit . "2494a6f78c9db5311123abc7cad119851a29a55c"))])
  (org-contrib .
-	      [(0 4 2)
+	      [(0 6)
 	       ((emacs
 		 (25 1))
 		(org
@@ -1713,7 +1717,7 @@
 		(:maintainer "Bastien Guerry" . "bzg@gnu.org")
 		(:authors
 		 ("Bastien Guerry" . "bzg@gnu.org"))
-		(:commit . "dce101b4612e6deef814516779ce216e8eace569"))])
+		(:commit . "0e65be83e4b41c17a5b9096c9055c1601b26a23d"))])
  (org-drill .
 	    [(2 7 0)
 	     ((emacs
@@ -1931,14 +1935,14 @@
 	       ("Andreas Politz" . "mail@andreas-politz.de"))
 	      (:commit . "a9c9a12c3ecf2005fa641059368ac8284f507620"))])
  (php-mode .
-	   [(1 25 1)
+	   [(1 26 1)
 	    ((emacs
 	      (26 1)))
 	    "Major mode for editing PHP code" tar
 	    ((:url . "https://github.com/emacs-php/php-mode")
 	     (:keywords "languages" "php")
 	     (:maintainer "USAMI Kenta" . "tadsan@zonu.me")
-	     (:commit . "6ad1715ef0aed463ab05076dc7c91657978e4ec1"))])
+	     (:commit . "9a2fe1c6c34f4f22f11efff0caf1d4e7c8ea233a"))])
  (popon .
 	[(0 13)
 	 ((emacs
@@ -1993,7 +1997,7 @@
 	       ("David Christiansen" . "david@davidchristiansen.dk"))
 	      (:commit . "1edda80e2e32b72e77f4f16ae5b83c312c68ee95"))])
  (racket-mode .
-	      [(1 0 20240826 113340)
+	      [(1 0 20240914 104237)
 	       ((emacs
 		 (25 1)))
 	       "Racket editing, REPL, and more" tar
@@ -2240,16 +2244,16 @@
 		     ("John Olsson" . "john@cryon.se"))
 		    (:commit . "2d5acd143a153e16372d59000e57d76291ab81dd"))])
  (subed .
-	[(1 2 14)
+	[(1 2 15)
 	 ((emacs
 	   (25 1)))
 	 "A major mode for editing subtitles" tar
 	 ((:url . "https://github.com/sachac/subed")
 	  (:keywords "convenience" "files" "hypermedia" "multimedia")
 	  (:maintainer "Sacha Chua" . "sacha@sachachua.com")
-	  (:commit . "d5e48886f4472a644c1c406dd8994b357abd15d8"))])
+	  (:commit . "47403ce79d084d7dec8599553456f35370d8aef2"))])
  (sweeprolog .
-	     [(0 27 5)
+	     [(0 27 6)
 	      ((emacs
 		(27 1))
 	       (compat
@@ -2260,7 +2264,7 @@
 	       (:maintainer "Eshel Yaron" . "~eshel/dev@lists.sr.ht")
 	       (:authors
 		("Eshel Yaron" . "me@eshelyaron.com"))
-	       (:commit . "d8ea9790b40d74f444ff147f7b98f2023ef2e61a"))])
+	       (:commit . "bd31199a34c0619b346954f25875fcb7239e2b86"))])
  (swift-mode .
 	     [(9 1 0)
 	      ((emacs
@@ -2278,16 +2282,18 @@
 		("Arthur Evstifeev" . "lod@pisem.net"))
 	       (:commit . "e58417ec871d260fe47183ffe4b7e47ac09bc682"))])
  (symbol-overlay .
-		 [(4 1)
+		 [(4 3)
 		  ((emacs
-		    (24 3)))
+		    (24 3))
+		   (seq
+		    (2 2)))
 		  "Highlight symbols with keymap-enabled overlays" tar
 		  ((:url . "https://github.com/wolray/symbol-overlay/")
 		   (:keywords "faces" "matching")
 		   (:maintainer "wolray" . "wolray@foxmail.com")
 		   (:authors
 		    ("wolray" . "wolray@foxmail.com"))
-		   (:commit . "d1464042783e252f5cac1fcac82fee16fc3534db"))])
+		   (:commit . "6151f4279bd94b5960149596b202cdcb45cacec2"))])
  (systemd .
 	  [(1 6 1)
 	   ((emacs
@@ -2580,14 +2586,14 @@
 	     ((:url . "https://github.com/lewang/ws-butler")
 	      (:commit . "323b651dd70ee40a25accc940b8f80c3a3185205"))])
  (xah-fly-keys .
-	       [(25 9 20240725161125)
+	       [(26 1 20240916184601)
 		((emacs
 		  (27)))
 		"ergonomic modal keybinding minor mode." tar
 		((:url . "http://xahlee.info/emacs/misc/xah-fly-keys.html")
 		 (:keywords "convenience" "vi" "vim" "ergoemacs" "keybinding")
 		 (:maintainer "Xah Lee" . "xah@xahlee.org")
-		 (:commit . "5556a1d5dfaa19ecd0fd0fce735966f8cc118865"))])
+		 (:commit . "37a31116395fba9966047d7a6fc13cd501d8cc4f"))])
  (xkcd .
        [(1 1)
 	((json
