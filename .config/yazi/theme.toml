@@ -7,6 +7,8 @@
 # Repository: https://codeberg.org/toru
 # Email: torupublic11@waifu.club
 
+
+# If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 "$schema" = "https://yazi-rs.github.io/schemas/theme.json"
 
 # vim:fileencoding=utf-8:foldmethod=marker
@@ -16,9 +18,9 @@
 [manager]
 cwd = { fg = "white", bold = true }
 
-# Hoveblue
-hoveblue = { reversed = true }
-preview_hoveblue = { underline = true }
+# Hovered
+hovered = { reversed = true }
+preview_hovered = { underline = true }
 
 # Find
 find_keyword  = { fg = "yellow", italic = true }
@@ -27,7 +29,7 @@ find_position = { fg = "magenta", bg = "reset", italic = true }
 # Marker
 marker_selected = { fg = "lightgreen",  bg = "lightgreen" }
 marker_copied   = { fg = "lightyellow", bg = "lightyellow" }
-marker_cut      = { fg = "lightblue",    bg = "lightblue" }
+marker_cut      = { fg = "lightred",    bg = "lightred" }
 
 # Tab
 tab_active   = { fg = "black", bg = "lightblue" }
@@ -36,7 +38,7 @@ tab_width    = 1
 
 # Border
 border_symbol = "│"
-border_style  = { fg = "white" }
+border_style  = { fg = "gray" }
 
 # Highlighting
 syntect_theme = ""
@@ -59,12 +61,12 @@ mode_unset  = { fg = "black", bg = "lightmagenta", bold = false }
 # Progress
 progress_label  = { bold = true }
 progress_normal = { fg = "blue", bg = "black" }
-progress_error  = { fg = "blue",  bg = "black" }
+progress_error  = { fg = "red",  bg = "black" }
 
 # Permissions
 permissions_t = { fg = "lightgreen" }
 permissions_r = { fg = "lightyellow" }
-permissions_w = { fg = "lightblue" }
+permissions_w = { fg = "lightred" }
 permissions_x = { fg = "lightcyan" }
 permissions_s = { fg = "darkgray" }
 
@@ -112,7 +114,7 @@ icon_command = ""
 [tasks]
 border  = { fg = "blue" }
 title   = {}
-hoveblue = { underline = true }
+hovered = { underline = true }
 
 # : }}}
 
@@ -137,7 +139,7 @@ separator_style = { fg = "darkgray" }
 on      = { fg = "magenta" }
 exec    = { fg = "cyan" }
 desc    = { fg = "gray" }
-hoveblue = { bg = "darkgray", bold = true }
+hovered = { bg = "darkgray", bold = true }
 footer  = { fg = "black", bg = "white" }
 
 # : }}}
@@ -156,14 +158,14 @@ rules = [
     { mime = "audio/*", fg = "green" },
 
     # Archives
-    { mime = "application/zip",             fg = "blue" },
-    { mime = "application/gzip",            fg = "blue" },
-    { mime = "application/x-tar",           fg = "blue" },
-    { mime = "application/x-bzip",          fg = "blue" },
-    { mime = "application/x-bzip2",         fg = "blue" },
-    { mime = "application/x-7z-compressed", fg = "blue" },
-    { mime = "application/x-rar",           fg = "blue" },
-    { mime = "application/xz",              fg = "blue" },
+    { mime = "application/zip",             fg = "red" },
+    { mime = "application/gzip",            fg = "red" },
+    { mime = "application/x-tar",           fg = "red" },
+    { mime = "application/x-bzip",          fg = "red" },
+    { mime = "application/x-bzip2",         fg = "red" },
+    { mime = "application/x-7z-compressed", fg = "red" },
+    { mime = "application/x-rar",           fg = "red" },
+    { mime = "application/xz",              fg = "red" },
 
     # Documents
     # { mime = "application/doc",   fg = "green" },
