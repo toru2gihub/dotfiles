@@ -4,10 +4,11 @@
 #░█▀█▒█▄▄░█░█▀█▒▄██░█▄▄▒▄██
 
 ## Coreutils ##
-#alias ls="ls -lhN --color=auto --group-directories-first"
-#alias la="ls -lahN --color=auto --group-directories-first"
-alias la='eza -la --icons --git --group-directories-first'
-alias ls='eza -l --icons --git --group-directories-first'
+alias ls="ls -lhN --color=auto --group-directories-first"
+alias la="ls -lahN --color=auto --group-directories-first"
+alias la='eza -la --icons --group-directories-first'
+alias ls='eza -l --icons --group-directories-first'
+
 alias cat='bat'
 alias cp="cp -iv"
 alias mv="mv -iv"
@@ -38,7 +39,7 @@ alias ff="fastfetch"
 alias rs="rsync -vuP"
 alias s="nsxiv"
 alias ncp="ncmpcpp"
-alias ytd="cd ~/dl; yt-dlp --embed-metadata -i"
+alias ytd="cd ~/dl; yt-dlp --embed-metadata -i -S res:1080"
 alias ffmpeg="ffmpeg -hide_banner"
 alias yt="cd ~/dl; ytfzf -t -d"
 alias tb="nc termbin.com 9999" #antes del "tb", usa | (pipe)

@@ -14,8 +14,8 @@
     "height": 47,
     // "width": 1580,
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["pulseaudio", "mpd", "memory", "clock", "tray"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "memory", "custom/recorder", "tray"],
 
     "hyprland/window": {
         "format": "{}",
@@ -42,9 +42,14 @@
         "spacing": 8
     },
 
+    //"clock": {
+    //    "format": " {:%I:%M %p   %a, %b %e}",
+    //    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    // },
+
     "clock": {
-        "format": " {:%I:%M %p   %a, %b %e}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        "format": " {:%I:%M %p}",
+        "tooltip-format": "<big>{:%a %e}</big>\n<tt><small>{calendar}</small></tt>"
     },
 
     "pulseaudio": {
@@ -102,5 +107,13 @@
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
+
+ "custom/recorder": {
+                "format": " ",
+                "return-type": "json",
+                "interval": 1,
+                "exec": "echo '{\"class\": \"recording\"}'",
+                "exec-if": "pgrep wf-recorder"
+        },
 
 }

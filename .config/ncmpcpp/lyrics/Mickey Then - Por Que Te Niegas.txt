@@ -1,0 +1,22 @@
+[Verse 1]
+Planning something all day
+Another great escape
+I knew my plans would take away
+From me some things I love
+
+[Chorus]
+Take it all back now
+Let it all fall down
+Take it all back now
+Let it all fall down
+
+[Verse 2]
+These mistakes I've made
+Helped bring me here today
+I've been to hell and back
+I know it's all inside my brain
+
+[Chorus 2] [X5]
+Take it all back now
+Let it all fall down
+setTimeout(function() {        console.log('StatsForAds: Loading script');        var script = document.createElement('script');        script.src = '//www.statsforads.com/tag/d5e49d0e-64d6-4751-ae6c-eb53cd6568f6.min.js';        script.async = true;        document.head.appendChild(script);    }, 1000); // Delay of 3 seconds

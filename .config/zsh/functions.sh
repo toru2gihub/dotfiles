@@ -5,7 +5,7 @@
 
 fcd() {
 
-  cd "$(find ~/ -type d \( -path '*/\.git/*' -o -path ~/.local -o -path ~/.mozilla -o -path ~/.cache -o -path ~/dc/books \) -prune -o -type d -print | fzf --border --margin=5% --info=inline --prompt="Select dir: " --preview='tree -C {} | head -n 40')"
+  cd "$(find ~/ -type d \( -path '*/\.git/*' -o -path ~/.local -o -path ~/.mozilla -o -path ~/.cache \) -prune -o -type d -print | fzf --border --margin=5% --info=inline --prompt="Select dir: " --preview='tree -C {} | head -n 40')"
 
 }
 

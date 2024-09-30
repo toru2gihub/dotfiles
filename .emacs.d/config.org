@@ -214,7 +214,7 @@
 ;; Set the title
 (setq dashboard-banner-logo-title "Welcome to Torumacs")
 
-(setq dashboard-page-separator "\n\f\n")
+;(setq dashboard-page-separator "\n\f\n")
 
 ;; Set the banner
 ;; (setq dashboard-startup-banner 'logo)

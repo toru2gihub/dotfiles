@@ -28,7 +28,7 @@ fi
 
 case "$url" in
 	*mkv|*webm|*mp4|*rumble.com*|*youtube.com/watch*|*youtube.com/playlist*|*youtube.com/shorts*|*youtu.be*|*hooktube.com*|*bitchute.com*|*videos.lukesmith.xyz*|*odysee.com*)
-		yt-dlp -P ~/dl -quiet "$url" >/dev/null 2>&1 ;;
+		yt-dlp -S res:1080 -P ~/dl -quiet "$url" >/dev/null 2>&1 ;;
 	*png|*jpg|*jpe|*jpeg|*gif)
 		curl -sL "$url" > "/tmp/$(echo "$url" | sed "s/.*\///;s/%20/ /g")" && nsxiv -a "/tmp/$(echo "$url" | sed "s/.*\///;s/%20/ /g")"  >/dev/null 2>&1 & ;;
 	*pdf|*cbz|*cbr)

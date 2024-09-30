@@ -2,8 +2,8 @@ background-color = #000000
 outline-color = #000000
 border-color = #000000
 text-cursor-background = #000000
-selection-color = #d79921
-selection-match-color = #cc241d
+selection-color = #696969
+selection-match-color = #4169e1
 
 font = "Jetbrains Mono"
 
@@ -165,7 +165,7 @@ history = true
 # algorithm.
 #
 # Supported values: normal, prefix, fuzzy
-matching-algorithm = normal
+#matching-algorithm = normal
 
 # If true, require a match to allow a selection to be made. If false,
 # making a selection with no matches will print input to stdout.
@@ -188,13 +188,13 @@ hidden-character = "*"
 
 # If true, use physical keys for shortcuts, regardless of the current
 # keyboard layout. If false, use the current layout's keys.
-physical-keybindings = true
+#physical-keybindings = true
 
 # Instead of printing the selected entry, print the 1-based index of
 # the selection. This option has no effect in run or drun mode. If
 # require-match is set to false, non-matching input will still result
 # in the input being printed.
-print-index = false
+#print-index = false
 
 # If true, directly launch applications on selection when in drun mode.
 # Otherwise, just print the command line to stdout.

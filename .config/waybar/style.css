@@ -42,7 +42,6 @@ window#waybar.empty #window {
 }
 
 window#waybar.floating {
-
 }
 
 tooltip {
@@ -52,13 +51,12 @@ tooltip {
     border-style: solid;
     border-color: #000000;
 }
-
 #workspaces button {
     color: #ffffff;
 }
 
 #workspaces button.active {
-    color: #cc241d;
+    color: #4169e1;
 }
 
 #workspaces button.focused {
@@ -69,7 +67,7 @@ tooltip {
 
 #workspaces button.urgent {
     color: #ffffff;
-    background: #cc241d;
+    background: #4169e1;
     border-radius: 5px;
 }
 
@@ -101,11 +99,11 @@ tooltip {
 #mpd {
     padding: 0 10px;
     /* border-radius: 10px;  */
-    color: #cc241d;
+    color: #4169e1;
 }
 
 #mpd.disconnected {
-    background-color: #cc241d;
+    background-color: #4169e1;
 }
 
 #mpd.stopped {
