@@ -41,7 +41,6 @@
   - [[#-corfu--cape][󱦟 Corfu & Cape.]]
   - [[#-avy][󰖇 Avy.]]
   - [[#-ox-hugo][󰠩 Ox-hugo.]]
-  - [[#-treemacs][ Treemacs]]
   - [[#-hydra][ Hydra.]]
   - [[#-olivetti][ Olivetti.]]
   - [[#-vundo][󰙅 Vundo.]]
@@ -49,15 +48,14 @@
   - [[#-snippets][󰔣 Snippets.]]
 - [[#-passive-pkgs][ Passive Pkgs]]
   - [[#-all-the-icons][ All-the-icons.]]
-  - [[#-auctex][ AucteX.]]
   - [[#-nix-mode][󱄅 Nix-mode.]]
   - [[#-no-littering][ No-littering.]]
   - [[#-highlight-indent-guides][ highlight-indent-guides.]]
-  - [[#-rainbow-modes][󰵼 Rainbow modes.]]
+  - [[#-rainbow-mode][󰵼 Rainbow-mode.]]
   - [[#-marginalia][ Marginalia.]]
   - [[#-page-break-lines][ Page-break-lines.]]
   - [[#-flycheck][󰓆 Flycheck.]]
-  - [[#--hl-todo][  Hl-TODO.]]
+  - [[#-hl-todo][ Hl-TODO.]]
 
 *  Overall
 ** 󱜥 Scripts. 
@@ -206,48 +204,48 @@
 ;; (setq inhibit-startup-message t) ;doesnt show the default emacs startpage
 ;; (setq inhibit-startup-screen t)
 
-(use-package dashboard
-  :ensure t
-  :config
-  (dashboard-setup-startup-hook))
+;; (use-package dashboard
+;;   :ensure t
+;;   :config
+;;   (dashboard-setup-startup-hook))
 
-;; Set the title
-(setq dashboard-banner-logo-title "Welcome to Torumacs")
+;; ;; Set the title
+;; (setq dashboard-banner-logo-title "Welcome to Torumacs")
 
-;(setq dashboard-page-separator "\n\f\n")
+;; ;(setq dashboard-page-separator "\n\f\n")
 
-;; Set the banner
-;; (setq dashboard-startup-banner 'logo)
-;; (setq dashboard-startup-banner 'official)
-(setq dashboard-startup-banner "~/pic/toru.png")
+;; ;; Set the banner
+;; ;; (setq dashboard-startup-banner 'logo)
+;; ;; (setq dashboard-startup-banner 'official)
+;; (setq dashboard-startup-banner "~/pic/toru.png")
 
-;; Content is not centered by default. To center, set
-(setq dashboard-center-content t)
+;; ;; Content is not centered by default. To center, set
+;; (setq dashboard-center-content t)
 
-;; vertically center content
-(setq dashboard-vertically-center-content t)
+;; ;; vertically center content
+;; (setq dashboard-vertically-center-content t)
 
-(setq dashboard-startupify-list '(dashboard-insert-banner
-                                  dashboard-insert-newline
-                                  dashboard-insert-banner-title
-                                  dashboard-insert-newline
-                                  dashboard-insert-navigator
-                                  dashboard-insert-newline
-                                  dashboard-insert-init-info
-                                  dashboard-insert-items
-                                  dashboard-insert-newline
-                                  dashboard-insert-footer))
+;; (setq dashboard-startupify-list '(dashboard-insert-banner
+;;                                   dashboard-insert-newline
+;;                                   dashboard-insert-banner-title
+;;                                   dashboard-insert-newline
+;;                                   dashboard-insert-navigator
+;;                                   dashboard-insert-newline
+;;                                   dashboard-insert-init-info
+;;                                   dashboard-insert-items
+;;                                   dashboard-insert-newline
+;;                                   dashboard-insert-footer))
 
-(setq dashboard-items '((recents   . 3)
-                        (bookmarks . 3)
-                        (agenda    . 3)))
+;; (setq dashboard-items '((recents   . 3)
+;;                         (bookmarks . 3)
+;;                         (agenda    . 3)))
 
-(setq dashboard-icon-type 'all-the-icons)  ; use `all-the-icons' package
+;; (setq dashboard-icon-type 'all-the-icons)  ; use `all-the-icons' package
 
-(setq dashboard-display-icons-p t)     ; display icons on both GUI and terminal
-(setq dashboard-icon-type 'nerd-icons) ; use `nerd-icons' package
-(setq dashboard-set-file-icons t)
-(setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name)))
+;; (setq dashboard-display-icons-p t)     ; display icons on both GUI and terminal
+;; (setq dashboard-icon-type 'nerd-icons) ; use `nerd-icons' package
+;; (setq dashboard-set-file-icons t)
+;; (setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name)))
 
 #+end_src
 
@@ -278,8 +276,8 @@
            :style released-button)))))
 
 (setq blink-cursor-mode nil) ;; Blinking cursor
-(menu-bar-mode -1)           ;; Disable the menu bar
-(tool-bar-mode -1)           ;; Disable the tool bar
+(menu-bar-mode 1)           ;; Disable the menu bar
+(tool-bar-mode 1)           ;; Disable the tool bar
 (tab-bar-mode -1)            ;; Disable tabs
 (scroll-bar-mode -1)         ;; Disable the scroll bar
 (setq display-line-numbers-type 'relative)
@@ -314,14 +312,11 @@
 #+name: modeline block
 #+begin_src emacs-lisp
 
- ;; (use-package simple-modeline
- ;;   :hook (after-init . simple-modeline-mode))
-
-(use-package doom-modeline
-  :ensure t
-  :hook (after-init . doom-modeline-mode))
-(setq doom-modeline-enable-word-count nil)
-(setq doom-modeline-column-zero-based nil)
+;; (use-package doom-modeline
+;;   :ensure t
+;;   :hook (after-init . doom-modeline-mode))
+;; (setq doom-modeline-enable-word-count nil)
+;; (setq doom-modeline-column-zero-based nil)
 
 (use-package diminish
   :ensure t)
@@ -870,7 +865,7 @@
 
 ;; Scratch buffer default message
 ; if you want a message, change the balue 'nil' with "YOUR MESSAGE"
-(setq initial-scratch-message nil)
+;(setq initial-scratch-message nil)
 
 (add-hook 'org-mode-hook 'org-indent-mode)
 
@@ -1675,132 +1670,6 @@ folder, otherwise delete a word"
 
 #+end_src
 
-**  Treemacs
-#+begin_src emacs-lisp
-(use-package treemacs
-  :ensure t
-  :defer t
-  :init
-  (with-eval-after-load 'winum
-    (define-key winum-keymap (kbd "M-0") #'treemacs-select-window))
-  :config
-  (progn
-    (setq treemacs-collapse-dirs                   (if treemacs-python-executable 3 0)
-          treemacs-deferred-git-apply-delay        0.5
-          treemacs-directory-name-transformer      #'identity
-          treemacs-display-in-side-window          t
-          treemacs-eldoc-display                   'simple
-          treemacs-file-event-delay                2000
-          treemacs-file-extension-regex            treemacs-last-period-regex-value
-          treemacs-file-follow-delay               0.2
-          treemacs-file-name-transformer           #'identity
-          treemacs-follow-after-init               t
-          treemacs-expand-after-init               t
-          treemacs-find-workspace-method           'find-for-file-or-pick-first
-          treemacs-git-command-pipe                ""
-          treemacs-goto-tag-strategy               'refetch-index
-          treemacs-header-scroll-indicators        '(nil . "^^^^^^")
-          treemacs-hide-dot-git-directory          t
-          treemacs-indentation                     2
-          treemacs-indentation-string              " "
-          treemacs-is-never-other-window           nil
-          treemacs-max-git-entries                 5000
-          treemacs-missing-project-action          'ask
-          treemacs-move-files-by-mouse-dragging    t
-          treemacs-move-forward-on-expand          nil
-          treemacs-no-png-images                   nil
-          treemacs-no-delete-other-windows         t
-          treemacs-project-follow-cleanup          nil
-          treemacs-persist-file                    (expand-file-name ".cache/treemacs-persist" user-emacs-directory)
-          treemacs-position                        'left
-          treemacs-read-string-input               'from-child-frame
-          treemacs-recenter-distance               0.1
-          treemacs-recenter-after-file-follow      nil
-          treemacs-recenter-after-tag-follow       nil
-          treemacs-recenter-after-project-jump     'always
-          treemacs-recenter-after-project-expand   'on-distance
-          treemacs-litter-directories              '("/node_modules" "/.venv" "/.cask")
-          treemacs-project-follow-into-home        nil
-          treemacs-show-cursor                     nil
-          treemacs-show-hidden-files               t
-          treemacs-silent-filewatch                nil
-          treemacs-silent-refresh                  nil
-          treemacs-sorting                         'alphabetic-asc
-          treemacs-select-when-already-in-treemacs 'move-back
-          treemacs-space-between-root-nodes        t
-          treemacs-tag-follow-cleanup              t
-          treemacs-tag-follow-delay                1.5
-          treemacs-text-scale                      nil
-          treemacs-user-mode-line-format           nil
-          treemacs-user-header-line-format         nil
-          treemacs-wide-toggle-width               70
-          treemacs-width                           35
-          treemacs-width-increment                 1
-          treemacs-width-is-initially-locked       t
-          treemacs-workspace-switch-cleanup        nil)
-
-    ;; The default width and height of the icons is 22 pixels. If you are
-    ;; using a Hi-DPI display, uncomment this to double the icon size.
-    ;;(treemacs-resize-icons 44)
-
-    (treemacs-follow-mode t)
-    (treemacs-filewatch-mode t)
-    (treemacs-fringe-indicator-mode 'always)
-    (when treemacs-python-executable
-      (treemacs-git-commit-diff-mode t))
-
-    (pcase (cons (not (null (executable-find "git")))
-                 (not (null treemacs-python-executable)))
-      (`(t . t)
-       (treemacs-git-mode 'deferred))
-      (`(t . _)
-       (treemacs-git-mode 'simple)))
-
-    (treemacs-hide-gitignored-files-mode nil))
-  :bind
-  (:map global-map
-        ("M-0"       . treemacs-select-window)
-        ("C-x t 1"   . treemacs-delete-other-windows)
-        ("C-x t t"   . treemacs)
-        ("C-x t d"   . treemacs-select-directory)
-        ("C-x t B"   . treemacs-bookmark)
-        ("C-x t C-t" . treemacs-find-file)
-        ("C-x t M-t" . treemacs-find-tag)))
-
-(setq treemacs-position 'right)
-(setq lsp-treemacs-symbols-position-params `((side . right) (slot . 2) (window-width . 35)))
-
-(use-package treemacs-evil
-  :after (treemacs evil)
-  :ensure t)
-
-(use-package treemacs-icons-dired
-  :hook (dired-mode . treemacs-icons-dired-enable-once)
-  :ensure t)
-
-(use-package lsp-treemacs
-  :ensure t)
-
-;; (use-package treemacs-projectile
-;;   :after (treemacs projectile)
-;;   :ensure t)
-
-;; (use-package treemacs-magit
-;;   :after (treemacs magit)
-;;   :ensure t)
-
-;; (use-package treemacs-persp ;;treemacs-perspective if you use perspective.el vs. persp-mode
-;;   :after (treemacs persp-mode) ;;or perspective vs. persp-mode
-;;   :ensure t
-;;   :config (treemacs-set-scope-type 'Perspectives))
-
-;; (use-package treemacs-tab-bar ;;treemacs-tab-bar if you use tab-bar-mode
-;;   :after (treemacs)
-;;   :ensure t
-;;   :config (treemacs-set-scope-type 'Tabs))
-
-#+end_src
-
 **  Hydra.
 #+name: hydra block
 #+begin_src emacs-lisp
@@ -1984,49 +1853,13 @@ folder, otherwise delete a word"
 
 #+end_src
 
-**  AucteX.
-#+name: auctex block
-#+begin_src emacs-lisp
-
-(use-package auctex)
-
-(use-package tex
-  :defer t
-  :ensure auctex
-  :mode
-  ("\\.tex\\'" . latex-mode)
-  :init (add-hook 'latex-mode-hook
-                  (lambda ()  (interactive) (outline-minor-mode)
-                    (setq-local page-delimiter "\\\\section\\**{")
-                    (setq-local outline-regexp "\\\\\\(sub\\)*section\\**{")
-                    (outline-hide-sublevels 3)
-                    ))
-  :defines (TeX-auto-save
-            TeX-parse-self
-            TeX-electric-escape
-            TeX-PDF-mode
-            TeX-source-correlate-method
-            TeX-newline-function
-            TeX-view-program-list
-            TeX-view-program-selection
-            TeX-mode-map))
-
-(use-package cdlatex)
-(add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)   ; with AUCTeX LaTeX mode
-
-#+end_src
-
 ** 󱄅 Nix-mode.
 #+name: nix-mode block
 #+begin_src emacs-lisp
 
-;; (use-package nix-mode
-;;   :mode "\\.nix\\'")
-
 (use-package nix-mode
   :hook (nix-mode . lsp-deferred)
   :ensure t)
-
 
 #+end_src
 
@@ -2059,7 +1892,7 @@ folder, otherwise delete a word"
 
 #+end_src
 
-** 󰵼 Rainbow modes.
+** 󰵼 Rainbow-mode.
 #+name: rainbow-modes block
 #+begin_src emacs-lisp
 
@@ -2112,7 +1945,7 @@ folder, otherwise delete a word"
 
 #+end_src
 
-**   Hl-TODO.
+**  Hl-TODO.
 #+name: hl-TODO block
 #+begin_src emacs-lisp
 
