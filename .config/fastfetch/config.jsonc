@@ -1,78 +1,144 @@
+// 6.jsonc
+// Load with --load-config examples/2.jsonc
+// Note that you must replace the image path to an existing image to display it.
+
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-    "logo": {
-        "type": "small",
-        "padding": {
-            "top": 1,
-            "right": 2
-        }
-    },
+    "logo": "~/.config/fastfetch/ola",
     "display": {
-        "separator": ">  ",
-        "color": {
-            "separator": "red"
-        }
+        "separator": " "
     },
     "modules": [
         {
-            "format": "{#1}{#keys}╭───────────────────────────────────────────────────────────────────────────╮\u001b[76D {6}{7}{8} 🖥  ",
-            "type": "title"
+            "type": "title",
+            "key": "╭─",
+            "format": "{user-name}@{host-name}",
+            "keyColor": "blue"
         },
         {
-            "key": "│\u001b[75C│\u001b[75D{#31} kernel   ",
-            "type": "kernel"
+            "type": "os",
+            "key": "├─{icon}", // Just get your distro's logo off nerdfonts.com
+            "keyColor": "blue"
         },
         {
-            "key": "│\u001b[75C│\u001b[75D{#32}󰅐 uptime   ",
-            "type": "uptime"
+            "type": "kernel",
+            "key": "├─",
+            "keyColor": "blue"
         },
         {
-            "key": "│\u001b[75C│\u001b[75D{#33}󰟾 distro   ",
-            "type": "os"
+            "type": "packages",
+            "key": "├─󰏖",
+            "keyColor": "blue"
         },
         {
-            "key": "│\u001b[75C│\u001b[75D{#34}󰇄 desktop  ",
-            "type": "de"
+            "type": "uptime",
+            "key": "╰─󰅐",
+            "keyColor": "blue"
         },
+
+        "break",
+
         {
-            "key": "│\u001b[75C│\u001b[75D{#35} term     ",
-            "type": "terminal"
-        },
-        {
-            "key": "│\u001b[75C│\u001b[75D{#36} shell    ",
-            "type": "shell"
-        },
-        {
-            "key": "│\u001b[75C│\u001b[75D{#35}󰍛 cpu      ",
             "type": "cpu",
-            "showPeCoreCount": true,
-            "temp": true
+            "key": "╭─󰻠",
+            "keyColor": "green"
         },
         {
-            "key": "│\u001b[75C│\u001b[75D{#34}󰍛 gpu      ",
-            "type": "gpu"
+            "type": "gpu",
+            "key": "├─󰍛",
+            "keyColor": "green"
         },
         {
-            "key": "│\u001b[75C│\u001b[75D{#33}󰉉 disk     ",
             "type": "disk",
-            "folders": "/"
+            "key": "├─",
+            "keyColor": "green"
         },
         {
-            "key": "│\u001b[75C│\u001b[75D{#32} memory   ",
-            "type": "memory"
+            "type": "memory",
+            "key": "├─󰑭",
+            "keyColor": "green"
         },
         {
-            "format": "{#1}{#keys}├───────────────────────────────────────────────────────────────────────────┤",
-            "type": "custom"
+            "type": "swap",
+            "key": "├─󰓡",
+            "keyColor": "green"
         },
         {
-            "key": "│\u001b[75C│\u001b[75D{#39} colors   ",
-            "type": "colors",
-            "symbol": "circle"
+            "type": "display",
+            "key": "├─󰍹",
+            "keyColor": "green"
         },
         {
-            "format": "{#1}{#keys}╰───────────────────────────────────────────────────────────────────────────╯",
-            "type": "custom"
+            "type": "brightness",
+            "key": "├─󰃞",
+            "keyColor": "green"
+        },
+        {
+            "type": "battery",
+            "key": "├─",
+            "keyColor": "green"
+        },
+        {
+            "type": "poweradapter",
+            "key": "├─",
+            "keyColor": "green"
+        },
+        {
+            "type": "gamepad",
+            "key": "├─",
+            "keyColor": "green"
+        },
+        {
+            "type": "bluetooth",
+            "key": "├─",
+            "keyColor": "green"
+        },
+        {
+            "type": "sound",
+            "key": "╰─",
+            "keyColor": "green"
+        },
+        "break",
+
+        {
+            "type": "shell",
+            "key": "╭─",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "terminal",
+            "key": "├─",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "terminalfont",
+            "key": "├─",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "lm",
+            "key": "├─󰧨",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "de",
+            "key": "├─",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "wm",
+            "key": "├─",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "theme",
+            "key": "├─󰉼",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "icons",
+            "key": "╰─󰀻",
+            "keyColor": "yellow"
         }
     ]
 }

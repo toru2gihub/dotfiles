@@ -65,7 +65,7 @@ while [ $opt != '' ]
         ;;
         4) clear; # Garbage Collector
             #nix-collect-garbage --delete-older-than 1d;
-            sudo nix-collect-garbage;
+            sudo nix-collect-garbage -d;
             show_menu;
         ;;
         5) clear; #

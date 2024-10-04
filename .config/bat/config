@@ -15,7 +15,7 @@
  # |_.__/ \__,_|\__|
 
 # No pager
---paging=always
+--paging=never
 
 # warpper
 #--wrap=never

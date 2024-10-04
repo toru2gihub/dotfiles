@@ -276,8 +276,8 @@
            :style released-button)))))
 
 (setq blink-cursor-mode nil) ;; Blinking cursor
-(menu-bar-mode 1)           ;; Disable the menu bar
-(tool-bar-mode 1)           ;; Disable the tool bar
+(menu-bar-mode -1)           ;; Disable the menu bar
+(tool-bar-mode -1)           ;; Disable the tool bar
 (tab-bar-mode -1)            ;; Disable tabs
 (scroll-bar-mode -1)         ;; Disable the scroll bar
 (setq display-line-numbers-type 'relative)
@@ -425,7 +425,6 @@
     "r b" '(org-roam-buffer-toggle :wk "Toggle buffer")
     "r f" '(org-roam-node-find :wk "Find notes")
     "r c" '(org-roam-capture :wk "Capture notes")
-    "r d" '(org-roam-dailies-capture-date :wk "Capture date 'dailies'")
     "r i" '(org-roam-node-insert :wk "Insert note link"))
 
   (user/leader-keys
@@ -465,8 +464,6 @@
     "t c" '(comment-line :wk "Toggle comment lines")
     "t v" '(vundo :wk "Vundo")
     "t d" '(org-todo :wk "Org-todo")
-    "t t" '(treemacs :wk "Treemacs")
-    "t s" '(lsp-treemacs-symbols :wk "Treemacs LSP symbols")
     "t b" '(toggle-org-buffer :wk "New scratch buffer")
     "t o" '(olivetti-mode :wk "Toggle olivetti-mode")
     "t e" '(org-clock-in :wk "Clock in")
