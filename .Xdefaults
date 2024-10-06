@@ -1,2 +1,5 @@
 Nsxiv.window.background: #000000
 Nsxiv.window.foreground: #ffffff
+Nsxiv.bar.background: #ffffff
+Nsxiv.bar.foreground: #000000
+Nsxiv.mark.foreground: #ff0000

@@ -9,20 +9,13 @@
 # Repository: https://codeberg.org/toru
 # Email: torupublic11@waifu.club
 
- #  _         __ _                              
- # | |_ ___  / _(_)_ __   _____      _____ _ __ 
- # | __/ _ \| |_| | '_ \ / _ \ \ /\ / / _ \ '__|
- # | || (_) |  _| | |_) | (_) \ V  V /  __/ |   
- #  \__\___/|_| |_| .__/ \___/ \_/\_/ \___|_|   
- #                |_|                           
-
 ###################################################
 # control del poder del sistema con tofi+systemd #
 ###################################################
 
 #dm="dmenu -i -c -l 4"
 #dm="dmenu -l 4"
-dm="tofi"
+dm="fzf"
 
 # Options
 shutdown="shutdown"
@@ -30,7 +23,7 @@ suspend="suspend"
 reboot="reboot"
 logout="exit"
 
-chosen=$(printf "$shutdown\n$reboot\n$logout\n$suspend" | $dm --output "Nixos-Session:")
+chosen=$(printf "$shutdown\n$reboot\n$logout\n$suspend" | $dm)
 case $chosen in
 
     $shutdown)
