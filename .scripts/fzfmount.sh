@@ -1,9 +1,24 @@
 #!/usr/bin/env bash
 
-# Created By: Javier Pacheco - javier@jpacheco.xyz
-# Created On: 23/07/24
-# Project: mount usb devices using fzf in terminal
+# ▀█▀▄▀▄█▀▄█ █
+#  █ ▀▄▀█▀▄▀▄█
+#  simple, clean, elegant
+#
+# Page: https://toru.codeberg.page/
+# Mastodon: @averagetiger89
+# Repository: https://codeberg.org/toru
+# Email: torupublic11@waifu.club
 
+#   __     __                             _         _     
+#  / _|___/ _|_ __ ___   ___  _   _ _ __ | |_   ___| |__  
+# | ||_  / |_| '_ ` _ \ / _ \| | | | '_ \| __| / __| '_ \ 
+# |  _/ /|  _| | | | | | (_) | |_| | | | | |_ _\__ \ | | |
+# |_|/___|_| |_| |_| |_|\___/ \__,_|_| |_|\__(_)___/_| |_|
+
+##############################################################
+# Mounts or unmounts a drive o even android phone (uses fzf) #
+##############################################################
+                                                        
 getmount() { 
  [ -z "$chosen" ] && exit 1
         # shellcheck disable=SC2086

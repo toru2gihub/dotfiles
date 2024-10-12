@@ -13,6 +13,13 @@ Mastodon: @averagetiger89
 Repository: https://codeberg.org/toru
 Email: torupublic11@waifu.club
 
+#  _                      _                 _ 
+# | |__  _   _ _ __  _ __| | __ _ _ __   __| |
+# | '_ \| | | | '_ \| '__| |/ _` | '_ \ / _` |
+# | | | | |_| | |_) | |  | | (_| | | | | (_| |
+# |_| |_|\__, | .__/|_|  |_|\__,_|_| |_|\__,_|
+#        |___/|_|                             
+
 * General
 ** Settings
 #+begin_src conf
@@ -90,10 +97,9 @@ windowrulev2 = tile, class:^([Nn]sxiv)$ #tile for nsxiv
 # windowrule = center, mpv
 # windowrule = size 700 500, mpv
 
-# launcher -> fzlauncher
-$fzlauncher.sh = class:^(launcher)$
-windowrulev2 = float,$fzlauncher.sh
-windowrulev2 = size 500 300,$fzlauncher.sh
+$fzfpower.sh = class:^(launcher)$
+windowrulev2 = float,$fzfpower.sh
+windowrulev2 = size 500 300,$fzfpower.sh
 #windowrulev2 = center,$fzlauncher
 #windowrulev2 = move 510 380,$fzlauncher.sh
 
@@ -218,7 +224,7 @@ misc {
     disable_hyprland_logo = true # If true disables the random hyprland logo / anime girl background. :(
     focus_on_activate = false
     enable_swallow = 1
-    swallow_regex = ^(foot|footclient)$
+    swallow_regex = ^(foot|footclient|kitty)$
 }
 
 #+end_src
@@ -232,10 +238,11 @@ $mainMod = SUPER # Sets "Windows" key as main modifier
 	 # Program Variables
 $terminal = kitty -1
 $files = $terminal -e yazi
-#$menu = tofi-drun | xargs hyprctl dispatch exec
-$menu = kitty --class launcher -1 -e fzlauncher.sh
+$menu = rofi -show drun
+      #$menu = tofi-drun | xargs hyprctl dispatch exec
+      #$menu = kitty --class launcher -1 -e fzlauncher.sh
 $editor = emacsclient -c
-$screenshot = grimblast copy area && hyprctl notify 2 5000 "rgb(153276)" "fontsize:16 Selection copy to clipboard"
+$screenshot = grimblast copy area && hyprctl notify 2 3000 "rgb(153276)" "fontsize:16 Selection copy to clipboard"
 
      # Aplications
 bind = $mainMod, RETURN, exec, $terminal
@@ -248,13 +255,10 @@ bind = $mainMod, v, exec, pkill -SIGUSR2 waybar # Reload waybar
 bind = $mainMod, b, exec, pkill -SIGUSR1 waybar # Hide waybar
 bind = $mainMod, z, exec, ~/dotfiles/.config/hypr/scripts/zoom.sh
 bind = $mainMod  SHIFT, X, exec, hyprlock
-bind = $mainMod  SHIFT, Z, exec, tofipower.sh
+bind = $mainMod  SHIFT, Z, exec, rofi -show power-menu -modi power-menu:rofi-power-menu
 bind = $mainMod, SPACE, togglefloating,
 bind = $mainMod, SPACE, resizeactive, exact 1100 750 
 bind = $mainMod, SPACE, centerwindow
-
-     # Pypr
-bind = $mainMod, G, exec, pypr expose
 
      # Windows
 bind = $mainMod SHIFT, Q, exit,

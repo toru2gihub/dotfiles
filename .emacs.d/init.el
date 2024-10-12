@@ -47,7 +47,7 @@
    '((simple-modeline-segment-modified simple-modeline-segment-buffer-name simple-modeline-segment-position)
      (simple-modeline-segment-vc simple-modeline-segment-misc-info simple-modeline-segment-process simple-modeline-segment-major-mode)))
  '(telega-server-libs-prefix "/nix/store")
- '(toc-org-max-depth 3)
+ '(toc-org-max-depth 3 t)
  '(warning-suppress-types '((use-package)))
  '(yas-snippet-dirs '("/home/toru/.emacs.d/snippets/")))
 (custom-set-faces

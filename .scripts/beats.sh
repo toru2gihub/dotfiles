@@ -9,6 +9,16 @@
 # Repository: https://codeberg.org/toru
 # Email: torupublic11@waifu.club
 
+#  _                _             _     
+# | |__   ___  __ _| |_ ___   ___| |__  
+# | '_ \ / _ \/ _` | __/ __| / __| '_ \ 
+# | |_) |  __/ (_| | |_\__ \_\__ \ | | |
+# |_.__/ \___|\__,_|\__|___(_)___/_| |_|
+
+##############
+# Plays lofi #
+##############
+
 # add more args here according to preference
 ARGS="--volume=60"
 

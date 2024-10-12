@@ -1,8 +1,23 @@
 #!/usr/bin/env sh
 
-# Created By: Javier Pacheco - javier@jpacheco.xyz
-# Created On: 25/07/24
-# Project: tombs scripts
+# ▀█▀▄▀▄█▀▄█ █
+#  █ ▀▄▀█▀▄▀▄█
+#  simple, clean, elegant
+#
+# Page: https://toru.codeberg.page/
+# Mastodon: @averagetiger89
+# Repository: https://codeberg.org/toru
+# Email: torupublic11@waifu.club
+
+#  _                               _         _     
+# | |_ _ __ ___   ___  _   _ _ __ | |_   ___| |__  
+# | __| '_ ` _ \ / _ \| | | | '_ \| __| / __| '_ \ 
+# | |_| | | | | | (_) | |_| | | | | |_ _\__ \ | | |
+#  \__|_| |_| |_|\___/ \__,_|_| |_|\__(_)___/_| |_|
+
+#############################################
+# Select and open a tomb (look at the path) #
+#############################################
 
 TOMB_DIR="$HOME/dc/tomb/"
 KEY_FILE="$TOMB_DIR/secret.key"

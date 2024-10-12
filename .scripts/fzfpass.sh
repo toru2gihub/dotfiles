@@ -1,17 +1,20 @@
 #!/bin/sh
 
+# ▀█▀▄▀▄█▀▄█ █
+#  █ ▀▄▀█▀▄▀▄█
+#  simple, clean, elegant
+#
+# Page: https://toru.codeberg.page/
+# Mastodon: @averagetiger89
+# Repository: https://codeberg.org/toru
+# Email: torupublic11@waifu.club
+
 #   __     __                     
 #  / _|___/ _|_ __   __ _ ___ ___ 
 # | ||_  / |_| '_ \ / _` / __/ __|
 # |  _/ /|  _| |_) | (_| \__ \__ \
 # |_|/___|_| | .__/ \__,_|___/___/
 # |_|                  
-
-#
-# Page: https://toru.codeberg.page/
-# Mastodon: @averagetiger89
-# Repository: https://codeberg.org/toru
-# Email: torupublic11@waifu.club
 
 ###########################################################################
 # this script is a combination with fzf and pass (password manager)	  #

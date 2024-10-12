@@ -19,9 +19,9 @@
 # Project: Screen share script to store a quick img to 0x0.st #
 #################################################################
 
-MENU="tofi"
+MENU="fzf"
 
-OPT=$(printf "Desktop\nWindow\nSelection\nQuit" | tofi --prompt "Select Capture: ")
+OPT=$(printf "Desktop\nWindow\nSelection\nQuit" | fzf --prompt "Select Capture: ")
 
 # capture the desktop
 desktop() {

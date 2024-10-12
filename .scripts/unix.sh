@@ -9,8 +9,15 @@
 # Repository: https://codeberg.org/toru
 # Email: torupublic11@waifu.club
 
-#original artwork by http://www.sanderfocus.nl/#/portfolio/tech-heroes
-#converted to shell by #nixers @ irc.unix.chat
+#              _            _     
+#  _   _ _ __ (_)_  __  ___| |__  
+# | | | | '_ \| \ \/ / / __| '_ \ 
+# | |_| | | | | |>  < _\__ \ | | |
+#  \__,_|_| |_|_/_/\_(_)___/_| |_|
+
+##################################
+# Prints one of the unix fathers #
+##################################
 
 cat << 'eof'
                      [38;5;255m,_ ,_==▄▂[0m

@@ -1,0 +1,162 @@
+/* ▀█▀▄▀▄█▀▄█ █ */
+/*  █ ▀▄▀█▀▄▀▄█ */
+/* simple, clean, elegant */
+
+/* Page: https://toru.codeberg.page/ */
+/* Mastodon: @averagetiger89 */
+/* Repository: https://codeberg.org/toru */
+/* Email: torupublic11@waifu.club */
+
+/* TORU THEME */
+
+/* Animations and FX */
+@keyframes animate{ 
+   0%{ 
+     opacity: 0.3; 
+   } 
+   50%{ 
+     opacity: 0.7; 
+   } 
+   100%{ 
+     opacity: 0.3; 
+   } 
+ } 
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 16px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: #000000;
+    /* background: trasnparent; */
+    color: #ffffff;
+}
+
+window#waybar.empty #window {
+    background: transparent;
+}
+
+window#waybar.floating {
+}
+
+tooltip {
+    background: #000000;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #000000;
+}
+#workspaces button {
+    color: #ffffff;
+}
+
+#workspaces button.active {
+    color: #4169e1;
+}
+
+#workspaces button.focused {
+    color: #a6adc8;
+    background: #d3869b;
+    border-radius: 5px;
+}
+
+#workspaces button.urgent {
+    color: #ffffff;
+    background: #4169e1;
+    border-radius: 5px;
+}
+
+#workspaces button:hover {
+    background: #000000;
+    color: #d65d0e;
+    border-radius: 5px;
+}
+
+#custom-window_state,
+#window,
+#clock,
+#custom-weather,
+#pulseaudio,
+#memory,
+#mpd,
+#workspaces,
+#tray
+
+{
+    background: #000000;
+    opacity: 0.8;
+    padding: 0px 10px;
+    margin: 3px 0px;
+    margin-top: 10px;
+    border: 0px solid #000000;
+}
+
+#mpd {
+    padding: 0 10px;
+    /* border-radius: 10px;  */
+    color: #ffffff;
+}
+
+#mpd.disconnected {
+    background-color: #4169e1;
+}
+
+#mpd.stopped {
+    /* background-color: rgba(0,0,0,0.5); */
+
+}
+
+#mpd.paused {
+    /* background-color: rgba(0,0,0,0.5); */
+
+}
+
+#tray {
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#workspaces {
+    background: #000000;
+    border-radius: 10px;
+    padding: 0;
+    margin-left: 10px;
+    margin-right: 0px;
+}
+
+#window {
+    border-radius: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+#clock {
+    color: #ffffff;
+    border-radius: 10px;
+    margin-left: 10px;
+    border-right: 0px;
+}
+
+#pulseaudio {
+    color: #ffffff;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#memory {
+    color: #ffffff;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+#custom-weather {
+    border-radius: 0px 1px 1px 0px;
+}
