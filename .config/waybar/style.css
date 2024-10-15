@@ -7,18 +7,18 @@
 /* Repository: https://codeberg.org/toru */
 /* Email: torupublic11@waifu.club */
 
-/* TORU THEME */
+/* TOKYO NIGHT */
 
 @define-color backgroundlight #FFFFFF;
 @define-color backgrounddark #FFFFFF;
-@define-color workspacesbackground1 #FFFFFF;
-@define-color workspacesbackground2 #CCCCCC;
+@define-color workspacesbackground1 #c3e88d;
+@define-color workspacesbackground2 #c3e88d;
 @define-color bordercolor #35D6E7;
-@define-color textcolor1 #000000;
-@define-color textcolor2 #000000;
+@define-color textcolor1 #1f2335;
+@define-color textcolor2 #1f2335;
 @define-color textcolor3 #FFFFFF;
 @define-color iconcolor #FFFFFF;
-@define-color backend1 #080809;
+@define-color backend1 #1f2335;
 
 /* -----------------------------------------------------
  * General
@@ -32,7 +32,10 @@
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.7);
+
+    /* background-color: rgba(0, 0, 0, 0.7); */
+    background-color: #1f2335;
+
     margin: 10px 0 0 0;
    /* border: 2px solid @bordercolor;
      Enable border by removing these > */
@@ -67,7 +70,7 @@ window#waybar {
 #workspaces button.active {
     color: @textcolor1;
     background: @workspacesbackground2;
-    border-radius: 15px;
+    border-radius: 7px;
     min-width: 15px;
     transition: all 0.3s ease-in-out;
 }
@@ -205,7 +208,7 @@ window#waybar.empty #window {
     font-size: 20px;
     font-weight: bold;
     opacity: 0.8;
-    color: #dc2f2f;
+    color: #cc241d;
 }
 
 /* -----------------------------------------------------
@@ -255,7 +258,7 @@ window#waybar.empty #window {
 #clock {
     margin: 10px 15px 10px 0px;
     font-size: 16px;
-    color: @textcolor0;
+    color: #c53b53;
 
 }
 
@@ -332,7 +335,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 label:focus {
-    background-color: #000000;
+    background-color: #282828;
 }
 
 #backlight {

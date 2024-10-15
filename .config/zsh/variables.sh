@@ -17,6 +17,7 @@ SAVEHIST=10000000
 HISTDUP=erase
 HISTFILE="$HOME/.local/share/.zsh_history"
 PATH="$HOME/.scripts":$PATH
+PATH="$HOME/.local/bin":$PATH
 #SUDO_ASKPASS="$HOME/.scripts/tofipass.sh"
 XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
 XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}

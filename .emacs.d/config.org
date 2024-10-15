@@ -255,7 +255,7 @@
 #+begin_src emacs-lisp
 
 ;; Theme
-  (load-theme 'adwaita-dark t)
+  (load-theme 'doom-tokyo-night t)
 
 (setq modus-themes-org-blocks 'gray-background)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/etc/themes")
