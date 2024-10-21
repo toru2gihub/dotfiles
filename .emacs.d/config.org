@@ -255,7 +255,7 @@
 #+begin_src emacs-lisp
 
 ;; Theme
-  (load-theme 'doom-tokyo-night t)
+  (load-theme 'ef-dark t)
 
 (setq modus-themes-org-blocks 'gray-background)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/etc/themes")
@@ -268,8 +268,8 @@
 		    )
 
 ;; Transparency
-(set-frame-parameter nil 'alpha-background 100)
-(add-to-list 'default-frame-alist '(alpha-background . 100))
+(set-frame-parameter nil 'alpha-background 90)
+(add-to-list 'default-frame-alist '(alpha-background . 90))
 
 (custom-set-faces
  `(org-checkbox ((t :box (:line-width 2 :color "gray"

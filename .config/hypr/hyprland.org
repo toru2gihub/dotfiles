@@ -238,11 +238,17 @@ $mainMod = SUPER # Sets "Windows" key as main modifier
 	 # Program Variables
 $terminal = kitty -1
 $files = $terminal -e yazi
-$menu = rofi -show drun
+$menu = ~/.config/rofi/scripts/launcher_t1
+
+      #$menu = rofi -show drun
       #$menu = tofi-drun | xargs hyprctl dispatch exec
       #$menu = kitty --class launcher -1 -e fzlauncher.sh
+
 $editor = emacsclient -c
-$screenshot = grimblast copy area && hyprctl notify 2 3000 "rgb(153276)" "fontsize:16 Selection copy to clipboard"
+$screenshot = grimblast copy area && notify-send "Cattura dello schermo inviato negli appunti 🔥📷"
+	    #$screenshot = grimblast copy area && hyprctl notify 2 3000 "rgb(153276)" "fontsize:18 Selection copy to clipboard"
+
+$screencast = screencast.sh
 
      # Aplications
 bind = $mainMod, RETURN, exec, $terminal
@@ -250,12 +256,12 @@ bind = $mainMod, d, exec, $menu
 bind = $mainMod, c, exec, $files
 bind = $mainMod, e, exec, $editor
 bind = $mainMod, w, exec, $screenshot
-bind = $mainMod, s, exec, $terminal -e pulsemixer
-bind = $mainMod, v, exec, pkill -SIGUSR2 waybar # Reload waybar
+bind = $mainMod, r, exec, $screencast
+bind = $mainMod, v, exec, pkill -SIGUSR2 waybar && notify-send "Waybar Ricaricato ⚙️🥸" # Reload waybar
 bind = $mainMod, b, exec, pkill -SIGUSR1 waybar # Hide waybar
 bind = $mainMod, z, exec, ~/dotfiles/.config/hypr/scripts/zoom.sh
 bind = $mainMod  SHIFT, X, exec, hyprlock
-bind = $mainMod  SHIFT, Z, exec, rofi -show power-menu -modi power-menu:rofi-power-menu
+bind = $mainMod  SHIFT, Z, exec, ~/.config/rofi/scripts/powermenu_t6
 bind = $mainMod, SPACE, togglefloating,
 bind = $mainMod, SPACE, resizeactive, exact 1100 750 
 bind = $mainMod, SPACE, centerwindow
@@ -271,10 +277,12 @@ bind = $mainMod, up, moveactive, 0 -50
 # bind = $mainMod, Z, pseudo, # dwindle
 # bind = $mainMod, X, togglesplit, # dwindle
 
-  # Audio (mpc)
-bind = $mainMod, T, exec, mpc toggle
-bind = $mainMod, N, exec, mpc next
-bind = $mainMod, P, exec, mpc previous
+  # Audio (mpd)
+bind = $mainMod, s, exec, $terminal -e pulsemixer
+bind = $mainMod, t, exec, ~/.config/rofi/applets/bin/mpd.sh
+bind = $mainMod, n, exec, mpc next
+bind = $mainMod, p, exec, mpc previous
+# bind = $mainMod, t, exec, mpc toggle
 # bind = ,XF86AudioPlay, exec, mpc toggle
 # bind = ,XF86AudioStop, exec, mpc stop
 # bind = ,XF86AudioNext, exec, mpc next

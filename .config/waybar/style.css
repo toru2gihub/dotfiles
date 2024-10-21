@@ -7,18 +7,18 @@
 /* Repository: https://codeberg.org/toru */
 /* Email: torupublic11@waifu.club */
 
-/* TOKYO NIGHT */
+/* TORU THEME */
 
-@define-color backgroundlight #FFFFFF;
-@define-color backgrounddark #FFFFFF;
-@define-color workspacesbackground1 #c3e88d;
-@define-color workspacesbackground2 #c3e88d;
-@define-color bordercolor #35D6E7;
-@define-color textcolor1 #1f2335;
-@define-color textcolor2 #1f2335;
-@define-color textcolor3 #FFFFFF;
-@define-color iconcolor #FFFFFF;
-@define-color backend1 #1f2335;
+@define-color backgroundlight #ffffff;
+@define-color backgrounddark #000000;
+@define-color workspacesbackground1 #a9a9a9;
+@define-color workspacesbackground2 #ffffff;
+@define-color bordercolor #a9a9a9;
+@define-color textcolor1 #000000;
+@define-color textcolor2 #000000;
+@define-color textcolor3 #ffffff;
+@define-color iconcolor #ffffff;
+@define-color backend1 #ffffff;
 
 /* -----------------------------------------------------
  * General
@@ -33,13 +33,14 @@
 
 window#waybar {
 
-    /* background-color: rgba(0, 0, 0, 0.7); */
-    background-color: #1f2335;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    /* background-color: #ffffff; */
 
     margin: 10px 0 0 0;
    /* border: 2px solid @bordercolor;
      Enable border by removing these > */
-    border-radius: 50px 50px;
+    border-radius: 10px 10px;
 
 }
 
@@ -252,13 +253,22 @@ window#waybar.empty #window {
 }
 
 /* -----------------------------------------------------
+ * MPD
+ * ----------------------------------------------------- */
+
+#mpd {
+    color: @backgroundlight;
+    background-color: transparent;
+}
+
+/* -----------------------------------------------------
  * Clock
  * ----------------------------------------------------- */
 
 #clock {
     margin: 10px 15px 10px 0px;
     font-size: 16px;
-    color: #c53b53;
+    color: @backgroundlight;
 
 }
 
@@ -281,10 +291,11 @@ window#waybar.empty #window {
 
 #pulseaudio {
     font-size: 16px;
-    color: @textcolor0;
+    color: @backgroundlight;
+    background-color: transparent;
     border-radius: 15px;
     padding: 2px 2px 2px 2px;
-    margin: 10px 0px 10px 5px;
+    margin: 10px 1px 10px 15px;
 
 }
 

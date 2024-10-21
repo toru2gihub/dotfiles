@@ -1,4 +1,4 @@
-# ▀█▀▄▀▄█▀▄█ █
+	# ▀█▀▄▀▄█▀▄█ █
 #  █ ▀▄▀█▀▄▀▄█
 # simple, clean, elegant
 #
@@ -75,7 +75,7 @@ seek_time = "5"
 header_visibility = "yes"
 statusbar_visibility = "yes"
 titles_visibility = "yes"
-progressbar_look =  "=λ·"
+progressbar_look =  "=."
 locked_screen_width_part = "30"
 ask_for_locked_screen_width_part = "no"
 progressbar_elapsed_color = "white"

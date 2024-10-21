@@ -66,9 +66,9 @@
     // Modules Right    
     "modules-right": [
         "mpd",
-    	"custom/recorder",
         "pulseaudio",
         "memory",
+    	"custom/recorder",
         "tray"
 
     ]

@@ -55,7 +55,7 @@ remove_vid() {
 
 kill_proc
 
-OPT=$(printf "screencast\narea\nshare\nquit" | fzf --prompt 'Select an option: ' )
+OPT=$(printf "screencast\narea\nshare\nquit" | rofi -dmenu)
 case $OPT in
     'screencast')
         sleep 1
